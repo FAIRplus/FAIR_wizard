@@ -1,8 +1,13 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+#temporarily
+ng
+npm
+
 
 ### STS ###
 .apt_generated
@@ -49,8 +54,6 @@ speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
-.project
-.classpath
 .c9/
 *.launch
 .settings/
