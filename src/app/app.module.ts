@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WizardComponent } from './wizard/wizard.component';
+import { DecisionNodeComponent } from './decision-node/decision-node.component';
+import { DecisionPathComponent } from './decision-path/decision-path.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WizardComponent,
+    DecisionNodeComponent,
+    DecisionPathComponent
   ],
   imports: [
     BrowserModule,

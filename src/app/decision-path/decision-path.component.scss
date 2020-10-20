@@ -1,0 +1,33 @@
+.decision-node {
+  margin: 0 auto;
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.question {
+  float: left;
+  margin: 0 auto;
+  justify-content: left;
+  width: 80%;
+}
+
+.answer {
+  float: right;
+  border: 1px solid black;
+  margin-right: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background-color: rgba(110, 13, 54, 0.31);
+}
+
+.fair-card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.37);
+  border-radius: 2px;
+}
