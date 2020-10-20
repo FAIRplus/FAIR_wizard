@@ -1,13 +1,9 @@
 # FairWizard
 
-
-./mvnw clean install -e 
-docker-compose up --build
-
-
-ng generate component wizard
-
+## Build
+- ./mvnw clean install -e 
+- docker-compose up --build
 
 
 ## develop
-ng build --watch
+- ng build --watch
