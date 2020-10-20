@@ -9,15 +9,16 @@ import {DecisionNode} from "../models/DecisionNode";
 export class DecisionPathComponent implements OnInit {
   @Input() question: string;
   @Input() answer: string;
-  @Output() someEvent = new EventEmitter<string>();
+  @Input() pathIndex: number;
+  @Output() someEvent = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  callParent(answer: string): void {
-    this.someEvent.next(answer);
+  callParent(index: number): void {
+    this.someEvent.next(index);
   }
 
 }

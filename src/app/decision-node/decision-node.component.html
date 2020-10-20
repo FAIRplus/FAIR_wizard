@@ -1,8 +1,9 @@
 <div>
   <div class="decision-node">
     <div class="question fair-card">{{question}}</div>
-    <div class="answer fair-card" *ngFor="let n of answers">
-      <button (click)="callParent(n.id)">{{n.answer}}</button>
+    <div *ngFor="let n of answers">
+      <div class="answer fair-card" (click)="callParent(n.id)">{{n.answer}}</div>
+<!--      <button (click)="callParent(n.id)">{{n.answer}}</button>-->
     </div>
   </div>
 </div>

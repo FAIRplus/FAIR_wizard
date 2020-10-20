@@ -9,7 +9,6 @@ import {DecisionNode} from "../models/DecisionNode";
 })
 export class WizardComponent implements OnInit {
   decisionTree: DecisionNode;
-  decisions: string[];
   decisionPath: DecisionNode[];
   currentNode: DecisionNode;
   reachedLeaf: boolean;
@@ -19,7 +18,6 @@ export class WizardComponent implements OnInit {
 
   ngOnInit(): void {
     this.decisionService.getDecisionTree().subscribe(dt => this.decisionTree = dt);
-    this.decisions = [];
     this.decisionPath = [];
     this.currentNode = this.decisionTree;
     this.reachedLeaf = false;
@@ -32,26 +30,35 @@ export class WizardComponent implements OnInit {
     console.log(node);
   }
 
+  resetDecision(pathIndex: number): void {
+    console.log("Path index:" + pathIndex);
+    if (pathIndex == 0) {
+      this.decisionPath = [];
+      this.currentNode = this.decisionTree;
+      this.reachedLeaf = false;
+    } else {
+      let pathId = this.decisionPath[pathIndex - 1].id;
+      this.decisionPath = this.decisionPath.slice(0, pathIndex - 1);
+      this.currentNode = this.getNextNode(pathId);
+      this.reachedLeaf = false;
+    }
+  }
+
   getNextNode(nodeId: string): DecisionNode {
     let node = this.decisionTree;
-    for (let val of this.decisions) {
-      console.log("decision: " + val);
+    for (let decision of this.decisionPath) {
       for (let child of node.children) {
         console.log("child id: " + child.id);
-        if (child.id == val) {
+        if (child.id == decision.id) {
           node = child;
-          console.log("matched: " + child.id + "=" + val);
           break;
         }
       }
-      console.log("Error, should not reach here, val = " + val);
+      console.log("Error, should not reach here, val = " + decision.id);
     }
 
-
-    console.log("children size: " + node.children.length);
     for (let child of node.children) {
       if (child.id == nodeId) {
-        this.decisions.push(nodeId);
         this.decisionPath.push({
           id: nodeId,
           answer: child.answer,
@@ -59,7 +66,6 @@ export class WizardComponent implements OnInit {
         });
         node = child;
         if (node.children == undefined || node.children.length == 0) {
-          console.log("reached leaf");
           this.reachedLeaf = true;
         }
         break;

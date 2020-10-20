@@ -1,15 +1,19 @@
-<div *ngFor="let path of decisionPath">
-  <app-decision-path
-    [question]="path.question"
-    [answer]=path.answer
-    (someEvent)="addDecision($event)">
-  </app-decision-path>
-</div>
-<app-decision-node *ngIf="!reachedLeaf"
-  [question]="currentNode.question"
-  [answers]="currentNode.children"
-  (someEvent)="addDecision($event)">
-</app-decision-node>
-<div *ngIf="reachedLeaf">
-  <button>Search</button>
+<div class="fair-wizard">
+  <h1>FAIR Wizard</h1>
+  <div *ngFor="let path of decisionPath; let i = index">
+    <app-decision-path
+      [question]="path.question"
+      [answer]=path.answer
+      [pathIndex]=i
+      (someEvent)="resetDecision($event)">
+    </app-decision-path>
+  </div>
+  <app-decision-node *ngIf="!reachedLeaf"
+                     [question]="currentNode.question"
+                     [answers]="currentNode.children"
+                     (someEvent)="addDecision($event)">
+  </app-decision-node>
+  <div *ngIf="reachedLeaf">
+    <button>Search</button>
+  </div>
 </div>
