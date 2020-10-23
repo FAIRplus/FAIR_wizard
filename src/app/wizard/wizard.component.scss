@@ -3,3 +3,40 @@
   margin: 0 auto;
   display: block;
 }
+
+.fair-search-button-container {
+  width: 100%;
+  clear: both;
+}
+
+.fair-search-button {
+  float: right;
+}
+
+.fair-resources {
+  clear: both;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.fair-resource {
+  text-align: center;
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+
+.fair-resource:hover {
+  border: 1px solid #dbdbdb;
+}
+
+.fair-resource-img {
+  height: 70px;
+  object-fit: contain;
+}
+
+.fair-resource-title {
+
+}

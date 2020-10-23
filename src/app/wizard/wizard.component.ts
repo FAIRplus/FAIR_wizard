@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DecisionService} from "../decision.service";
 import {DecisionNode} from "../models/DecisionNode";
+import {FairResource} from "../models/FairResource";
 
 @Component({
   selector: 'app-wizard',
@@ -12,6 +13,7 @@ export class WizardComponent implements OnInit {
   decisionPath: DecisionNode[];
   currentNode: DecisionNode;
   reachedLeaf: boolean;
+  fairResources: FairResource[];
 
   constructor(private decisionService: DecisionService) {
   }
@@ -21,6 +23,11 @@ export class WizardComponent implements OnInit {
     this.decisionPath = [];
     this.currentNode = this.decisionTree;
     this.reachedLeaf = false;
+    // this.fairResources = [];
+  }
+
+  searchResources(): void {
+    this.decisionService.searchResources().subscribe(r => this.fairResources = r);
   }
 
   addDecision(nodeId: string): void {
@@ -42,6 +49,7 @@ export class WizardComponent implements OnInit {
       this.currentNode = this.getNextNode(pathId);
       this.reachedLeaf = false;
     }
+    this.fairResources = [];
   }
 
   getNextNode(nodeId: string): DecisionNode {
