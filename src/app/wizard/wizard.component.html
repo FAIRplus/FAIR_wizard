@@ -8,7 +8,7 @@
       (someEvent)="resetDecision($event)">
     </app-decision-path>
   </div>
-  <app-decision-node *ngIf="!reachedLeaf"
+  <app-decision-node *ngIf="!reachedLeaf && currentNode != undefined"
                      [question]="currentNode.question"
                      [answers]="currentNode.children"
                      (someEvent)="addDecision($event)">

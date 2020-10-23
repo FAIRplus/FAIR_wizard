@@ -3,4 +3,6 @@ export interface DecisionNode {
   question: string;
   answer: string;
   children?: DecisionNode[];
+  labels?: string[];
+  displayAnswer?: string;
 }

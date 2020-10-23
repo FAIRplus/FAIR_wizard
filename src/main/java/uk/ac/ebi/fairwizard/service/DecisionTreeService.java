@@ -1,6 +1,7 @@
 package uk.ac.ebi.fairwizard.service;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -42,6 +43,17 @@ public class DecisionTreeService {
     List<FairResource> fairResources = new ArrayList<>();
     FairResource fairResource = new FairResource();
     fairResources.add(fairResource);
+
+    try {
+      File file = ResourceUtils.getFile("classpath:fair_resources.json");
+      fairResources = jsonMapper.readValue(file, new TypeReference<List<FairResource>>() {});
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (JsonParseException | JsonMappingException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
     return fairResources;
   }

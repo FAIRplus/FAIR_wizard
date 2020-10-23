@@ -1,11 +1,11 @@
 {
   "id": "0",
-  "question": "Choose your destiny",
+  "question": "Choose your destiny 1",
   "answer": "",
   "children": [
     {
       "id": "1",
-      "question": "How did they come to New York?",
+      "question": "Do you wish to continue?",
       "answer": "Novice",
       "children": [
         {
@@ -19,24 +19,18 @@
           "question": "",
           "answer": "Give Up",
           "children": []
-        },
-        {
-          "id": "1_3",
-          "question": "",
-          "answer": "Die",
-          "children": []
         }
       ]
     },
     {
       "id": "2",
-      "question": "How did they come to London",
+      "question": "Do you wish to continue?",
       "answer": "Warrior",
       "children": [
         {
           "id": "2_1",
           "question": "",
-          "answer": "Fight and Die",
+          "answer": "Fight",
           "children": []
         },
         {

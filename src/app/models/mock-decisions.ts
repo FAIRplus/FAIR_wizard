@@ -5,7 +5,7 @@ export const DECISION_TREE = {
   "children": [
     {
       "id": "1",
-      "question": "What would you like to do?",
+      "question": "Do you wish to continue?",
       "answer": "Novice",
       "children": [
         {
@@ -30,7 +30,7 @@ export const DECISION_TREE = {
     },
     {
       "id": "2",
-      "question": "Do you want to fight?",
+      "question": "Do you wish to continue?",
       "answer": "Warrior",
       "children": [
         {

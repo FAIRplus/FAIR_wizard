@@ -19,9 +19,11 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.decisionService.getDecisionTree().subscribe(dt => this.decisionTree = dt);
+    this.decisionService.getDecisionTree().subscribe(dt => {
+      this.decisionTree = dt;
+      this.currentNode = this.decisionTree;
+    });
     this.decisionPath = [];
-    this.currentNode = this.decisionTree;
     this.reachedLeaf = false;
     // this.fairResources = [];
   }
@@ -31,14 +33,10 @@ export class WizardComponent implements OnInit {
   }
 
   addDecision(nodeId: string): void {
-    console.log("parent: " + nodeId);
-    let node = this.getNextNode(nodeId);
-    this.currentNode = node;
-    console.log(node);
+    this.currentNode = this.getNextNode(nodeId);
   }
 
   resetDecision(pathIndex: number): void {
-    console.log("Path index:" + pathIndex);
     if (pathIndex == 0) {
       this.decisionPath = [];
       this.currentNode = this.decisionTree;
@@ -56,13 +54,12 @@ export class WizardComponent implements OnInit {
     let node = this.decisionTree;
     for (let decision of this.decisionPath) {
       for (let child of node.children) {
-        console.log("child id: " + child.id);
         if (child.id == decision.id) {
           node = child;
           break;
         }
       }
-      console.log("Error, should not reach here, val = " + decision.id);
+      console.log("[fix me]Error, should not reach here, val = " + decision.id);
     }
 
     for (let child of node.children) {
