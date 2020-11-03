@@ -1,1 +1,35 @@
+.main-menu-container {
+  width: 100%;
+  background-color: #310562;
+}
 
+.main-menu {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #310562;
+  color: #ffffff;
+  padding: 0;
+}
+
+.main-menu a {
+  color: #ffffff;
+}
+
+.main-menu li {
+  padding: 0.3rem;
+}
+
+.main-menu li:hover {
+  background-color: #ff4057;
+}
+
+.btn-nav-search {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-nav-search:hover {
+  color: #ffffff;
+  background-color: #ff4057;
+  border-color: #310562;
+}

@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class ApplicationConfig {
-  @Value("${fairwizard.resources.decisiontree:decision_tree.json}")
+  @Value("${fairwizard.resources.decisiontree:classpath:decision_tree.json}")
   private String decisionTreeFile;
-  @Value("${fairwizard.resources.fairresources:fair_resources.json}")
+  @Value("${fairwizard.resources.fairresources:classpath:fair_resources.json}")
   private String fairResourcesFile;
 }

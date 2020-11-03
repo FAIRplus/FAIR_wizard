@@ -3,6 +3,7 @@ package uk.ac.ebi.fairwizard.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
 import uk.ac.ebi.fairwizard.model.Node;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
@@ -25,12 +26,12 @@ public class DecisionTreeController {
   }
 
   @GetMapping("/wizard")
-  public Node getDecisionTree() {
+  public Node getDecisionTree() throws ApplicationStatusException {
     return decisionTreeService.getDecisionTree();
   }
 
   @GetMapping("/search")
-  public List<FairResource> searchResources() {
+  public List<FairResource> searchResources() throws ApplicationStatusException{
     return decisionTreeService.searchResources(new ArrayList<>());
   }
 

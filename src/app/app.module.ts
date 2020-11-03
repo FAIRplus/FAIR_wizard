@@ -7,13 +7,17 @@ import {AppComponent} from './app.component';
 import {WizardComponent} from './wizard/wizard.component';
 import {DecisionNodeComponent} from './decision-node/decision-node.component';
 import {DecisionPathComponent} from './decision-path/decision-path.component';
+import { HomeComponent } from './home/home.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WizardComponent,
     DecisionNodeComponent,
-    DecisionPathComponent
+    DecisionPathComponent,
+    HomeComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

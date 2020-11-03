@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-lg-10">
         <div class="card-title">{{question}}</div>
-        <div class="vf-badge vf-badge--primary vf-badge--outline vf-badge--rounded">{{answer}}</div>
+        <div class="badge badge-secondary answer">{{answer}}</div>
       </div>
       <div class="col-lg-2">
-        <div class="vf-button vf-button--primary vf-button--sm" (click)="callParent(pathIndex)">Change</div>
+        <button class="btn btn-outline-primary btn-answer" (click)="callParent(pathIndex)">Change</button>
       </div>
     </div>
   </div>

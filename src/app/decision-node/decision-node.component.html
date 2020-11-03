@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <div class="card-title">{{question}}</div>
         <div *ngFor="let n of answers">
-          <div class="answer vf-button vf-button--primary" (click)="callParent(n.id)">{{n.answer}}</div>
+          <div class="badge badge-primary answer" (click)="callParent(n.id)">{{n.answer}}</div>
         </div>
       </div>
     </div>

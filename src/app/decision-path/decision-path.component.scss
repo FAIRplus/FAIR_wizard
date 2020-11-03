@@ -13,8 +13,8 @@
 
 .answer {
   float: left;
-  cursor: pointer;
-  width: 20%;
+  margin-right: 10px;
+  font-size: 20px;
 }
 
 .reset-button {
@@ -23,8 +23,14 @@
   margin-left: 30px;
 }
 
-.answer:hover {
-  background-color: rgba(110, 13, 54, 0.31);
+.btn-answer {
+  color: #310562;
+  border-color: #310562;
+}
+
+.btn-answer:hover {
+  color: #ffffff;
+  background-color: #310562;
 }
 
 .fair-card {
