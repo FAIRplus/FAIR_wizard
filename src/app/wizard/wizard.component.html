@@ -19,7 +19,8 @@
     </div>
   </div>
 
-  <div class="fair-resources container-fluid" *ngIf="fairResources == undefined || fairResources.length > 0">
+  <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
+    <app-fair-resources [resources]="fairResources"></app-fair-resources>
     <div class="row">
       <div class="card-deck">
       <div class="col-lg-3" *ngFor="let resource of fairResources">

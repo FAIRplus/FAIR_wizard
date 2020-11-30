@@ -1,42 +1,42 @@
 {
   "id": "0",
-  "question": "Choose your destiny",
+  "question": "Which is your favourite animal?",
   "answer": "",
   "children": [
     {
       "id": "1",
-      "question": "Do you wish to continue?",
-      "answer": "Novice",
+      "question": "Are you crazy?",
+      "answer": "Cat",
       "children": [
         {
           "id": "1_1",
           "question": "",
-          "answer": "Run",
+          "answer": "Yes",
           "children": []
         },
         {
           "id": "1_2",
           "question": "",
-          "answer": "Give Up",
+          "answer": "No",
           "children": []
         }
       ]
     },
     {
       "id": "2",
-      "question": "Do you wish to continue?",
-      "answer": "Warrior",
+      "question": "Are you a human?",
+      "answer": "Snake",
       "children": [
         {
           "id": "2_1",
           "question": "",
-          "answer": "Fight",
+          "answer": "Yes",
           "children": []
         },
         {
           "id": "2_2",
           "question": "",
-          "answer": "Run",
+          "answer": "No",
           "children": []
         }
       ]
@@ -44,19 +44,13 @@
     {
       "id": "3",
       "question": "",
-      "answer": "Master",
+      "answer": "Dog",
       "children": []
     },
     {
       "id": "4",
       "question": "",
-      "answer": "Champion",
-      "children": []
-    },
-    {
-      "id": "5",
-      "question": "",
-      "answer": "Elder God",
+      "answer": "Chimpanzee",
       "children": []
     }
   ]

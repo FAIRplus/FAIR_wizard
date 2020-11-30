@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {DecisionNode} from "./models/DecisionNode";
-import {DECISION_TREE, FAIR_RESOURCES} from "./models/mock-decisions"
-import { Observable, of } from 'rxjs';
-import {FairResource} from "./models/FairResource";
+import {Observable} from 'rxjs';
+import {FairResource, FairResourceType} from "./models/FairResource";
 import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,12 @@ export class DecisionService {
   }
 
   searchResources(): Observable<FairResource[]> {
-    return this.http.get<FairResource[]>(this.searchUrl);
+    return this.http.get<FairResource[]>(this.searchUrl)
+      .pipe(map(resources => {
+        let fairResources: FairResource[] = [];
+        resources.forEach(r => r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]);
+        return resources;
+      }));
     // return of(FAIR_RESOURCES);
   }
 }

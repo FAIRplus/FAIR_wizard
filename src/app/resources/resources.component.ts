@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FairResource} from "../models/FairResource";
+import {DecisionService} from "../decision.service";
 
 @Component({
   selector: 'app-resources',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resources.component.scss']
 })
 export class ResourcesComponent implements OnInit {
+  fairResources: FairResource[];
 
-  constructor() { }
+  constructor(private decisionService: DecisionService) { }
 
   ngOnInit(): void {
+    this.searchResources();
   }
 
+  searchResources(): void {
+    this.decisionService.searchResources().subscribe(r => this.fairResources = r);
+  }
 }

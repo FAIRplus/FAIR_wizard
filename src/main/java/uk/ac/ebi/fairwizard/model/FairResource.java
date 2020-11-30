@@ -9,4 +9,5 @@ public class FairResource {
   private String location;
   private String description;
   private String image;
+  private String resourceType;
 }

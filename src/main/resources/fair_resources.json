@@ -4,48 +4,87 @@
     "name": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/fair_process.jpg",
+    "resourceType": "Process"
+  },
+  {
+    "id": "1",
+    "name": "FAIR Resource",
+    "location": "http://www.google.com",
+    "description": "Test FAIR resource",
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2, this is a really long description to check how cards work",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2, this is a long title for the card",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe"
   },
   {
     "id": "2",
     "name": "FAIR Resource 2",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
-    "image": "assets/img/fair_resource.jpg"
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Tool"
+  },
+  {
+    "id": "2",
+    "name": "FAIR Resource 2",
+    "location": "http://www.google.com",
+    "description": "Test FAIR resource 2",
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Tool"
+  },
+  {
+    "id": "2",
+    "name": "FAIR Resource 2",
+    "location": "http://www.google.com",
+    "description": "Test FAIR resource 2",
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Tool"
+  },
+  {
+    "id": "2",
+    "name": "FAIR Resource 2",
+    "location": "http://www.google.com",
+    "description": "Test FAIR resource 2",
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Indicator"
   }
 ]

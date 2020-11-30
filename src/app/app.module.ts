@@ -9,6 +9,7 @@ import {DecisionNodeComponent} from './decision-node/decision-node.component';
 import {DecisionPathComponent} from './decision-path/decision-path.component';
 import { HomeComponent } from './home/home.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { FairResourcesComponent } from './common/fair-resources/fair-resources.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ResourcesComponent } from './resources/resources.component';
     DecisionNodeComponent,
     DecisionPathComponent,
     HomeComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    FairResourcesComponent
   ],
   imports: [
     BrowserModule,
