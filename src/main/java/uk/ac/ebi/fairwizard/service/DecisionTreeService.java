@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
-import uk.ac.ebi.fairwizard.model.Node;
+import uk.ac.ebi.fairwizard.model.Question;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -32,36 +32,29 @@ public class DecisionTreeService {
     fairResourceIndex = this.loadResources();
   }
 
-  public Node getDecisionTree() throws ApplicationStatusException {
-    Node node;
+  public List<Question> getDecisionTree() throws ApplicationStatusException {
+    List<Question> questions;
     try {
       InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream();
-      node = jsonMapper.readValue(in, Node.class);
+      questions = jsonMapper.readValue(in, new TypeReference<>() {
+      });
     } catch (IOException e) {
       e.printStackTrace();
       throw new ApplicationStatusException("Failed to load decision tree");
     }
 
-    return node;
-  }
-
-  public List<FairResource> searchResources2(List<String> labels) throws ApplicationStatusException {
-    List<FairResource> fairResources;
-    try {
-      InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream();
-      fairResources = jsonMapper.readValue(in, new TypeReference<>() {
-      });
-    } catch (IOException e) {
-      throw new ApplicationStatusException("Failed to load FAIR resources");
-    }
-
-    return fairResources;
+    return questions;
   }
 
   public Set<FairResource> searchResources(List<String> labels) {
     Set<FairResource> fairResources = new HashSet<>();
     for (String label : labels) {
-      fairResources.addAll(fairResourceIndex.get(label));
+      if (fairResourceIndex.containsKey(label)) {
+        fairResources.addAll(fairResourceIndex.get(label));
+      } else {
+        //todo properly log
+        System.out.println("Warning: Orphan label in question bank: " + label);
+      }
     }
     return fairResources;
   }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DecisionService} from "../decision.service";
-import {DecisionNode} from "../models/DecisionNode";
+import {DecisionNode, Question} from "../models/DecisionNode";
 import {FairResource} from "../models/FairResource";
 
 @Component({
@@ -9,9 +9,9 @@ import {FairResource} from "../models/FairResource";
   styleUrls: ['./wizard.component.scss']
 })
 export class WizardComponent implements OnInit {
-  decisionTree: DecisionNode;
-  decisionPath: DecisionNode[];
-  currentNode: DecisionNode;
+  decisionTree: Map<string, Question>;
+  decisions: DecisionNode[];
+  currentNode: Question;
   reachedLeaf: boolean;
   fairResources: FairResource[];
 
@@ -19,65 +19,52 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.decisionService.getDecisionTree().subscribe(dt => {
-      this.decisionTree = dt;
-      this.currentNode = this.decisionTree;
+    this.decisionService.getDecisionTree().subscribe(questions => {
+      this.decisionTree = new Map();
+      for (let q of questions) {
+        this.decisionTree.set(q.id, q);
+      }
+
+      this.currentNode = this.decisionTree.get("1");
     });
-    this.decisionPath = [];
+    this.decisions = [];
     this.reachedLeaf = false;
     // this.fairResources = [];
   }
 
   searchResources(): void {
-    this.decisionService.searchResources(["interoperability"]).subscribe(r => this.fairResources = r);
+    let filters = [];
+    for (let decision of this.decisions) {
+      filters.push(decision.answer.labels);
+    }
+    this.decisionService.searchResources(filters).subscribe(r => this.fairResources = r);
   }
 
-  addDecision(nodeId: string): void {
-    this.currentNode = this.getNextNode(nodeId);
+  addDecision(decision: DecisionNode): void {
+    this.processDecision(decision);
   }
 
-  resetDecision(pathIndex: number): void {
-    if (pathIndex == 0) {
-      this.decisionPath = [];
-      this.currentNode = this.decisionTree;
-      this.reachedLeaf = false;
+  processDecision(decision: DecisionNode) {
+    this.decisions.push(decision);
+    if (decision.answer.next == "0") {
+      this.reachedLeaf = true
     } else {
-      let pathId = this.decisionPath[pathIndex - 1].id;
-      this.decisionPath = this.decisionPath.slice(0, pathIndex - 1);
-      this.currentNode = this.getNextNode(pathId);
-      this.reachedLeaf = false;
+      this.currentNode = this.decisionTree.get(decision.answer.next)
     }
-    this.fairResources = [];
   }
 
-  getNextNode(nodeId: string): DecisionNode {
-    let node = this.decisionTree;
-    for (let decision of this.decisionPath) {
-      for (let child of node.children) {
-        if (child.id == decision.id) {
-          node = child;
-          break;
-        }
-      }
-      console.log("[fix me]Error, should not reach here, val = " + decision.id);
-    }
-
-    for (let child of node.children) {
-      if (child.id == nodeId) {
-        this.decisionPath.push({
-          id: nodeId,
-          answer: child.answer,
-          question: node.question
-        });
-        node = child;
-        if (node.children == undefined || node.children.length == 0) {
-          this.reachedLeaf = true;
-        }
+  resetDecision(question: Question): void {
+    let newDecisions = [];
+    for (let decision of this.decisions) {
+      if (decision.question.id === question.id) {
+        this.currentNode = question;
         break;
       }
+      newDecisions.push(decision);
     }
 
-    return node;
+    this.decisions = newDecisions;
+    this.fairResources = [];
+    this.reachedLeaf = false;
   }
-
 }

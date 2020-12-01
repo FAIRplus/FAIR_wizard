@@ -16,12 +16,24 @@
 
 .fair-search-button {
   float: right;
+  width: 100px;
+  color: #ffffff;
+  border-color: #000000;
+  background-color: #310562;
+}
+
+.fair-search-button:hover {
+  color: #ffffff;
+  background-color: #ff4057;
+  border-color: #310562;
 }
 
 .fair-resources {
   clear: both;
   margin-top: 30px;
   padding-top: 30px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .fair-resource {
