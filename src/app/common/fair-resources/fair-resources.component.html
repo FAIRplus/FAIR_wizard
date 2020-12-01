@@ -1,5 +1,6 @@
 <ng-template #blankContent>No Data</ng-template>
 
+<div class="fair-resources">
 <div class="fair-processes">
   <div class="resource-sub-title">FAIRification Processes</div>
   <div *ngIf="processes.length > 0; else blankContent" class="resource-body">
@@ -14,7 +15,9 @@
     <div class="row">
       <div *ngFor="let recipe of recipes" class="col-lg-2">
         <div class="card">
-          <img class="card-img-top" [src]="recipe.image" alt="Card image cap">
+          <a [href]="recipe.location">
+            <img class="card-img-top" [src]="recipe.image" alt="Card image cap">
+          </a>
           <div class="card-body">
             <h6 class="card-title">{{recipe.name}}</h6>
             <p class="card-text text-muted">{{recipe.description}}</p>
@@ -87,4 +90,5 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>

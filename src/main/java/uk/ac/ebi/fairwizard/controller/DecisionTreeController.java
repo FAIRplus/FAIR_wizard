@@ -2,14 +2,16 @@ package uk.ac.ebi.fairwizard.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
 import uk.ac.ebi.fairwizard.model.Node;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
@@ -20,9 +22,9 @@ public class DecisionTreeController {
     this.decisionTreeService = decisionTreeService;
   }
 
-  @GetMapping("/info")
+  @GetMapping("/version")
   public String getApi() {
-    return "{'api': 'v12'}";
+    return "{'api': 'v0.0.1'}";
   }
 
   @GetMapping("/wizard")
@@ -31,8 +33,14 @@ public class DecisionTreeController {
   }
 
   @GetMapping("/search")
-  public List<FairResource> searchResources() throws ApplicationStatusException{
-    return decisionTreeService.searchResources(new ArrayList<>());
+  public Set<FairResource> searchResources(@RequestParam(required = false) List<String> filters) {
+//    return decisionTreeService.searchResources(Arrays.asList("process"));
+
+    System.out.println(filters);
+    if (filters == null || filters.isEmpty()) {
+      return decisionTreeService.getAllResources();
+    }
+    return decisionTreeService.searchResources(filters);
   }
 
 }

@@ -2,89 +2,133 @@
   {
     "id": "1",
     "name": "FAIR Resource",
-    "location": "http://www.google.com",
+    "title": "FAIR Resource",
     "description": "Test FAIR resource",
     "image": "assets/img/fair_process.jpg",
-    "resourceType": "Process"
-  },
-  {
-    "id": "1",
-    "name": "FAIR Resource",
     "location": "http://www.google.com",
-    "description": "Test FAIR resource",
-    "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Process",
+    "status": "released",
+    "labels": ["process", "interoperability"],
+    "target": "interoperability"
   },
   {
     "id": "2",
+    "name": "FAIR Resource",
+    "title": "FAIR Resource",
+    "location": "http://www.google.com",
+    "description": "Test FAIR resource",
+    "image": "assets/img/home_recipes.png",
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["recipe", "interoperability"],
+    "target": "interoperability"
+  },
+  {
+    "id": "3",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "4",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2, this is a really long description to check how cards work",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "5",
     "name": "FAIR Resource 2, this is a long title for the card",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "6",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "7",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Recipe"
+    "resourceType": "Recipe",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "8",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Tool"
+    "resourceType": "Tool",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "9",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Tool"
+    "resourceType": "Tool",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "10",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Tool"
+    "resourceType": "Tool",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   },
   {
-    "id": "2",
+    "id": "11",
     "name": "FAIR Resource 2",
+    "title": "FAIR Resource",
     "location": "http://www.google.com",
     "description": "Test FAIR resource 2",
     "image": "assets/img/home_recipes.png",
-    "resourceType": "Indicator"
+    "resourceType": "Indicator",
+    "status": "released",
+    "labels": ["process", "findability"],
+    "target": "findability"
   }
 ]

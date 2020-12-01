@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {DecisionNode} from "./models/DecisionNode";
 import {Observable} from 'rxjs';
 import {FairResource, FairResourceType} from "./models/FairResource";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -20,8 +20,15 @@ export class DecisionService {
     // return of(DECISION_TREE);
   }
 
-  searchResources(): Observable<FairResource[]> {
-    return this.http.get<FairResource[]>(this.searchUrl)
+  searchResources(filters: string[]): Observable<FairResource[]> {
+    let params = new HttpParams();
+    for (let filter of filters) {
+      params = params.set("filters", filter);
+    }
+
+    console.log(filters);
+    console.log(params);
+    return this.http.get<FairResource[]>(this.searchUrl, {params: params})
       .pipe(map(resources => {
         let fairResources: FairResource[] = [];
         resources.forEach(r => r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]);

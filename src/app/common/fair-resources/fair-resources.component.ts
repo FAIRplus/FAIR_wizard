@@ -30,20 +30,15 @@ export class FairResourcesComponent implements OnInit {
 
   searchFairResources() {
     this.populateFairResources(this.resources);
-    // this.decisionService.searchResources().subscribe(r => {
-    //   this.populateFairResources(r)
-    // });
   }
 
   populateFairResources(resources: FairResource[]): void {
     for (let resource of resources) {
-      console.log(resource.resourceType);
       if (resource.resourceType === FairResourceType.Process) {
         this.processes.push(resource);
       } else if (resource.resourceType === FairResourceType.Indicator) {
         this.indicators.push(resource);
       } else if (resource.resourceType === FairResourceType.Recipe) {
-        console.log("Found recipe");
         this.recipes.push(resource);
       } else if (resource.resourceType === FairResourceType.Requirement) {
         this.requirements.push(resource);

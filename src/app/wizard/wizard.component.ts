@@ -29,7 +29,7 @@ export class WizardComponent implements OnInit {
   }
 
   searchResources(): void {
-    this.decisionService.searchResources().subscribe(r => this.fairResources = r);
+    this.decisionService.searchResources(["interoperability"]).subscribe(r => this.fairResources = r);
   }
 
   addDecision(nodeId: string): void {

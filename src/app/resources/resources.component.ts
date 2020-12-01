@@ -17,6 +17,6 @@ export class ResourcesComponent implements OnInit {
   }
 
   searchResources(): void {
-    this.decisionService.searchResources().subscribe(r => this.fairResources = r);
+    this.decisionService.searchResources([]).subscribe(r => this.fairResources = r);
   }
 }
