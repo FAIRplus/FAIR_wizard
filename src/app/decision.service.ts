@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {DecisionNode} from "./models/DecisionNode";
+import {Question} from "./models/DecisionNode";
 import {Observable} from 'rxjs';
 import {FairResource, FairResourceType} from "./models/FairResource";
 import {HttpClient, HttpParams} from "@angular/common/http";
@@ -15,15 +15,17 @@ export class DecisionService {
   constructor(private http: HttpClient) {
   }
 
-  getDecisionTree(): Observable<DecisionNode> {
-    return this.http.get<DecisionNode>(this.wizardUrl);
+  getDecisionTree(): Observable<Question[]> {
+    return this.http.get<Question[]>(this.wizardUrl);
     // return of(DECISION_TREE);
   }
 
   searchResources(filters: string[]): Observable<FairResource[]> {
     let params = new HttpParams();
     for (let filter of filters) {
-      params = params.set("filters", filter);
+      if (filter) {
+        params = params.append("filters", filter);
+      }
     }
 
     console.log(filters);

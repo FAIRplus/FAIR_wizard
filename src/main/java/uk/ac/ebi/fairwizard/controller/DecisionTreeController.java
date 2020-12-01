@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
-import uk.ac.ebi.fairwizard.model.Node;
+import uk.ac.ebi.fairwizard.model.Question;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -28,7 +27,7 @@ public class DecisionTreeController {
   }
 
   @GetMapping("/wizard")
-  public Node getDecisionTree() throws ApplicationStatusException {
+  public List<Question> getDecisionTree() throws ApplicationStatusException {
     return decisionTreeService.getDecisionTree();
   }
 

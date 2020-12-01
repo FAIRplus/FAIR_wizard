@@ -1,72 +1,89 @@
-export const DECISION_TREE = {
-  "id": "0",
-  "question": "Choose your destiny",
-  "answer": "",
-  "children": [
-    {
-      "id": "1",
-      "question": "Do you wish to continue?",
-      "answer": "Novice",
-      "children": [
-        {
-          "id": "1_1",
-          "question": "",
-          "answer": "Run",
-          "children": []
-        },
-        {
-          "id": "1_2",
-          "question": "",
-          "answer": "Give Up",
-          "children": []
-        },
-        {
-          "id": "1_3",
-          "question": "",
-          "answer": "Cry",
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "question": "Do you wish to continue?",
-      "answer": "Warrior",
-      "children": [
-        {
-          "id": "2_1",
-          "question": "",
-          "answer": "Yes, Fight and Die",
-          "children": []
-        },
-        {
-          "id": "2_2",
-          "question": "",
-          "answer": "Run",
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "question": "",
-      "answer": "Master",
-      "children": []
-    },
-    {
-      "id": "4",
-      "question": "",
-      "answer": "Champion",
-      "children": []
-    },
-    {
-      "id": "5",
-      "question": "",
-      "answer": "Elder God",
-      "children": []
-    }
-  ]
-};
+export const DECISION_TREE = [
+  {
+    "id": "1",
+    "question": "What is the dataset/project status?",
+    "answers": [
+      {
+        "text": "Prospective data",
+        "labels": ["Prospective data"],
+        "next": "2"
+      },
+      {
+        "text": "Retrospective data",
+        "labels": ["Retrospective data"],
+        "next": "3"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "question": "What is the data type?",
+    "answers": [
+      {
+        "text": "Metabolomics",
+        "labels": ["Metabolomics"],
+        "next": "0"
+      },
+      {
+        "text": "Transcriptomics",
+        "labels": ["Transcriptomics"],
+        "next": "0"
+      },
+      {
+        "text": "Chemical compounds",
+        "labels": ["Chemical compounds"],
+        "next": "0"
+      },
+      {
+        "text": "Cell line metadata",
+        "labels": ["Cell line metadata"],
+        "next": "4"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "question": "Do you want to perform FAIR assessment?",
+    "answers": [
+      {
+        "text": "Yes",
+        "labels": ["FAIR assessment"],
+        "next": "0"
+      },
+      {
+        "text": "No",
+        "labels": [],
+        "next": "2"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "question": "Which FAIR principle do you want to focus?",
+    "answers": [
+      {
+        "text": "Findability",
+        "labels": ["Findability"],
+        "next": "0"
+      },
+      {
+        "text": "Interoperability",
+        "labels": ["Interoperability"],
+        "next": "0"
+      },
+      {
+        "text": "Resuability",
+        "labels": ["Resuability"],
+        "next": "0"
+      },
+      {
+        "text": "Accessiblity",
+        "labels": ["Accessiblity"],
+        "next": "0"
+      }
+    ]
+  }
+];
 
 export const FAIR_RESOURCES = [
   {

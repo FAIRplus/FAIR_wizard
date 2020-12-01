@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {DecisionNode} from "../models/DecisionNode";
+import {DecisionNode, Question} from "../models/DecisionNode";
 
 @Component({
   selector: 'app-decision-path',
@@ -7,18 +7,16 @@ import {DecisionNode} from "../models/DecisionNode";
   styleUrls: ['./decision-path.component.scss']
 })
 export class DecisionPathComponent implements OnInit {
-  @Input() question: string;
-  @Input() answer: string;
-  @Input() pathIndex: number;
-  @Output() someEvent = new EventEmitter<number>();
+  @Input() decision: DecisionNode;
+  @Output() someEvent = new EventEmitter<Question>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  callParent(index: number): void {
-    this.someEvent.next(index);
+  callParent(question: Question): void {
+    this.someEvent.next(question);
   }
 
 }
