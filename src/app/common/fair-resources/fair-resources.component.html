@@ -3,6 +3,7 @@
 <div class="fair-resources">
 <div class="fair-processes">
   <div class="resource-sub-title">FAIRification Processes</div>
+  <app-process-diagram></app-process-diagram>
   <div *ngIf="processes.length > 0; else blankContent" class="resource-body">
     <div *ngFor="let process of processes">
       <img class="fair-process-img" [src]="process.image" alt="FAIR process">

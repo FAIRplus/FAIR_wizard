@@ -1,0 +1,50 @@
+<p>process-diagram works!</p>
+<div class="diagram-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64" fill="#fff" fill-rule="evenodd" stroke="#000"
+       stroke-linecap="round" stroke-linejoin="round" font-family="Roboto" font-size="14" text-anchor="middle">
+<!--    <path d="M9.5 47.5l-8-15 8-15h44l8 15-8 15z" fill="#fdc" stroke="#838383"/>-->
+
+    <g id="lastProcess">
+      <path (click)="openSeperate(mymodal)" d="M12 2h10l5 5 -5 5h-10v-10 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2"/>
+      <text x="16" y="8" font-size="3" fill="black" stroke="black" stroke-width=".06">Open</text>
+    </g>
+    <path d="M27 2h10l5 5 -5 5h-10l5 -5 -5 -5 z" fill="#310562" stroke="#888888" stroke-width="0.2"/>
+    <path d="M42 2h10l5 5 -5 5h-10l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <path d="M57 2q50 15, 5 28l-5 -5 5 -5q40 -5, -5 -8l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <path d="M47 20h10l-5 5 5 5h-10l-5 -5 5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <path d="M32 20h10l-5 5 5 5h-10l-5 -5 5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <path d="M27 20q-50 15, -5 28l5 -5 -5 -5q-40 -5, 5 -8l-5 -5 5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <path d="M27 38h10l5 5 -5 5h-10l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>
+    <g id="lastProcess">
+      <path (click)="openProcessDialog($event)" d="M42 38h15v10h-15l5 -5 -5 -5 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2"/>
+      <text x="50" y="44" font-size="3" fill="black" stroke="black" stroke-width=".06">hello</text>
+    </g>
+
+
+<!--    <path d="M2 12h10l5 -5 -5 -5h-10v10 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2"/>-->
+<!--    <path d="M17 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+<!--    <path d="M32 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+<!--    <path d="M47 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+<!--    <path d="M63 12c10 10, 10 10, 0 30l-5 5 5 5c10 10, 10 10, 0 10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+<!--    <path d="M63 12q30 -15, 0 30l-5 5 5 5q-10 5, 0 10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+    <line x1="1" x2="40" y1="1" y2="1" stroke="#888888" stroke-width="0.2"/>
+  </svg>
+
+
+  <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+</div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is example from ItSolutionStuff.com
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>

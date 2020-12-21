@@ -7,3 +7,5 @@
 
 ## develop
 - ng build --watch
+
+Live loads, but does not refresh the browser.
