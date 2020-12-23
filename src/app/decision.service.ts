@@ -11,6 +11,7 @@ import {map} from "rxjs/operators";
 export class DecisionService {
   private searchUrl = 'api/search';
   private wizardUrl = 'api/wizard';
+  private processNetworkUrl = 'api/processes';
 
   constructor(private http: HttpClient) {
   }
@@ -28,8 +29,6 @@ export class DecisionService {
       }
     }
 
-    console.log(filters);
-    console.log(params);
     return this.http.get<FairResource[]>(this.searchUrl, {params: params})
       .pipe(map(resources => {
         let fairResources: FairResource[] = [];
@@ -37,5 +36,17 @@ export class DecisionService {
         return resources;
       }));
     // return of(FAIR_RESOURCES);
+  }
+
+  getProcessNetwork(filters: string[], process: string): Observable<Object> {
+    let params = new HttpParams();
+    for (let filter of filters) {
+      if (filter) {
+        params = params.append("filters", filter);
+      }
+    }
+    params = params.append("process", process);
+
+    return this.http.get<Object>(this.processNetworkUrl, {params: params});
   }
 }

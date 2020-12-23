@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
 
 @Component({
@@ -18,36 +18,9 @@ export class ProcessDiagramComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openProcessDialog($event) {
-    alert("hello");
-  }
-
-  showModal(): void {
-    // this.displayService.setShowModal(true);
-    // communication to show the modal, I use a behaviour subject from a service layer here
-  }
-
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  openSeperate(content) {
+  openProcessDialog(content) {
     const modalRef = this.modalService.open(ProcessDialogComponent, {size: 'xl', centered: true});
-    modalRef.componentInstance.name = 'World';
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+    modalRef.componentInstance.name = content;
   }
 
 }
