@@ -7,9 +7,12 @@ import {AppComponent} from './app.component';
 import {WizardComponent} from './wizard/wizard.component';
 import {DecisionNodeComponent} from './decision-node/decision-node.component';
 import {DecisionPathComponent} from './decision-path/decision-path.component';
-import { HomeComponent } from './home/home.component';
-import { ResourcesComponent } from './resources/resources.component';
-import { FairResourcesComponent } from './common/fair-resources/fair-resources.component';
+import {HomeComponent} from './home/home.component';
+import {ResourcesComponent} from './resources/resources.component';
+import {FairResourcesComponent} from './common/fair-resources/fair-resources.component';
+import {ProcessDiagramComponent} from './common/process-diagram/process-diagram.component';
+import {ProcessDialogComponent} from './common/process-dialog/process-dialog.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { FairResourcesComponent } from './common/fair-resources/fair-resources.c
     DecisionPathComponent,
     HomeComponent,
     ResourcesComponent,
-    FairResourcesComponent
+    FairResourcesComponent,
+    ProcessDiagramComponent,
+    ProcessDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

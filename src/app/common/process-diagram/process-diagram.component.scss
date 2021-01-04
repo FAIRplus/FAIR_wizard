@@ -1,0 +1,23 @@
+.diagram-container {
+  height: 300px;
+  width: 900px;
+}
+
+svg path:hover {
+  fill: #310562;
+}
+
+svg text:hover {
+  fill: #ffffff;
+}
+
+.process-block:hover path {
+  fill: #310562;
+  cursor: pointer;
+}
+
+.process-block:hover text {
+  fill: #afafaf;
+  stroke: #7F7F7F;
+  cursor: pointer;
+}
