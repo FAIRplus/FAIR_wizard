@@ -1,0 +1,28 @@
+@prefix cd:    <http://www.w3.org/2001/cd/3.0#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix fair:  <http://www.fair.org/2001/fair/3.0#> .
+
+<http://fairwizard.com/resource/2>
+        fair:description  "Test FAIR resource" ;
+        fair:name         "FAIR Resource" ;
+        fair:title        "FAIR Resource" ;
+        fair:type         "Recipe" .
+
+<http://fairwizard.com/resource/3>
+        fair:description  "Test FAIR resource" ;
+        fair:name         "FAIR Resource" ;
+        fair:title        "FAIR Resource" ;
+        fair:type         "Tool" .
+
+<http://fairwizard.com/resource/1>
+        fair:resourceType            "Process" ;
+        fair:name            "FAIR Resource" ;
+        fair:title           "FAIR Resource" ;
+        fair:description     "Test FAIR resource" ;
+        fair:status          "released" ;
+        fair:labels          ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
+        fair:image           "assets/img/fair_process.png" ;
+        fair:location        "http://www.google.com" ;
+        fair:relatedProcesses  ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+        fair:target          "interoperability" .

@@ -1,9 +1,9 @@
 # FairWizard
 
 ## Build and Run
-- ./mvnw clean install -e 
-- docker-compose up -d --build
-- Go to 'http://localhost:8080/home'
+- `./mvnw clean install -e` 
+- `docker-compose up -d --build`
+- go to `http://localhost:8080/home`
 
 
 ## develop
