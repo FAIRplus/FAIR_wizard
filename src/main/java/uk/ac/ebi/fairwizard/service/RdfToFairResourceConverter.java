@@ -34,14 +34,17 @@ public class RdfToFairResourceConverter {
           RDFList rdfList = statement.getObject().as(RDFList.class);
           ExtendedIterator<RDFNode> items = rdfList.iterator();
 
-          List<String> itemList = new ArrayList<>();
+          List<Object> itemList = new ArrayList<>();
           fairResourceAccessor.setPropertyValue(predicate, itemList);
           while (items.hasNext()) {
             RDFNode node = items.next();
             if (node.isLiteral()) {
               itemList.add(node.asLiteral().getString());
             } else {
-              itemList.add(node.asResource().getURI());
+              FairResource emptyResource = new FairResource();
+              emptyResource.setId(node.asResource().getURI());
+              itemList.add(emptyResource);
+//              itemList.add(node.asResource().getURI());
             }
           }
         }

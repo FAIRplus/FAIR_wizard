@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 public class ApplicationConfig {
   @Value("${fairwizard.resources.decisiontree:classpath:question_bank.json}")
   private String decisionTreeFile;
-  @Value("${fairwizard.resources.fairresources:classpath:fair_resources.json}")
+  @Value("${fairwizard.resources.fairresources:classpath:fair_resources.ttl}")
   private String fairResourcesFile;
 }
