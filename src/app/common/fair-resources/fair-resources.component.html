@@ -3,11 +3,12 @@
 <div class="fair-resources">
 <div class="fair-processes">
   <div class="resource-sub-title">FAIRification Processes</div>
-  <div *ngIf="processes.length > 0; else blankContent" class="resource-body">
+  <app-process-diagram></app-process-diagram>
+  <!--<div *ngIf="processes.length > 0; else blankContent" class="resource-body">
     <div *ngFor="let process of processes">
       <img class="fair-process-img" [src]="process.image" alt="FAIR process">
     </div>
-  </div>
+  </div>-->
 </div>
 <div class="fair-recipes">
   <div class="resource-sub-title">FAIR Cookbook Recipe Recommendations</div>
@@ -31,19 +32,17 @@
 <div class="fair-implementation-tools">
   <div class="resource-sub-title">FAIRification Implementation Tools</div>
   <div *ngIf="tools.length > 0; else blankContent" class="resource-body">
-    <table class="table table-hover table-dark">
+    <table class="table table-hover table-bordered table-dark" aria-describedby="FAIRification implementation tools">
       <thead>
       <tr>
-        <th scope="col">Function</th>
-        <th scope="col">Tools</th>
-        <th scope="col">Related recipes</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let tool of tools">
         <td>{{tool.name}}</td>
-        <td>{{tool.name}}</td>
-        <td>{{tool.name}}</td>
+        <td>{{tool.description}}</td>
       </tr>
       </tbody>
     </table>
@@ -55,15 +54,13 @@
     <table class="table table-hover table-bordered">
       <thead>
       <tr>
-        <th scope="col">Function</th>
-        <th scope="col">Tools</th>
-        <th scope="col">Related recipes</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let indicator of indicators">
-        <td>{{indicator.name}}</td>
-        <td>{{indicator.name}}</td>
+        <td>{{indicator.id}}</td>
         <td>{{indicator.name}}</td>
       </tr>
       </tbody>
@@ -71,24 +68,29 @@
   </div>
 </div>
 <div class="fair-requirements">
-  <div class="resource-sub-title">FAIRification Requirements</div>
+  <div class="resource-sub-title">Maturity level improvements</div>
   <div *ngIf="requirements.length > 0; else blankContent" class="resource-body">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-dark">
+      <caption>FAIRification implementation tools</caption>
       <thead>
       <tr>
-        <th scope="col">Function</th>
-        <th scope="col">Tools</th>
-        <th scope="col">Related recipes</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let requirement of requirements">
         <td>{{requirement.name}}</td>
-        <td>{{requirement.name}}</td>
-        <td>{{requirement.name}}</td>
+        <td>{{requirement.description}}</td>
       </tr>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="fair-requirements">
+  <div class="resource-sub-title">FAIRification examples</div>
+  <div *ngIf="requirements.length > 0; else blankContent" class="resource-body">
+
   </div>
 </div>
 </div>

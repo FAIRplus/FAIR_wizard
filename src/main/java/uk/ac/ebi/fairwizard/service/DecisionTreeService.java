@@ -29,7 +29,7 @@ public class DecisionTreeService {
 
   @PostConstruct
   public void init() throws ApplicationStatusException {
-    fairResourceIndex = this.loadResources();
+//    fairResourceIndex = this.loadResources();
   }
 
   public List<Question> getDecisionTree() throws ApplicationStatusException {

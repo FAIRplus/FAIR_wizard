@@ -16,4 +16,9 @@ public class FairResource {
   private String resourceType;
   private List<String> labels;
   private String target;
+
+  private List<FairResource> relatesTo;
+  private List<FairResource> requires;
+  private List<FairResource> isAfter;
+  private List<FairResource> includes;
 }
