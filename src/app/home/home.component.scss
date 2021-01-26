@@ -1,6 +1,5 @@
 .fair-home-wrapper {
   width: 100%;
-  height: 100vh;
   background-color: #310562;
   padding-top: 20px;
   border-top: 1px solid #ffffff;
@@ -24,7 +23,17 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
 }
-
+.fair-overview {
+  width: 100%;
+  background-color: #ffffff;
+}
+.fair-overview-text {
+  width: 80%;
+  font-family: 'Roboto';
+  font-size: 17px;
+  text-align: left;
+  margin: 10px 20px 10px;
+}
 .card {
   width: 18%;
   margin-left: 1%;
