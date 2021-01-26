@@ -1,0 +1,218 @@
+[
+  {
+    "resource": "Study level documentation is available in a human readable format.",
+    "description": "Study-level documentation provides high-level information on the research context and design the data collection methods used any data preparations and manipulations and summaries of findings based on the data. Examples and a suggested list of coverage can be found at UK Data Services. Repurposing",
+    "internal_id": "CMM_F+S01",
+    "id": "indicator4068143603170371285",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "interoperability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Data is reported by following community specific minimum information guidelines",
+    "description": "A reporting standard ensures recording the information (metadata) required to unambiguously communicate experimental designs treatments and analyses to con-textualize the data generated. Such standards are also known as data content or minimum information standards (Chervitz et all.). See examples: reporting standards for health care",
+    "internal_id": "CMM_F+S02",
+    "id": "indicator3342256941028690594",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Metadata documents and provides references about all data biological data types and formats in data is expressed.",
+    "description": "Biological and biomedical research has been considered an especially challenging research field in this regard as data types are extremely heterogeneous and not all have defined data standards (Griffin et. all). Metadata should capture all data types and format names in a study if possible provide a reference or URL for format specification",
+    "internal_id": "CMM_F+S03",
+    "id": "indicator8273044894976530631",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Relationships between different data sets in a study is well defined.",
+    "description": "In a study there are multiple data sets which are used as input and produced as an output. When a data is FAIRified it is important to understand which data files are generated from the analysis of which other data sets or sample data. For example the EMBL-EBI SDRF (Sample and Data Relationship Format) describes the sample characteristics and the relationship between samples arrays",
+    "internal_id": "CMM_F+S04",
+    "id": "indicator5324004451417711669",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "findability"
+    ]
+  },
+  {
+    "resource": "A versioning policy is applied to uniquely identify a particular form of a dataset from an earlier form or other forms of itself.",
+    "description": "Versioning is tracking the changes made in data by saving new copies of data files with indicators of the changes made. A new version is created when there is a change in the structure contents or condition of the resource. In the case of research data a new version of a dataset may be created when an existing dataset is reprocessed",
+    "internal_id": "CMM_F+S05",
+    "id": "indicator-2272968738514576769",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Shares not only derived and publication related data but data generated in early phases of research data workflow such as primary data and analyzed data.",
+    "description": "Life science experiments comprise different samples; based on experiment and sample several measurements are performed. After quantification there is a step of data processing and analysis which results in life science research (Colmsee et.all). In most cases data is shared with publications as supplementary files or in data repositories which are referenced by articles. However raw data and primary data resides in private storages (Arend",
+    "internal_id": "CMM_F+S06",
+    "id": "indicator1787217449564683029",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Negative results are shared.",
+    "description": "Negative results are the outcomes which do not support study hypotheses. Researchers are rewarded more for publishing novel findings and not for publishing negative results. However sharing negative results could reduce efforts and avoid repeating work that may be difficult to replicate (ATCC).Negative result also can be reported in publications (e.g. Negative Results Journal). Repurposing",
+    "internal_id": "CMM_F+S07",
+    "id": "indicator-4965224361488258489",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "reusability"
+    ]
+  },
+  {
+    "resource": "The study is described with metadata including context",
+    "description": " samples and data acquisition methods for analyzing and processing data quality control and restriction for reuse.",
+    "internal_id": "CMM_F+S08",
+    "id": "indicator6489480779590165568",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Metadata includes information about the study design",
+    "description": " protocols and data collection methods.Example metadata: study \/ experiment design trial protocol data acquisition methods",
+    "internal_id": "CMM_F+S08a",
+    "id": "indicator785543140297643940",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Metadata includes explicit references to research resources such as samples",
+    "description": " cell linesProvide information about key research materials such as antibodies cell lines and organisms. Preferable with identifiers",
+    "internal_id": "CMM_F+S08b",
+    "id": "indicator-4930948157241142466",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Metadata contains information about data processing methods",
+    "description": " data analysis and quality assurance metrics.See specific examples for quality requirements for In Vitro research such as chemical probes cell line authentication",
+    "internal_id": "CMM_F+S08c",
+    "id": "indicator-829625912951670336",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "interoperability"
+    ]
+  },
+  {
+    "resource": "Metadata includes information about data ownership",
+    "description": " license and reuse constraints for sensitive data.Considering the sensitive nature of life science data beside data reuse license consent",
+    "internal_id": "CMM_F+S08d",
+    "id": "indicator8140844144853866108",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Data is organized and documented in a human understandable way",
+    "description": "Data-level or object-level documentation provides information at the level of variables in a database or individual objects such as images. Data-level information can be embedded in data files such as variable",
+    "internal_id": "CMM_F+A01",
+    "id": "indicator-1721646150443159845",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Data is encoded in a community specific exchange standard.",
+    "description": "A data exchange standard defined the encoding format of data. A data exchange standard delineates what data types can be encoded and the particular way they should be encoded (e.g. tab-delimited columns XML binary",
+    "internal_id": "CMM_F+A02",
+    "id": "indicator375889843440242478",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "interoperability"
+    ]
+  },
+  {
+    "resource": "A machine and human readable formal description of the structure of data is available including types",
+    "description": " properties.A schema describes the structure of the data. Special schemes have meanings associated with databases such as community agreed profiles. A schema consists of a key dimension and its properties expected types",
+    "internal_id": "CMM_F+A03",
+    "id": "indicator7820327921579184283",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Data is structured by following a life sciences domain model",
+    "description": " core classes and their semantic relations refers to a common data  model.Meaningful exchange of information is a fundamental challenge in life sciences research. A domain model A domain is an abstract implementation-independent representation of the grammar or semantics",
+    "internal_id": "CMM_F+A04",
+    "id": "indicator-2663822751181611124",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Data is described with terminology standards.",
+    "description": "Terminology standards is typically defined by the use cases and provides control vocabularies to support and competency questions it is designed to answer. In life sciences domain ontologies are common ways to encode terminology standards (Chervitz et all.). Terminology standards add an interpretive layer to the data by defining the concepts or terms in a domain and in some cases the relationships between them (Tenenbaum et. all). See an example list for terminology standards. For a complete listing see the OBO Foundry.Integration",
+    "internal_id": "CMM_F+A05",
+    "id": "indicator-8660801326173587753",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "interoperability"
+    ]
+  },
+  {
+    "resource": "Core data classes (important data elements) follows a common master and reference data entity.",
+    "description": "Master data is defined as core business objects used in different applications across an organization along with their associated metadata definitions and taxonomies. Reference data is used to characterize or classify other data such as codes and description tables. Master and Reference data lowers cost and complexity through use of standards common data models and integration patterns. Sharing master data within a community or in organization reduces variability caused by multiple studies producing the same type of data",
+    "internal_id": "CMM_F+A06",
+    "id": "indicator-9066113219442634818",
+    "type": "indicators",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "interoperability"
+    ]
+  }
+]

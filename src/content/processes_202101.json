@@ -1,0 +1,158 @@
+[
+  {
+    "resource": "Data access and ethics",
+    "description": "Determine data access for FAIRification",
+    "version": "2020-12-01",
+    "id": "process-7201634925228134237",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Interim hosting",
+    "description": "Host data in interim solution and make available for FAIRification processes.\n",
+    "version": "2020-12-01",
+    "id": "process-8298344911298610653",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Long term hosting",
+    "description": "Match data types to available hosting solutions eg. public repos, EFPIA cloud.\nExamine dataset hosting choices and needs (size, complexity, analytics)\n",
+    "version": "2020-12-01",
+    "id": "process238355532526975171",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "interoperability"
+    ]
+  },
+  {
+    "resource": "Data Usability Goals",
+    "description": "Define desired and expected outcomes of FAIRification.\n",
+    "version": "2020-12-01",
+    "id": "process-568280961313138723",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Competency questions",
+    "description": "Determine competency questions for FAIRification\n",
+    "version": "2020-12-01",
+    "id": "process6303934084986307113",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "interoperability",
+      "interoperability"
+    ]
+  },
+  {
+    "resource": "Examination",
+    "description": "Dataset owners \nand FAIR experts examine datasets and reach shared understanding\n",
+    "version": "2020-12-01",
+    "id": "process-4022619904400672439",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Understand data types",
+    "description": "Identify Data Types and primary organising principles",
+    "version": "2020-12-01",
+    "id": "process-5053427395880553195",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Identifier strategies",
+    "description": "Determine identifier strategy for data types. \nAssign identifiers in accordance with strategy.\nMapping identifiers to established data sources\n\n\n\n",
+    "version": "2020-12-01",
+    "id": "process-4542955192858635464",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Metadata strategies",
+    "description": "Determine  project metadata strategies using FAIRsharing.\nApply metadata strategies to datasets.\n",
+    "version": "2020-12-01",
+    "id": "process514831807475787382",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "accessibility",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Evaluate against standards",
+    "description": "Compare datasets to community standards.\nEvaluate datasets using FAIR indicators that are appropriate given competency questions\n\n",
+    "version": "2020-12-01",
+    "id": "process4797913240548361534",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "findability"
+    ]
+  },
+  {
+    "resource": "Ontology strategies",
+    "description": "Determine  project ontology strategies using FAIRsharing.\nApply ontology strategies to datasets.\n",
+    "version": "2020-12-01",
+    "id": "process-8491626043857545931",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "findability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Interoperability requirements",
+    "description": "Determine interoperability requirement for dataset  (eg. consumption of data for downstream analysis)\n\n",
+    "version": "2020-12-01",
+    "id": "process4521070458167520677",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "interoperability",
+      "accessibility"
+    ]
+  },
+  {
+    "resource": "Data sharing",
+    "description": "Submit data to chosen hosting solution for public sharing and dissemination.",
+    "version": "2020-12-01",
+    "id": "process8430680201372698036",
+    "type": "processes",
+    "time": "2020-11",
+    "labels": [
+      "reusability",
+      "interoperability"
+    ]
+  }
+]
