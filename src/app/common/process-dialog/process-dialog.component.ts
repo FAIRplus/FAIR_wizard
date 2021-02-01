@@ -37,19 +37,46 @@ export class ProcessDialogComponent implements OnInit {
         {
           selector: 'node',
           style: {
-            'background-color': '#666',
-            'label': 'data(id)'
+            'width': 100,
+            'height': 100,
+            'background-color': '#f0f0f0',
+            'border-width': 3,
+            'border-color': '#929292',
+            'label': 'data(label)',
+            'color': '#4b4b4b',
+            'font-size': 30
           }
         },
-
+        {
+          selector: 'node[type="Process"]',
+          style: {
+            'shape': 'rectangle',
+            'background-color': '#cde1f0'
+          }
+        },
+        {
+          selector: 'node[type="Tool"]',
+          style: {
+            'background-color': '#b1f0cb'
+          }
+        },
+        {
+          selector: 'node[type="Indicator"]',
+          style: {
+            'background-color': '#f0efcb'
+          }
+        },
         {
           selector: 'edge',
           style: {
             'width': 3,
-            'line-color': '#ccc',
-            'target-arrow-color': '#ccc',
+            'line-color': '#d4d4d4',
+            'target-arrow-color': '#D4D4D4',
             'target-arrow-shape': 'triangle',
-            'curve-style': 'bezier'
+            'curve-style': 'bezier',
+            'label': 'data(label)',
+            'color': '#848484',
+            'font-size': 25
           }
         }
       ],

@@ -4,14 +4,15 @@ import {Observable} from 'rxjs';
 import {FairResource, FairResourceType} from "./models/FairResource";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DecisionService {
-  private searchUrl = 'api/search';
-  private wizardUrl = 'api/wizard';
-  private processNetworkUrl = 'api/processes';
+  private searchUrl = environment.baseUrl + 'api/search';
+  private wizardUrl = environment.baseUrl + 'api/wizard';
+  private processNetworkUrl = environment.baseUrl + 'api/processes';
 
   constructor(private http: HttpClient) {
   }

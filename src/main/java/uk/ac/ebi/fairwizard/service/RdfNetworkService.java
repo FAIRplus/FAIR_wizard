@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
+import uk.ac.ebi.fairwizard.model.ProcessEdge;
+import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
+import uk.ac.ebi.fairwizard.model.ProcessNode;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,6 +46,45 @@ public class RdfNetworkService {
     } else {
       return searchResourcesAll();
     }
+  }
+
+  public List<ProcessNetworkElement> getResourceNetwork() {
+    String processName = "";
+    String outwardQuery = "prefix fair:  <http://www.fair.org/2001/fair/3.0#>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT ?predicate, ?object WHERE { " + processName + " ?predicate ?object }";
+    String inwardQuery = "prefix fair:  <http://www.fair.org/2001/fair/3.0#>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT ?predicate, ?subject WHERE { ?subject ?predicate " + processName + " }";
+
+
+    List<ProcessNetworkElement> network = new ArrayList<>();
+    Set<FairResource> resources = searchResourcesAll();
+    for (FairResource resource : resources) {
+      network.add(new ProcessNetworkElement(new ProcessNode(resource.getId(), resource.getName(), resource.getResourceType(), resource.getDescription())));
+      if (resource.getRelatesTo() != null && !resource.getRelatesTo().isEmpty()) {
+        for (FairResource r : resource.getRelatesTo()) {
+          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "relatesTo")));
+        }
+      }
+      if (resource.getRequires() != null && !resource.getRequires().isEmpty()) {
+        for (FairResource r : resource.getRequires()) {
+          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "requires")));
+        }
+      }
+      if (resource.getIsAfter() != null && !resource.getIsAfter().isEmpty()) {
+        for (FairResource r : resource.getIsAfter()) {
+          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "isAfter")));
+        }
+      }
+      if (resource.getIncludes() != null && !resource.getIncludes().isEmpty()) {
+        for (FairResource r : resource.getIncludes()) {
+          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "includes")));
+        }
+      }
+    }
+
+    return network;
   }
 
   private Set<FairResource> searchResourcesWithFilters(List<String> labels) {
