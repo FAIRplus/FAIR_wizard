@@ -9,4 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProcessNode {
   private String id;
+  private String label;
+  private String type;
+  private String description;
 }

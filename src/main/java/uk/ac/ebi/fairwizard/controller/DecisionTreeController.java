@@ -56,10 +56,12 @@ public class DecisionTreeController {
   public List<ProcessNetworkElement> getProcessNetwork(@RequestParam(required = false) List<String> filters,
                                                        @RequestParam(required = false) String process) {
 
-    if (filters == null || filters.isEmpty()) {
-      return processNetworkService.getResourceNetwork();
-    }
-    return processNetworkService.getResourceNetwork();
+//    if (filters == null || filters.isEmpty()) {
+//      return processNetworkService.getResourceNetwork();
+//    }
+//    return processNetworkService.getResourceNetwork();
+
+    return rdfNetworkService.getResourceNetwork();
   }
 
 }
