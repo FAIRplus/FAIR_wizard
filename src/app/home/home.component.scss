@@ -24,14 +24,15 @@
   border-bottom: 1px solid #ffffff;
 }
 .fair-overview {
+  margin-top: 30px;
   width: 100%;
   background-color: #ffffff;
 }
 .fair-overview-text {
-  width: 80%;
+  //width: 80%;
+  text-align: justify;
   font-family: 'Roboto';
   font-size: 17px;
-  text-align: left;
   margin: 10px 20px 10px;
 }
 .card {
@@ -48,6 +49,7 @@
   overflow: hidden;
   width: 100%;
   padding-top: 50px;
+  margin-bottom: 30px;
 }
 
 .btn-fair-wizard {
