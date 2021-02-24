@@ -52,17 +52,17 @@ public class RdfNetworkService {
     String labelQuery = labelBuilder.toString();
     labelQuery = labelQuery.substring(0, labelQuery.length() - 1);
 
-    String query = "prefix fair:  <http://www.fair.org/2001/fair/3.0#>\n" +
+    String query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-      "SELECT DISTINCT ?x WHERE { ?x  fair:labels/rdf:rest*/rdf:first ?label . FILTER (?label in (" + labelQuery + ")) }";
+      "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label . FILTER (?label in (" + labelQuery + ")) }";
 
     return queryRdfGraph(query);
   }
 
   private Set<FairResource> searchResourcesAll() {
-    String query = "prefix fair:  <http://www.fair.org/2001/fair/3.0#>\n" +
+    String query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-      "SELECT DISTINCT ?x WHERE { ?x  fair:labels/rdf:rest*/rdf:first ?label }";
+      "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label }";
 
     return queryRdfGraph(query);
   }

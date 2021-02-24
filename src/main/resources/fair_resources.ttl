@@ -5,14 +5,16 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 
-<http://fair-wizard.com/collection/process-7201634925228134237> fw:category "processes";
+<fw:process-7201634925228134237> fw:category "processes";
+  fw:resourceType "Recipe" ;
+  fw:image "assets/img/home_recipes.png" ;
   fw:description "Determine data access for FAIRification";
-  fw:label "accessibility";
+  fw:labels ( "accessibility" "hosting" );
   fw:lastUpdate "2021-02-05";
   fw:name "Data access and ethics";
-  fw:relatesTo "process-8298344911298610653" .
+  fw:relatesTo (<fw:process-8298344911298610653>) .
 
-<http://fair-wizard.com/collection/process-8298344911298610653> fw:category "processes";
+<fw:process-8298344911298610653> fw:category "processes";
   fw:description "Host data in interim solution and make available for FAIRification processes.";
   fw:label "accessibility";
   fw:lastUpdate "2021-02-05";
@@ -42,7 +44,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""";
   fw:relatesTo "Process-4022619904400672439" .
 
 <http://fair-wizard.com/collection/process-4022619904400672439> fw:category "processes";
-  fw:description """Dataset owners 
+  fw:description """Dataset owners
 and FAIR experts examine datasets and reach shared understanding""";
   fw:label "accessibility";
   fw:lastUpdate "2021-02-05";
@@ -57,7 +59,7 @@ and FAIR experts examine datasets and reach shared understanding""";
   fw:relatesTo "Process-4542955192858635464" .
 
 <http://fair-wizard.com/collection/process-4542955192858635464> fw:category "processes";
-  fw:description """Determine identifier strategy for data types. 
+  fw:description """Determine identifier strategy for data types.
 Assign identifiers in accordance with strategy.
 Mapping identifiers to established data sources""";
   fw:label "accessibility";
