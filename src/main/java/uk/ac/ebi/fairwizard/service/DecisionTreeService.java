@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
-import uk.ac.ebi.fairwizard.model.Question;
+import uk.ac.ebi.fairwizard.model.DecisionNode;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -32,8 +32,8 @@ public class DecisionTreeService {
 //    fairResourceIndex = this.loadResources();
   }
 
-  public List<Question> getDecisionTree() throws ApplicationStatusException {
-    List<Question> questions;
+  public List<DecisionNode> getDecisionTree() throws ApplicationStatusException {
+    List<DecisionNode> questions;
     try {
       InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream();
       questions = jsonMapper.readValue(in, new TypeReference<>() {

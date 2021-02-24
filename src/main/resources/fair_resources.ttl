@@ -1,119 +1,152 @@
-@prefix cd:    <http://www.w3.org/2001/cd/3.0#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
-@prefix fair:  <http://www.fair.org/2001/fair/3.0#> .
+@prefix fw:   <http://fair-wizard/collection/fw/0.1/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+<fw:process-7201634925228134237>
+  fw:category     "processes" ;
+  fw:resourceType "Recipe" ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:description  "Determine data access for FAIRification" ;
+  fw:isBefore     "process-8298344911298610653" ;
+  fw:labels       ( "accessibility" "hosting" ) ;
+  fw:lastUpdate   "2021-02-05" ;
+  fw:name         "Data access and ethics" ;
+  fw:relatesTo    ( <fw:process-8298344911298610653> ) .
+
+<fw:process-8298344911298610653>
+  fw:category    "processes" ;
+  fw:resourceType "Recipe" ;
+  fw:description "Host data in interim solution and make available for FAIRification processes." ;
+  fw:labels       ( "accessibility" "hosting" ) ;
+  fw:lastUpdate  "2021-02-05" ;
+  fw:name        "Interim hosting" ;
+  fw:isAfter     ( <fw:process-7201634925228134237> );
+  fw:isBefore    ( <fw:process-238355532526975171> );
+  fw:relatesTo   ( <fw:process-238355532526975171>  <fw:process-7201634925228134237> ) .
+
+<fw:process-238355532526975171>
+  fw:category    "processes" ;
+  fw:resourceType "Recipe" ;
+  fw:description """Match data types to available hosting solutions eg. public repos, EFPIA cloud.
+Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
+  fw:labels       ( "accessibility" "hosting" ) ;
+  fw:lastUpdate  "2021-02-05" ;
+  fw:name        "Long term hosting" .
 
 <http://fairwizard.com/resource/1>
-  fair:resourceType     "Recipe" ;
-  fair:name             "how to select an ontology" ;
-  fair:title            "how to select an ontology" ;
-  fair:description      "how to select an ontology" ;
-  fair:status           "released" ;
-  fair:labels           ( "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Recipe" ;
+  fw:name         "how to select an ontology" ;
+  fw:title        "how to select an ontology" ;
+  fw:description  "how to select an ontology" ;
+  fw:status       "released" ;
+  fw:labels       ( "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/2>
-  fair:resourceType     "Recipe" ;
-  fair:name             "how to perform ontology annotation with zooma" ;
-  fair:title            "how to perform ontology annotation with zooma" ;
-  fair:description      "how to perform ontology annotation with zooma" ;
-  fair:status           "released" ;
-  fair:labels           ( "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/4> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Recipe" ;
+  fw:name         "how to perform ontology annotation with zooma" ;
+  fw:title        "how to perform ontology annotation with zooma" ;
+  fw:description  "how to perform ontology annotation with zooma" ;
+  fw:status       "released" ;
+  fw:labels       ( "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/4> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/3>
-  fair:resourceType     "Tool" ;
-  fair:name             "OLS" ;
-  fair:title            "OLS" ;
-  fair:description      "OLS" ;
-  fair:status           "released" ;
-  fair:labels           ( "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:isAfter          ( <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Tool" ;
+  fw:name         "OLS" ;
+  fw:title        "OLS" ;
+  fw:description  "OLS" ;
+  fw:status       "released" ;
+  fw:labels       ( "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:isAfter      ( <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/4>
-  fair:resourceType     "Tool" ;
-  fair:name             "ZOOMA" ;
-  fair:title            "ZOOMA" ;
-  fair:description      "ZOOMA" ;
-  fair:status           "released" ;
-  fair:labels           ( "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Tool" ;
+  fw:name         "ZOOMA" ;
+  fw:title        "ZOOMA" ;
+  fw:description  "ZOOMA" ;
+  fw:status       "released" ;
+  fw:labels       ( "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/5>
-  fair:resourceType     "Process" ;
-  fair:name             "ontology annotation validation" ;
-  fair:title            "ontology annotation validation" ;
-  fair:description      "ontology annotation validation" ;
-  fair:status           "released" ;
-  fair:labels           ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Process" ;
+  fw:name         "ontology annotation validation" ;
+  fw:title        "ontology annotation validation" ;
+  fw:description  "ontology annotation validation" ;
+  fw:status       "released" ;
+  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/6>
-  fair:resourceType     "Process" ;
-  fair:name             "metadata strategies" ;
-  fair:title            "metadata strategies" ;
-  fair:description      "metadata strategies" ;
-  fair:status           "released" ;
-  fair:labels           ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Process" ;
+  fw:name         "metadata strategies" ;
+  fw:title        "metadata strategies" ;
+  fw:description  "metadata strategies" ;
+  fw:status       "released" ;
+  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/7>
-  fair:resourceType     "Process" ;
-  fair:name             "interoperability requirements" ;
-  fair:title            "interoperability requirements" ;
-  fair:description      "interoperability requirements" ;
-  fair:status           "released" ;
-  fair:labels           ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Process" ;
+  fw:name         "interoperability requirements" ;
+  fw:title        "interoperability requirements" ;
+  fw:description  "interoperability requirements" ;
+  fw:status       "released" ;
+  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 
 <http://fairwizard.com/resource/8>
-  fair:resourceType     "Indicator" ;
-  fair:name             "Metadata uses FAIR-compliant vocabulories" ;
-  fair:title            "Metadata uses FAIR-compliant vocabulories" ;
-  fair:description      "Metadata uses FAIR-compliant vocabulories" ;
-  fair:status           "released" ;
-  fair:labels           ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fair:image            "assets/img/home_recipes.png" ;
-  fair:location         "http://www.google.com" ;
-  fair:relatesTo        ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:requires         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:isAfter          ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:includes         ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fair:target           "interoperability" .
+  fw:resourceType "Indicator" ;
+  fw:name         "Metadata uses FAIR-compliant vocabulories" ;
+  fw:title        "Metadata uses FAIR-compliant vocabulories" ;
+  fw:description  "Metadata uses FAIR-compliant vocabulories" ;
+  fw:status       "released" ;
+  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
+  fw:image        "assets/img/home_recipes.png" ;
+  fw:location     "http://www.google.com" ;
+  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
+  fw:target       "interoperability" .
 

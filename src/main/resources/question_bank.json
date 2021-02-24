@@ -2,6 +2,7 @@
   {
     "id": "1",
     "question": "What is the dataset/project status?",
+    "multipleChoices": false,
     "answers": [
       {
         "text": "Prospective data",
@@ -17,7 +18,8 @@
   },
   {
     "id": "2",
-    "question": "What is the data type?",
+    "question": "What are the data types?",
+    "multipleChoices": true,
     "answers": [
       {
         "text": "Metabolomics",
@@ -44,6 +46,7 @@
   {
     "id": "3",
     "question": "Do you want to perform FAIR assessment?",
+    "multipleChoices": false,
     "answers": [
       {
         "text": "Yes",
@@ -60,6 +63,7 @@
   {
     "id": "4",
     "question": "Which FAIR principle do you want to focus?",
+    "multipleChoices": true,
     "answers": [
       {
         "text": "Findability",

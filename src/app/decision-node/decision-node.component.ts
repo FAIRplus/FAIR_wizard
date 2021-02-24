@@ -8,12 +8,14 @@ import {Answer, DecisionNode, Question} from "../models/DecisionNode";
 })
 export class DecisionNodeComponent implements OnInit {
   @Input() question: Question;
-  @Output() someEvent = new EventEmitter<DecisionNode>();
+  @Output() selectAnswerEvent = new EventEmitter<DecisionNode>();
+  answers: Answer[];
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.answers = [];
   }
 
   callParent(answer: Answer): void {
@@ -21,6 +23,23 @@ export class DecisionNodeComponent implements OnInit {
       "question": this.question,
       "answer": answer
     };
-    this.someEvent.next(decision);
+    this.selectAnswerEvent.next(decision);
+  }
+
+  addAnswer(answer: Answer): void {
+    this.answers.push(answer);
+  }
+
+  next(): void {
+    // const decision = {
+    //   "question": this.question,
+    //   "answers": this.answers
+    // };
+    // this.selectAnswerEvent.next(decision);
+    const decision = {
+      "question": this.question,
+      "answer": this.answers.pop()
+    };
+    this.selectAnswerEvent.next(decision);
   }
 }

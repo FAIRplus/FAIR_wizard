@@ -5,8 +5,9 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Question {
+public class DecisionNode {
   private String id;
   private String question;
+  private boolean multipleChoices;
   private List<Answer> answers;
 }

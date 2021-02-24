@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
-import uk.ac.ebi.fairwizard.model.Question;
+import uk.ac.ebi.fairwizard.model.DecisionNode;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
 import uk.ac.ebi.fairwizard.service.ProcessNetworkService;
 import uk.ac.ebi.fairwizard.service.RdfNetworkService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -42,7 +40,7 @@ public class DecisionTreeController {
   }
 
   @GetMapping("/wizard")
-  public List<Question> getDecisionTree() throws ApplicationStatusException {
+  public List<DecisionNode> getDecisionTree() throws ApplicationStatusException {
     return decisionTreeService.getDecisionTree();
   }
 
