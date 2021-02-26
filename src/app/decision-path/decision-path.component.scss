@@ -15,6 +15,16 @@
   float: left;
   margin-right: 10px;
   font-size: 20px;
+  background-color: #dbdbdb;
+  border: 1px solid #989898;
+}
+
+.answer-selected {
+  float: left;
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: #310562;
+  border: 1px solid #989898;
 }
 
 .reset-button {
@@ -26,6 +36,8 @@
 .btn-answer {
   color: #310562;
   border-color: #310562;
+  margin: 18px 20px 10px 50px;
+  width: 90px;
 }
 
 .btn-answer:hover {

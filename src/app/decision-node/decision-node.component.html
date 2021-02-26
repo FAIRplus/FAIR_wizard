@@ -1,12 +1,18 @@
 <div class="card decision-node">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-10">
         <div class="card-title question">{{question.question}}</div>
         <div *ngFor="let answer of question.answers">
-          <div class="badge badge-primary answer" (click)="callParent(answer)">{{answer.text}}</div>
+          <div class="badge badge-primary answer" (click)="toggleAnswer(answer)"
+               [ngClass]="answers.includes(answer) ? 'answer-selected' : 'answer'">{{answer.text}}</div>
         </div>
+      </div>
+      <div class="col-lg-2">
+        <button *ngIf="answers.length > 0" class="btn btn-outline-primary btn-answer" (click)="next()">Next</button>
       </div>
     </div>
   </div>
 </div>
+
+<!--[ngClass]="{'badge-secondary': answers.includes(answer), 'badge-primary':!answers.includes(answer) }"-->

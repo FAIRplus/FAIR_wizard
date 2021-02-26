@@ -3,12 +3,12 @@
   <div *ngFor="let d of decisions; let i = index">
     <app-decision-path
       [decision]="d"
-      (someEvent)="resetDecision($event)">
+      (resetNodeEvent)="resetDecision($event)">
     </app-decision-path>
   </div>
   <app-decision-node *ngIf="!reachedLeaf && currentNode != undefined"
                      [question]="currentNode"
-                     (someEvent)="addDecision($event)">
+                     (selectAnswerEvent)="addDecision($event)">
   </app-decision-node>
   <div *ngIf="reachedLeaf">
     <div class="fair-search-button-container">

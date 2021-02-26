@@ -8,7 +8,7 @@ import {DecisionNode, Question} from "../models/DecisionNode";
 })
 export class DecisionPathComponent implements OnInit {
   @Input() decision: DecisionNode;
-  @Output() someEvent = new EventEmitter<Question>();
+  @Output() resetNodeEvent = new EventEmitter<Question>();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class DecisionPathComponent implements OnInit {
   }
 
   callParent(question: Question): void {
-    this.someEvent.next(question);
+    this.resetNodeEvent.next(question);
   }
 
 }

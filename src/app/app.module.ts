@@ -14,6 +14,7 @@ import {ProcessDiagramComponent} from './common/process-diagram/process-diagram.
 import {ProcessDialogComponent} from './common/process-dialog/process-dialog.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { FairResourceComponent } from './common/fair-resource/fair-resource.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FairResourceComponent } from './common/fair-resource/fair-resource.comp
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
