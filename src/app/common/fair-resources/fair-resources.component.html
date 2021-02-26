@@ -2,105 +2,115 @@
 
 <div class="fair-resources">
 
-  <div class="card h-100">
+  <div class="card h-100 fair-resource">
     <h3 class="card-header">FAIRification Processes</h3>
     <div class="card-body">
-      <h5 class="card-title h-100">Special title treatment</h5>
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
       <p class="card-text h-100"><app-process-diagram></app-process-diagram></p>
     </div>
   </div>
 
-
-<div class="fair-processes">
-  <div class="resource-sub-title">FAIRification Processes</div>
-  <app-process-diagram></app-process-diagram>
-  <!--<div *ngIf="processes.length > 0; else blankContent" class="resource-body">
-    <div *ngFor="let process of processes">
-      <img class="fair-process-img" [src]="process.image" alt="FAIR process">
-    </div>
-  </div>-->
-</div>
-<div class="fair-recipes">
-  <div class="resource-sub-title">FAIR Cookbook Recipe Recommendations</div>
-  <div *ngIf="recipes.length > 0; else blankContent" class="resource-body">
-    <div class="row">
-      <div *ngFor="let recipe of recipes" class="col-lg-2">
-        <div class="card">
-          <a [href]="recipe.location">
-            <img class="card-img-top" [src]="recipe.image" alt="Card image cap">
-          </a>
-          <div class="card-body">
-            <h6 class="card-title">{{recipe.name}}</h6>
-            <p class="card-text text-muted">{{recipe.description}}</p>
-            <span class="badge badge-dark">Findability</span>
+  <div class="card h-100 fair-resource">
+    <h3 class="card-header">FAIR Cookbook Recipe Recommendations</h3>
+    <div class="card-body">
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
+      <div *ngIf="recipes.length > 0; else blankContent" class="card-text h-100">
+        <div class="row">
+          <div *ngFor="let recipe of recipes" class="col-lg-2">
+            <div class="card">
+              <a [href]="recipe.location">
+                <img class="card-img-top" [src]="recipe.image" alt="Card image cap">
+              </a>
+              <div class="card-body">
+                <h6 class="card-title">{{recipe.name}}</h6>
+                <p class="card-text text-muted">{{recipe.description}}</p>
+                <span class="badge badge-dark">Findability</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="fair-implementation-tools">
-  <div class="resource-sub-title">FAIRification Implementation Tools</div>
-  <div *ngIf="tools.length > 0; else blankContent" class="resource-body">
-    <table class="table table-hover table-bordered table-dark" aria-describedby="FAIRification implementation tools">
-      <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let tool of tools">
-        <td>{{tool.name}}</td>
-        <td>{{tool.description}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="fair-indicators">
-  <div class="resource-sub-title">FAIRification Indicators</div>
-  <div *ngIf="indicators.length > 0; else blankContent" class="resource-body">
-    <table class="table table-hover table-bordered">
-      <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let indicator of indicators">
-        <td>{{indicator.id}}</td>
-        <td>{{indicator.name}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="fair-requirements">
-  <div class="resource-sub-title">Maturity level improvements</div>
-  <div *ngIf="requirements.length > 0; else blankContent" class="resource-body">
-    <table class="table table-hover table-dark">
-      <caption>FAIRification implementation tools</caption>
-      <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let requirement of requirements">
-        <td>{{requirement.name}}</td>
-        <td>{{requirement.description}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="fair-requirements">
-  <div class="resource-sub-title">FAIRification examples</div>
-  <div *ngIf="requirements.length > 0; else blankContent" class="resource-body">
 
+  <div class="card h-100 fair-resource">
+    <h3 class="card-header">FAIRification Implementation Tools</h3>
+    <div class="card-body">
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
+      <div *ngIf="tools.length > 0; else blankContent" class="card-text h-100">
+        <table class="table table-hover table-bordered table-dark" aria-describedby="FAIRification implementation tools">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let tool of tools">
+            <td>{{tool.name}}</td>
+            <td>{{tool.description}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="card h-100 fair-resource">
+    <h3 class="card-header">FAIRification Indicators</h3>
+    <div class="card-body">
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
+      <div *ngIf="indicators.length > 0; else blankContent" class="card-text h-100">
+        <table class="table table-hover table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let indicator of indicators">
+            <td>{{indicator.id}}</td>
+            <td>{{indicator.name}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card h-100 fair-resource">
+    <h3 class="card-header">Maturity level improvements</h3>
+    <div class="card-body">
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
+      <div *ngIf="requirements.length > 0; else blankContent" class="card-text h-100">
+        <table class="table table-hover table-dark">
+          <caption>FAIRification implementation tools</caption>
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let requirement of requirements">
+            <td>{{requirement.name}}</td>
+            <td>{{requirement.description}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card h-100 fair-resource">
+    <h3 class="card-header">FAIRification examples</h3>
+    <div class="card-body">
+      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
+      <div *ngIf="requirements.length > 0; else blankContent" class="card-text h-100">
+
+      </div>
+    </div>
+  </div>
+
 </div>
