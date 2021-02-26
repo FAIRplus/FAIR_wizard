@@ -3,10 +3,13 @@
     <div class="row">
       <div class="col-lg-10">
         <div class="card-title question">{{decision.question.question}}</div>
-<!--        <div *ngFor="let answer of decision.answer">-->
-<!--          <div class="badge badge-primary answer" (click)="addAnswer(answer)">{{answer.text}}</div>-->
-<!--        </div>-->
-        <div class="badge badge-secondary answer">{{decision.answer.text}}</div>
+        <div *ngFor="let answer of decision.question.answers">
+          <div class="badge badge-primary answer"
+               [ngClass]="decision.answers.includes(answer) ? 'answer-selected' : 'answer'">{{answer.text}}</div>
+        </div>
+        <!--<div *ngFor="let answer of decision.answers">
+          <div class="badge badge-secondary answer">{{answer.text}}</div>
+        </div>-->
       </div>
       <div class="col-lg-2">
         <button class="btn btn-outline-primary btn-answer" (click)="callParent(decision.question)">Change</button>

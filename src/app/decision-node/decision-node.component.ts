@@ -18,28 +18,24 @@ export class DecisionNodeComponent implements OnInit {
     this.answers = [];
   }
 
-  callParent(answer: Answer): void {
-    const decision = {
-      "question": this.question,
-      "answer": answer
-    };
-    this.selectAnswerEvent.next(decision);
-  }
-
-  addAnswer(answer: Answer): void {
-    this.answers.push(answer);
+  toggleAnswer(answer: Answer): void {
+    const index = this.answers.indexOf(answer);
+    if (index !== -1) {
+      this.answers.splice(index, 1)
+    } else {
+      if (!this.question.multipleChoices) {
+        this.answers = []
+      }
+      this.answers.push(answer);
+    }
   }
 
   next(): void {
-    // const decision = {
-    //   "question": this.question,
-    //   "answers": this.answers
-    // };
-    // this.selectAnswerEvent.next(decision);
     const decision = {
       "question": this.question,
-      "answer": this.answers.pop()
+      "answers": this.answers
     };
     this.selectAnswerEvent.next(decision);
+    this.answers = [];
   }
 }

@@ -1,12 +1,13 @@
 export interface DecisionNode {
   question: Question;
-  answer: Answer;
+  answers: Answer[];
 }
 
 export interface Question {
   id: string;
   question: string;
   answers: Answer[];
+  multipleChoices: boolean;
 }
 
 export interface Answer {
