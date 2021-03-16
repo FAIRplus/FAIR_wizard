@@ -27,6 +27,14 @@ export class ProcessDialogComponent implements OnInit {
       });
   }
 
+  getProcessNetwork(id) {
+    this.decisionService.getProcessNetwork([], '')
+      .subscribe(p => {
+        this.processes = p;
+        this.draw();
+      });
+  }
+
   draw(): void {
     let cytoscapeElements = JSON.parse(JSON.stringify(this.processes));
 

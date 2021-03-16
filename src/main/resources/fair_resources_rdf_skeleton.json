@@ -1,0 +1,170 @@
+[
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "fw",
+          "uri": "http://fair-wizard/collection/fw/0.1/"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        }
+      ],
+      "baseUri": "http://fair-wizard.com/collection/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "identifier",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/category",
+              "curie": "fw:category",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "category",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/name",
+              "curie": "fw:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "name",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/lastUpdate",
+              "curie": "fw:lastUpdate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "lastUpdate",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/description",
+              "curie": "fw:description",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "description",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/location",
+              "curie": "fw:location",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "location",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/relatesTo",
+              "curie": "fw:relatesTo",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "relatesTo",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/requiredBy",
+              "curie": "fw:requiredBy",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "requiredBy",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/requires",
+              "curie": "fw:requires",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "requires",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/isBefore",
+              "curie": "fw:isBefore",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "isBefore",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/isAfter",
+              "curie": "fw:isAfter",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "isAfter",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/partOf",
+              "curie": "fw:partOf",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "partOf",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://fair-wizard/collection/fw/0.1/label",
+              "curie": "fw:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "label",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            }
+          ],
+          "rdfTypes": []
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "category",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [],
+          "rdfTypes": []
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {FairResource, FairResourceType} from "../../models/FairResource";
 
 @Component({
   selector: 'app-fair-resource',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fair-resource.component.scss']
 })
 export class FairResourceComponent implements OnInit {
+  @Input() resource: FairResource;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getResourceType(resourceType) {
+    return FairResourceType[resourceType];
   }
 
 }

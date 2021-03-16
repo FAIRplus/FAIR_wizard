@@ -24,7 +24,16 @@
   white-space: nowrap;
 }
 
-.card-text {
+.card-header-recipe {
+  font-size: 14px;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-text-recipe {
+  font-size: 12px;
   height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -35,4 +44,17 @@
 
 .fair-process-img {
   height: 400px;
+}
+
+.fair-recipe-img {
+  height: 30px;
+}
+
+.fair-recipe {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.fair-resource-table-entry {
+  cursor: pointer;
 }

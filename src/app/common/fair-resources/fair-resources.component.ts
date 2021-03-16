@@ -6,6 +6,9 @@ import {FairResourceRecipe} from "../../models/FairResourceRecipe";
 import {FairResourceRequirement} from "../../models/FairResourceRequirement";
 import {FairResourceTool} from "../../models/FairResourceTool";
 import {DecisionService} from "../../decision.service";
+import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {FairResourceComponent} from "../fair-resource/fair-resource.component";
 
 @Component({
   selector: 'app-fair-resources',
@@ -21,7 +24,7 @@ export class FairResourcesComponent implements OnInit {
   tools: FairResourceTool[] = [];
 
 
-  constructor(private decisionService: DecisionService) {
+  constructor(private decisionService: DecisionService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -46,6 +49,11 @@ export class FairResourcesComponent implements OnInit {
         this.tools.push(resource);
       }
     }
+  }
+
+  openProcessDialog(resource) {
+    const modalRef = this.modalService.open(FairResourceComponent, {size: 'lg', centered: true});
+    modalRef.componentInstance.resource = resource;
   }
 
 }
