@@ -17,13 +17,14 @@
       <div *ngIf="recipes.length > 0; else blankContent" class="card-text h-100">
         <div class="row">
           <div *ngFor="let recipe of recipes" class="col-lg-2">
-            <div class="card">
-              <a [href]="recipe.location">
-                <img class="card-img-top" [src]="recipe.image" alt="Card image cap">
-              </a>
+            <div class="card fair-recipe" (click)="openProcessDialog(recipe)">
+<!--              <a [href]="recipe.location">-->
+<!--                <img class="card-img-top fair-recipe-img" [src]="recipe.image" alt="Card image cap">-->
+<!--              </a>-->
+              <div class="card-header card-header-recipe">{{recipe.name}}</div>
               <div class="card-body">
-                <h6 class="card-title">{{recipe.name}}</h6>
-                <p class="card-text text-muted">{{recipe.description}}</p>
+<!--                <h6 class="card-title">{{recipe.name}}</h6>-->
+                <p class="card-text text-muted card-text-recipe">{{recipe.description}}</p>
                 <span class="badge badge-dark">Findability</span>
               </div>
             </div>
@@ -46,7 +47,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let tool of tools">
+          <tr class="fair-resource-table-entry" *ngFor="let tool of tools" (click)="openProcessDialog(tool)">
             <td>{{tool.name}}</td>
             <td>{{tool.description}}</td>
           </tr>
@@ -64,14 +65,14 @@
         <table class="table table-hover table-bordered">
           <thead>
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">Name</th>
+            <th scope="col">Description</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let indicator of indicators">
-            <td>{{indicator.id}}</td>
+          <tr class="fair-resource-table-entry" *ngFor="let indicator of indicators" (click)="openProcessDialog(indicator)">
             <td>{{indicator.name}}</td>
+            <td>{{indicator.description}}</td>
           </tr>
           </tbody>
         </table>
@@ -93,7 +94,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let requirement of requirements">
+          <tr class="fair-resource-table-entry" *ngFor="let requirement of requirements" (click)="openProcessDialog(requirement)">
             <td>{{requirement.name}}</td>
             <td>{{requirement.description}}</td>
           </tr>

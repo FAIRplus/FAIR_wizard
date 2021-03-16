@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://fair-wizard.com/labels/fair-wizard-labels.owl#"
+     xml:base="https://fair-wizard.com/labels/fair-wizard-labels.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://fair-wizard.com/labels/fair-wizard-labels.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fair-wizard.com/labels/l1 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l1">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data types</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l11 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l11">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l1"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transcriptomcis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l12 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l12">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l1"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genomics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l2 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l2">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">principles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l21 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l21">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">findability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l22 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l22">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accessibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l23 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l23">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interoperability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l24 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l24">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reusabilily</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l3 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l3">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">roles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l31 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l31">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l3"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data curator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l32 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l32">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l3"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">project manager</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l33 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l33">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l3"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l34 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l34">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l3"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fair-wizard.com/labels/l35 -->
+
+    <owl:Class rdf:about="http://fair-wizard.com/labels/l35">
+        <rdfs:subClassOf rdf:resource="http://fair-wizard.com/labels/l3"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">software engineer</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+
