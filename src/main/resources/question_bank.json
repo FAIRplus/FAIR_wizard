@@ -1,131 +1,186 @@
 [
-{
-  "id": "1",
-  "question": "Which role fits you best?",
-  "answers": [
-    {
-      "text": "Project owner",
-      "labels": ["Project owner"],
-      "next": "2"
-    },
-    {
-      "text": "Data curator",
-      "labels": ["Data curator"],
-      "next": "2"
-    },
-    {
-      "text": "Data owner (Researchers who generates data)",
-      "labels": ["Data owner"],
-      "next": "2"
-    },
-    {
-      "text": "Data consumer (Bioinformatician who perform data analysis)",
-      "labels": ["Data consumer"],
-      "next": "2"
-    },
-    {
-      "text": "Software technician (e.g. Developers who build data manage systems)",
-      "labels": ["Software technician"],
-      "next": "2"
-    },
-    {
-      "text": "Other",
-      "labels": ["Others"],
-      "next": "2"
-    }
-  ]
-},
-{
-"id": "2",
-"question": "What is the status of your project or dataset?",
-"answers": [
-{
-"text": "Retrospective data/finished projects",
-"labels": ["Retrospective"],
-"next": "3"
-},
-{
-"text": "Prospective data/ongoing projects",
-"labels": ["Prospective"],
-"next": "3"
-},
-{
-"text": "I don't have project or data available",
-"labels": ["Retrospective", "Prospective"],
-"next": "4"
-}
-]
-},
-{
-"id":"3",
-"question":"Would you like to perform FAIR assessment first?",
-"answers":[
-{"text":"yes (WIP)",
-"labels":["yes (WIP)"],
-"next":"0"},
-{"text":"no",
-"labels":["no"],
-"next":"4"}
-]
-},
-{
-"id": "4",
-"question": "Which aspect of FAIR you'd like to improve?",
-"answers": [
-{
-"text": "Findability",
-"labels": ["Findability"],
-"next": "5"
-},
-{
-"text": "Accessibility(WIP)",
-"labels": ["Accessibility(WIP)"],
-"next": "0"
-},
-{ "text": "Interoperability",
-"labels": ["Interoperability"],
-"next": "5"},
-{ "text": "Reusability(WIP)",
-"labels": ["Reusability(WIP)"],
-"next": "0"}
-
-]
-},
-{
-"id": "5",
-"question": "Which topic are you interested in ?",
-"answers": [
-{
-"text": "Data archiving (WIP)",
-"labels": ["Data archiving (WIP)"],
-"next": "0"
-},
-{
-"text": "Data standards",
-"labels": ["Data standards"],
-"next": "6"
-},
-{
-"text": "Data annotation",
-"labels": ["Data annotation"],
-"next": "6"
-}
-]
-},
-{
-"id": "6",
-"question": "Select the topics below",
-"answers": [
-{
-"text": "Vocabulary (e.g. ontology, taxonomy)",
-"labels": ["Vocabulary","ontology"],
-"next": "0"
-},
-{
-"text": "Minimum information (checklists)",
-"labels": ["Checklists"],
-"next": "0"
-}
-]
-}
+  {
+    "id": "1",
+    "question": "Which role fits you best?",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Project owner",
+        "labels": [
+          "Project owner"
+        ],
+        "next": "2"
+      },
+      {
+        "text": "Data curator",
+        "labels": [
+          "Data curator"
+        ],
+        "next": "2"
+      },
+      {
+        "text": "Data owner (Researchers who generates data)",
+        "labels": [
+          "Data owner"
+        ],
+        "next": "2"
+      },
+      {
+        "text": "Data consumer (Bioinformatician who perform data analysis)",
+        "labels": [
+          "Data consumer"
+        ],
+        "next": "2"
+      },
+      {
+        "text": "Software technician (e.g. Developers who build data manage systems)",
+        "labels": [
+          "Software technician"
+        ],
+        "next": "2"
+      },
+      {
+        "text": "Other",
+        "labels": [
+          "Others"
+        ],
+        "next": "2"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "question": "What is the status of your project or dataset?",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Retrospective data/finished projects",
+        "labels": [
+          "Retrospective"
+        ],
+        "next": "3"
+      },
+      {
+        "text": "Prospective data/ongoing projects",
+        "labels": [
+          "Prospective"
+        ],
+        "next": "3"
+      },
+      {
+        "text": "I don't have project or data available",
+        "labels": [
+          "Retrospective",
+          "Prospective"
+        ],
+        "next": "4"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "question": "Would you like to perform FAIR assessment first?",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "yes (WIP)",
+        "labels": [
+          "yes (WIP)"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "no",
+        "labels": [
+          "no"
+        ],
+        "next": "4"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "question": "Which aspect of FAIR you'd like to improve?",
+    "multipleChoices": true,
+    "answers": [
+      {
+        "text": "Findability",
+        "labels": [
+          "Findability"
+        ],
+        "next": "5"
+      },
+      {
+        "text": "Accessibility(WIP)",
+        "labels": [
+          "Accessibility(WIP)"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Interoperability",
+        "labels": [
+          "Interoperability"
+        ],
+        "next": "5"
+      },
+      {
+        "text": "Reusability(WIP)",
+        "labels": [
+          "Reusability(WIP)"
+        ],
+        "next": "0"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "question": "Which topic are you interested in ?",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Data archiving (WIP)",
+        "labels": [
+          "Data archiving (WIP)"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data standards",
+        "labels": [
+          "Data standards"
+        ],
+        "next": "6"
+      },
+      {
+        "text": "Data annotation",
+        "labels": [
+          "Data annotation"
+        ],
+        "next": "6"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "question": "Select the topics below",
+    "multipleChoices": true,
+    "answers": [
+      {
+        "text": "Vocabulary (e.g. ontology, taxonomy)",
+        "labels": [
+          "Vocabulary",
+          "ontology"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Minimum information (checklists)",
+        "labels": [
+          "Checklists"
+        ],
+        "next": "0"
+      }
+    ]
+  }
 ]
