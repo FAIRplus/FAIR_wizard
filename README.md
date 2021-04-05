@@ -1,4 +1,8 @@
-# FairWizard
+# ⚠️WIP
+-------
+# FAIR wizard
+
+
 
 ## Build and Run
 - `./mvnw clean install -e` 
