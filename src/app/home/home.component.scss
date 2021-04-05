@@ -12,6 +12,12 @@
   display: block;
   color: #ffffff;
   background-color: #310562;
+  font-family: 'Roboto', serif;
+  font-size: 18px;
+}
+
+.background-white {
+  background-color: #ffffff;
 }
 
 .fair-home-title {
@@ -29,11 +35,8 @@
   background-color: #ffffff;
 }
 .fair-overview-text {
-  //width: 80%;
   text-align: justify;
-  font-family: 'Roboto';
-  font-size: 17px;
-  margin: 10px 20px 10px;
+  font-size: 18px;
 }
 .card {
   width: 18%;

@@ -1,13 +1,12 @@
 <div class="fair-home-wrapper">
   <div class="fair-home">
-      <p class="fair-overview-text">FAIR wizard</p>
       <h2>What is FAIR and why FAIRify the data</h2>
-      <p> Findability, Accessibility, Interoperability, and Reuse of digital assets. The principles emphasise
+      <p class="fair-overview-text"> Findability, Accessibility, Interoperability, and Reuse of digital assets. The principles emphasise
         machine-actionability (i.e., the capacity of computational systems to find, access, interoperate, and reuse data
         with none or minimal human intervention) because humans increasingly rely on computational support to deal with
         data as a result of the increase in volume, complexity, and creation speed of data. </p>
       <h2>What does the FAIR wizard do?</h2>
-      <p>To provide guidance on FAIRification of projects and datasets, and make FAIRplus project outcomes more
+      <p class="fair-overview-text">To provide guidance on FAIRification of projects and datasets, and make FAIRplus project outcomes more
         accessible and reusable for external academic projects and pharmaceutical partners, we propose the creation of a
         FAIRplus FAIRification wizard. This web-based service will support FAIRification workflow design by data owners,
         data stewards and other key stakeholders, exploiting FAIRplus FAIRification solutions by aligning user needs and
@@ -29,31 +28,38 @@
       </ul>
       <h2>Source of FAIRification materials </h2>
       <p>We work with different communities to generate FAIRification materials</p>
-      <ul>
-        <li><a href="https://fairplus.github.io/the-fair-cookbook/content/home.html">
-          <img src="assets/img/fair-cookbook.png" alt="cookbook" width="200">
-          FAIR cookbook
-        </a></li>
-        <li><a href="https://tess.elixir-europe.org/">
-          <img src="assets/img/elixir-tess.png" alt="exixlir tess" width="200">
-          Elixir Tess
-        </a></li>
-        <li><a href="https://www.ebi.ac.uk/training/">
-          <img src="assets/img/ebi-training.jpg" alt="ebi" width="200">
-          EBI training
-        </a></li>
-      </ul>
-      <h2>Example use case and solutions</h2>
-      <ul>
-        <li>
-          <p>User1: EBiSC project. how to perform ontology annotation to make them more findable </p>
-          <p><a href="example.com">Solution for this use case</a></p>
-        </li>
-        <li>
-          <p>User2: HCA project. how to improve cell line metadata </p>
-          <p><a href="example.com">Solution for this use case</a></p>
-        </li>
-      </ul>
+    <div class="row ml-1">
+        <div class="card">
+          <img class="card-img-top" src="assets/img/fair-cookbook.png" alt="FAIR Cookbook">
+          <div class="card-body">
+            <a href="https://fairplus.github.io/the-fair-cookbook/content/home.html">
+            <h5 class="card-title">FAIR cookbook</h5>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="assets/img/elixir-tess.png" alt="Card image cap">
+          <div class="card-body">
+            <a href="https://tess.elixir-europe.org/">
+            <h5 class="card-title">Elixir Tess</h5>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="assets/img/ebi-training.jpg" alt="Card image cap">
+          <div class="card-body">
+            <a href="https://www.ebi.ac.uk/training/">
+            <h5 class="card-title">EBI training</h5>
+            </a>
+          </div>
+        </div>
+    </div>
+
+    <h2>Example use case and solutions</h2>
+    <ol>
+      <li><a href="example.com">User1: EBiSC project. how to perform ontology annotation to make them more findable</a></li>
+      <li><a href="example.com">User2: HCA project. how to improve cell line metadata</a></li>
+    </ol>
 
     <div class="card">
       <img class="card-img-top" src="assets/img/home_process.png" alt="Card image cap">
@@ -95,8 +101,17 @@
           content.</p>
       </div>
     </div>
-    <img class="fair-overview" src="assets/img/home_overview.png" alt="overview">
+  </div>
+</div>
 
+<div class="fair-home-wrapper background-white">
+  <div class="fair-home background-white">
+    <img class="fair-overview" src="assets/img/home_overview.png" alt="overview">
+  </div>
+</div>
+
+<div class="fair-home-wrapper">
+  <div class="fair-home">
     <div class="btn-fair-wizard-wrapper">
       <div routerLink="/wizard" class="btn-outline-danger btn-fair-wizard">Go to Wizard</div>
     </div>
