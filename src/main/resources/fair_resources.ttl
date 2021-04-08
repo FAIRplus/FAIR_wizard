@@ -165,11 +165,12 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Recipe" ;
   fw:labels (
               "retrospective" "prospective" "EBiSC" "terminology manager" "data manager" "data scientist" "ontologist"
-              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+              "text annotation" "interoperability" "data standards" "vocabulary" "ontology"
             ) ;
   fw:description
     "To provide a general guidline on how to request new terms, as well as to give some examples for specific ontologies." ;
   fw:lastUpdate "2021-04-06" ;
+  fw:usecase ("EBiSC");
   fw:location
     "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ontology-new-term-request-recipe.html" ;
   fw:name "Requesting terms addition to terminology artefacts" ;
@@ -184,9 +185,10 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Recipe" ;
   fw:labels (
               "retrospective" "prospective"  "EBiSC" "terminology manager" "data manager" "data scientist" "ontologist"
-              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+              "text annotation" "interoperability" "data standards" "vocabulary" "ontology"
             ) ;
   fw:lastUpdate "2021-04-06" ;
+  fw:usecase ("EBiSC");
   fw:location
     "https://github.com/FAIRplus/the-fair-cookbook/blob/proccaserra-patch-for-oxo-recipe/content/recipes/interoperability/ontology-alignment-oxo.md" ;
   fw:name "ontology mapping with oxo" ;
@@ -199,9 +201,10 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
 
 <fw:Recipe-ontology-annotation-zooma>
   fw:resourceType "Recipe" ;
+  fw:usecase ("EBiSC");
   fw:labels (
               "retrospective" "prospective"  "terminology manager" "data manager" "data scientist" "ontologist"
-              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+              "text annotation" "interoperability" "data standards" "vocabulary" "ontology"
             ) ;
   fw:lastUpdate "2021-04-06" ;
   fw:location "https://www.ebi.ac.uk/spot/zooma/docs/search" ;
@@ -217,8 +220,9 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
 
 <fw:Recipe-build-ontology-robot>
   fw:resourceType "Recipe" ;
+  fw:usecase ("EBiSC");
   fw:labels (
-              "retrospective" "prospective" "hands-on" "terminology manager" "data manager" "data scientist" "ontologist" "interoperability" "data standards" "vocabulory" "ontology" "ontology building"
+              "retrospective" "prospective" "hands-on" "terminology manager" "data manager" "data scientist" "ontologist" "interoperability" "data standards" "vocabulary" "ontology" "ontology building"
             ) ;
   fw:lastUpdate "2021-04-06" ;
   fw:location "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ontology-robot-recipe.html" ;
@@ -233,7 +237,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Recipe" ;
   fw:labels (
               "retrospective" "prospective"  "hands-on" "data manager" "data scientist" "interoperability"
-              "data standards" "vocabulory" "ontology" "metabolomics"
+              "data standards" "vocabulary" "ontology" "metabolomics"
             ) ;
   fw:lastUpdate "2021-04-06" ;
   fw:location
@@ -257,12 +261,14 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
 <fw:process-ontology-strategies>
   fw:resourceType "Process" ;
   fw:name "ontology strategies" ;
+  fw:usecase ("EBiSC");
   fw:lastUpdate "2021-04-06" ;
   fw:labels ( "Interoperability" "ontology" "vocabulary" ) .
 
 <fw:process-ontology-annotation>
   fw:resourceType "Process" ;
   fw:name "ontology annotation" ;
+  fw:usecase ("EBiSC");
   fw:lastUpdate "2021-04-06" ;
   fw:labels ( "Interoperability" "ontology" ) .
 
@@ -270,6 +276,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Process" ;
   fw:name "ontology mapping" ;
   fw:lastUpdate "2021-04-06" ;
+  fw:usecase ("EBiSC");
   fw:labels ( "Interoperability" ) .
 
 <fw:process-ontology-engineering>
@@ -288,14 +295,16 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Indicator" ;
   fw:name "Metadata uses FAIR-compliant vocabulories" ;
   fw:lastUpdate "2021-04-06" ;
-  fw:labels ( "vocabulory" "interoperability" );
+  fw:labels ( "vocabulary" "interoperability" );
+  fw:usecase ("EBiSC");
   fw:description "The controlled vocabulary used to describe datasets needs to be documented and resolvable using globally unique and persistent identifiers. This documentation needs to be easily findable and accessible by anyone who uses the dataset." .
 
 <fw:indicator-RDA-I2-01D>
   fw:resourceType "Indicator" ;
   fw:name "Data uses FAIR-compliant vocabulories" ;
   fw:lastUpdate "2021-04-06" ;
-  fw:labels ( "vocabulory" "interoperability" );
+  fw:labels ( "vocabulary" "interoperability" );
+  fw:usecase ("EBiSC");
   fw:description "The controlled vocabulary used to describe datasets needs to be documented and resolvable using globally unique and persistent identifiers. This documentation needs to be easily findable and accessible by anyone who uses the dataset." .
 
 <fw:indicator-RDA-R1.3-01M>
@@ -303,6 +312,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:name "Metadata complies with a community standard" ;
   fw:lastUpdate "2021-04-06" ;
   fw:labels ( "data standards" "interoperability" "reusability" );
+  fw:usecase ("EBiSC");
   fw:description "same type of data, data organised in a standardised way, well-established and sustainable file formats, documentation (metadata) following a common template and using common vocabulary. If community standards or best practices for data archiving and sharing exist, they should be followed. " .
 
 
@@ -310,11 +320,13 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
   fw:resourceType "Indicator" ;
   fw:name "Metadata is expressed in compliance with a machine-understandable community standard" ;
   fw:lastUpdate "2021-04-06" ;
+  fw:usecase ("EBiSC");
   fw:labels ( "data standards" "interoperability" "reusability" );
   fw:description "Metadata is expressed in compliance with a machine-understandable community standard" .
 
 <fw:tool-ols>
   fw:resourceType "Tool" ;
+  fw:usecase ("EBiSC");
   fw:description
     "The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific." ;
   fw:labels ( "interoperability" ) ;
@@ -324,6 +336,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
 
 <fw:tool-oxo>
   fw:resourceType "Tool" ;
+  fw:usecase ("EBiSC");
   fw:description
     "OxO is a service for finding mappings (or cross-references) between terms from ontologies, vocabularies and coding standards. OxO imports mappings from a variety of sources including the Ontology Lookup Service and a subset of mappings provided by the UMLS. We're still developing the service so please get in touch if you have any feedback." ;
   fw:labels ( "interoperability" ) ;
@@ -349,6 +362,7 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
 
 <fw:tool-zooma>
   fw:resourceType "Tool" ;
+  fw:usecase ("EBiSC");
   fw:description """Zooma is a tool for mapping free text annotations to ontology term based on a curated repository of annotation knowledge.
 
 Where mappings are not found in the curated respository one or more ontologies can be selected from the Ontology Lookup Service to increase coverage. For example if you want to map GWAS annotations select the GWAS datasource and a common disease ontology such as EFO or DOID to maximise coverage when terms have no curated mappings.
