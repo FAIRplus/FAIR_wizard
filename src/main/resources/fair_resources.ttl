@@ -152,6 +152,15 @@ Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
                  <fw:process-ontology-annotation>
                ) .
 
+<fw:Recipe-imi>
+  fw:resourceType "Recipe" ;
+  fw:labels ( "imi" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://fairplus.github.io/the-fair-cookbook/content/recipes/introduction/what-is-IMI.html" ;
+  fw:name "What is IMI" ;
+  fw:description
+    "IMI stands for Innovative Medicine Initiative and is an European project. More precisely, it is a joint initiative (public-private partnership) of the DG Research of the European Commission, representing the European Communities, and the European Federation of Pharmaceutical Industries and Associations (EFPIA)" .
+
 <fw:Recipe-request-ontology-terms>
   fw:resourceType "Recipe" ;
   fw:labels (
