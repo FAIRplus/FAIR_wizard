@@ -1,1250 +1,381 @@
-@prefix fw:   <http://fair-wizard/collection/fw/0.1/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix fw: <http://fair-wizard/collection/fw/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-
-<http://fairwizard.com/resource/2>
-  fw:resourceType "Recipe" ;
-  fw:name         "how to perform ontology annotation with zooma" ;
-  fw:title        "how to perform ontology annotation with zooma" ;
-  fw:description  "how to perform ontology annotation with zooma" ;
-  fw:status       "released" ;
-  fw:labels       ( "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/4> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/3>
-  fw:resourceType "Tool" ;
-  fw:name         "OLS" ;
-  fw:title        "OLS" ;
-  fw:description  "OLS" ;
-  fw:status       "released" ;
-  fw:labels       ( "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:isAfter      ( <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/4>
-  fw:resourceType "Tool" ;
-  fw:name         "ZOOMA" ;
-  fw:title        "ZOOMA" ;
-  fw:description  "ZOOMA" ;
-  fw:status       "released" ;
-  fw:labels       ( "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/5>
-  fw:resourceType "Process" ;
-  fw:name         "ontology annotation validation" ;
-  fw:title        "ontology annotation validation" ;
-  fw:description  "ontology annotation validation" ;
-  fw:status       "released" ;
-  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/6>
-  fw:resourceType "Process" ;
-  fw:name         "metadata strategies" ;
-  fw:title        "metadata strategies" ;
-  fw:description  "metadata strategies" ;
-  fw:status       "released" ;
-  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/7>
-  fw:resourceType "Process" ;
-  fw:name         "interoperability requirements" ;
-  fw:title        "interoperability requirements" ;
-  fw:description  "interoperability requirements" ;
-  fw:status       "released" ;
-  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
-
-<http://fairwizard.com/resource/8>
-  fw:resourceType "Indicator" ;
-  fw:name         "Metadata uses FAIR-compliant vocabulories" ;
-  fw:title        "Metadata uses FAIR-compliant vocabulories" ;
-  fw:description  "Metadata uses FAIR-compliant vocabulories" ;
-  fw:status       "released" ;
-  fw:labels       ( "Prospective data" "Findability" "Metabolomics" "Interoperability" ) ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:location     "http://www.google.com" ;
-  fw:relatesTo    ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:requires     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:isAfter      ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:includes     ( <http://fairwizard.com/resource/3> <http://fairwizard.com/resource/2> ) ;
-  fw:target       "interoperability" .
 
 #real data from here, but they do not fit into any search criteria
 
 <fw:process-7201634925228134237>
   fw:resourceType "Process" ;
-  fw:image        "assets/img/home_recipes.png" ;
-  fw:description  "Determine data access for FAIRification" ;
-  fw:labels       ( "accessibility" "hosting" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data access and ethics" ;
-  fw:relatesTo    ( <fw:process-8298344911298610653> ) .
+  fw:image "assets/img/home_recipes.png" ;
+  fw:description "Determine data access for FAIRification" ;
+  fw:labels ( "accessibility" "hosting" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Data access and ethics" ;
+  fw:relatesTo ( <fw:process-8298344911298610653> ) .
 
 <fw:process-8298344911298610653>
   fw:resourceType "Process" ;
-  fw:description  "Host data in interim solution and make available for FAIRification processes." ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Interim hosting" ;
-  fw:relatesTo    ( <fw:process-238355532526975171> ) .
+  fw:description "Host data in interim solution and make available for FAIRification processes." ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Interim hosting" ;
+  fw:relatesTo ( <fw:process-238355532526975171> ) .
 
 <fw:process-238355532526975171>
   fw:resourceType "Process" ;
-  fw:description  """Match data types to available hosting solutions eg. public repos, EFPIA cloud.
+  fw:description """Match data types to available hosting solutions eg. public repos, EFPIA cloud.
 Examine dataset hosting choices and needs (size, complexity, analytics)""" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Long term hosting" ;
-  fw:relatesTo    ( <fw:process-568280961313138723> ) .
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Long term hosting" ;
+  fw:relatesTo ( <fw:process-568280961313138723> ) .
 
 <fw:process-568280961313138723>
   fw:resourceType "Process" ;
-  fw:description  "Define desired and expected outcomes of FAIRification." ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data Usability Goals" ;
-  fw:relatesTo    ( <fw:process-6303934084986307113> ) .
+  fw:description "Define desired and expected outcomes of FAIRification." ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Data Usability Goals" ;
+  fw:relatesTo ( <fw:process-6303934084986307113> ) .
 
 <fw:process-6303934084986307113>
   fw:resourceType "Process" ;
-  fw:description  "Determine competency questions for FAIRification" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Competency questions" ;
-  fw:relatesTo    ( <fw:process-4022619904400672439> ) .
+  fw:description "Determine competency questions for FAIRification" ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Competency questions" ;
+  fw:relatesTo ( <fw:process-4022619904400672439> ) .
 
 <fw:process-4022619904400672439>
   fw:resourceType "Process" ;
-  fw:description  """Dataset owners
-and FAIR experts examine datasets and reach shared understanding""" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Examination" ;
-  fw:relatesTo    ( <fw:process-5053427395880553195> ) .
+  fw:description "Dataset owners and FAIR experts examine datasets and reach shared understanding" ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Examination" ;
+  fw:relatesTo ( <fw:process-5053427395880553195> ) .
 
 <fw:process-5053427395880553195>
   fw:resourceType "Process" ;
-  fw:description  "Identify Data Types and primary organising principles" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Understand data types" ;
-  fw:relatesTo    ( <fw:process-4542955192858635464> ) .
+  fw:description "Identify Data Types and primary organising principles" ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Understand data types" ;
+  fw:relatesTo ( <fw:process-4542955192858635464> ) .
 
 <fw:process-4542955192858635464>
   fw:resourceType "Process" ;
-  fw:description  """Determine identifier strategy for data types.
-Assign identifiers in accordance with strategy.
-Mapping identifiers to established data sources""" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Identifier strategies" ;
-  fw:relatesTo    ( <fw:process-514831807475787382> ) .
+  fw:description
+    "Determine identifier strategy for data types. Assign identifiers in accordance with strategy. Mapping identifiers to established data sources" ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Identifier strategies" ;
+  fw:relatesTo ( <fw:process-514831807475787382> ) .
 
 <fw:process-514831807475787382>
   fw:resourceType "Process" ;
-  fw:description  """Determine  project metadata strategies using FAIRsharing.
-Apply metadata strategies to datasets.""" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Metadata strategies" ;
-  fw:relatesTo    ( <fw:process-4797913240548361534> ) .
+  fw:description "Determine  project metadata strategies using FAIRsharing. Apply metadata strategies to datasets." ;
+  fw:labels ( "accessibility" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Metadata strategies" ;
+  fw:includes (
+                <fw:process-ontology-strategies>
+                <fw:process-ontology-annotation>
+              ) ;
+  fw:relatesTo ( <fw:process-4797913240548361534> ) .
 
 <fw:process-4797913240548361534>
   fw:resourceType "Process" ;
-  fw:description  """Compare datasets to community standards.
-Evaluate datasets using FAIR indicators that are appropriate given competency questions""" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Evaluate against standards" ;
-  fw:relatesTo    ( <fw:process-8491626043857545931> ) .
+  fw:description
+    "Compare datasets to community standards. Evaluate datasets using FAIR indicators that are appropriate given competency questions" ;
+  fw:labels ( "reusability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Evaluate against standards" ;
+  fw:relatesTo ( <fw:process-8491626043857545931> ) .
 
 <fw:process-8491626043857545931>
   fw:resourceType "Process" ;
-  fw:description  """Determine  project ontology strategies using FAIRsharing.
-Apply ontology strategies to datasets.""" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Ontology strategies" ;
-  fw:relatesTo    ( <fw:process-4521070458167520677> ) .
+  fw:description "Determine  project ontology strategies using FAIRsharing. Apply ontology strategies to datasets." ;
+  fw:labels ( "reusability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Ontology strategies" ;
+  fw:includes (
+                <fw:process-ontology-strategies>
+                <fw:process-ontology-annotation>
+                <fw:process-ontology-mapping>
+                <fw:process-ontology-engineering>
+                <fw:process-ontology-management>
+              ) ;
+  fw:relatesTo ( <fw:process-4521070458167520677> ) .
 
 <fw:process-4521070458167520677>
   fw:resourceType "Process" ;
-  fw:description
-                  "Determine interoperability requirement for dataset  (eg. consumption of data for downstream analysis)" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Interoperability requirements" ;
-  fw:relatesTo    ( <fw:process-8430680201372698036> ) .
+  fw:description "Determine interoperability requirement for dataset  (eg. consumption of data for downstream analysis)" ;
+  fw:labels ( "reusability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Interoperability requirements" ;
+  fw:relatesTo ( <fw:process-8430680201372698036> ) ;
+  fw:includes (
+                <fw:process-ontology-strategies>
+                <fw:process-ontology-annotation>
+                <fw:process-ontology-mapping>
+                <fw:process-ontology-engineering>
+                <fw:process-ontology-management>
+              ) .
+
 
 <fw:process-8430680201372698036>
   fw:resourceType "Process" ;
-  fw:description  "Submit data to chosen hosting solution for public sharing and dissemination." ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data sharing" ;
-  fw:relatesTo    ( <fw:process-4521070458167520677> ) .
+  fw:description "Submit data to chosen hosting solution for public sharing and dissemination." ;
+  fw:labels ( "reusability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Data sharing" ;
+  fw:relatesTo ( <fw:process-4521070458167520677> ) .
 
-<fw:Recipe-6324936043312235027>
+<fw:Recipe-vocabulary-selection>
   fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/FAIR-cookbook-audience.html" ;
-  fw:name         "Who should read this book ?" .
+  fw:labels (
+              "vocabulary" "ontology" "data standards" "data annotation" "guidance" "principal investigator"
+              "data manager" "terminology mamanger" "data scientist" "ontologist" "EBiSC" "interoperability" "clinical"
+              "disease"
+            ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/selecting-ontologies.html" ;
+  fw:name "Which vocabulary to use" ;
+  fw:description
+    "To provide guidances on how to select the most suitable semantic artefacts given a specific research context in general, and when it comes to IMI projects, their main themes, i.e. risk assessment, clinical trial, drug discovery or fundamental research." ;
+  fw:relatesTo (
+                 <fw:process-8491626043857545931> <fw:indicator-RDA-I2-01M>
+                 <fw:indicator-RDA-I2-01D> <fw:process-514831807475787382>
+                 <fw:process-ontology-management>
+                 <fw:process-ontology-annotation>
+               ) .
 
-<fw:Recipe5236459522169274466>
+<fw:Recipe-request-ontology-terms>
   fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/fair-principle.html" ;
-  fw:name         "What is FAIR ?" .
-
-<fw:Recipe-881604471847787996>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/FAIRplus-values.html" ;
-  fw:name         "The Values of FAIR" .
-
-<fw:Recipe-3383924512047840448>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/what-is-IMI.html" ;
-  fw:name         "What is IMI ?" .
-
-<fw:Recipe-7700859528835864133>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/IMI-and-data-management-plans.html" ;
-  fw:name         "IMI and Data Management" .
-
-<fw:Recipe-6288877472617882048>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/FAIR-in-IMI-context.html" ;
-  fw:name         "FAIR in IMI context" .
-
-<fw:Recipe789539873089433740>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/introduction/data-sharing-models.html" ;
-  fw:name         "Models for Data Sharing" .
-
-<fw:Recipe8934294842260657175>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/infrastructure.html" ;
-  fw:name         "Infrastructure for FAIR" .
-
-<fw:Recipe4221883301455841347>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/id-resolution.html" ;
-  fw:name         "Identifier Resolution Service" .
-
-<fw:Recipe-8091542677457665571>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
+  fw:labels (
+              "retrospective" "prospective" "EBiSC" "terminology manager" "data manager" "data scientist" "ontologist"
+              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+            ) ;
+  fw:description
+    "To provide a general guidline on how to request new terms, as well as to give some examples for specific ontologies." ;
+  fw:lastUpdate "2021-04-06" ;
   fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/UC3_R13_local_ontology_services.html" ;
-  fw:name         "Deploying Vocabulary Servers" .
+    "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ontology-new-term-request-recipe.html" ;
+  fw:name "Requesting terms addition to terminology artefacts" ;
+  fw:relatesTo (
+                 <fw:process-ontology-management>
+                 <fw:process-ontology-strategies>
+                 <fw:indicator-RDA-I2-01M>
+                 <fw:indicator-RDA-I2-01D>
+               ) .
 
-<fw:Recipe-896965399320440267>
+<fw:Recipe-ontology-mapping-oxo>
   fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
+  fw:labels (
+              "retrospective" "prospective"  "EBiSC" "terminology manager" "data manager" "data scientist" "ontologist"
+              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+            ) ;
+  fw:lastUpdate "2021-04-06" ;
   fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/Selecting_and_using_ontology_lookup_services.html" ;
-  fw:name         "Selecting Terminology Services" .
+    "https://github.com/FAIRplus/the-fair-cookbook/blob/proccaserra-patch-for-oxo-recipe/content/recipes/interoperability/ontology-alignment-oxo.md" ;
+  fw:name "ontology mapping with oxo" ;
+  fw:relatesTo (
+                 <fw:process-8491626043857545931> <fw:process-514831807475787382>
+                 <fw:indicator-RDA-I2-01M>
+                 <fw:process-ontology-mapping>
+               ) ;
+  fw:requires ( <fw:tool-robot> ) .
 
-<fw:Recipe-7889391725481858659>
+<fw:Recipe-ontology-annotation-zooma>
   fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
+  fw:labels (
+              "retrospective" "prospective"  "terminology manager" "data manager" "data scientist" "ontologist"
+              "text annotation" "interoperability" "data standards" "vocabulory" "ontology"
+            ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://www.ebi.ac.uk/spot/zooma/docs/search" ;
+  fw:name "ontology annotation with zooma" ;
+  fw:relatesTo (
+                 <fw:process-8491626043857545931> <fw:process-514831807475787382>
+                 <fw:indicator-RDA-I2-01M>
+                 <fw:indicator-RDA-R1.3-01M>
+                 <fw:indicator-RDA-R1.3-02M>
+                 <fw:process-ontology-annotation>
+               ) ;
+  fw:requires ( <fw:tool-zooma> ) .
+
+<fw:Recipe-build-ontology-robot>
+  fw:resourceType "Recipe" ;
+  fw:labels (
+              "retrospective" "prospective" "hands-on" "terminology manager" "data manager" "data scientist" "ontologist" "interoperability" "data standards" "vocabulory" "ontology" "ontology building"
+            ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ontology-robot-recipe.html" ;
+  fw:name "Building an application ontology with Robot" ;
+  fw:relatesTo (
+                 <fw:process-8491626043857545931> <fw:process-ontology-engineering>
+                 <fw:indicator-RDA-I2-01M>
+               ) ;
+  fw:requires ( <fw:tool-robot> ) .
+
+<fw:Recipe-build-ontology-msio>
+  fw:resourceType "Recipe" ;
+  fw:labels (
+              "retrospective" "prospective"  "hands-on" "data manager" "data scientist" "interoperability"
+              "data standards" "vocabulory" "ontology" "metabolomics"
+            ) ;
+  fw:lastUpdate "2021-04-06" ;
   fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html" ;
-  fw:name         "Criteria for selecting Ontology Services" .
+    "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ontology-robot/MSIO-robot-build-process.html" ;
+  fw:name "MSIO, an application ontology for Metabolomics" ;
+  fw:isAfter ( <fw:Recipe-build-ontology-robot> ) ;
+  fw:relatesTo (
+                 <fw:process-8491626043857545931> <fw:process-ontology-engineering>
+                 <fw:process-ontology-management>
+               ) .
 
-<fw:Recipe-3642283697628185524>
+<fw:Recipe-metadata-profile-generation>
   fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/chemical-identities.html" ;
-  fw:name         "Chemical identities - Generating InChI and SMILES strings" .
-
-<fw:Recipe-3936733753791632470>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/data-catalog.html" ;
-  fw:name         "Building a Data Catalogue" .
-
-<fw:Recipe-3078866030015924615>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/infrastructure/data-catalog-deployment.html" ;
-  fw:name         "Deploying the FAIRplus IMI Data Catalogue" .
-
-<fw:Recipe-3178843587355057139>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability.html" ;
-  fw:name         "Findability" .
-
-<fw:Recipe-6827705281216328724>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/identifiers.html" ;
-  fw:name         "How to create persistent resolvable identifiers" .
-
-<fw:Recipe7457494795732116146>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/zenodo-deposition.html" ;
-  fw:name         "Depositing to a Data Catalogue - The Zenodo example" .
-
-<fw:Recipe-4791075659600896223>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/seo.html" ;
-  fw:name         "Search Engine Optimization" .
-
-<fw:Recipe-2379942277813382531>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/seo/bioschemas-datacatalog.html" ;
-  fw:name         "Marking up Data Catalog with Bioschema" .
-
-<fw:Recipe157538649219840394>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "findability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/seo/bioschemas-dataset.html" ;
-  fw:name         "Marking up Dataset with Bioschema" .
-
-<fw:Recipe5361423758508218422>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "findability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/findability/seo/bioschemas-data-page.html" ;
-  fw:name         "Marking up Datapage with Bioschema" .
-
-<fw:Recipe-208373016948081259>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "findability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/accessibility.html" ;
-  fw:name         "Accessibility" .
-
-<fw:Recipe-2295955872605358307>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/accessibility/anonymization.html" ;
-  fw:name         "Anonymization Recipe" .
-
-<fw:Recipe-7422457256790050212>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/accessibility//how-to-use-sftp-for-transfer.html" ;
-  fw:name         "File Transfer via sFTP" .
-
-<fw:Recipe-1640013777693684134>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/accessibility/aspera.html" ;
-  fw:name         "Fast File Transfer via Aspera" .
-
-<fw:Recipe-9144035994614464874>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/interoperability.html" ;
-  fw:name         "Interoperability" .
-
-<fw:Recipe4573982643673564155>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/interoperability/selecting-ontologies.html" ;
-  fw:name         "How to select ontologies" .
-
-<fw:Recipe2577878569038449988>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
+  fw:labels ( "retrospective" "prospective"  "reusability" "data standards" "principle investigator" "data scientist" ) ;
+  fw:lastUpdate "2021-04-06" ;
   fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/interoperability/ontology-new-term-request-recipe.html" ;
-  fw:name         "How to request new terms in existing ontologies" .
+    "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/creating-minimal-metadata-profiles.html" ;
+  fw:name "Creating a Metadata Profile" ;
+  fw:relatesTo ( <fw:process-514831807475787382> ) .
 
-<fw:Recipe-6890535108822254424>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/interoperability/ontology-robot-recipe.html" ;
-  fw:name         "How to build an application ontology" .
+<fw:process-ontology-strategies>
+  fw:resourceType "Process" ;
+  fw:name "ontology strategies" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "Interoperability" "ontology" "vocabulary" ) .
 
-<fw:Recipe-6161838023345342107>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/interoperability/ontology-robot/MSIO-robot-build-process.html" ;
-  fw:name         "MSIO robot build process" .
+<fw:process-ontology-annotation>
+  fw:resourceType "Process" ;
+  fw:name "ontology annotation" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "Interoperability" "ontology" ) .
 
-<fw:Recipe-7529531149130445305>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/interoperability/creating-minimal-metadata-profiles.html" ;
-  fw:name         "Minimal MetaData Profiles" .
+<fw:process-ontology-mapping>
+  fw:resourceType "Process" ;
+  fw:name "ontology mapping" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "Interoperability" ) .
 
-<fw:Recipe-7161069174892538972>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/interoperability/transcriptomics-metadata.html" ;
-  fw:name         "A Transcriptomics MetaData Profile" .
+<fw:process-ontology-engineering>
+  fw:resourceType "Process" ;
+  fw:name "ontology engineering" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "Interoperability" ) .
 
-<fw:Recipe195591565005687541>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/interoperability/covid19-sample-metadata-profile-shex-use-case.html" ;
-  fw:name         "Covid19 Sample MetaData Profile Shex Validation" .
+<fw:process-ontology-management>
+  fw:resourceType "Process" ;
+  fw:name "ontology management" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "Interoperability" ) .
 
-<fw:Recipe187102006286812842>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/interoperability/fastq-file-format-validators.html" ;
-  fw:name         "How to validate file formats" .
-
-<fw:Recipe5100759266221111572>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/interoperability/from-proprietary-to-open-standard-mzml-exemplar.html" ;
-  fw:name         "How to convert to open format from propriatory" .
-
-<fw:Recipe1260487045291893021>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/reusability.html" ;
-  fw:name         "Reusability" .
-
-<fw:Recipe4423827750435668095>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/accessibility/license-selection.html" ;
-  fw:name         "Selecting a Licensing Mode" .
-
-<fw:Recipe-6116826662272333629>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/assessing-fairness.html" ;
-  fw:name         "FAIR Assessment" .
-
-<fw:Recipe-2154143582540716281>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/assessing-fairness/fair-indicators.html" ;
-  fw:name         "FAIR indicators" .
-
-<fw:Recipe-7776114281579449896>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/assessing-fairness/manual-fair-assessment.html" ;
-  fw:name         "manual assessment" .
-
-<fw:Recipe3798075358001129261>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/assessing-fairness/fair-assessment-recipe.html" ;
-  fw:name         "automatic assessment with FAIREvaluator" .
-
-<fw:Recipe4559125501238587050>
-  fw:resourceType "Recipe" ;
-  fw:labels       ( "reusability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/assessing-fairness/fair-assessment-fairshake.html" ;
-  fw:name         "automatic assessment with FAIRshake" .
-
-<fw:Recipe6757233359937662849>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/applied-examples.html" ;
-  fw:name         "FAIRification Examples" .
-
-<fw:Recipe3304926867391601327>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/fair-data-matrix-recipe.html" ;
-  fw:name         "FAIR data matrix Recipe" .
-
-<fw:Recipe-2248117954152308478>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html" ;
-  fw:name         "Converting Excel to Frictionless Data Package" .
-
-<fw:Recipe8988559078594743521>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html" ;
-  fw:name         "Plotting from Frictionless Data Package in Python" .
-
-<fw:Recipe7821512408387869149>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html" ;
-  fw:name         "Plotting from Frictionless Data Package in R" .
-
-<fw:Recipe972960264611274261>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html" ;
-  fw:name         "Exploration fo semantic model with SPARQL" .
-
-<fw:Recipe-595738343945329572>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/fairified-imi-data.html" ;
-  fw:name         "FAIRification of IMI datasets" .
-
-<fw:Recipe-2858543137774001763>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/etox_raw/FAIRplus_Recipe_Ontology_mapping_the_eTox_dataset_scenario.html" ;
-  fw:name         "eTOX experience Recipe" .
-
-<fw:Recipe-8119340106462267895>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/resolute_raw/rawRecipe_resolute.html" ;
-  fw:name         "RESOLUTE experience Recipe" .
-
-<fw:Recipe-8567303974915368915>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/oncotrack_raw/rawRecipe-oncotrack.html" ;
-  fw:name         "ONCOTRACK experience Recipe" .
-
-<fw:Recipe-8963796694758336701>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "https://fairplus.github.io/cookbook-dev/recipes/applied-examples/nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html" ;
-  fw:name         "ND4BB experience Recipe" .
-
-<fw:Recipe1598987258895299593>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/cmmi.html" ;
-  fw:name         "Capability & Maturity indicators" .
-
-<fw:Recipe1746653655704351223>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/tools4fair.html" ;
-  fw:name         "Tools for FAIR" .
-
-<fw:Recipe1133305780653144058>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/glossary-fair-terms.html" ;
-  fw:name         "Glossary" .
-
-<fw:Recipe-1509406298822114315>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help.html" ;
-  fw:name         "Contributing Content" .
-
-<fw:Recipe-3969746824084934391>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help/how-to-create-recipe-with-gdoc.html" ;
-  fw:name         "How to create a recipe with GoogleDoc" .
-
-<fw:Recipe1983560300531275521>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help/how-to-create-recipe-with-hackmd.html" ;
-  fw:name         "How to use HackMD to write a FAIR Cookbook Recipe" .
-
-<fw:Recipe-6358636913980270435>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help/tips-tricks.html" ;
-  fw:name         "HackMD Tips and Tricks" .
-
-<fw:Recipe8945079961034720791>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help/how-to-create-recipe-with-git.html" ;
-  fw:name         "How to create a recipe with git" .
-
-<fw:Recipe1340974016590344603>
-  fw:resourceType "Recipe" ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://fairplus.github.io/cookbook-dev/recipes/help/recipe-template.html" ;
-  fw:name         "Recipe Template" .
-
-<fw:indicator4068143603170371285>
+<fw:indicator-RDA-I2-01M>
   fw:resourceType "Indicator" ;
-  fw:description
-                  "Study-level documentation provides high-level information on the research context and design the data collection methods used any data preparations and manipulations and summaries of findings based on the data. Examples and a suggested list of coverage can be found at UK Data Services. Repurposing" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Study level documentation is available in a human readable format." .
+  fw:name "Metadata uses FAIR-compliant vocabulories" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "vocabulory" "interoperability" );
+  fw:description "The controlled vocabulary used to describe datasets needs to be documented and resolvable using globally unique and persistent identifiers. This documentation needs to be easily findable and accessible by anyone who uses the dataset." .
 
-<fw:indicator3342256941028690594>
+<fw:indicator-RDA-I2-01D>
   fw:resourceType "Indicator" ;
-  fw:description
-                  "A reporting standard ensures recording the information (metadata) required to unambiguously communicate experimental designs treatments and analyses to con-textualize the data generated. Such standards are also known as data content or minimum information standards (Chervitz et all.). See examples: reporting standards for health care" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data is reported by following community specific minimum information guidelines" .
+  fw:name "Data uses FAIR-compliant vocabulories" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "vocabulory" "interoperability" );
+  fw:description "The controlled vocabulary used to describe datasets needs to be documented and resolvable using globally unique and persistent identifiers. This documentation needs to be easily findable and accessible by anyone who uses the dataset." .
 
-<fw:indicator8273044894976530631>
+<fw:indicator-RDA-R1.3-01M>
   fw:resourceType "Indicator" ;
-  fw:description
-                  "Biological and biomedical research has been considered an especially challenging research field in this regard as data types are extremely heterogeneous and not all have defined data standards (Griffin et. all). Metadata should capture all data types and format names in a study if possible provide a reference or URL for format specification" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name
-                  "Metadata documents and provides references about all data biological data types and formats in data is expressed." .
+  fw:name "Metadata complies with a community standard" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "data standards" "interoperability" "reusability" );
+  fw:description "same type of data, data organised in a standardised way, well-established and sustainable file formats, documentation (metadata) following a common template and using common vocabulary. If community standards or best practices for data archiving and sharing exist, they should be followed. " .
 
-<fw:indicator5324004451417711669>
+
+<fw:indicator-RDA-R1.3-02M>
   fw:resourceType "Indicator" ;
-  fw:description
-                  "In a study there are multiple data sets which are used as input and produced as an output. When a data is FAIRified it is important to understand which data files are generated from the analysis of which other data sets or sample data. For example the EMBL-EBI SDRF (Sample and Data Relationship Format) describes the sample characteristics and the relationship between samples arrays" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Relationships between different data sets in a study is well defined." .
+  fw:name "Metadata is expressed in compliance with a machine-understandable community standard" ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:labels ( "data standards" "interoperability" "reusability" );
+  fw:description "Metadata is expressed in compliance with a machine-understandable community standard" .
 
-<fw:indicator-2272968738514576769>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Versioning is tracking the changes made in data by saving new copies of data files with indicators of the changes made. A new version is created when there is a change in the structure contents or condition of the resource. In the case of research data a new version of a dataset may be created when an existing dataset is reprocessed" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name
-                  "A versioning policy is applied to uniquely identify a particular form of a dataset from an earlier form or other forms of itself." .
-
-<fw:indicator1787217449564683029>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Life science experiments comprise different samples; based on experiment and sample several measurements are performed. After quantification there is a step of data processing and analysis which results in life science research (Colmsee et.all). In most cases data is shared with publications as supplementary files or in data repositories which are referenced by articles. However raw data and primary data resides in private storages (Arend" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name
-                  "Shares not only derived and publication related data but data generated in early phases of research data workflow such as primary data and analyzed data." .
-
-<fw:indicator-4965224361488258489>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Negative results are the outcomes which do not support study hypotheses. Researchers are rewarded more for publishing novel findings and not for publishing negative results. However sharing negative results could reduce efforts and avoid repeating work that may be difficult to replicate (ATCC).Negative result also can be reported in publications (e.g. Negative Results Journal). Repurposing" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Negative results are shared." .
-
-<fw:indicator6489480779590165568>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "samples and data acquisition methods for analyzing and processing data quality control and restriction for reuse." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "The study is described with metadata including context" .
-
-<fw:indicator785543140297643940>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "protocols and data collection methods.Example metadata: study / experiment design trial protocol data acquisition methods" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Metadata includes information about the study design" .
-
-<fw:indicator-4930948157241142466>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "cell linesProvide information about key research materials such as antibodies cell lines and organisms. Preferable with identifiers" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Metadata includes explicit references to research resources such as samples" .
-
-<fw:indicator-829625912951670336>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "data analysis and quality assurance metrics.See specific examples for quality requirements for In Vitro research such as chemical probes cell line authentication" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Metadata contains information about data processing methods" .
-
-<fw:indicator8140844144853866108>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "license and reuse constraints for sensitive data.Considering the sensitive nature of life science data beside data reuse license consent" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Metadata includes information about data ownership" .
-
-<fw:indicator-1721646150443159845>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Data-level or object-level documentation provides information at the level of variables in a database or individual objects such as images. Data-level information can be embedded in data files such as variable" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data is organized and documented in a human understandable way" .
-
-<fw:indicator375889843440242478>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "A data exchange standard defined the encoding format of data. A data exchange standard delineates what data types can be encoded and the particular way they should be encoded (e.g. tab-delimited columns XML binary" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data is encoded in a community specific exchange standard." .
-
-<fw:indicator7820327921579184283>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "properties.A schema describes the structure of the data. Special schemes have meanings associated with databases such as community agreed profiles. A schema consists of a key dimension and its properties expected types" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name
-                  "A machine and human readable formal description of the structure of data is available including types" .
-
-<fw:indicator-2663822751181611124>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "core classes and their semantic relations refers to a common data  model.Meaningful exchange of information is a fundamental challenge in life sciences research. A domain model A domain is an abstract implementation-independent representation of the grammar or semantics" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data is structured by following a life sciences domain model" .
-
-<fw:indicator-8660801326173587753>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Terminology standards is typically defined by the use cases and provides control vocabularies to support and competency questions it is designed to answer. In life sciences domain ontologies are common ways to encode terminology standards (Chervitz et all.). Terminology standards add an interpretive layer to the data by defining the concepts or terms in a domain and in some cases the relationships between them (Tenenbaum et. all). See an example list for terminology standards. For a complete listing see the OBO Foundry.Integration" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Data is described with terminology standards." .
-
-<fw:indicator-9066113219442634818>
-  fw:resourceType "Indicator" ;
-  fw:description
-                  "Master data is defined as core business objects used in different applications across an organization along with their associated metadata definitions and taxonomies. Reference data is used to characterize or classify other data such as codes and description tables. Master and Reference data lowers cost and complexity through use of standards common data models and integration patterns. Sharing master data within a community or in organization reduces variability caused by multiple studies producing the same type of data" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Core data classes (important data elements) follows a common master and reference data entity." .
-
-<fw:tool-1802244706507895372>
+<fw:tool-ols>
   fw:resourceType "Tool" ;
   fw:description
-                  "Type any term or phrase to search the AberOWL ontology repository for a class with label (try pancreas), class description containing searched phrase or part of it (try sugar binding GO), using class OBO ID (try PATO:0001234), for ontologies by acronym (try ECO) or by phrase part of ontology description (try integrated upper ontology,infectious disease, or pathology), or perform a Description Logic query (try 'part of' some 'apoptotic process' ):" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://aber-owl.net/#/" ;
-  fw:name         "Aber-OWL" .
+    "The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific." ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://www.ebi.ac.uk/ols/ontologies/obi" ;
+  fw:name "Ontology Lookup Service, OLS" .
 
-<fw:tool-8460440406676768097>
-  fw:resourceType "Tool" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.alation.com/" ;
-  fw:name         "Alation" .
-
-<fw:tool-2597139327568999544>
+<fw:tool-oxo>
   fw:resourceType "Tool" ;
   fw:description
-                  "This repository provides the code for fine-tuning BioBERT, a biomedical language representation model designed for biomedical text mining tasks such as biomedical named entity recognition, relation extraction, question answering, etc. Please refer to our paper BioBERT: a pre-trained biomedical language representation model for biomedical text mining for more details. This project is done by DMIS-Lab." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/dmis-lab/biobert" ;
-  fw:name         "Biobert" .
+    "OxO is a service for finding mappings (or cross-references) between terms from ontologies, vocabularies and coding standards. OxO imports mappings from a variety of sources including the Ontology Lookup Service and a subset of mappings provided by the UMLS. We're still developing the service so please get in touch if you have any feedback." ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://www.ebi.ac.uk/spot/oxo/" ;
+  fw:name "Ontology Xref Service, OXO" .
 
-<fw:tool1211738704062386262>
+
+<fw:tool-protege>
   fw:resourceType "Tool" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Cantree API" .
+  fw:labels ( "interoperability" "ontology engineering" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:name "Protege" .
 
-<fw:tool-4047816096447411734>
-  fw:resourceType "Tool" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.collibra.com/" ;
-  fw:name         "Collibra" .
-
-<fw:tool-2808344235473424905>
+<fw:tool-robot>
   fw:resourceType "Tool" ;
   fw:description
-                  "Slimmer is a slim tool to slim ontologies as part of ontology integration. It allows users to provide configuration files that specify which parts of an ontology should be kept and/or removed, allowing to just select parts of the ontology you like. Rewiring the ontology is part of the features, allowing you to define new super terms." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/enanomapper/slimmer" ;
-  fw:name         "eNanoMapper Slimmer" .
+    "ROBOT is a tool for working with Open Biomedical Ontologies. It can be used as a command-line tool or as a library for any language on the Java Virtual Machine." ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "http://robot.obolibrary.org/" ;
+  fw:name "ROBOT" .
 
-<fw:tool-4238721493009317882>
+<fw:tool-zooma>
   fw:resourceType "Tool" ;
-  fw:description  """INFOTECH Soft is dedicated to the development of state of the art software solutions for the healthcare and life science industries. Our objective is to create software solutions that enable medical and research professionals to effectively diagnose and treat patient ailments.
-
-We specialize in the application of Semantic Web technologies to biomedical and clinical research. Coupled with a solid understanding of new and evolving technologies in network computing, high speed integrated services networks, and distributed systems architectures, our goal is to meet the information technology solutions needs of our customers.""" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://www.genetegra.com/" ;
-  fw:name         "GeneTegra" .
-
-<fw:tool3562876621611196912>
-  fw:resourceType "Tool" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://developer.marklogic.com/concept/ontology-driven-entity-extraction/" ;
-  fw:name         "MarkLogic" .
-
-<fw:tool11672039196568234>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The goal of the National Center for Biomedical Ontology is to support biomedical researchers in their knowledge-intensive work, by providing online tools and a Web portal enabling them to access, review, and integrate disparate ontological resources in all aspects of biomedical investigation and clinical practice. A major focus of our work involves the use of biomedical ontologies to aid in the management and analysis of data derived from complex experiments." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://bioportal.bioontology.org/" ;
-  fw:name         "NCBO Bioportal" .
-
-<fw:tool-6760009003056553255>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The range of publicly available biomedical data is enormous and continues to rapidly expand. This expansion means that researchers now face a hurdle to extracting the data they need from the large numbers of data that are available. Biomedical researchers have turned to ontologies and terminologies to structure and annotate their data with ontology concepts for better search and retrieval. However, this annotation process cannot be easily automated and often requires expert curators. Plus, there is a lack of easy-to-use systems that facilitate the use of ontologies for annotation. The NCBO Annotator (formerly referred to as the Open Biomedical Annotator (OBA)) is an ontology-based Web service that annotates public datasets with biomedical ontology concepts based on their textual metadata. The biomedical community can use the annotator service to tag their data automatically with ontology concepts. These concepts come from the Unified Medical Language System (UMLS) Metathesaurus and the National Center for Biomedical Ontology (NCBO) BioPortal ontologies. Such annotations facilitate translational discoveries by integrating annotated data." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://bioportal.bioontology.org/annotator" ;
-  fw:name         "NCBO bioportal Annotator" .
-
-<fw:tool-4244107448249474955>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "NCR is a concept recognizer for annotating unstructured text with concepts from an ontology. In its core, NCR uses a deep neural network trained to classify input phrases with concepts in a given ontology, and is capable of generalizing to synonyms not explicitly available." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/ccmbioinfo/NeuralCR" ;
-  fw:name         "NeuralCR" .
-
-<fw:tool-7725961953531878093>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The mission of the OBO Foundry is to develop a family of interoperable ontologies that are both logically well-formed and scientifically accurate. To achieve this, OBO Foundry participants follow and contribute to the development of an evolving set of principles including open use, collaborative development, non-overlapping and strictly-scoped content, and common syntax and relations, based on ontology models that work well, such as the Operations Committee with Editorial, Technical and Outreach working groups." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://www.obofoundry.org/" ;
-  fw:name         "OBO foundry" .
-
-<fw:tool93103256108442864>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.ebi.ac.uk/ols/ontologies/obi" ;
-  fw:name         "OLS" .
-
-<fw:tool-2118379673562288780>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Ontobee: A linked data server designed for ontologies. Ontobee is aimed to facilitate ontology data sharing, visualization, query, integration, and analysis. Ontobee dynamically dereferences and presents individual ontology term URIs to (i) HTML web pages for user-friendly web browsing and navigation, and to (ii) RDF source code for Semantic Web applications. Ontobee is the default linked data server for most OBO Foundry library ontologies. Ontobee has also been used for many non" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://www.ontobee.org/" ;
-  fw:name         "Ontobee" .
-
-<fw:tool-1077429877939484448>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "OntoMaton facilitates ontology search and tagging functionalities within Google Spreadsheets. It has been developed by the ISA Team at the University of Oxford's e-Research Centre." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/ISA-tools/OntoMaton" ;
-  fw:name         "OntoMaton" .
-
-<fw:tool4965272688391386973>
-  fw:resourceType "Tool" ;
-  fw:description  """Organize your information and documents into enterprise knowledge graphs
-We make data management and analytics work in synergy:
-
-Connect and publish complex enterprise knowledge with standard-compliant semantic graph database;
-Customize and apply analytics to link documents to graphs, extract new facts, classify and recommend content;
-Access data via GraphQL to ease application development.""" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.ontotext.com/products/ontotext-platform/" ;
-  fw:name         "OntoText" .
-
-<fw:tool-6819309560935213542>
-  fw:resourceType "Tool" ;
-  fw:description  "The OWL API is a Java API for creating, manipulating and serialising OWL Ontologies." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/owlcs/owlapi" ;
-  fw:name         "OWLAPI" .
-
-<fw:tool5428549736443096969>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "OxO is a service for finding mappings (or cross-references) between terms from ontologies, vocabularies and coding standards. OxO imports mappings from a variety of sources including the Ontology Lookup Service and a subset of mappings provided by the UMLS. We're still developing the service so please get in touch if you have any feedback." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.ebi.ac.uk/spot/oxo/" ;
-  fw:name         "OXO" .
-
-<fw:tool-111406598838558556>
-  fw:resourceType "Tool" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Protege" .
-
-<fw:tool-2169541413414124461>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "https://help.poolparty.biz/pp7/user-guide-for-knowledge-engineers/advanced-features/ontology-management-overview" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.poolparty.biz/natural-language-processing/" ;
-  fw:name         "PoolParty" .
-
-<fw:tool8345290811003156185>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "RDFLib is a pure Python package for working with RDF. RDFLib contains useful APIs for working with RDF, including:" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://rdflib.readthedocs.io/en/stable/" ;
-  fw:name         "rdflibs" .
-
-<fw:tool1156950162806413466>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "ROBOT is a tool for working with Open Biomedical Ontologies. It can be used as a command-line tool or as a library for any language on the Java Virtual Machine." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://robot.obolibrary.org/" ;
-  fw:name         "ROBOT" .
-
-<fw:tool6116818129052297940>
-  fw:resourceType "Tool" ;
-  fw:description  """Deliver faster time to insight with Stardog’s Enterprise Knowledge Graph platform.
-
-Bring context to your data for better decision-making
-Perform complex queries across silos
-Seamlessly support multiple apps and data models""" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.stardog.com/" ;
-  fw:name         "Stardog" .
-
-<fw:tool-909764664881749857>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "SciBite addresses these problems with user-friendly, efficient and robust solutions which simplify collaborative ontology management and use the power of machine learning techniques to support the process of curating and enriching both internal and external ontologies." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.scibite.com/" ;
-  fw:name         "Termite (scibite) Centre" .
-
-<fw:tool-8342864256361012764>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "TopBraid EDG–VM creates a Knowledge Graph of your vocabularies and associated resources. A flexible, web-based system, it supports business stakeholders who need to collaborate on defining, linking and using enterprise vocabularies (such as taxonomies, thesauri and ontologies) required to integrate content sources, comply with regulations, enhance navigation and search." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.topquadrant.com/products/topbraid-edg-vocabulary-management/" ;
-  fw:name         "Topbraid Composer" .
-
-<fw:tool-7329472341567815243>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Virtuoso Universal Server is modern platform built on existing open standards that harnesses the power of Hyperlinks (functioning as Super Keys) for breaking down data silos that impede both user and enterprise ability . For example, Virtuoso's core SQL & SPARQL powers many Enterprise Knowledge Graph initiatives just as it does DBpedia and a majority of nodes in the Linked Open Data Cloud -- the world's largest publicly accessible Knowledge Graph." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://virtuoso.openlinksw.com/" ;
-  fw:name         "Virtuoso" .
-
-<fw:tool-8908719240678650787>
-  fw:resourceType "Tool" ;
-  fw:description  """Zooma is a tool for mapping free text annotations to ontology term based on a curated repository of annotation knowledge.
+  fw:description """Zooma is a tool for mapping free text annotations to ontology term based on a curated repository of annotation knowledge.
 
 Where mappings are not found in the curated respository one or more ontologies can be selected from the Ontology Lookup Service to increase coverage. For example if you want to map GWAS annotations select the GWAS datasource and a common disease ontology such as EFO or DOID to maximise coverage when terms have no curated mappings.
 
 Use the text box to find possible ontology mappings for free text terms in the ZOOMA repository of curated annotation knowledge. You can add one term (e.g. 'Homo sapiens') per line. If you also have a type for your term (e.g. 'organism'), put this after the term, separated by a tab.
 If you are new to ZOOMA, take a look at our getting started guide.""" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.ebi.ac.uk/spot/zooma/" ;
-  fw:name         "Zooma" .
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://www.ebi.ac.uk/spot/zooma/" ;
+  fw:name "Zooma" .
 
-<fw:tool-6162236207964484041>
-  fw:resourceType "Tool" ;
-  fw:description  "Tool for Biomedical Entity Expansion, Ranking, and Exploration." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "http://discovery.informatics.uab.edu/BEERE/" ;
-  fw:name         "beere" .
-
-<fw:tool6438044801114947699>
+<fw:tool-ontology-development-kit>
   fw:resourceType "Tool" ;
   fw:description
-                  "Leveraging word embeddings and medical entity extraction for biomedical dataset retrieval using unstructured texts. Mayo's Data for the bioCADDIE 2016 Dataset Retrieval Challenge" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/yanshanwang/biocaddie2016mayodata" ;
-  fw:name         "biocaddie" .
+    "Bootstrap an OBO Library ontology" ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "https://github.com/INCATools/ontology-development-kit" ;
+  fw:name "Ontology development kit" .
 
-<fw:tool-4918357171446889746>
+<fw:tool-hermit>
   fw:resourceType "Tool" ;
   fw:description
-                  "Unifying single-cell annotations based on the Cell Ontology. Single cell typing based on cell ontology. please see the document of OnClass at https://onclass.readthedocs.io/en/latest/" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://onclass.readthedocs.io/en/latest/" ;
-  fw:name         "onclass" .
+    "reasoner for ontologies written using the Web Ontology Language (OWL). Given an OWL file, HermiT can determine whether or not the ontology is consistent, identify subsumption relationships between classes, and much more." ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "http://www.hermit-reasoner.com/" ;
+  fw:name "HermiT OWL Reasoner" .
 
-<fw:tool-1731676583135367744>
+<fw:tool-elk>
   fw:resourceType "Tool" ;
   fw:description
-                  "Prediction of human phenotype ontology term associations using cross ontology annotation co-occurrences. Mapping between HPO and GO terms. If you find HPO2GO useful, please consider citing this publication:. Mapping between Human Phenotype Ontology (HPO) and Gene Ontology (GO) terms for the prediction of gene/protein - function - phenotype - disease associations. In this study, a novel approach is proposed for the identification of relationships between biomedical entities by automatically mapping phenotypic abnormality defining HPO terms with biomolecular function defining GO terms, where each association indicates the occurrence of the abnormality due to the loss of the biomolecular function expressed by the corresponding GO term" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://github.com/cansyl/HPO2GO" ;
-  fw:name         "hpo2go" .
+    "ELK is an ontology reasoner developed as part of the ConDOR project. The goal of ELK is to fully support the OWL 2 EL profile." ;
+  fw:labels ( "interoperability" ) ;
+  fw:lastUpdate "2021-04-06" ;
+  fw:location "http://www.cs.ox.ac.uk/isg/tools/ELK/" ;
+  fw:name "ELK OWL 2 EL Reasoner" .
 
-<fw:tool-7989354770938286130>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The tool was developed to manage ontologies (and controlled terminologies e.g. CDISC SEND). The primary goal of the tool is to provide an online collaborative solution for expert curators to map code list terms (sourced from multiple systems/databases) to preferred ontology terms. Other key features include visualisation of ontologies in hierarchical/graph format, advanced search capabilities, peer review/approval workflow and web service access to data." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://bio.tools/ontobrowser" ;
-  fw:name         "ontobrowser" .
 
-<fw:tool-1173329963976295008>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://en.wikipedia.org/wiki/BERT_(language_model)" ;
-  fw:name         "Bert" .
-
-<fw:tool-4047816096447411734>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Collibra Data Catalog empowers business users to quickly discover and understand data that matters so they can generate impactful insights that drive business value. Collibra Data Lineage: Collibra Data Lineage automatically maps relationships between data to show how data flows from system to system and how data sets are built" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "aggregated" ;
-  fw:name         "Collibra" .
-
-<fw:tool5605130047360711530>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The Dublin Core Metadata Initiative or DCMI is an organization supporting innovation in metadata design and best practices across the metadata ecology. DCMI works openly and it supported by a paid-membership model. DCMI's activities include: work on architecture and modelling" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://dublincore.org/" ;
-  fw:name         "Dublin Core" .
-
-<fw:tool5168613560416533892>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location
-                  "each offering local computation and storage. Rather than rely on hardware to deliver high-availability" ;
-  fw:name         "Hadoop" .
-
-<fw:tool-1093164953604752218>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Informatica is the only Enterprise Cloud Data Management leader that accelerates data-driven digital transformation. Informatica enables companies to fuel innovation become more agile and realize new growth opportunities resulting in intelligent market disruptions" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.informatica.com/gb/about-us.html" ;
-  fw:name         "Informatica" .
-
-<fw:tool6773208910100621388>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "The OMOP Common Data Model allows for the systematic analysis of disparate observational databases. The concept behind this approach is to transform data contained within those databases into a common format (data model) as well as a common representation (terminologies vocabularies coding schemes) and then perform systematic analyses using a library of standard analytic routines that have been written based on the common format" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.ohdsi.org/data-standardization/the-common-data-model/" ;
-  fw:name         "OMOP" .
-
-<fw:tool971227232691534242>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "REDCap is a secure web application for building and managing online surveys and databases. While REDCap can be used to collect virtually any type of data in any environment (including compliance with 21 CFR Part 11 FISMA HIPAA and GDPR)" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.project-redcap.org/" ;
-  fw:name         "REDCap" .
-
-<fw:tool6865448652550866976>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "SDTM provides a standard for organizing and formatting data to streamline processes in collection management analysis and reporting. Implementing SDTM supports data aggregation and warehousing; fosters mining and reuse; facilitates sharing; helps perform due diligence and other important data review activities; and improves the regulatory review and approval process. SDTM is also used in non-clinical data (SEND) medical devices and pharmacogenomics/genetics studies." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.cdisc.org/standards/foundational/sdtm" ;
-  fw:name         "SDTM" .
-
-<fw:tool-3757409349378717183>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Accelerating Analytic outcomes. The toughest analytics challenges need consolidated cleansed categorized data. Tamr’s data mastering solutions are designed to power timely actionable analytic insightsCloud-Native Master. Data Management (MDM). Tamr’s cloud-native data mastering solutions make it easy to connect internal and external data sources quickly to power analytic insights and drive business outcomes" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.tamr.com/" ;
-  fw:name         "TAMR" .
-
-<fw:tool-6889793941815152999>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "An Open-Source—Open-Data Community. Enabling collaboration for precision medicine through sharing integration standardization" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://i2b2transmart.org/" ;
-  fw:name         "TransMART" .
-
-<fw:tool828355421769954463>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Poor data quality can sink any analytics project. Trifacta helps you understand your data so you can quickly and accurately clean it up. Clean Blend & Standardize your Data. Data transformation. All the power with none of the code. Trifacta provides visual and intelligent guidance so you can get to insights faster.Automate Your Data Processes. Data pipelines. Manual repetitive data preparation processes don’t scale. Trifacta helps you build deploy and manage self-service data pipelines in minutes not months." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:location     "https://www.trifacta.com/" ;
-  fw:name         "TriFacta" .
-
-<fw:tool-4544028877615330347>
-  fw:resourceType "Tool" ;
-  fw:description  "TERMite (TERM identification" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "Termite" .
-
-<fw:tool-2985223437548704761>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "A general-purpose FAIRifier on the basis of the OpenRefine data cleaning and wrangling tool and the RDF plugin. This FAIRifier enables a post-hoc FAIRification workflow: load an existing dataset" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "fairifier" .
-
-<fw:tool-8650457348792010915>
-  fw:resourceType "Tool" ;
-  fw:description  "galaxy only" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "query tabular" .
-
-<fw:tool-2245596179367195657>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "Tool for data retrieval and data mining that integrates data from Ensembl. Through the web interface it allows you to apply a series of filters to create custom datasets which can be converted to several useful output formats." ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "martview" .
-
-<fw:tool-5927044756952364085>
-  fw:resourceType "Tool" ;
-  fw:description
-                  "OsiriX is an image processing software dedicated to DICOM images (“.dcm” / “.DCM” extension) produced by imaging equipment (MRI" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "osirix" .
-
-<fw:tool4940931381669193674>
-  fw:resourceType "Tool" ;
-  fw:description  "The ms-data-core-api is a free" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "ms-data-core-api" .
-
-<fw:tool180773408246401237>
-  fw:resourceType "Tool" ;
-  fw:description  "deprecated" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "snpator" .
-
-<fw:tool-5607621352020703842>
-  fw:resourceType "Tool" ;
-  fw:description  "DISQOVER is a data integration platform for public" ;
-  fw:labels       ( "interoperability" ) ;
-  fw:lastUpdate   "2021-02-05" ;
-  fw:name         "disqover" .

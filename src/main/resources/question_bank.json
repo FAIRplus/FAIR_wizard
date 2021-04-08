@@ -5,44 +5,43 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Project owner",
+        "text": "Principle investigator",
         "labels": [
-          "Project owner"
+          "principle investigator"
         ],
         "next": "2"
       },
       {
-        "text": "Data curator",
+        "text": "Data manager",
         "labels": [
-          "Data curator"
+          "data manager"
         ],
         "next": "2"
       },
       {
-        "text": "Data owner (Researchers who generates data)",
+        "text": "Terminology manager",
         "labels": [
-          "Data owner"
+          "terminology manager"
         ],
         "next": "2"
       },
       {
-        "text": "Data consumer (Bioinformatician who perform data analysis)",
+        "text": "Data scientist",
         "labels": [
-          "Data consumer"
+          "data scientist"
         ],
         "next": "2"
       },
       {
-        "text": "Software technician (e.g. Developers who build data manage systems)",
+        "text": "ontologist",
         "labels": [
-          "Software technician"
+          "ontologist"
         ],
         "next": "2"
       },
       {
         "text": "Other",
         "labels": [
-          "Others"
         ],
         "next": "2"
       }
@@ -54,24 +53,24 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Retrospective data/finished projects",
+        "text": "Retrospective data",
         "labels": [
-          "Retrospective"
+          "retrospective"
         ],
         "next": "3"
       },
       {
-        "text": "Prospective data/ongoing projects",
+        "text": "Prospective data",
         "labels": [
-          "Prospective"
+          "prospective"
         ],
         "next": "3"
       },
       {
         "text": "I don't have project or data available",
         "labels": [
-          "Retrospective",
-          "Prospective"
+          "retrospective",
+          "prospective"
         ],
         "next": "4"
       }
@@ -83,16 +82,14 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "yes (WIP)",
+        "text": "Yes",
         "labels": [
-          "yes (WIP)"
         ],
         "next": "0"
       },
       {
-        "text": "no",
+        "text": "No",
         "labels": [
-          "no"
         ],
         "next": "4"
       }
@@ -106,28 +103,28 @@
       {
         "text": "Findability",
         "labels": [
-          "Findability"
+          "findability"
         ],
         "next": "5"
       },
       {
-        "text": "Accessibility(WIP)",
+        "text": "Accessibility",
         "labels": [
-          "Accessibility(WIP)"
+          "accessibility"
         ],
         "next": "0"
       },
       {
         "text": "Interoperability",
         "labels": [
-          "Interoperability"
+          "interoperability"
         ],
         "next": "5"
       },
       {
-        "text": "Reusability(WIP)",
+        "text": "Reusability",
         "labels": [
-          "Reusability(WIP)"
+          "reusability"
         ],
         "next": "0"
       }
@@ -139,9 +136,9 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Data archiving (WIP)",
+        "text": "Data archiving",
         "labels": [
-          "Data archiving (WIP)"
+          "Data archiving"
         ],
         "next": "0"
       },
@@ -167,7 +164,7 @@
     "multipleChoices": true,
     "answers": [
       {
-        "text": "Vocabulary (e.g. ontology, taxonomy)",
+        "text": "Vocabulary",
         "labels": [
           "Vocabulary",
           "ontology"
@@ -175,9 +172,9 @@
         "next": "0"
       },
       {
-        "text": "Minimum information (checklists)",
+        "text": "Minimum information",
         "labels": [
-          "Checklists"
+          "checklists"
         ],
         "next": "0"
       }
