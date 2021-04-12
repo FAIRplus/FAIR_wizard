@@ -3,7 +3,9 @@
   <div class="card-body">
     <h6 class="card-title">{{getResourceType(resource.resourceType)}}</h6>
     <p class="card-text text-muted">{{resource.description}}</p>
-    <span class="badge badge-dark">Findability</span> <!--list labels-->
+    <div class="fair-resource-badge-container">
+      <div *ngFor="let label of resource.labels" class="badge badge-dark fair-resource-badge">{{label}}</div>
+    </div>
     <a class="btn btn-primary btn-resource-url" [href]="resource.location" target="_blank">Go to resource</a>
   </div>
 </div>

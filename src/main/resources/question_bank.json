@@ -2,10 +2,13 @@
   {
     "id": "1",
     "question": "Which role fits you best?",
+    "category": "Step 2: Project examination",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Principle investigator",
+        "description": "",
         "labels": [
           "principle investigator"
         ],
@@ -13,6 +16,7 @@
       },
       {
         "text": "Data manager",
+        "description": "",
         "labels": [
           "data manager"
         ],
@@ -20,6 +24,7 @@
       },
       {
         "text": "Terminology manager",
+        "description": "",
         "labels": [
           "terminology manager"
         ],
@@ -27,6 +32,7 @@
       },
       {
         "text": "Data scientist",
+        "description": "",
         "labels": [
           "data scientist"
         ],
@@ -34,6 +40,7 @@
       },
       {
         "text": "ontologist",
+        "description": "",
         "labels": [
           "ontologist"
         ],
@@ -41,6 +48,7 @@
       },
       {
         "text": "Other",
+        "description": "",
         "labels": [
         ],
         "next": "2"
@@ -50,10 +58,13 @@
   {
     "id": "2",
     "question": "What is the status of your project or dataset?",
+    "category": "Step 2: Project examination",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Retrospective data",
+        "description": "",
         "labels": [
           "retrospective"
         ],
@@ -61,6 +72,7 @@
       },
       {
         "text": "Prospective data",
+        "description": "",
         "labels": [
           "prospective"
         ],
@@ -68,6 +80,7 @@
       },
       {
         "text": "I don't have project or data available",
+        "description": "",
         "labels": [
           "retrospective",
           "prospective"
@@ -79,16 +92,20 @@
   {
     "id": "3",
     "question": "Would you like to perform FAIR assessment first?",
+    "category": "Step 3: Assessment",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Yes",
+        "description": "",
         "labels": [
         ],
         "next": "0"
       },
       {
         "text": "No",
+        "description": "",
         "labels": [
         ],
         "next": "4"
@@ -98,10 +115,13 @@
   {
     "id": "4",
     "question": "Which aspect of FAIR you'd like to improve?",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": true,
     "answers": [
       {
         "text": "Findability",
+        "description": "",
         "labels": [
           "findability"
         ],
@@ -109,6 +129,7 @@
       },
       {
         "text": "Accessibility",
+        "description": "",
         "labels": [
           "accessibility"
         ],
@@ -116,6 +137,7 @@
       },
       {
         "text": "Interoperability",
+        "description": "",
         "labels": [
           "interoperability"
         ],
@@ -123,6 +145,7 @@
       },
       {
         "text": "Reusability",
+        "description": "",
         "labels": [
           "reusability"
         ],
@@ -133,10 +156,13 @@
   {
     "id": "5",
     "question": "Which topic are you interested in ?",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Data archiving",
+        "description": "",
         "labels": [
           "Data archiving"
         ],
@@ -144,6 +170,7 @@
       },
       {
         "text": "Data standards",
+        "description": "",
         "labels": [
           "Data standards"
         ],
@@ -151,6 +178,7 @@
       },
       {
         "text": "Data annotation",
+        "description": "",
         "labels": [
           "Data annotation"
         ],
@@ -161,10 +189,13 @@
   {
     "id": "6",
     "question": "Select the topics below",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": true,
     "answers": [
       {
         "text": "Vocabulary",
+        "description": "",
         "labels": [
           "Vocabulary",
           "ontology"
@@ -173,6 +204,7 @@
       },
       {
         "text": "Minimum information",
+        "description": "",
         "labels": [
           "checklists"
         ],
