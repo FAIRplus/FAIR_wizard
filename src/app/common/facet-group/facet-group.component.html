@@ -1,0 +1,6 @@
+<div class="facet-group">
+  <div class="facet-group-heading">{{group}}</div>
+  <div *ngFor="let facet of facets | keyvalue">
+    <app-facet [attribute]="facet.key" [count]="facet.value"></app-facet>
+  </div>
+</div>

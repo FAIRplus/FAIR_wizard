@@ -15,6 +15,10 @@ import {ProcessDialogComponent} from './common/process-dialog/process-dialog.com
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { FairResourceComponent } from './common/fair-resource/fair-resource.component';
 import {FormsModule} from "@angular/forms";
+import { FairResourcesShowcaseComponent } from './common/fair-resources-showcase/fair-resources-showcase.component';
+import { FacetPanelComponent } from './common/facet-panel/facet-panel.component';
+import { FacetGroupComponent } from './common/facet-group/facet-group.component';
+import { FacetComponent } from './common/facet/facet.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import {FormsModule} from "@angular/forms";
     FairResourcesComponent,
     ProcessDiagramComponent,
     ProcessDialogComponent,
-    FairResourceComponent
+    FairResourceComponent,
+    FairResourcesShowcaseComponent,
+    FacetPanelComponent,
+    FacetGroupComponent,
+    FacetComponent
   ],
   imports: [
     BrowserModule,

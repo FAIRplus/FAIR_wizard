@@ -1,0 +1,44 @@
+.resource-container {
+  width: 100%;
+  clear: both;
+}
+
+.resource-container-head {
+  clear: both;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.resource-card {
+  width: 12vw;
+  height: 10vw;
+  float: left;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.showcase-navigator {
+  right: 10px;
+  top: 0;
+  height: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 50px 20px;
+  font-size: 20px;
+}
+
+.showcase-navigator-fragment {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.showcase-navigator-fragment:hover {
+  cursor: pointer;
+  font-size: 25px;
+  color: purple;
+}
+
+.showcase-navigator-btn {
+  margin: 5px 0;
+  width: 100%;
+}

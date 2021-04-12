@@ -1,0 +1,8 @@
+<div class="facet-panel">
+  <h4>Filter Resources</h4>
+  <div *ngFor="let fg of facetGroups | keyvalue">
+    <app-facet-group [group]="fg.key" [facets]="fg.value"></app-facet-group>
+  </div>
+  <button class="btn-primary facet-btn">Apply</button>
+  <button class="btn-secondary facet-btn">Clear</button>
+</div>

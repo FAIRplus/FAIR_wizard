@@ -4,6 +4,7 @@ import {WizardComponent} from "./wizard/wizard.component";
 import {HomeComponent} from "./home/home.component";
 import {ResourcesComponent} from "./resources/resources.component";
 import {FairResourceComponent} from "./common/fair-resource/fair-resource.component";
+import {FairResourcesShowcaseComponent} from "./common/fair-resources-showcase/fair-resources-showcase.component";
 
 const routes: Routes = [
   {path: 'index', component: HomeComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'wizard', component: WizardComponent},
   {path: 'resources', component: ResourcesComponent},
   {path: 'resource', component: FairResourceComponent},
+  {path: 'showcase', component: FairResourcesShowcaseComponent},
 ];
 
 @NgModule({
