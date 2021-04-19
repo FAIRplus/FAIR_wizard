@@ -1,10 +1,10 @@
 <div class="card decision-node">
+  <div class="card-header">{{question.category}}</div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-10">
-<!--        <div class="card-title question">{{question.category}}</div>-->
         <div class="card-title question">{{question.question}}</div>
-<!--        <div class="card-title question">{{question.description}}</div>-->
+        <div class="card-subtitle">{{question.description}}</div>
         <div *ngFor="let answer of question.answers">
           <div class="badge badge-primary answer" (click)="toggleAnswer(answer)"
                [ngClass]="answers.includes(answer) ? 'answer-selected' : 'answer'">{{answer.text}}</div>

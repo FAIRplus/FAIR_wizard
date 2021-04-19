@@ -3,7 +3,7 @@
     "id": "1",
     "question": "Which role fits you best?",
     "category": "Step 2: Project examination",
-    "description": "",
+    "description": "Select a single role that matches as close as possible",
     "multipleChoices": false,
     "answers": [
       {
