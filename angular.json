@@ -133,6 +133,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fair-wizard"
+    }
+  },
+  "defaultProject": "fair-wizard",
+  "cli": {
+    "analytics": "a386e6b9-76d4-45a3-8365-0dc05064ca2a"
+  }
 }

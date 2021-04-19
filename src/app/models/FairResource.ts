@@ -5,6 +5,7 @@ export interface FairResource {
   description: string;
   image: string;
   resourceType: FairResourceType;
+  labels: string[];
 }
 
 export enum FairResourceType {

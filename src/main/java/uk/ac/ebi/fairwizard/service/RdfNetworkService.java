@@ -88,6 +88,8 @@ public class RdfNetworkService {
   }
 
   private Set<FairResource> searchResourcesWithFilters(List<String> labels) {
+    Set<FairResource> fairResources = new HashSet<>();
+
     StringBuilder labelBuilder = new StringBuilder();
     for (String label : labels) {
       labelBuilder.append("\"").append(label).append("\",");
@@ -98,20 +100,28 @@ public class RdfNetworkService {
     String query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
       "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label . FILTER (?label in (" + labelQuery + ")) }";
+    queryRdfGraph(query, fairResources);
 
-    return queryRdfGraph(query);
+    query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT DISTINCT ?x WHERE { ?x  fw:usecase/rdf:rest*/rdf:first ?usecase . FILTER (?usecase in (" + labelQuery + ")) }";
+    queryRdfGraph(query, fairResources);
+
+    return fairResources;
   }
 
   private Set<FairResource> searchResourcesAll() {
+    Set<FairResource> fairResources = new HashSet<>();
+
     String query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
       "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label }";
+    queryRdfGraph(query, fairResources);
 
-    return queryRdfGraph(query);
+    return fairResources;
   }
 
-  private Set<FairResource> queryRdfGraph(String queryString) {
-    Set<FairResource> fairResources = new HashSet<>();
+  private void queryRdfGraph(String queryString, Set<FairResource> fairResources) {
     Query query = QueryFactory.create(queryString);
     try (QueryExecution execution = QueryExecutionFactory.create(query, fairResourceGraph)) {
       ResultSet results = execution.execSelect();
@@ -121,7 +131,6 @@ public class RdfNetworkService {
         fairResources.add(fairResource);
       }
     }
-    return fairResources;
   }
 
   private Model loadResources() throws ApplicationStatusException {

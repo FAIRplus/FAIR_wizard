@@ -2,47 +2,54 @@
   {
     "id": "1",
     "question": "Which role fits you best?",
+    "category": "Step 2: Project examination",
+    "description": "Select a single role that matches as close as possible",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Project owner",
+        "text": "Principle investigator",
+        "description": "",
         "labels": [
-          "Project owner"
+          "principle investigator"
         ],
         "next": "2"
       },
       {
-        "text": "Data curator",
+        "text": "Data manager",
+        "description": "",
         "labels": [
-          "Data curator"
+          "data manager"
         ],
         "next": "2"
       },
       {
-        "text": "Data owner (Researchers who generates data)",
+        "text": "Terminology manager",
+        "description": "",
         "labels": [
-          "Data owner"
+          "terminology manager"
         ],
         "next": "2"
       },
       {
-        "text": "Data consumer (Bioinformatician who perform data analysis)",
+        "text": "Data scientist",
+        "description": "",
         "labels": [
-          "Data consumer"
+          "data scientist"
         ],
         "next": "2"
       },
       {
-        "text": "Software technician (e.g. Developers who build data manage systems)",
+        "text": "ontologist",
+        "description": "",
         "labels": [
-          "Software technician"
+          "ontologist"
         ],
         "next": "2"
       },
       {
         "text": "Other",
+        "description": "",
         "labels": [
-          "Others"
         ],
         "next": "2"
       }
@@ -51,27 +58,32 @@
   {
     "id": "2",
     "question": "What is the status of your project or dataset?",
+    "category": "Step 2: Project examination",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Retrospective data/finished projects",
+        "text": "Retrospective data",
+        "description": "",
         "labels": [
-          "Retrospective"
+          "retrospective"
         ],
         "next": "3"
       },
       {
-        "text": "Prospective data/ongoing projects",
+        "text": "Prospective data",
+        "description": "",
         "labels": [
-          "Prospective"
+          "prospective"
         ],
         "next": "3"
       },
       {
         "text": "I don't have project or data available",
+        "description": "",
         "labels": [
-          "Retrospective",
-          "Prospective"
+          "retrospective",
+          "prospective"
         ],
         "next": "4"
       }
@@ -80,19 +92,21 @@
   {
     "id": "3",
     "question": "Would you like to perform FAIR assessment first?",
+    "category": "Step 3: Assessment",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "yes (WIP)",
+        "text": "Yes",
+        "description": "",
         "labels": [
-          "yes (WIP)"
         ],
         "next": "0"
       },
       {
-        "text": "no",
+        "text": "No",
+        "description": "",
         "labels": [
-          "no"
         ],
         "next": "4"
       }
@@ -101,33 +115,39 @@
   {
     "id": "4",
     "question": "Which aspect of FAIR you'd like to improve?",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": true,
     "answers": [
       {
         "text": "Findability",
+        "description": "",
         "labels": [
-          "Findability"
+          "findability"
         ],
         "next": "5"
       },
       {
-        "text": "Accessibility(WIP)",
+        "text": "Accessibility",
+        "description": "",
         "labels": [
-          "Accessibility(WIP)"
+          "accessibility"
         ],
         "next": "0"
       },
       {
         "text": "Interoperability",
+        "description": "",
         "labels": [
-          "Interoperability"
+          "interoperability"
         ],
         "next": "5"
       },
       {
-        "text": "Reusability(WIP)",
+        "text": "Reusability",
+        "description": "",
         "labels": [
-          "Reusability(WIP)"
+          "reusability"
         ],
         "next": "0"
       }
@@ -136,17 +156,21 @@
   {
     "id": "5",
     "question": "Which topic are you interested in ?",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Data archiving (WIP)",
+        "text": "Data archiving",
+        "description": "",
         "labels": [
-          "Data archiving (WIP)"
+          "Data archiving"
         ],
         "next": "0"
       },
       {
         "text": "Data standards",
+        "description": "",
         "labels": [
           "Data standards"
         ],
@@ -154,6 +178,7 @@
       },
       {
         "text": "Data annotation",
+        "description": "",
         "labels": [
           "Data annotation"
         ],
@@ -164,10 +189,13 @@
   {
     "id": "6",
     "question": "Select the topics below",
+    "category": "Step 4: Solution design",
+    "description": "",
     "multipleChoices": true,
     "answers": [
       {
-        "text": "Vocabulary (e.g. ontology, taxonomy)",
+        "text": "Vocabulary",
+        "description": "",
         "labels": [
           "Vocabulary",
           "ontology"
@@ -175,9 +203,10 @@
         "next": "0"
       },
       {
-        "text": "Minimum information (checklists)",
+        "text": "Minimum information",
+        "description": "",
         "labels": [
-          "Checklists"
+          "checklists"
         ],
         "next": "0"
       }
