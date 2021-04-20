@@ -20,13 +20,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class RdfNetworkService {
   private Model fairResourceGraph;
-  private ApplicationConfig applicationConfig;
-  private ResourceLoader resourceLoader;
-  private RdfToFairResourceConverter rdfToFairResourceConverter;
+  private final ApplicationConfig applicationConfig;
+  private final ResourceLoader resourceLoader;
+  private final RdfToFairResourceConverter rdfToFairResourceConverter;
 
   public RdfNetworkService(ApplicationConfig applicationConfig, ResourceLoader resourceLoader,
                            RdfToFairResourceConverter rdfToFairResourceConverter) {
@@ -57,34 +58,87 @@ public class RdfNetworkService {
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
       "SELECT ?predicate, ?subject WHERE { ?subject ?predicate " + processName + " }";
 
-
-    List<ProcessNetworkElement> network = new ArrayList<>();
     Set<FairResource> resources = searchResourcesAll();
+    return populateNetwork(resources);
+  }
+
+  public List<ProcessNetworkElement> getResourceNetwork(String resourceId) {
+    Set<FairResource> resources = new HashSet<>();
+    resourceId = "fw:process-8298344911298610653";
+
+    String queryString = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT ?x WHERE { ?x ?predicate ?y . FILTER (?x = <" + resourceId + ">) }";
+    queryRdfGraph(queryString, resources);
+
+    queryString = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT DISTINCT ?x WHERE { ?x fw:relatesTo/rdf:rest*/rdf:first ?o . FILTER (?o in (<fw:process-8298344911298610653>)) }";
+    queryRdfGraph(queryString, resources);
+
+    queryString = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT DISTINCT ?x WHERE { ?x fw:requires/rdf:rest*/rdf:first ?o . FILTER (?o in (<fw:process-8298344911298610653>)) }";
+    queryRdfGraph(queryString, resources);
+
+    queryString = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT DISTINCT ?x WHERE { ?x fw:isAfter/rdf:rest*/rdf:first ?o . FILTER (?o in (<fw:process-8298344911298610653>)) }";
+    queryRdfGraph(queryString, resources);
+
+    queryString = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
+      "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+      "SELECT DISTINCT ?x WHERE { ?x fw:includes/rdf:rest*/rdf:first ?o . FILTER (?o in (<fw:process-8298344911298610653>)) }";
+    queryRdfGraph(queryString, resources);
+
+    return populateNetwork(resources);
+  }
+
+  private List<ProcessNetworkElement> populateNetwork(Set<FairResource> resources) {
+    List<ProcessNetworkElement> network = new ArrayList<>();
+    Set<String> resourceIds = resources.stream().map(FairResource::getId).collect(Collectors.toSet());
+
     for (FairResource resource : resources) {
       network.add(new ProcessNetworkElement(new ProcessNode(resource.getId(), resource.getName(), resource.getResourceType(), resource.getDescription())));
       if (resource.getRelatesTo() != null && !resource.getRelatesTo().isEmpty()) {
         for (FairResource r : resource.getRelatesTo()) {
-          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "relatesTo")));
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "relatesTo")));
+          }
         }
       }
       if (resource.getRequires() != null && !resource.getRequires().isEmpty()) {
         for (FairResource r : resource.getRequires()) {
-          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "requires")));
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "requires")));
+          }
         }
       }
       if (resource.getIsAfter() != null && !resource.getIsAfter().isEmpty()) {
         for (FairResource r : resource.getIsAfter()) {
-          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "isAfter")));
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "isAfter")));
+          }
         }
       }
       if (resource.getIncludes() != null && !resource.getIncludes().isEmpty()) {
         for (FairResource r : resource.getIncludes()) {
-          network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "includes")));
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "includes")));
+          }
         }
       }
     }
 
     return network;
+  }
+
+  private void addNetworkLinks(FairResource resource, List<FairResource> resourceList, List<ProcessNetworkElement> network) {
+
+  }
+
+  public List<ProcessNetworkElement> getConnectedResources() {
+    return null;
   }
 
   private Set<FairResource> searchResourcesWithFilters(List<String> labels) {
@@ -126,7 +180,7 @@ public class RdfNetworkService {
     try (QueryExecution execution = QueryExecutionFactory.create(query, fairResourceGraph)) {
       ResultSet results = execution.execSelect();
       while (results.hasNext()) {
-        Resource resource = results.nextSolution().getResource("x");
+        Resource resource = results.next().getResource("x");
         FairResource fairResource = rdfToFairResourceConverter.convert(resource);
         fairResources.add(fairResource);
       }

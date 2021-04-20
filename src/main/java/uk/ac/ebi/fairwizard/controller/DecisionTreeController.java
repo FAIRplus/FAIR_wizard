@@ -62,4 +62,9 @@ public class DecisionTreeController {
     return rdfNetworkService.getResourceNetwork();
   }
 
+  @GetMapping("/network")
+  public List<ProcessNetworkElement> getNetwork(@RequestParam(required = false) String resourceId) {
+    return rdfNetworkService.getResourceNetwork("");
+  }
+
 }
