@@ -58,8 +58,10 @@ public class DecisionTreeController {
 //      return processNetworkService.getResourceNetwork();
 //    }
 //    return processNetworkService.getResourceNetwork();
+//    return rdfNetworkService.getResourceNetwork();
 
-    return rdfNetworkService.getResourceNetwork();
+    Set<FairResource> resources = rdfNetworkService.searchResources(filters);
+    return rdfNetworkService.populateNetwork(resources);
   }
 
   @GetMapping("/network")

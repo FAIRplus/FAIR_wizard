@@ -94,7 +94,7 @@ public class RdfNetworkService {
     return populateNetwork(resources);
   }
 
-  private List<ProcessNetworkElement> populateNetwork(Set<FairResource> resources) {
+  public List<ProcessNetworkElement> populateNetwork(Set<FairResource> resources) {
     List<ProcessNetworkElement> network = new ArrayList<>();
     Set<String> resourceIds = resources.stream().map(FairResource::getId).collect(Collectors.toSet());
 
@@ -133,9 +133,6 @@ public class RdfNetworkService {
     return network;
   }
 
-  private void addNetworkLinks(FairResource resource, List<FairResource> resourceList, List<ProcessNetworkElement> network) {
-
-  }
 
   public List<ProcessNetworkElement> getConnectedResources() {
     return null;
