@@ -1,5 +1,12 @@
 <div class="fair-wizard">
   <h1 class="page-title">FAIRification Wizard</h1>
+
+  <div class="alert-warning"
+       style="margin: 0 auto; border: 1px solid gray; border-radius: 5px; margin-bottom: 3px; padding: 3px">
+    Some features in this wizard are under construction. If you are just testing this out, we recommend following this path in the question list.<br>
+    <b>Data Manager > Retrospective data > No > Interoperability > Data standards</b>
+  </div>
+
   <div *ngFor="let d of decisions; let i = index">
     <app-decision-path
       [decision]="d"
