@@ -37,8 +37,6 @@ deploy:
     - chmod 700 ~/.ssh
     - ssh-keyscan 45.88.80.100 >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - ssh -v -o StrictHostKeyChecking=no ubuntu@45.88.80.100 "cd FAIR_wizard"
-    - ssh -v -o StrictHostKeyChecking=no ubuntu@45.88.80.100 "./mvnw clean install -e"
-    - ssh -v -o StrictHostKeyChecking=no ubuntu@45.88.80.100 "docker-compose up -d --build"
+    - ssh -v -o StrictHostKeyChecking=no ubuntu@45.88.80.100 "cd FAIR_wizard ; ./mvnw clean install -e && docker-compose up -d --build"
   only:
     - deployment_pipeline
