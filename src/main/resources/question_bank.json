@@ -1,55 +1,32 @@
 [
   {
     "id": "1",
-    "question": "Which role fits you best?",
-    "category": "Step 2: Project examination",
-    "description": "Select a single role that matches as close as possible",
+    "question": "What's your role in data FAIRification",
+    "category": "Step 1: Project examination",
+    "description": "Please select one most appropriate answer",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Principle investigator",
-        "description": "",
+        "text": "Project manager",
+        "description": "Project manager or project owner who plays the lead role in planning, executing, monitoring, controlling, etc. ",
         "labels": [
-          "principle investigator"
+          "project manager"
         ],
         "next": "2"
       },
       {
-        "text": "Data manager",
-        "description": "",
+        "text": "Data scientist or software engineer",
+        "description": "Bioinformatician or software enigineer whose work involves computational analysis.",
         "labels": [
-          "data manager"
+          "software engineer","bioinformatician","computational biologist"
         ],
         "next": "2"
       },
       {
-        "text": "Terminology manager",
-        "description": "",
+        "text": "Biologist",
+        "description": "People who mainly works with biological matter, chemicals and perform experiments. ",
         "labels": [
-          "terminology manager"
-        ],
-        "next": "2"
-      },
-      {
-        "text": "Data scientist",
-        "description": "",
-        "labels": [
-          "data scientist"
-        ],
-        "next": "2"
-      },
-      {
-        "text": "ontologist",
-        "description": "",
-        "labels": [
-          "ontologist"
-        ],
-        "next": "2"
-      },
-      {
-        "text": "Other",
-        "description": "",
-        "labels": [
+          "biologist"
         ],
         "next": "2"
       }
@@ -57,14 +34,14 @@
   },
   {
     "id": "2",
-    "question": "What is the status of your project or dataset?",
-    "category": "Step 2: Project examination",
-    "description": "",
+    "question": "What is the status of the dataset to be FAIRified",
+    "category": "Step 1: Project examination",
+    "description": "Please indicate the status of your project or dataset",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Retrospective data",
-        "description": "",
+        "description": "Data that has been generated in the past and needs to be improved",
         "labels": [
           "retrospective"
         ],
@@ -72,14 +49,14 @@
       },
       {
         "text": "Prospective data",
-        "description": "",
+        "description": "Data to be generated or at very early stage of data generation",
         "labels": [
           "prospective"
         ],
-        "next": "3"
+        "next": "4"
       },
       {
-        "text": "I don't have project or data available",
+        "text": "I have no data available",
         "description": "",
         "labels": [
           "retrospective",
@@ -92,14 +69,14 @@
   {
     "id": "3",
     "question": "Would you like to perform FAIR assessment first?",
-    "category": "Step 3: Assessment",
-    "description": "",
+    "category": "Step 2: Assessment",
+    "description": "An assessment evaluates the FAIR status of the data.",
     "multipleChoices": false,
     "answers": [
       {
         "text": "Yes",
         "description": "",
-        "labels": [
+        "labels": [ "assessment"
         ],
         "next": "0"
       },
@@ -115,13 +92,13 @@
   {
     "id": "4",
     "question": "Which aspect of FAIR you'd like to improve?",
-    "category": "Step 4: Solution design",
+    "category": "Step 3: Solution design",
     "description": "",
     "multipleChoices": true,
     "answers": [
       {
         "text": "Findability",
-        "description": "",
+        "description": "To make data and metadata easier to find for both computers and humans",
         "labels": [
           "findability"
         ],
@@ -129,84 +106,165 @@
       },
       {
         "text": "Accessibility",
-        "description": "",
+        "description": "To make data accessible to both humans and machines.",
         "labels": [
           "accessibility"
         ],
-        "next": "0"
+        "next": "6"
       },
       {
         "text": "Interoperability",
-        "description": "",
+        "description": "To ensure the data can be integrated with other data, and supporting different applications or workflows to analysis, store and process the data.",
         "labels": [
           "interoperability"
         ],
-        "next": "5"
+        "next": "7"
       },
       {
         "text": "Reusability",
-        "description": "",
+        "description": "To make the data reusable by providing well-described data and metadata.",
         "labels": [
           "reusability"
         ],
-        "next": "0"
+        "next": "8"
       }
     ]
   },
   {
     "id": "5",
-    "question": "Which topic are you interested in ?",
-    "category": "Step 4: Solution design",
-    "description": "",
+    "question": "Which topic would you like to focus on",
+    "category": "Step 3: Solution design",
+    "description": "Key areas in improving data findability",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Data archiving",
+        "text": "Identifiers",
         "description": "",
         "labels": [
-          "Data archiving"
+          "identifier"
         ],
         "next": "0"
       },
       {
-        "text": "Data standards",
+        "text": "Search Engine Optimization",
         "description": "",
         "labels": [
-          "Data standards"
+          "search engine","data markup"
         ],
-        "next": "6"
+        "next": "0"
       },
       {
-        "text": "Data annotation",
-        "description": "",
+        "text": "Data sharing",
+        "description": " ",
         "labels": [
-          "Data annotation"
+          "Data sharing"
         ],
-        "next": "6"
+        "next": "0"
       }
     ]
   },
   {
     "id": "6",
-    "question": "Select the topics below",
-    "category": "Step 4: Solution design",
-    "description": "",
+    "question": "Which topic would you like to focus on",
+    "category": "Step 3: Solution design",
+    "description": "Key areas in improving data accessibility",
     "multipleChoices": true,
     "answers": [
       {
-        "text": "Vocabulary",
-        "description": "",
+        "text": "Data transfer",
+        "description": "Exchanging large files between systems or organisations",
         "labels": [
-          "Vocabulary",
-          "ontology"
+          "data transfer"
         ],
         "next": "0"
       },
       {
-        "text": "Minimum information",
+        "text": "Data deposition",
         "description": "",
         "labels": [
-          "checklists"
+          "data deposition"
+        ],
+        "next": "0"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "question": "Which topic would you like to focus on",
+    "category": "Step 3: Solution design",
+    "description": "Key areas in improving data interoperability",
+    "multipleChoices": true,
+    "answers": [
+      {
+        "text": "Metadata profile",
+        "description": "",
+        "labels": [
+          "metadata profile"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data formatting",
+        "description": "",
+        "labels": [
+          "data formatting"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data annotation",
+        "description": "",
+        "labels": [
+          "data annotation"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data vocabularies",
+        "description": "",
+        "labels": [
+          "vocabulary"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data validation",
+        "description": "",
+        "labels": [
+          "validation"
+        ],
+        "next": "0"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "question": "Which topic would you like to focus on",
+    "category": "Step 3: Solution design",
+    "description": "Key areas in improving data reusability",
+    "multipleChoices": true,
+    "answers": [
+      {
+        "text": "Licensing",
+        "description": "",
+        "labels": [
+          "licensing"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Minimum information checklists",
+        "description": "Minimum information required during data collection",
+        "labels": [
+          "checklist"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Provenance",
+        "description": "",
+        "labels": [
+          "provenance"
         ],
         "next": "0"
       }

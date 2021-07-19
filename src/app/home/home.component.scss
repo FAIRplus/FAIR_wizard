@@ -5,7 +5,6 @@
   border-top: 1px solid #ffffff;
   overflow: hidden
 }
-
 .fair-home {
   width: 60%;
   margin: 0 auto;
@@ -38,21 +37,20 @@
   text-align: justify;
   font-size: 18px;
 }
-.card {
-  width: 18%;
-  margin-left: 1%;
-  margin-right: 1%;
-  float: left;
-  text-align: center;
-  border-width: 0;
-  background-color: #310562;
-}
 
 .btn-fair-wizard-wrapper {
   overflow: hidden;
   width: 100%;
   padding-top: 50px;
   margin-bottom: 30px;
+}
+.table{
+  background-color:#C1C1C1;
+  font-size:15px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .btn-fair-wizard {
@@ -71,4 +69,17 @@
   background-color: #ff4057;
   border: 1px solid #ff4057;
   cursor: pointer;
+}
+.column {
+  float: left;
+  width: 30%;
+  padding: 0 10px;
+}
+
+.btn-homepage-references {
+
+  width: 90%;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 10px;
 }
