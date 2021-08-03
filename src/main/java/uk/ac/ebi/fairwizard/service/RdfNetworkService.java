@@ -153,6 +153,13 @@ public class RdfNetworkService {
       "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label . FILTER (?label in (" + labelQuery + ")) }";
     queryRdfGraph(query, fairResources);
 
+    // add relateTo resources
+    List<FairResource> relateToList = new ArrayList<>();
+    for (FairResource r : fairResources) {
+      relateToList.addAll(getRelatedResources(r));
+    }
+    fairResources.addAll(relateToList);
+
     query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
       "SELECT DISTINCT ?x WHERE { ?x  fw:usecase/rdf:rest*/rdf:first ?usecase . FILTER (?usecase in (" + labelQuery + ")) }";
@@ -182,6 +189,13 @@ public class RdfNetworkService {
         fairResources.add(fairResource);
       }
     }
+  }
+
+  private List<FairResource> getRelatedResources(FairResource resource) {
+    return resource.getRelatesTo().stream()
+                   .map(r -> fairResourceGraph.getResource(r.getId()))
+                   .map(rdfToFairResourceConverter::convert)
+                   .collect(Collectors.toList());
   }
 
   private Model loadResources() throws ApplicationStatusException {
