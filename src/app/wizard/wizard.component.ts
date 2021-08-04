@@ -78,6 +78,16 @@ export class WizardComponent implements OnInit {
     this.generateSearchUrl();
   }
 
+  get filters() : string[] {
+    let filters = [];
+    for (let decision of this.decisions) {
+      for (let answer of decision.answers) {
+        filters.push(answer.labels);
+      }
+    }
+    return filters;
+  }
+
   generateQueryParams() {
     let params = [];
     for (let decision of this.decisions) {

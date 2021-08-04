@@ -426,14 +426,14 @@
   fw:labels       ( ) ;
   fw:lastUpdate   "2021-05-28" ;
   fw:name         "data aggregation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-data-annotation>
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-05-26" ;
   fw:name         "data annotation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-data-deposition>
@@ -442,7 +442,7 @@
   fw:labels       ( "data sharing" ) ;
   fw:lastUpdate   "2021-05-24" ;
   fw:name         "data deposition" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-data-query-and-retrieval>
@@ -451,7 +451,7 @@
   fw:labels       ( "data sharing" ) ;
   fw:lastUpdate   "2021-06-30" ;
   fw:name         "search engine" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-data-sharing>
@@ -469,7 +469,7 @@
   fw:labels       ( ) ;
   fw:lastUpdate   "2021-05-26" ;
   fw:name         "data transformation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-data-validation>
@@ -477,7 +477,7 @@
   fw:labels       ( "data standards" "data models" "uc-metadata-standards") ;
   fw:lastUpdate   "2021-05-27" ;
   fw:name         "data validation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
+  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-evaluation-against-standards>
@@ -495,21 +495,21 @@
   fw:labels       ( ) ;
   fw:lastUpdate   "2021-05-27" ;
   fw:name         "identifier mapping" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
+  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-identifier-minting>
   fw:labels       ( ) ;
   fw:lastUpdate   "2021-05-28" ;
   fw:name         "identifier minting" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
+  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-identifier-resolution>
   fw:labels       ( ) ;
   fw:lastUpdate   "2021-05-28" ;
   fw:name         "identifier resolution" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
+  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-identifier-strategies>
@@ -546,7 +546,7 @@
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-06-30" ;
   fw:name         "ontology alignment" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
+  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-ontology-annotation>
@@ -555,14 +555,14 @@
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-05-24" ;
   fw:name         "ontology annotation" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
+  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-ontology-engineering>
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-05-26" ;
   fw:name         "ontology engineering" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
+  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-ontology-management>
@@ -571,14 +571,14 @@
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-05-27" ;
   fw:name         "ontology management" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
+  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
   fw:resourceType "Process" .
 
 <fw:Process-ontology-recommendation>
   fw:labels       ( "vocabulary" ) ;
   fw:lastUpdate   "2021-05-28" ;
   fw:name         "ontology recommendation" ;
-  fw:relatesTo    ( "interoperability requirements" "uc-vocabulary-annotation") ;
+  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
   fw:resourceType "Process" .
 
 <fw:Recipe-an-inventory-of-tools-for-converting-your-data-to-rdf>
@@ -588,8 +588,7 @@
   fw:labels       ( "data markup" "data annotation" "data formatting" ) ;
   fw:description
                   "Present an inventory of a selection of popular tools for converting datasets in different formats (e.g. CSV, JSON, RDBMs, XML) to RDF, and to provide guidance for choosing the right tool" ;
-  fw:resourceType "Recipe" ;
-  fw:relatesTo    ( "???" ) .
+  fw:resourceType "Recipe" .
 
 <fw:Recipe-application-ontology-for-metabolomics>
   fw:lastUpdate   "2021-06-30" ;
@@ -609,7 +608,7 @@
   fw:description
                   "To detail the key elements for the creation of a data catalogue to enable data findability in an organisation." ;
   fw:labels       ( "data deposition" ) ;
-  fw:relatesTo    ( <fw:Tool-dats> <fw:Tool-dcat> ) ;
+  fw:relatesTo    ( ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-building-an-application-ontology-with-robot>
@@ -648,6 +647,7 @@
   fw:location     "https://fairsharing.org/FAIRsharing.26dmba" ;
   fw:description
                   "mzML was formed to amalgamate two formats for encoding raw spectrometer data; mzData developed by the PSI, and, mzXML developed at the Seattle Proteome Center at the Institute for Systems Biology. The PSI, with full participation by the ISB, developed the new format by taking the best aspects of each of the precursors to form a single, less confusing, format. " ;
+  fw:name         "Tool mz markup language" ;
   fw:labels       ( "mass spectrometry" "data markup" "data formatting" ) ;
   fw:lastUpdate   "2021-06-30" ;
   fw:resourceType "Tool" .
@@ -1087,7 +1087,7 @@
   fw:description
                   "Provenance covers the elements detailing how the data was produced by identifying the agents (human, software, workflows) so a certain level of tracability and accountability can be established. " ;
   fw:name         "Provenance information" ;
-  fw:relatesTo    ( <fw:tool-prov-vocabulary> ) ;
+  fw:relatesTo    ( <fw:Tool-prov-vocabulary> ) ;
   fw:labels       ( "provenance" ) ;
   fw:resourceType "Recipe" .
 
