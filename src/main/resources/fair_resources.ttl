@@ -413,174 +413,6 @@
   fw:name         "RDA-R1.3-02M: Metadata is expressed in compliance with a machine-understandable community standard" ;
   fw:resourceType "Indicator" .
 
-<fw:Process-data-access>
-  fw:description  "Determine data access for FAIRification, including ethics, DTAs, licensing et" ;
-  fw:labels       ( "licensing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "data access" ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-aggregation>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "data aggregation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-annotation>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "data annotation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-deposition>
-  fw:description
-                  "The process of loading data to hosting (end) destinations, such as public data archives and data warehouses." ;
-  fw:labels       ( "data sharing" ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:name         "data deposition" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-query-and-retrieval>
-  fw:description
-                  "The process of extracting structured or unstructured data from different sources. The process of identifying and obtaining data from data management systems." ;
-  fw:labels       ( "data sharing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:name         "search engine" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-sharing>
-  fw:description  "Submit data to chosen hosting solution for public sharing and dissemination" ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "data sharing" ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-transformation>
-  fw:description
-                  "The process of converting the data format, structure, and value for a specific goal, which may include meeting a specific data standards." ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "data transformation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-validation>
-  fw:description  "The process of validating data against specific data standards, data formats, and data models." ;
-  fw:labels       ( "data standards" "data models" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "data validation" ;
-  fw:relatesTo    ( "metadata strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-evaluation-against-standards>
-  fw:description  "Compare datasets to community standards" ;
-  fw:labels       ( "data standards" "data models" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-05-23" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "evaluation against standards" ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-mapping>
-  fw:description
-                  "The process of cross linking different identifiers for the same object to support data exchange across databases." ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "identifier mapping" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-minting>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "identifier minting" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-resolution>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "identifier resolution" ;
-  fw:relatesTo    ( "identifier strategies" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-strategies>
-  fw:description  "Determine identifier strategy for data types and assign identifiers in accordance with strategy" ;
-  fw:labels       ( "identifier" "metadata" "accession" ) ;
-  fw:lastUpdate   "2021-05-22" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "identifier strategies" ;
-  fw:resourceType "Process" .
-
-<fw:Process-interoperability-requirements>
-  fw:description
-                  "Determine interoperability requirement for dataset (e,g, consumption of data for downstream analysis)" ;
-  fw:labels       ( "vocabularies" "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-21" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "interoperability requirements" ;
-  fw:resourceType "Process" .
-
-<fw:Process-metadata-strategies>
-  fw:description  "Apply metadata strategies to datasets" ;
-  fw:labels       ( "metadata" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "metadata strategies" ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-alignment>
-  fw:description
-                  "The process of determining correspondences between equivalent concepts in alternative ontologies, and other vocabularies. This may include mapping to convey different levels of granularity." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:name         "ontology alignment" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-annotation>
-  fw:description
-                  "The process of linking free text or data items to tokens (defined terms from a lexicon) which provide semantic value. For example, type 2 diabetes can be annotated with corresponding term in the MONDO disease ontology." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:name         "ontology annotation" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-engineering>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "ontology engineering" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-management>
-  fw:description
-                  "The process of managing ontologies and other vocabularies in semantic web-linked data environments.This includes policies for update and maintenance of constituent and new terms." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "ontology management" ;
-  fw:relatesTo    ( "interoperability requirements" ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-recommendation>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "ontology recommendation" ;
-  fw:relatesTo    ( "interoperability requirements" "uc-vocabulary-annotation") ;
-  fw:resourceType "Process" .
-
 <fw:Recipe-an-inventory-of-tools-for-converting-your-data-to-rdf>
   fw:lastUpdate   "2021-06-30" ;
   fw:location     "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/rdf-conversion.html" ;
@@ -602,15 +434,6 @@
   fw:resourceType "Recipe" .
 
 
-<fw:Recipe-building-a-catalogue-of-datasets>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://fairplus.github.io/the-fair-cookbook/content/recipes/infrastructure/data-catalog.html" ;
-  fw:name         "Building a catalogue of datasets" ;
-  fw:description
-                  "To detail the key elements for the creation of a data catalogue to enable data findability in an organisation." ;
-  fw:labels       ( "data deposition" ) ;
-  fw:relatesTo    ( <fw:Tool-dats> <fw:Tool-dcat> ) ;
-  fw:resourceType "Recipe" .
 
 <fw:Recipe-building-an-application-ontology-with-robot>
   fw:lastUpdate   "2021-06-30" ;
@@ -1855,3 +1678,192 @@
   fw:name         "ZOOMA" ;
   fw:resourceType "Tool" .
 
+<fw:process-data-access-and-ethics>
+  fw:name         "data access and ethics" ;
+  fw:description  "Determine data access for FAIRification, including ethics, DTAs, licensing etc" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" .
+
+<fw:process-competency-questions>
+  fw:name         "competency questions" ;
+  fw:description  "Define dataset competency questions and expected/desired outcomes of FAIRification" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-interim-hosting>
+  fw:name         "interim hosting" ;
+  fw:description  "Host data in interim solution and make available for FAIRification processes" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-competency-questions>" ) ;
+  fw:relatesTo    ( "<fw:process-competency-questions>" ) .
+
+<fw:process-examination>
+  fw:name         "examination" ;
+  fw:description  "Dataset owners and FAIR experts examine datasets and reach shared understanding" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-interim-hosting>" ) ;
+  fw:relatesTo    ( "<fw:process-interim-hosting>" ) .
+
+<fw:process-identify-data-types>
+  fw:name         "identify data types" ;
+  fw:description
+                  "Identify Data Types (processes, assays, subjects, samples etc.) Identify primary organising principles e.g. cells, compounds" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-examination>" ) ;
+  fw:relatesTo    ( "<fw:process-examination>" ) .
+
+<fw:process-identifier-strategies>
+  fw:name         "identifier strategies" ;
+  fw:description  "Determine identifier strategy for data types. Assign identifiers in accordance with strategy." ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identify-data-types>" ) ;
+  fw:relatesTo    ( "<fw:process-identify-data-types>" ) .
+
+<fw:process-metadata-strategies>
+  fw:name         "metadata strategies" ;
+  fw:description  "Determine  project metadata strategies using FAIRsharing. Apply metadata strategies to datasets" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+
+<fw:process-evaluate-against-standards>
+  fw:name         "evaluate against standards" ;
+  fw:description
+                  "Compare datasets to community standards. Evaluate datasets using FAIR indicators that are appropriate given competency questions. Share with IMI Catalog for indexing. " ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-metadata-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+
+<fw:process-interoperability-requirements>
+  fw:name         "interoperability requirements" ;
+  fw:description
+                  "Determine interoperability requirement for dataset  (e,g, consumption of data for downstream analysis)" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-evaluate-against-standards>" ) ;
+  fw:relatesTo    ( "<fw:process-evaluate-against-standards>" ) .
+
+<fw:process-hosting-requirements>
+  fw:name         "hosting requirements" ;
+  fw:description
+                  "Examine dataset hosting choices and needs (size, complexity, analytics). Match data types to available hosting solutions eg. public repos, EFPIA cloud" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-data-sharing>
+  fw:name         "data sharing" ;
+  fw:description  "Submit data to chosen hosting solution for public sharing and dissemination" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-hosting-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-hosting-requirements>" ) .
+
+<fw:process-data-access>
+  fw:name         "data access" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-data-ethics>
+  fw:name         "data ethics" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-data-retrieval>
+  fw:name         "data retrieval" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-identifier-mapping>
+  fw:name         "identifier mapping" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-resolution>" ) ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-resolution>" "<fw:process-identifier-strategies>" ) .
+
+<fw:process-identifier-resolution>
+  fw:name         "identifier resolution" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-minting>" ) ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-minting>" "<fw:process-identifier-strategies>" ) .
+
+<fw:process-identifier-minting>
+  fw:name         "identifier minting" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+
+<fw:process-vocabulary-engineering>
+  fw:name         "vocabulary engineering" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-management>
+  fw:name         "vocabulary management" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-annotation>
+  fw:name         "vocabulary annotation" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-alignment>
+  fw:name         "vocabulary alignment" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-data-annotation>
+  fw:name         "data annotation" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-metadata-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+
+<fw:process-data-deposition>
+  fw:name         "data deposition" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+
+<fw:process-data-transfer>
+  fw:name         "data transfer" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+
+<fw:process-licensing>
+  fw:name         "licensing" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
