@@ -11,7 +11,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "identifier" ) .
 
 <fw:indicator-data-is-identified-by-a-persistent-identifier>
@@ -21,7 +21,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "identifier" ) .
 
 <fw:indicator-metadata-is-identified-by-a-globally-unique-identifier>
@@ -31,7 +31,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "identifier" ) .
 
 <fw:indicator-data-is-identified-by-a-globally-unique-identifier>
@@ -41,7 +41,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "identifier" ) .
 
 <fw:indicator-rich-metadata-is-provided-to-allow-discovery>
@@ -51,7 +51,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" ) .
 
 <fw:indicator-metadata-includes-the-identifier-for-the-data>
@@ -61,7 +61,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "identifier" ) .
 
 <fw:indicator-metadata-is-offered-in-such-a-way-that-it-can-be-harvested-and-indexed>
@@ -71,7 +71,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "findability" "search enginee" ) .
 
 <fw:indicator-metadata-contains-information-to-enable-the-user-to-get-access-to-the-data>
@@ -81,7 +81,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-metadata-can-be-accessed-manually-ie-with-human-intervention>
@@ -91,7 +91,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-data-can-be-accessed-manually-ie-with-human-intervention>
@@ -101,7 +101,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-metadata-identifier-resolves-to-a-metadata-record>
@@ -111,7 +111,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-data-identifier-resolves-to-a-digital-object>
@@ -121,7 +121,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-metadata-is-accessed-through-standardised-protocol>
@@ -131,7 +131,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-data-is-accessible-through-standardised-protocol>
@@ -141,7 +141,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-data-can-be-accessed-automatically-ie-by-a-computer-program>
@@ -151,7 +151,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" ) .
 
 <fw:indicator-metadata-is-accessible-through-a-free-access-protocol>
@@ -161,7 +161,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" "protocols" ) .
 
 <fw:indicator-data-is-accessible-through-a-free-access-protocol>
@@ -171,7 +171,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" "protocols" ) .
 
 <fw:indicator-data-is-accessible-through-an-access-protocol-that-supports-authentication-and-authorisation>
@@ -181,7 +181,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" "protocols" ) .
 
 <fw:indicator-metadata-is-guaranteed-to-remain-available-after-data-is-no-longer-available>
@@ -191,7 +191,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "accessibility" "provenance" ) .
 
 <fw:indicator-metadata-uses-knowledge-representation-expressed-in-standardised-format>
@@ -201,7 +201,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" ) .
 
 <fw:indicator-data-uses-knowledge-representation-expressed-in-standardised-format>
@@ -211,7 +211,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" ) .
 
 <fw:indicator-metadata-uses-machine-understandable-knowledge-representation>
@@ -221,7 +221,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" ) .
 
 <fw:indicator-data-uses-machine-understandable-knowledge-representation>
@@ -231,7 +231,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" ) .
 
 <fw:indicator-metadata-uses-fair-compliant-vocabularies>
@@ -241,7 +241,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" "vocabulary" ) .
 
 <fw:indicator-data-uses-fair-compliant-vocabularies>
@@ -251,7 +251,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "schema" "data model" "vocabulary" ) .
 
 <fw:indicator-metadata-includes-references-to-other-metadata>
@@ -261,7 +261,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-data-includes-references-to-other-data>
@@ -271,7 +271,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-metadata-includes-references-to-other-data>
@@ -281,7 +281,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-data-includes-qualified-references-to-other-data>
@@ -291,7 +291,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-metadata-includes-qualified-references-to-other-metadata>
@@ -301,7 +301,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-metadata-include-qualified-references-to-other-data>
@@ -311,7 +311,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "interoperability" "data references" ) .
 
 <fw:indicator-plurality-of-accurate-and-relevant-attributes-are-provided-to-allow-reuse>
@@ -321,7 +321,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" ) .
 
 <fw:indicator-metadata-includes-information-about-the-licence-under-which-the-data-can-be-reused>
@@ -331,7 +331,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "licence" ) .
 
 <fw:indicator-metadata-refers-to-a-standard-reuse-licence>
@@ -341,7 +341,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "licence" ) .
 
 <fw:indicator-metadata-refers-to-a-machine-understandable-reuse-licence>
@@ -351,7 +351,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "licence" ) .
 
 <fw:indicator-metadata-includes-provenance-information-according-to-community-specific-standards>
@@ -361,7 +361,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "provenance" "standards" ) .
 
 <fw:indicator-metadata-includes-provenance-information-according-to-a-cross-community-language>
@@ -371,7 +371,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "provenance" "standards" ) .
 
 <fw:indicator-metadata-complies-with-a-community-standard>
@@ -380,7 +380,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
 <fw:indicator-data-complies-with-a-community-standard>
@@ -389,7 +389,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
 <fw:indicator-metadata-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
@@ -399,7 +399,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
 <fw:indicator-data-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
@@ -409,7 +409,7 @@
   fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:resourceType "indicator" ;
+  fw:resourceType "Indicator" ;
   fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
 <fw:Recipe-an-inventory-of-tools-for-converting-your-data-to-rdf>
@@ -478,7 +478,7 @@
                   "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/creating-minimal-metadata-profiles.html" ;
   fw:description  "a starting point to guide the generation of a metadata template." ;
   fw:name         "Creating a metadata profile" ;
-  fw:labels       ( "metadata profile" "uc-metadata-standards") ;
+  fw:labels       ( "metadata profile" "uc-metadata-standards" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-creating-data/variable-dictionary>
@@ -556,7 +556,7 @@
   fw:description
                   "A step-by-step guide on how to deploy the EBI Ontology Lookup Service (OLS) on local machines. This demonstrates the workflow for deploying open source ontology service softwares in-house." ;
   fw:labels       ( "data deposition" "data sharing" ) ;
-  fw:relatesTo    ( <fw:Tool-ols> ) ;
+  fw:relatesTo    ( <fw:tool-ols> ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-depositing-in-zenodo-generic-repository>
@@ -566,7 +566,7 @@
   fw:description
                   "To show how to take advantage of CERN Zenodo repository to document the existence of datasets, thus increasing its findability. This is of particular relevant for IMI projects since Zenodo is aimed to support the European Commission (EC) nascent Open Data policy and is commissioned by the EC." ;
   fw:labels       ( "data deposition" "data sharing" ) ;
-  fw:relatesTo    ( <fw:Tool-zenodo> ) ;
+  fw:relatesTo    ( ) ;
   fw:resourceType "Recipe" .
 
 
@@ -579,7 +579,6 @@
   fw:labels       ( "data transfer" "data sharing" ) ;
   fw:relatesTo    ( <fw:Tool-aspera> ) ;
   fw:resourceType "Recipe" .
-
 
 
 
@@ -615,7 +614,8 @@
   fw:lastUpdate   "2021-06-30" ;
   fw:location     "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/ETL-tools.html" ;
   fw:name         "Extraction, transformation, and loading process" ;
-  fw:labels       ( "metadata profile" "data annotation" "data formatting" "validation" "checklist" "uc-metadata-standards") ;
+  fw:labels       ( "metadata profile" "data annotation" "data formatting" "validation" "checklist"
+                    "uc-metadata-standards" ) ;
   fw:description
                   "This recipe identifies tools for data extraction, transformation, and loading (ETL). ETL is the process of collecting data from one source to persist it in another designated system in which the data is represented differently" ;
   fw:resourceType "Recipe" .
@@ -658,21 +658,20 @@
   fw:lastUpdate   "2021-06-30" ;
   fw:location     "https://fairplus.github.io/the-fair-cookbook/content/recipes/findability/checksum-validate.html" ;
   fw:name         "How to check intactness of files by validating checksums" ;
-  fw:description "Confirming the identity of two different files may be achieved by calculating a so-called “checksum” of the file in the source system, calculating the checksum in the target system, and comparing the outputs.";
+  fw:description
+                  "Confirming the identity of two different files may be achieved by calculating a so-called “checksum” of the file in the source system, calculating the checksum in the target system, and comparing the outputs." ;
   fw:labels       ( "validation" "data sharing" ) ;
-  fw:relatesTo    (<fw:Tool-md5sum>);
+  fw:relatesTo    ( <fw:Tool-md5sum> ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-how-to-create-checksum-files>
   fw:lastUpdate   "2021-06-30" ;
   fw:location     "https://fairplus.github.io/the-fair-cookbook/content/recipes/findability/checksum-create.html" ;
   fw:name         "How to create checksum files" ;
-  fw:description  "How to create checksum files";
-  fw:relatesTo (<fw:Tool-md5sum>);
+  fw:description  "How to create checksum files" ;
+  fw:relatesTo    ( <fw:Tool-md5sum> ) ;
   fw:labels       ( "validation" "data sharing" ) ;
   fw:resourceType "Recipe" .
-
-
 
 
 
@@ -682,8 +681,8 @@
   fw:description
                   "Provide practical examples on how to map identifiers for Genes, Proteins, Metabolites and Pathways between resources using a purpose built tool, namely BridgeDb. Hands on guidance is provided for 2 interfaces (R package and a Python Webservices) provided by BridgeDb" ;
   fw:name         "Identifier mapping with BridgeDb" ;
-  fw:labels       ( "data annotation" "identifier" "uc-chemical-identifier") ;
-  fw:relatesTo    ( <fw:Tool-bridgedb> ) ;
+  fw:labels       ( "data annotation" "identifier" "uc-chemical-identifier" ) ;
+  fw:relatesTo    ( ) ;
   fw:resourceType "Recipe" .
 
 
@@ -695,7 +694,7 @@
   fw:description
                   "To take an SDF file, validate the content for chemical inconsistencies, and generate InChIs, InChIKeys, and SMILES for each entry in the SDF file." ;
   fw:name         "InChI and SMILES identifiers for chemical structures" ;
-  fw:labels       ( "chemical data" "identifier" "uc-chemical-identifier") ;
+  fw:labels       ( "chemical data" "identifier" "uc-chemical-identifier" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-integrating-data>
@@ -724,7 +723,7 @@
   fw:labels       ( "checklist" "external" "uc-metadata-standards" ) ;
   fw:lastUpdate   "2021-04-06" ;
   fw:name         "ENA sample checklists" ;
-  fw:location    "https://www.ebi.ac.uk/ena/browser/checklists" .
+  fw:location     "https://www.ebi.ac.uk/ena/browser/checklists" .
 
 <fw:Recipe-ebi-repos>
   fw:resourceType "Recipe" ;
@@ -739,7 +738,7 @@
   fw:lastUpdate   "2021-06-30" ;
   fw:location
                   "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/introduction-terminologies-ontologies.html" ;
-  fw:labels       ( "vocabulary" "uc-vocabulary-annotation") ;
+  fw:labels       ( "vocabulary" "uc-vocabulary-annotation" ) ;
   fw:name         "Introduction to terminologies and ontologies" ;
   fw:description
                   "The aim of this recipe is to provide a compact introduction about controlled terminologies and ontologies, why these resources are central to the preservation of knowledge and data mining and how such resources are developed." ;
@@ -775,7 +774,7 @@
   fw:location
                   "https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/transcriptomics-metadata.html" ;
   fw:name         "Metadata profile for transcriptomics" ;
-  fw:labels       ( "metadata profile" "transcriptomics" "data annotation" "uc-metadata-standards") ;
+  fw:labels       ( "metadata profile" "transcriptomics" "data annotation" "uc-metadata-standards" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-metadata-profile-validation-in-rdf>
@@ -785,7 +784,7 @@
   fw:name         "Metadata profile validation in RDF" ;
   fw:description
                   "To provide guidance on the minimum set of metadata and semantics required to describe any transcriptomics experiments, from standard case-control to dosage-response designs, and from microarrays to single cell RNA sequencing" ;
-  fw:labels       ( "metadata profile" "validation" "linked data" "uc-metadata-standards") ;
+  fw:labels       ( "metadata profile" "validation" "linked data" "uc-metadata-standards" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-minting-identifiers-with-minid>
@@ -795,7 +794,7 @@
                   "To create a persistent, globally unique and resolvable identifier using the Minid client accessing the Minid 2.0 release" ;
   fw:name         "Minting identifiers with Minid" ;
   fw:relatesTo    ( <fw:Tool-minid> ) ;
-  fw:labels       ( "identifier" "uc-chemical-identifier") ;
+  fw:labels       ( "identifier" "uc-chemical-identifier" ) ;
   fw:resourceType "Recipe" .
 
 
@@ -821,7 +820,7 @@
   fw:name         "Ontology-related tools and services" ;
   fw:description
                   "This recipe aims to provide an overview of tools available to perform a number of key operations using ontologies and relevant to FAIR processes: from ontology management to using ontology for annotation or performing ontology mapping." ;
-  fw:labels       ( "data annotation" "vocabulary" "uc-vocabulary-annotation") ;
+  fw:labels       ( "data annotation" "vocabulary" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
 
@@ -832,8 +831,8 @@
   fw:name         "Portals and lookup services" ;
   fw:description
                   "This recipe provides guidance on making a decision about the feasibility of a local deployment of existing open source ontology service software. " ;
-  fw:relatesTo    ( <fw:Tool-ols> ) ;
-  fw:labels       ( "vocabulary" "infrastructure" "uc-vocabulary-annotation") ;
+  fw:relatesTo    ( <fw:tool-ols> ) ;
+  fw:labels       ( "vocabulary" "infrastructure" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-provenance-information>
@@ -842,7 +841,7 @@
   fw:description
                   "Provenance covers the elements detailing how the data was produced by identifying the agents (human, software, workflows) so a certain level of tracability and accountability can be established. " ;
   fw:name         "Provenance information" ;
-  fw:relatesTo    ( <fw:Tool-prov-vocabulary> ) ;
+  fw:relatesTo    ( ) ;
   fw:labels       ( "provenance" ) ;
   fw:resourceType "Recipe" .
 
@@ -882,8 +881,8 @@
   fw:name         "Selecting an ontology lookup service" ;
   fw:description
                   "This recipe provides guidance on the selection and exploitation of ontology lookup services. An ‘ontology lookup service’ refers to any type of application, standalone or Web-based, that enables the use of existing ontologies to support knowledge formalization and sharing, by fostering ontology-based descriptions of knowledge." ;
-  fw:relatesTo    ( fw:Tool-ols ) ;
-  fw:labels       ( "vocabulary" "uc-vocabulary-annotation") ;
+  fw:relatesTo    ( fw:tool-ols ) ;
+  fw:labels       ( "vocabulary" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-selecting-terminologies-and-ontologies>
@@ -893,7 +892,7 @@
   fw:name         "Selecting terminologies and ontologies" ;
   fw:description
                   "To provide guidance on how to select the most suitable semantic artefacts given a specific research context in general, and when it comes to life and biomedical sciences projects, their main themes, i.e. risk assessment, clinical trial, drug discovery or fundamental research." ;
-  fw:labels       ( "vocabulary" "uc-vocabulary-annotation") ;
+  fw:labels       ( "vocabulary" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-software-licenses>
@@ -938,7 +937,7 @@
   fw:description
                   "1. Mapping data from a recognized data source by BridgeDb to another recognized data source (see here). For example mapping data identifiers from HGNC to Ensembl. 2. Given a local identifier and a TSV mapping it to one of the BridgeDb data sources, how to map the local identifier to a different data source." ;
   fw:name         "Using BridgeDb web services" ;
-  fw:relatesTo    ( <fw:Tool-bridgedb> ) ;
+  fw:relatesTo    ( ) ;
   fw:labels       ( "identifier" ) ;
   fw:resourceType "Recipe" .
 
@@ -949,7 +948,7 @@
   fw:labels       ( "Data query and retrieval" "information integration" "data unification" ) ;
   fw:location     "https://www.tamr.com/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-bert>
   fw:name         "Bert" ;
@@ -958,7 +957,7 @@
   fw:labels       ( "Data query and retrieval" "relationship extraction" ) ;
   fw:location     "https://github.com/google-research/bert" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-termite>
   fw:name         "Termite" ;
@@ -967,7 +966,7 @@
   fw:labels       ( "Data query and retrieval" "information extraction" ) ;
   fw:location     "https://www.scibite.com/platform/termite/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-oracle-clinical>
   fw:name         "Oracle clinical" ;
@@ -976,7 +975,7 @@
   fw:labels       ( "Data query and retrieval" "Clinical data" ) ;
   fw:location     "https://www.oracle.com/uk/industries/life-sciences/clinical-research/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-geoboost2>
   fw:name         "GeoBoost2" ;
@@ -985,7 +984,7 @@
                     "Public health and epidemiology" "Infectiousdisease" ) ;
   fw:location     "https://bio.tools/geoboost2" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-martview>
   fw:name         "MartView" ;
@@ -995,7 +994,7 @@
                     "Molecular interactions" "pathways and networks" "Gene transcripts" ) ;
   fw:location     "https://bio.tools/martview" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-clobnet>
   fw:name         "CLOBNET" ;
@@ -1004,7 +1003,7 @@
   fw:labels       ( "Data query and retrieval" "Machine learning" "Medicines research and development" ) ;
   fw:location     "https://bio.tools/CLOBNET" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-pdbusqlextractor>
   fw:name         "PDBUSQLExtractor" ;
@@ -1012,7 +1011,7 @@
   fw:labels       ( "Data query and retrieval" "Nucleic acid structure analysis" ) ;
   fw:location     "https://bio.tools/PDBUSQLExtractor" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-repo>
   fw:name         "repo" ;
@@ -1022,7 +1021,7 @@
                     "Database management" ) ;
   fw:location     "https://bio.tools/repo" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-snpator>
   fw:name         "SNPator" ;
@@ -1032,7 +1031,7 @@
                     "GWAS study" ) ;
   fw:location     "https://bio.tools/snpator" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-pygmql>
   fw:name         "PyGMQL" ;
@@ -1040,7 +1039,7 @@
   fw:labels       ( "Data query and retrieval" "Imaging" "Workflows" "Database management" ) ;
   fw:location     "https://bio.tools/PyGMQL" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-plantpis>
   fw:name         "PlantPIs" ;
@@ -1048,7 +1047,7 @@
   fw:labels       ( "data portals" "Database Portal" ) ;
   fw:location     "https://bio.tools/plantpis" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-baget>
   fw:name         "BAGET" ;
@@ -1057,7 +1056,7 @@
   fw:labels       ( "data portals" "DNA" "Sequencing" "Model organisms" "Sequence analysis" ) ;
   fw:location     "https://bio.tools/baget" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ncbi-resources>
   fw:name         "NCBI Resources" ;
@@ -1067,7 +1066,7 @@
                     "Molecular interactions" "pathways and networks" "Rare diseases" ) ;
   fw:location     "https://bio.tools/ncbi_resources" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-cpad>
   fw:name         "CPAD" ;
@@ -1077,7 +1076,7 @@
                     "Small molecules" "Literature and language" ) ;
   fw:location     "https://bio.tools/cpad" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-genomicsdb>
   fw:name         "GenomicsDB" ;
@@ -1087,7 +1086,7 @@
                     "Complementary medicine" "Biobank" ) ;
   fw:location     "https://bio.tools/GenomicsDB" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-epiviz-file-server>
   fw:name         "Epiviz File Server" ;
@@ -1095,7 +1094,7 @@
   fw:labels       ( "data portals" "Oncology" "Workflows" "DNA" ) ;
   fw:location     "https://bio.tools/epivizFileServer" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-sdtm>
   fw:name         "SDTM" ;
@@ -1105,7 +1104,7 @@
                     "Standard for Exchange of Non-clinical Data" ) ;
   fw:location     "https://www.cdisc.org/standards/foundational/sdtm" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-trifacta>
   fw:name         "TriFacta" ;
@@ -1114,7 +1113,7 @@
   fw:labels       ( "data transformation" "" ) ;
   fw:location     "https://www.trifacta.com/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-omop>
   fw:name         "OMOP" ;
@@ -1123,7 +1122,7 @@
   fw:labels       ( "data transformation" "Data transformation" ) ;
   fw:location     "https://www.ohdsi.org/data-standardization/the-common-data-model/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-collibra>
   fw:name         "Collibra" ;
@@ -1132,7 +1131,7 @@
   fw:labels       ( "data transformation" "Data catalogue" "data governance" "data linkage" ) ;
   fw:location     "https://www.collibra.com/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-apache-hadoop>
   fw:name         "Apache Hadoop" ;
@@ -1141,7 +1140,7 @@
   fw:labels       ( "data transformation" "Distributed computing" ) ;
   fw:location     "https://hadoop.apache.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-talend>
   fw:name         "Talend" ;
@@ -1150,7 +1149,7 @@
   fw:labels       ( "data transformation" "Data integration" ) ;
   fw:location     "https://www.talend.com/products/integrate-data/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-informatica>
   fw:name         "Informatica" ;
@@ -1158,7 +1157,7 @@
   fw:labels       ( "data transformation" "Data integration" ) ;
   fw:location     "https://www.informatica.com/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-openrefine-metadata-extension>
   fw:name         "OpenRefine-metadata-extension" ;
@@ -1167,7 +1166,7 @@
   fw:labels       ( "data transformation" "Data submission" "Annotation and curation" "Data identity and mapping" ) ;
   fw:location     "https://github.com/FAIRDataTeam/OpenRefine-metadata-extension" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-disqover>
   fw:name         "DISQOVER" ;
@@ -1176,7 +1175,7 @@
   fw:labels       ( "data transformation" "Biomedical science" "Omics" "Biology" "Chemistry" "Medicine" ) ;
   fw:location     "https://bio.tools/discover" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-pga>
   fw:name         "PGA" ;
@@ -1187,7 +1186,7 @@
                     "Data governance" "RNA-seq" ) ;
   fw:location     "https://bio.tools/pga" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-query-tabular>
   fw:name         "Query Tabular" ;
@@ -1196,7 +1195,7 @@
   fw:labels       ( "data transformation" "Bioinformatics" "Workflows" ) ;
   fw:location     "https://bio.tools/Query_Tabular" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ms-data-core-api>
   fw:name         "ms-data-core-api" ;
@@ -1205,7 +1204,7 @@
   fw:labels       ( "data transformation" "Proteomics" "Proteomics experiment" "Software engineering" ) ;
   fw:location     "https://bio.tools/ms-data-core-api" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-redcap>
   fw:name         "REDCap" ;
@@ -1214,7 +1213,7 @@
   fw:labels       ( "data deposition" "Cloud migration" ) ;
   fw:location     "https://www.project-redcap.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-transmart>
   fw:name         "TransMART" ;
@@ -1223,7 +1222,7 @@
   fw:labels       ( "data deposition" "Data storage" "clinical data" ) ;
   fw:location     "https://github.com/transmart" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-stardog>
   fw:name         "Stardog" ;
@@ -1231,7 +1230,7 @@
   fw:labels       ( "data deposition" "Data integration" "data catalog" ) ;
   fw:location     "https://www.stardog.com/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-postgresql>
   fw:name         "Postgresql" ;
@@ -1240,7 +1239,7 @@
   fw:labels       ( "data deposition" "Relational database" ) ;
   fw:location     "https://www.postgresql.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-chemotion>
   fw:name         "Chemotion" ;
@@ -1249,7 +1248,7 @@
   fw:labels       ( "data deposition" "Data submission" "annotation and curation" "Workflows" "Chemistry" ) ;
   fw:location     "https://bio.tools/chemotion" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-zooma>
   fw:name         "ZOOMA" ;
@@ -1259,7 +1258,7 @@
                     "Data identity and mapping" ) ;
   fw:location     "https://www.ebi.ac.uk/spot/zooma/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ncbi-bioportal-annotator>
   fw:name         "NCBI BioPortal Annotator" ;
@@ -1268,7 +1267,7 @@
                     "Data identity and mapping" ) ;
   fw:location     "https://bioportal.bioontology.org/annotatorplus" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-biobert>
   fw:name         "BioBert" ;
@@ -1278,7 +1277,7 @@
                     "natural language processing" ) ;
   fw:location     "https://github.com/dmis-lab/biobert" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-termite>
   fw:name         "Termite" ;
@@ -1287,7 +1286,7 @@
   fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" ) ;
   fw:location     "https://www.scibite.com/platform/termite/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-poolparty-semantic-suite>
   fw:name         "PoolParty Semantic Suite" ;
@@ -1296,7 +1295,7 @@
   fw:labels       ( "ontology annotation" "interoperability" "Content enrichment" "Data integration" ) ;
   fw:location     "https://semantic-web.com/poolparty-semantic-suite/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ontomaton>
   fw:name         "OntoMaton" ;
@@ -1304,7 +1303,7 @@
   fw:labels       ( "ontology annotation" "interoperability" "" ) ;
   fw:location     "https://github.com/ISA-tools/OntoMaton" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-prodigy>
   fw:name         "Prodigy" ;
@@ -1313,7 +1312,7 @@
   fw:labels       ( "ontology annotation" "interoperability" "Data annotation" ) ;
   fw:location     "https://prodi.gy/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ontotext>
   fw:name         "OntoText" ;
@@ -1322,7 +1321,7 @@
   fw:labels       ( "ontology annotation" "interoperability" "" ) ;
   fw:location     "https://www.ontotext.com/products/ontotext-platform/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-biobert>
   fw:name         "bioBERT" ;
@@ -1332,7 +1331,7 @@
                     "Natural language processing" ) ;
   fw:location     "https://bio.tools/BioBERT" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ppr-ssm>
   fw:name         "PPR-SSM" ;
@@ -1342,7 +1341,7 @@
                     "Genotype and phenotype" "Ontology and terminology" ) ;
   fw:location     "https://bio.tools/PPR-SSM" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-hpo2go>
   fw:name         "HPO2GO" ;
@@ -1352,7 +1351,7 @@
                     "Genotype and phenotype" "Ontology and terminology" "Gene expression" ) ;
   fw:location     "https://bio.tools/HPO2GO" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-vapur>
   fw:name         "Vapur" ;
@@ -1362,7 +1361,7 @@
                     "Natural language processing" "Enzymes" ) ;
   fw:location     "https://bio.tools/vapur" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-matscholar>
   fw:name         "matscholar" ;
@@ -1372,7 +1371,7 @@
                     "Natural language processing" ) ;
   fw:location     "https://bio.tools/matscholar" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-collabonet>
   fw:name         "CollaboNet" ;
@@ -1381,7 +1380,7 @@
                     "Machine learning" ) ;
   fw:location     "https://bio.tools/collabonet" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-calchas>
   fw:name         "Calchas" ;
@@ -1391,7 +1390,7 @@
                     "Natural language processing" "Bioinformatics" ) ;
   fw:location     "https://bio.tools/calchas" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-qtl-tableminerqtm>
   fw:name         "QTL TableMiner++(QTM)" ;
@@ -1400,17 +1399,16 @@
   fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" ) ;
   fw:location     "https://bio.tools/QTM" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-thbp>
   fw:name         "thbp" ;
-  fw:description
-                  "Mapping anatomical related entities to human body parts based on wikipedia in discharge summaries." ;
+  fw:description  "Mapping anatomical related entities to human body parts based on wikipedia in discharge summaries." ;
   fw:labels       ( "ontology annotation" "interoperability" "Anatomy" "Ontology and terminology"
                     "Natural language processing" ) ;
   fw:location     "https://bio.tools/thbp" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-oxo>
   fw:name         "OxO" ;
@@ -1419,7 +1417,7 @@
   fw:labels       ( "ontology mapping" "interoperability" "Ontology alignment" ) ;
   fw:location     "https://www.ebi.ac.uk/spot/oxo/index" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-meshr>
   fw:name         "meshr" ;
@@ -1427,7 +1425,7 @@
   fw:labels       ( "ontology mapping" "interoperability" "Medical informatics" "Data quality management" ) ;
   fw:location     "https://bio.tools/meshr" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-locdb>
   fw:name         "locdb" ;
@@ -1437,7 +1435,7 @@
                     "annotation and curation" "Proteins" ) ;
   fw:location     "https://bio.tools/locdb" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ols>
   fw:name         "OLS" ;
@@ -1446,7 +1444,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
   fw:location     "https://www.ebi.ac.uk/ols/index" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-bioportal>
   fw:name         "BioPortal" ;
@@ -1454,7 +1452,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
   fw:location     "https://bioportal.bioontology.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-poolparty>
   fw:name         "PoolParty" ;
@@ -1463,7 +1461,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
   fw:location     "https://www.poolparty.biz/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-centree-ontology-manager>
   fw:name         "Centree Ontology Manager" ;
@@ -1472,7 +1470,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
   fw:location     "https://www.scibite.com/platform/centree/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ontobee>
   fw:name         "Ontobee" ;
@@ -1481,7 +1479,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
   fw:location     "http://www.ontobee.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-aberowl>
   fw:name         "AberOWL" ;
@@ -1490,7 +1488,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
   fw:location     "http://www.aber-owl.net/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ngly1>
   fw:name         "ngly1" ;
@@ -1500,7 +1498,7 @@
                     "pathways and networks" "Ontology and terminology" "Machine learning" ) ;
   fw:location     "https://bio.tools/ngly1" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-doc2hpo>
   fw:name         "Doc2Hpo" ;
@@ -1509,7 +1507,7 @@
                     "Ontology and terminology" "Natural language processing" ) ;
   fw:location     "https://bio.tools/doc2hpo" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-plangexq>
   fw:name         "PlanGexQ" ;
@@ -1519,7 +1517,7 @@
                     "Model organisms" "Ontology and terminology" "Gene expression" ) ;
   fw:location     "https://bio.tools/PlanGexQ" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-gocats>
   fw:name         "GOcats" ;
@@ -1528,7 +1526,7 @@
                     "Microarray experiment" ) ;
   fw:location     "https://bio.tools/gocats" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-rdfscape>
   fw:name         "RDFScape" ;
@@ -1538,7 +1536,7 @@
                     "Ontology and terminology" "Biology" ) ;
   fw:location     "https://bio.tools/rdfscape" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-ontobrowser>
   fw:name         "OntoBrowser" ;
@@ -1548,7 +1546,7 @@
                     "Data identity and mapping" ) ;
   fw:location     "https://bio.tools/ontobrowser" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-quickgo>
   fw:name         "QuickGO" ;
@@ -1556,7 +1554,7 @@
   fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
   fw:location     "https://bio.tools/quickgo" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-circular-gene-ontology-cirgo>
   fw:name         "Circular Gene Ontology (CirGO)" ;
@@ -1566,7 +1564,7 @@
                     "Data visualisation" "Gene expression" ) ;
   fw:location     "https://bio.tools/cirgo" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-protégé>
   fw:name         "Protégé" ;
@@ -1574,7 +1572,7 @@
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "https://protege.stanford.edu/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-robot>
   fw:name         "ROBOT" ;
@@ -1583,16 +1581,15 @@
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "http://robot.obolibrary.org/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-owlapi>
   fw:name         "OWLAPI" ;
-  fw:description
-                  "A Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies." ;
+  fw:description  "A Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies." ;
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "http://owlcs.github.io/owlapi/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-enanomapper-slimmer>
   fw:name         "eNanoMapper Slimmer" ;
@@ -1601,7 +1598,7 @@
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "https://github.com/enanomapper/slimmer" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-topbraid-composer>
   fw:name         "TopBraid Composer" ;
@@ -1610,7 +1607,7 @@
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "https://www.topquadrant.com/products/topbraid-composer/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:tool-vocbench>
   fw:name         "VocBench" ;
@@ -1619,194 +1616,219 @@
   fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
   fw:location     "http://vocbench.uniroma2.it/" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "tool" .
+  fw:resourceType "Tool" .
 
 <fw:process-data-access-and-ethics>
   fw:name         "data access and ethics" ;
   fw:description  "Determine data access for FAIRification, including ethics, DTAs, licensing etc" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" .
 
 <fw:process-competency-questions>
   fw:name         "competency questions" ;
   fw:description  "Define dataset competency questions and expected/desired outcomes of FAIRification" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-data-access-and-ethics>" ) ;
-  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-data-access-and-ethics> ) ;
+  fw:relatesTo    ( <fw:process-data-access-and-ethics> ) .
 
 <fw:process-interim-hosting>
   fw:name         "interim hosting" ;
   fw:description  "Host data in interim solution and make available for FAIRification processes" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-competency-questions>" ) ;
-  fw:relatesTo    ( "<fw:process-competency-questions>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-competency-questions> ) ;
+  fw:relatesTo    ( <fw:process-competency-questions> ) .
 
 <fw:process-examination>
   fw:name         "examination" ;
   fw:description  "Dataset owners and FAIR experts examine datasets and reach shared understanding" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-interim-hosting>" ) ;
-  fw:relatesTo    ( "<fw:process-interim-hosting>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-interim-hosting> ) ;
+  fw:relatesTo    ( <fw:process-interim-hosting> ) .
 
 <fw:process-identify-data-types>
   fw:name         "identify data types" ;
   fw:description
                   "Identify Data Types (processes, assays, subjects, samples etc.) Identify primary organising principles e.g. cells, compounds" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-examination>" ) ;
-  fw:relatesTo    ( "<fw:process-examination>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-examination> ) ;
+  fw:relatesTo    ( <fw:process-examination> ) .
 
 <fw:process-identifier-strategies>
   fw:name         "identifier strategies" ;
   fw:description  "Determine identifier strategy for data types. Assign identifiers in accordance with strategy." ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-identify-data-types>" ) ;
-  fw:relatesTo    ( "<fw:process-identify-data-types>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-identify-data-types> ) ;
+  fw:relatesTo    ( <fw:process-identify-data-types> ) .
 
 <fw:process-metadata-strategies>
   fw:name         "metadata strategies" ;
   fw:description  "Determine  project metadata strategies using FAIRsharing. Apply metadata strategies to datasets" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-identifier-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-identifier-strategies> ) ;
+  fw:relatesTo    ( <fw:process-identifier-strategies> ) .
 
 <fw:process-evaluate-against-standards>
   fw:name         "evaluate against standards" ;
   fw:description
                   "Compare datasets to community standards. Evaluate datasets using FAIR indicators that are appropriate given competency questions. Share with IMI Catalog for indexing. " ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-metadata-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-metadata-strategies> ) ;
+  fw:relatesTo    ( <fw:process-metadata-strategies> ) .
 
 <fw:process-interoperability-requirements>
   fw:name         "interoperability requirements" ;
   fw:description
                   "Determine interoperability requirement for dataset  (e,g, consumption of data for downstream analysis)" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-evaluate-against-standards>" ) ;
-  fw:relatesTo    ( "<fw:process-evaluate-against-standards>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-evaluate-against-standards> ) ;
+  fw:relatesTo    ( <fw:process-evaluate-against-standards> ) .
 
 <fw:process-hosting-requirements>
   fw:name         "hosting requirements" ;
   fw:description
                   "Examine dataset hosting choices and needs (size, complexity, analytics). Match data types to available hosting solutions eg. public repos, EFPIA cloud" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-interoperability-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-interoperability-requirements> ) ;
+  fw:relatesTo    ( <fw:process-interoperability-requirements> ) .
 
 <fw:process-data-sharing>
   fw:name         "data sharing" ;
   fw:description  "Submit data to chosen hosting solution for public sharing and dissemination" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-hosting-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-hosting-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-hosting-requirements> ) ;
+  fw:relatesTo    ( <fw:process-hosting-requirements> ) .
 
 <fw:process-data-access>
   fw:name         "data access" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
-  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-access-and-ethics> ) ;
+  fw:relatesTo    ( <fw:process-data-access-and-ethics> ) .
 
 <fw:process-data-ethics>
   fw:name         "data ethics" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
-  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-access-and-ethics> ) ;
+  fw:relatesTo    ( <fw:process-data-access-and-ethics> ) .
 
 <fw:process-data-retrieval>
   fw:name         "data retrieval" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
-  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-access-and-ethics> ) ;
+  fw:relatesTo    ( <fw:process-data-access-and-ethics> ) .
 
 <fw:process-identifier-mapping>
   fw:name         "identifier mapping" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-identifier-resolution>" ) ;
-  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-identifier-resolution>" "<fw:process-identifier-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-identifier-resolution> ) ;
+  fw:hasParent    ( <fw:process-identifier-strategies> ) ;
+  fw:relatesTo    ( <fw:process-identifier-resolution> <fw:process-identifier-strategies> ) .
 
 <fw:process-identifier-resolution>
   fw:name         "identifier resolution" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:isAfter      ( "<fw:process-identifier-minting>" ) ;
-  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-identifier-minting>" "<fw:process-identifier-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:isAfter      ( <fw:process-identifier-minting> ) ;
+  fw:hasParent    ( <fw:process-identifier-strategies> ) ;
+  fw:relatesTo    ( <fw:process-identifier-minting> <fw:process-identifier-strategies> ) .
 
 <fw:process-identifier-minting>
   fw:name         "identifier minting" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-identifier-strategies> ) ;
+  fw:relatesTo    ( <fw:process-identifier-strategies> ) .
 
 <fw:process-vocabulary-engineering>
   fw:name         "vocabulary engineering" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-interoperability-requirements> ) ;
+  fw:relatesTo    ( <fw:process-interoperability-requirements> ) .
 
 <fw:process-vocabulary-management>
   fw:name         "vocabulary management" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-interoperability-requirements> ) ;
+  fw:relatesTo    ( <fw:process-interoperability-requirements> ) .
 
 <fw:process-vocabulary-annotation>
   fw:name         "vocabulary annotation" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-interoperability-requirements> ) ;
+  fw:relatesTo    ( <fw:process-interoperability-requirements> ) .
 
 <fw:process-vocabulary-alignment>
   fw:name         "vocabulary alignment" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
-  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-interoperability-requirements> ) ;
+  fw:relatesTo    ( <fw:process-interoperability-requirements> ) .
 
 <fw:process-data-annotation>
   fw:name         "data annotation" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-metadata-strategies>" ) ;
-  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-metadata-strategies> ) ;
+  fw:relatesTo    ( <fw:process-metadata-strategies> ) .
 
 <fw:process-data-deposition>
   fw:name         "data deposition" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
-  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-sharing> ) ;
+  fw:relatesTo    ( <fw:process-data-sharing> ) .
 
 <fw:process-data-transfer>
   fw:name         "data transfer" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
-  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-sharing> ) ;
+  fw:relatesTo    ( <fw:process-data-sharing> ) .
 
 <fw:process-licensing>
   fw:name         "licensing" ;
   fw:lastUpdate   "2021-08-04" ;
-  fw:resourceType "process" ;
-  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
-  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+  fw:labels       ( "" ) ;
+  fw:resourceType "Process" ;
+  fw:hasParent    ( <fw:process-data-sharing> ) ;
+  fw:relatesTo    ( <fw:process-data-sharing> ) .

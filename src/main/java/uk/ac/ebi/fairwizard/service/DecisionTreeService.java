@@ -2,6 +2,8 @@ package uk.ac.ebi.fairwizard.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
@@ -15,10 +17,11 @@ import java.io.InputStream;
 import java.util.*;
 
 @Service
+@Slf4j
 public class DecisionTreeService {
-  private ObjectMapper jsonMapper;
-  private ApplicationConfig applicationConfig;
-  private ResourceLoader resourceLoader;
+  private final ObjectMapper jsonMapper;
+  private final ApplicationConfig applicationConfig;
+  private final ResourceLoader resourceLoader;
   private Map<String, Set<FairResource>> fairResourceIndex;
 
   public DecisionTreeService(ApplicationConfig applicationConfig, ObjectMapper jsonMapper, ResourceLoader resourceLoader) {
@@ -52,8 +55,7 @@ public class DecisionTreeService {
       if (fairResourceIndex.containsKey(label)) {
         fairResources.addAll(fairResourceIndex.get(label));
       } else {
-        //todo properly log
-        System.out.println("Warning: Orphan label in question bank: " + label);
+        log.warn("Warning: Orphan label in question bank: {}", label);
       }
     }
     return fairResources;

@@ -128,6 +128,13 @@ public class RdfNetworkService {
           }
         }
       }
+      if (resource.getHasParent() != null && !resource.getHasParent().isEmpty()) {
+        for (FairResource r : resource.getHasParent()) {
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "hasParent")));
+          }
+        }
+      }
     }
 
     return network;
