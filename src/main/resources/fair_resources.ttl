@@ -4,582 +4,413 @@
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-<fw:Indicator-rda-a1-01m:-metadata-contains-information-to-enable-the-user-to-get-access-to-the-data>
+<fw:indicator-metadata-is-identified-by-a-persistent-identifier>
+  fw:name         "Metadata is identified by a persistent identifier" ;
   fw:description
-                  "The indicator ref ers to the information that is necessary to allow the requester to gain access to the digital object. It is about (i) restrictions to access the data (i.e. access to the data may be open, restricted or closed), (ii) the actions to be taken by a person who is interested to access the data, in particular when the data has not been published on the Web or (iii) specifications that the resources are available through specified authentication/authorisationsystem including single sign-on providers such as eduGAIN17or through specialised solutions such as proposed for EPOS18." ;
-  fw:labels       ( "accessibility" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F1-01M: This indicator evaluates whether or not the metadata is identified by a persistent identifier. A persistent identifier ensures that the metadata will remain findable over time and reduces the risk of broken links." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-01M: Metadata contains information to enable the user to get access to the data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "identifier" ) .
 
-<fw:Indicator-rda-a1-02d:-data-can-be-accessed-manually-(i.e.-with-human-intervention)>
+<fw:indicator-data-is-identified-by-a-persistent-identifier>
+  fw:name         "Data is identified by a persistent identifier" ;
   fw:description
-                  "The indicator refers to any human interactions that are needed if the requester wants to access the digital object. The FAIR principle ref ers mostly to automated interactions where a machine is able to access the digital object, but there may also be digital objectsthat require human interactions, such as clicking on a link on a landing page, sending an e-mail to the data owner, or even calling by telephone" ;
-  fw:labels       ( "data sharing" "accessibility" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F1-01D: This  indicator evaluates whether or notthe data is identified by a persistent identifier. A persistent identifier ensures that the data will remain findable over time andreduces the risk of broken links." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-02D: Data can be accessed manually (i.e. with human intervention)" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "identifier" ) .
 
-<fw:Indicator-rda-a1-02m:-metadata-can-be-accessed-manually-(i.e.-with-human-intervention)>
+<fw:indicator-metadata-is-identified-by-a-globally-unique-identifier>
+  fw:name         "Metadata is identified by a globally unique identifier" ;
   fw:description
-                  "The indicator refers to any human interactions that are needed if the requester wants to access metadata. The FAIR principle ref ers mostly to automated interactions where a machine is able to access the metadata, but there may also be metadata that requirehuman interactions. This may be important in cases where the metadata itself  contains sensitive inf ormation. Human interaction might involve sending an e-mail to the metadata owner, or calling by telephone to receive instructions." ;
-  fw:labels       ( "data sharing" "accessibility" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F1-02M: The  indicator serves to evaluate  whether  the  identifier of  the  metadata is globally unique,  i.e.  that  there  are  no  two  identical identifiers that  identify dif ferent metadata records." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-02M: Metadata can be accessed manually (i.e. with human intervention)" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "identifier" ) .
 
-<fw:Indicator-rda-a1-03d:-data-identifier-resolves-to-a-digital-object>
+<fw:indicator-data-is-identified-by-a-globally-unique-identifier>
+  fw:name         "Data is identified by a globally unique identifier" ;
   fw:description
-                  "This indicator is about the resolution of the identifier that identifies the digital object. The identifier assigned to thedata should be associated with a formally def ined retrieval/resolution mechanism that enables access to the digital object orprovides access instructions f or access in the case of human-mediated access. The FAIR principle and this indicator do not say anything about the mutability or immutability of the digital object that is identif ied by the data identifier --this is an aspect thatshould be governed by a persistence policy of the data provider." ;
-  fw:labels       ( "identifier" "uc-chemical-identifier") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F1-02D: The  indicator serves toevaluate whether the identif ier of  the data is globally unique, i.e. that there are no two people that would use that same identifier for two different digital objects. " ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-03D: Data identifier resolves to a digital object" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "identifier" ) .
 
-<fw:Indicator-rda-a1-03m:-metadata-identifier-resolves-to-a-metadata-record>
+<fw:indicator-rich-metadata-is-provided-to-allow-discovery>
+  fw:name         "Rich metadata is provided to allow discovery" ;
   fw:description
-                  "This indicator is about the resolution of the metadata identifier. The identifier assigned tothe metadata should be associated with a resolution service that enables access to the metadata record. " ;
-  fw:labels       ( "identifier" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F2-01M: The  indicator is about the presence of metadata, but also about howmuch metadata is provided and how well the provided metadata supports discovery. " ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-03M: Metadata identifier resolves to a metadata record" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" ) .
 
-<fw:Indicator-rda-a1-04d:-data-is-accessible-through-standardised-protocol>
+<fw:indicator-metadata-includes-the-identifier-for-the-data>
+  fw:name         "Metadata includes the identifier for the data" ;
   fw:description
-                  "The indicator concerns the protocol through which the digital object is accessed and requires the protocol to be defined in a standard" ;
-  fw:labels       ( "protocols" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F3-01M: The indicator deals with the inclusion of the ref erence(i.e. the identifier) of the digital object in the metadata so that the digital object can be accessed" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-04D: Data is accessible through standardised protocol" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "identifier" ) .
 
-<fw:Indicator-rda-a1-04m:-metadata-is-accessed-through-standardised-protocol>
+<fw:indicator-metadata-is-offered-in-such-a-way-that-it-can-be-harvested-and-indexed>
+  fw:name         "Metadata is offered in such a way that it can be harvested and indexed" ;
   fw:description
-                  "The indicator concerns the protocol through which the metadata is accessed and requires the protocol to be defined in a standard." ;
-  fw:labels       ( "protocols" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-F4-01M: The indicator tests whether the metadata is offered in such a way that it can be indexed. In some cases, metadata could be provided together with the data to a  local institutional repository or to  a  domain-specific or regional portal, or metadata could be included in a landing page where it can be harvested by a search engine. The indicator remains broad enough on purpose not to limit the way how and by whom the harvesting and indexing of the data might be done." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-04M: Metadata is accessed through standardised protocol" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "findability" "search enginee" ) .
 
-<fw:Indicator-rda-a1-05d:-data-can-be-accessed-automatically-(i.e.-by-a-computer-program)>
+<fw:indicator-metadata-contains-information-to-enable-the-user-to-get-access-to-the-data>
+  fw:name         "Metadata contains information to enable the user to get access to the data" ;
   fw:description
-                  "The indicator ref ers to automated interactions between machines to access digital objects. The way machines interact and grant access to the digital object will be evaluated by the indicator. " ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-01M: The indicator ref ers to the information that is necessary to allow the requester to gain access to the digital object. It is about (i) restrictions to access the data (i.e. access to the data may be open, restricted or closed), (ii) the actions to be taken by a person who is interested to access the data, in particular when the data has not been published on the Web or (iii) specifications that the resources are  available through specified authentication/authorisationsystem including single sign-on providers such as eduGAIN17or through specialised solutions such as proposed for EPOS18." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1-05D: Data can be accessed automatically (i.e. by a computer program)" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-a1.1-01d:-data-is-accessible-through-a-free-access-protocol>
+<fw:indicator-metadata-can-be-accessed-manually-ie-with-human-intervention>
+  fw:name         "Metadata can be accessed manually (i.e. with human intervention)" ;
   fw:description
-                  "The indicator requires that the protocol can be used f ree of charge which f acilitates unfettered access." ;
-  fw:labels       ( "protocols" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-02M: The indicator refers to any human interactions that are needed if the requester wants  to access metadata. The  FAIR  principle ref ers mostly to automated interactions where a  machine is able to access the metadata, but there may also be metadata that requirehuman interactions. This may be important in cases  where  the  metadata  itself   contains  sensitive  inf ormation.  Human interaction might involve sending an e-mail to the metadata owner, or calling by telephone to receive instructions." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1.1-01D: Data is accessible through a free access protocol" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-a1.1-01m:-metadata-is-accessible-through-a-free-access-protocol>
+<fw:indicator-data-can-be-accessed-manually-ie-with-human-intervention>
+  fw:name         "Data can be accessed manually (i.e. with human intervention)" ;
   fw:description
-                  "The indicator tests that theprotocol that enables the requester to access metadata can be f reely used. Such f ree use of the protocol enhances data reusability." ;
-  fw:labels       ( "protocols" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-02D: The indicator refers to any human interactions that are needed if the requester wants  to  access  the  digital  object.  The  FAIR  principle  ref ers  mostly  to automated interactions where a machine is able to access the digital object, but there  may also be  digital objectsthat require  human  interactions, such as clicking on a link on a landing page, sending an e-mail to the data owner, or even calling by telephone" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A1.1-01M: Metadata is accessible through a free access protocol" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-a1.2-01d:-data-is-accessible-through-an-access-protocol-that-supports-authentication-and-authorisation>
+<fw:indicator-metadata-identifier-resolves-to-a-metadata-record>
+  fw:name         "Metadata identifier resolves to a metadata record" ;
   fw:description
-                  "The indicator requires that if the data or local environment indicates a degree of additional protection then the access protocol must support authentication and authorisation of people and/or machines?" ;
-  fw:labels       ( "protocols" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-03M: This indicator is about the resolutionof the metadata identifier. The identifier assigned tothe metadata should be associated with a resolution service that enables access to the metadata record. " ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name
-                  "RDA-A1.2-01D: Data is accessible through an access protocol that supports authentication and authorisation" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-a2-01m:-metadata-is-guaranteed-to-remain-available-after-data-is-no-longer-available>
+<fw:indicator-data-identifier-resolves-to-a-digital-object>
+  fw:name         "Data identifier resolves to a digital object" ;
   fw:description
-                  "The indicator intends to verify that inf ormation about a digital object is still available af ter the object has been deleted or otherwise has become unavailable.  If possible, the metadata that remains available should also indicate why the object is no longeravailable." ;
-  fw:labels       ( "provenance" "data deposition" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-03D: This indicator is about the resolution of the identifier that identifies the digital object. The identifier assigned to thedata should be associated with a formally def ined retrieval/resolution mechanism that enables access to the digital object orprovides access instructions f or access in the  case of  human-mediated access. The  FAIR principle and this indicator do not say anything about the mutability or immutability of  the  digital object that is  identif ied by the  data identifier --this is an aspect thatshould be governed by a persistence policy of the data provider." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-A2-01M: Metadata is guaranteed to remain available after data is no longer available" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-f1-01d:-data-is-identified-by-a-persistent-identifier>
+<fw:indicator-metadata-is-accessed-through-standardised-protocol>
+  fw:name         "Metadata is accessed through standardised protocol" ;
   fw:description
-                  "This indicator evaluates whether or notthe data is identified by a persistent identifier. A persistent identifier ensures that the data will remain findable over time andreduces the risk of broken links." ;
-  fw:labels       ( "identifier" "uc-chemical-identifier") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-04M: The  indicator concerns the protocol through which the metadata is accessed and requires the protocol to be defined in a standard." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F1-01D: Data is identified by a persistent identifier" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-f1-01m:-metadata-is-identified-by-a-persistent-identifier>
+<fw:indicator-data-is-accessible-through-standardised-protocol>
+  fw:name         "Data is accessible through standardised protocol" ;
   fw:description
-                  "This indicator evaluates whether or not the metadata is identified by a persistent identifier. A persistent identifier ensures that the metadata will remain findable over time and reduces the risk of broken links." ;
-  fw:labels       ( "identifier" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-04D: The indicator concerns the protocol through which the digital object is accessed and requires the protocol to be defined in a standard" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F1-01M: Metadata is identified by a persistent identifier" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-f1-02d:-data-is-identified-by-a-globally-unique-identifier>
+<fw:indicator-data-can-be-accessed-automatically-ie-by-a-computer-program>
+  fw:name         "Data can be accessed automatically (i.e. by a computer program)" ;
   fw:description
-                  "The indicator serves toevaluate whether the identif ier of the data is globally unique, i.e. that there are no two people that would use that same identifier for two different digital objects. " ;
-  fw:labels       ( "identifier" "uc-chemical-identifier") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1-05D: The  indicator ref ers to automated interactions between machines to access digital objects.  The way machines interact and grant access to the digital object will be evaluated by the indicator. " ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F1-02D: Data is identified by a globally unique identifier" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" ) .
 
-<fw:Indicator-rda-f1-02m:-metadata-is-identified-by-a-globally-unique-identifier>
+<fw:indicator-metadata-is-accessible-through-a-free-access-protocol>
+  fw:name         "Metadata is accessible through a free access protocol" ;
   fw:description
-                  "The indicator serves to evaluate whether the identifier of the metadata is globally unique, i.e. that there are no two identical identifiers that identify dif ferent metadata records." ;
-  fw:labels       ( "identifier" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1.1-01M: The  indicator tests that  theprotocol that  enables the  requester to  access metadata can be f reely used. Such f ree use of the protocol enhances data reusability." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F1-02M: Metadata is identified by a globally unique identifier" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" "protocols" ) .
 
-<fw:Indicator-rda-f2-01m:-rich-metadata-is-provided-to-allow-discovery>
+<fw:indicator-data-is-accessible-through-a-free-access-protocol>
+  fw:name         "Data is accessible through a free access protocol" ;
   fw:description
-                  "The indicator is about the presence of metadata, but also about howmuch metadata is provided and how well the provided metadata supports discovery. " ;
-  fw:labels       ( "data annotation" "resuability" "checklist" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1.1-01D: The  indicator requires that the  protocol can be  used f ree  of  charge which f acilitates unfettered access." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F2-01M: Rich metadata is provided to allow discovery" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" "protocols" ) .
 
-<fw:Indicator-rda-f3-01m:-metadata-includes-the-identifier-for-the-data>
+<fw:indicator-data-is-accessible-through-an-access-protocol-that-supports-authentication-and-authorisation>
+  fw:name         "Data is accessible through an access protocol that supports authentication and authorisation" ;
   fw:description
-                  "The indicator deals with the inclusion of the ref erence(i.e. the identifier) of the digital object in the metadata so that the digital object can be accessed" ;
-  fw:labels       ( "identifier" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A1.2-01D: The  indicator requires that if the data or local environment indicates a degree of  additional protection then the access protocol must support authentication and authorisation of people and/or machines?" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F3-01M: Metadata includes the identifier for the data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" "protocols" ) .
 
-<fw:Indicator-rda-f4-01m:-metadata-is-offered-in-such-a-way-that-it-can-be-harvested-and-indexed>
+<fw:indicator-metadata-is-guaranteed-to-remain-available-after-data-is-no-longer-available>
+  fw:name         "Metadata is guaranteed to remain available after data is no longer available" ;
   fw:description
-                  "The indicator tests whether the metadata is offered in such a way that it can be indexed. In some cases, metadata could be provided together with the data to a local institutional repository or to a domain-specific or regional portal, or metadata could be included in a landing page where it can be harvested by a search engine. The indicator remains broad enough on purpose not to limit the way how and by whom the harvesting and indexing of the data might be done." ;
-  fw:labels       ( "search engine" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-A2-01M: The indicator intends to verify that inf ormation about a digital object is still available  af ter  the  object  has  been  deleted  or  otherwise  has  become unavailable.   If  possible, the  metadata that  remains  available should also indicate why the object is no longeravailable." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-F4-01M: Metadata is offered in such a way that it can be harvested and indexed" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "accessibility" "provenance" ) .
 
-<fw:Indicator-rda-i1-01d:-data-uses-knowledge-representation-expressed-in-standardised-format>
+<fw:indicator-metadata-uses-knowledge-representation-expressed-in-standardised-format>
+  fw:name         "Metadata uses knowledge representation expressed in standardised format" ;
   fw:description
-                  "The indicator serves to determine that an appropriate standard is used to express knowledge, in particular the data model and format." ;
-  fw:labels       ( "metadata profile" "checklist" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I1-01M: The  indicator serves to determine that  an  appropriate standard is used toexpress  knowledge,  f or   example,  controlled  vocabularies  f or  subject classifications" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I1-01D: Data uses knowledge representation expressed in standardised format" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" ) .
 
-<fw:Indicator-rda-i1-01m:-metadata-uses-knowledge-representation-expressed-in-standardised-format>
+<fw:indicator-data-uses-knowledge-representation-expressed-in-standardised-format>
+  fw:name         "Data uses knowledge representation expressed in standardised format" ;
   fw:description
-                  "The indicator serves to determine that an appropriate standard is used toexpress knowledge, f or  example, controlled vocabularies f or subject classifications" ;
-  fw:labels       ( "metadata profile" "checklist" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I1-01D: The  indicator serves to determine that  an  appropriate standard is used to express knowledge, in particular the data model and format." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I1-01M: Metadata uses knowledge representation expressed in standardised format" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" ) .
 
-<fw:Indicator-rda-i1-02d:-data-uses-machine-understandable-knowledge-representation>
+<fw:indicator-metadata-uses-machine-understandable-knowledge-representation>
+  fw:name         "Metadata uses machine-understandable knowledge representation" ;
   fw:description
-                  "This indicator f ocuses on the machine-understandability aspect of the data. This means that data should be readable and thus interoperable for machines without any requirements such as specific translators or mappings" ;
-  fw:labels       ( "data formatting" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I1-02M: This  indicator  f ocuses  on  the  machine-understandability  aspect  of   the metadata. This means that metadata should be readable and thus interoperable f or  machines  without  any requirements  such  as  specific  translators  or mappings." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I1-02D: Data uses machine-understandable knowledge representation" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" ) .
 
-<fw:Indicator-rda-i1-02m:-metadata-uses-machine-understandable-knowledge-representation>
+<fw:indicator-data-uses-machine-understandable-knowledge-representation>
+  fw:name         "Data uses machine-understandable knowledge representation" ;
   fw:description
-                  "This indicator f ocuses on the machine-understandability aspect of  the metadata. This means that metadata should be readable and thus interoperable f or machines without any requirements such as specific translators or mappings." ;
-  fw:labels       ( "data annotation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I1-02D: This  indicator f ocuses on the machine-understandability aspect of the data. This means that data should be readable and thus interoperable for machines without any requirements such as specific translators or mappings" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I1-02M: Metadata uses machine-understandable knowledge representation" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" ) .
 
-<fw:Indicator-rda-i2-01d:-data-uses-fair-compliant-vocabularies>
+<fw:indicator-metadata-uses-fair-compliant-vocabularies>
+  fw:name         "Metadata uses FAIR-compliant vocabularies" ;
   fw:description
-                  "The indicator requires the controlled vocabulary used for the data to conform to the FAIR principles,and at least be documented and resolvable using globally unique and persistent identifiers. The documentation needs to be easily f indable and accessible." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I2-01M: The indicator requires the vocabularyused f or the metadata to conform to the FAIR  principles, and at least be  documented and resolvable using globally unique  and  persistent  identifiers.  The  documentation  needs  to  be  easily f indable and accessible." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I2-01D: Data uses FAIR-compliant vocabularies" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" "vocabulary" ) .
 
-<fw:Indicator-rda-i2-01m:-metadata-uses-fair-compliant-vocabularies>
+<fw:indicator-data-uses-fair-compliant-vocabularies>
+  fw:name         "Data uses FAIR-compliant vocabularies" ;
   fw:description
-                  "The indicator requires the vocabulary used of or the metadata to conform to the FAIR principles, and at least be documented and resolvable using globally unique and persistent identifiers. The documentation needs to be easily f indable and accessible." ;
-  fw:labels       ( "data annotation" "vocabulary" "uc-vocabulary-annotation") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I2-01D: The indicator requires the controlled vocabulary used for the data to conform to the FAIR principles,and at least be documented and resolvable using globally unique  and  persistent  identifiers.  The  documentation  needs  to  be  easily f indable and accessible." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I2-01M: Metadata uses FAIR-compliant vocabularies" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "schema" "data model" "vocabulary" ) .
 
-<fw:Indicator-rda-i3-01d:-data-includes-references-to-other-data>
+<fw:indicator-metadata-includes-references-to-other-metadata>
+  fw:name         "Metadata includes references to other metadata" ;
   fw:description
-                  "This indicator is about the way data is connected to other data, f or example linking to previous or related research data that provides additional context to the data." ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-01M: The  indicator is about the way that metadata is connected to other metadata, f or example through links to inf ormation about organisations, people, places, projects or time periods that are related to the digital object that the metadata describes." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-01D: Data includes references to other data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-i3-01m:-metadata-includes-references-to-other-metadata>
+<fw:indicator-data-includes-references-to-other-data>
+  fw:name         "Data includes references to other data" ;
   fw:description
-                  "The indicator is about the way that metadata is connected to other metadata, f or example through links to inf ormation about organisations, people, places, projects or time periods that are related to the digital object that the metadata describes." ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-01D: This indicator is about the way data is connected to other data, f or example linking to previous or related research data that provides additional context to the data." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-01M: Metadata includes references to other metadata" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-i3-02d:-data-includes-qualified-references-to-other-data>
+<fw:indicator-metadata-includes-references-to-other-data>
+  fw:name         "Metadata includes references to other data" ;
   fw:description
-                  "This indicator is about the way data is connected to other data. The ref erences need to be qualif ied which means that the relationship role of the related resource is specified, f or example that a particular link is a specification of a unit of  measurement, or the identification of  the sensor with which the measurement was done" ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-02M: This indicator is about the way metadata is connected to other data, for example linking to previous or related research data that provides additional context to the data. Please note that this is not about the link f rom the metadata to the data it describes; that link is considered in principle F3 and in indicator RDA-F3-01M." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-02D: Data includes qualified references to other data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-i3-02m:-metadata-includes-references-to-other-data>
+<fw:indicator-data-includes-qualified-references-to-other-data>
+  fw:name         "Data includes qualified references to other data" ;
   fw:description
-                  "This indicator is about the way metadata is connected to other data, for example linking to previous or related research data that provides additional context to the data. Please note that this is not about the link f rom the metadata to the data it describes; that link is considered in principle F3 and in indicator RDA-F3-01M." ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-02D: This indicator is about the way data is connected to other data. The ref erences need  to  be  qualif ied which means  that  the  relationship role of  the  related resource is specified, f or example that a particular link is a specification of a unit  of   measurement,  or  the  identification  of   the  sensor  with  which  the measurement was done" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-02M: Metadata includes references to other data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-i3-03m:-metadata-includes-qualified-references-to-other-metadata>
+<fw:indicator-metadata-includes-qualified-references-to-other-metadata>
+  fw:name         "Metadata includes qualified references to other metadata" ;
   fw:description
-                  "This indicator is about the way metadata is connected to other metadata, for example to descriptions of related resources that provide additional context to the data. The references need to be qualified which means that the relationship of the related resource is specified, f or example person Y is the author ofdataset X." ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-03M: This indicator is about the way metadata is connected to other metadata, for example to descriptions of related resources that provide additional context to the data. The references need to be qualified which means that the relationship of  the related resource is specified, f or example person Y is  the  author  ofdataset X." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-03M: Metadata includes qualified references to other metadata" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-i3-04m:-metadata-include-qualified-references-to-other-data>
+<fw:indicator-metadata-include-qualified-references-to-other-data>
+  fw:name         "Metadata include qualified references to other data" ;
   fw:description
-                  "This indicator is about the way metadata is connected to other data. The ref erences need to be qualified which means that the relationship role of the related resource is specified, for example dataset X is derived from dataset Y." ;
-  fw:labels       ( "data references" "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-I3-04M: This  indicator is  about the  way  metadata is  connected to other data. The ref erences need to be qualified which means that the relationship role of  the related resource is specified, for example dataset X is derived from dataset Y." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-I3-04M: Metadata include qualified references to other data" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "interoperability" "data references" ) .
 
-<fw:Indicator-rda-r1-01m:-plurality-of-accurate-and-relevant-attributes-are-provided-to-allow-reuse>
+<fw:indicator-plurality-of-accurate-and-relevant-attributes-are-provided-to-allow-reuse>
+  fw:name         "Plurality of accurate and relevant attributes are provided to allow reuse" ;
   fw:description
-                  "The indicator concerns the quantity but also the quality of metadata provided in order to enhance data reusability" ;
-  fw:labels       ( "data annotation" "metadata profile" "checklist" "uc-metadata-standards" "uc-vocabulary-annotation") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1-01M: The indicator concerns the quantity but also the quality of metadata provided in order to enhance data reusability" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1-01M: Plurality of accurate and relevant attributes are provided to allow reuse" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" ) .
 
-<fw:Indicator-rda-r1.1-01m:-metadata-includes-information-about-the-license-under-which-the-data-can-be-reused>
+<fw:indicator-metadata-includes-information-about-the-licence-under-which-the-data-can-be-reused>
+  fw:name         "Metadata includes information about the licence under which the data can be reused" ;
   fw:description
-                  "This indicator is about the information that is provided in the metadata related to the conditions (e.g. obligations, restrictions) under which data can be reused. In the absence of licenseinformation, data cannot be reused." ;
-  fw:labels       ( "licensing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.1-01M: This indicator is about the information that is provided in the metadata related to the conditions (e.g. obligations, restrictions) under which data can be reused. In the absence of licenceinformation, data cannot be reused." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.1-01M: Metadata includes information about the license under which the data can be reused" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "licence" ) .
 
-<fw:Indicator-rda-r1.1-02m:-metadata-refers-to-a-standard-reuse-license>
+<fw:indicator-metadata-refers-to-a-standard-reuse-licence>
+  fw:name         "Metadata refers to a standard reuse licence" ;
   fw:description
-                  "This indicator requires the reference to the conditions of reuse to be a standard license, rather than a locally defined license." ;
-  fw:labels       ( "licensing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.1-02M: This indicator requires the reference to the conditions of reuse to be a standard licence, rather than a locally defined licence." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.1-02M: Metadata refers to a standard reuse license" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "licence" ) .
 
-<fw:Indicator-rda-r1.1-03m:-metadata-refers-to-a-machine-understandable-reuse-license>
+<fw:indicator-metadata-refers-to-a-machine-understandable-reuse-licence>
+  fw:name         "Metadata refers to a machine-understandable reuse licence" ;
   fw:description
-                  "This indicator is about the way that the reuse license is expressed. Rather than being a human-readable text, the license should be expressed in such a way that it can be processed by machines, without human intervention, for example in automated searches." ;
-  fw:labels       ( "licensing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.1-03M: This indicator is about the way that the reuse licence is expressed. Rather than being a human-readable text, the licence should be expressed in such a way that it can be processed by machines, without human intervention, for example in automated searches." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.1-03M: Metadata refers to a machine-understandable reuse license" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "licence" ) .
 
-<fw:Indicator-rda-r1.2-01m:-metadata-includes-provenance-information-according-to-community-specific-standards>
+<fw:indicator-metadata-includes-provenance-information-according-to-community-specific-standards>
+  fw:name         "Metadata includes provenance information according to community-specific standards" ;
   fw:description
-                  "This indicator requires the metadata to include inf ormation about the provenance of the data, i.e. information about the origin, history or workflow that generated the data, in a way that is compliant with the standards that are used in the community for which the data is curated" ;
-  fw:labels       ( "provenance" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.2-01M: This  indicator  requires  the  metadata  to  include  inf ormation  about  the provenance of the data, i.e. information about the origin, history or workflow that generated the data, in a way that is compliant with the standards that are used in the community for which the data is curated" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.2-01M: Metadata includes provenance information according to community-specific standards" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "provenance" "standards" ) .
 
-<fw:Indicator-rda-r1.2-02m:-metadata-includes-provenance-information-according-to-a-cross-community-language>
+<fw:indicator-metadata-includes-provenance-information-according-to-a-cross-community-language>
+  fw:name         "Metadata includes provenance information according to a cross-community language" ;
   fw:description
-                  "This indicator requires that the metadata provides provenance inf ormation according to a cross-domainlanguage." ;
-  fw:labels       ( "provenance" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.2-02M: This  indicator requires  that  the  metadata provides provenance inf ormation according to a cross-domainlanguage." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.2-02M: Metadata includes provenance information according to a cross-community language" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "provenance" "standards" ) .
 
-<fw:Indicator-rda-r1.3-01d:-data-complies-with-a-community-standard>
-  fw:description  "This indicator requires that data complies with community standards." ;
-  fw:labels       ("uc-chemical-identifier") ;
-  fw:lastUpdate   "2021-06-30" ;
+<fw:indicator-metadata-complies-with-a-community-standard>
+  fw:name         "Metadata complies with a community standard" ;
+  fw:description  "RDA-R1.3-01M: This indicator requires that metadata complies with community standards. " ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.3-01D: Data complies with a community standard" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
-<fw:Indicator-rda-r1.3-01m:-metadata-complies-with-a-community-standard>
-  fw:description  "This indicator requires that metadata complies with community standards. " ;
-  fw:labels       ( "metadata profile" "vocabulary" "checklist" "uc-metadata-standards" "uc-vocabulary-annotation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+<fw:indicator-data-complies-with-a-community-standard>
+  fw:name         "Data complies with a community standard" ;
+  fw:description  "RDA-R1.3-01D: This indicator requires that data complies with community standards." ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.3-01M: Metadata complies with a community standard" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
-<fw:Indicator-rda-r1.3-02d:-data-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
+<fw:indicator-metadata-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
+  fw:name         "Metadata is expressed in compliance with a machine-understandable community standard" ;
   fw:description
-                  "This indicator requires that the data f ollowsa community standard that has a machine-understandable expression" ;
-  fw:labels       ( "unmapped" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.3-02M: This indicator requires that the metadata follows a community standard that has a machine-understandable expression" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.3-02D: Data is expressed in compliance with a machine-understandable community standard" ;
-  fw:resourceType "Indicator" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
-<fw:Indicator-rda-r1.3-02m:-metadata-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
+<fw:indicator-data-is-expressed-in-compliance-with-a-machine-understandable-community-standard>
+  fw:name         "Data is expressed in compliance with a machine-understandable community standard" ;
   fw:description
-                  "This indicator requires that the metadata follows a community standard that has a machine-understandable expression" ;
-  fw:labels       ( "metadata profile" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-06-30" ;
+                  "RDA-R1.3-02D: This indicator requires that the data f ollowsa community standard that has a machine-understandable expression" ;
+  fw:lastUpdate   "2021-08-04" ;
   fw:location
                   "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
-  fw:name         "RDA-R1.3-02M: Metadata is expressed in compliance with a machine-understandable community standard" ;
-  fw:resourceType "Indicator" .
-
-<fw:Process-data-access>
-  fw:description  "Determine data access for FAIRification, including ethics, DTAs, licensing et" ;
-  fw:labels       ( "licensing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "data access" ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-aggregation>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "data aggregation" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-annotation>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "data annotation" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-deposition>
-  fw:description
-                  "The process of loading data to hosting (end) destinations, such as public data archives and data warehouses." ;
-  fw:labels       ( "data sharing" ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:name         "data deposition" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-query-and-retrieval>
-  fw:description
-                  "The process of extracting structured or unstructured data from different sources. The process of identifying and obtaining data from data management systems." ;
-  fw:labels       ( "data sharing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:name         "search engine" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-sharing>
-  fw:description  "Submit data to chosen hosting solution for public sharing and dissemination" ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "data sharing" ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-transformation>
-  fw:description
-                  "The process of converting the data format, structure, and value for a specific goal, which may include meeting a specific data standards." ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "data transformation" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-data-validation>
-  fw:description  "The process of validating data against specific data standards, data formats, and data models." ;
-  fw:labels       ( "data standards" "data models" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "data validation" ;
-  fw:relatesTo    ( <fw:Process-metadata-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-evaluation-against-standards>
-  fw:description  "Compare datasets to community standards" ;
-  fw:labels       ( "data standards" "data models" "uc-metadata-standards") ;
-  fw:lastUpdate   "2021-05-23" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "evaluation against standards" ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-mapping>
-  fw:description
-                  "The process of cross linking different identifiers for the same object to support data exchange across databases." ;
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "identifier mapping" ;
-  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-minting>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "identifier minting" ;
-  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-resolution>
-  fw:labels       ( ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "identifier resolution" ;
-  fw:relatesTo    ( <fw:Process-identifier-strategies> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-identifier-strategies>
-  fw:description  "Determine identifier strategy for data types and assign identifiers in accordance with strategy" ;
-  fw:labels       ( "identifier" "metadata" "accession" ) ;
-  fw:lastUpdate   "2021-05-22" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "identifier strategies" ;
-  fw:resourceType "Process" .
-
-<fw:Process-interoperability-requirements>
-  fw:description
-                  "Determine interoperability requirement for dataset (e,g, consumption of data for downstream analysis)" ;
-  fw:labels       ( "vocabularies" "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-21" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "interoperability requirements" ;
-  fw:resourceType "Process" .
-
-<fw:Process-metadata-strategies>
-  fw:description  "Apply metadata strategies to datasets" ;
-  fw:labels       ( "metadata" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location
-                  "https://www.imi.europa.eu/sites/default/files/styles/news_block_sticky_image/public/uploads/images/news-events/Newsroom/FAIRification-process-Nov-2019.png?itok=TcwtRYTQ" ;
-  fw:name         "metadata strategies" ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-alignment>
-  fw:description
-                  "The process of determining correspondences between equivalent concepts in alternative ontologies, and other vocabularies. This may include mapping to convey different levels of granularity." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:name         "ontology alignment" ;
-  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-annotation>
-  fw:description
-                  "The process of linking free text or data items to tokens (defined terms from a lexicon) which provide semantic value. For example, type 2 diabetes can be annotated with corresponding term in the MONDO disease ontology." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-24" ;
-  fw:name         "ontology annotation" ;
-  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-engineering>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-26" ;
-  fw:name         "ontology engineering" ;
-  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-management>
-  fw:description
-                  "The process of managing ontologies and other vocabularies in semantic web-linked data environments.This includes policies for update and maintenance of constituent and new terms." ;
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-27" ;
-  fw:name         "ontology management" ;
-  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
-  fw:resourceType "Process" .
-
-<fw:Process-ontology-recommendation>
-  fw:labels       ( "vocabulary" ) ;
-  fw:lastUpdate   "2021-05-28" ;
-  fw:name         "ontology recommendation" ;
-  fw:relatesTo    ( <fw:Process-interoperability-requirements> ) ;
-  fw:resourceType "Process" .
+  fw:resourceType "indicator" ;
+  fw:labels       ( "reusability" "data model" "standards" "vocabulary" ) .
 
 <fw:Recipe-an-inventory-of-tools-for-converting-your-data-to-rdf>
   fw:lastUpdate   "2021-06-30" ;
@@ -599,7 +430,6 @@
   fw:name         "Application ontology for metabolomics" ;
   fw:labels       ( "infrastructure" "vocabulary" "metabolomics" ) ;
   fw:resourceType "Recipe" .
-
 
 <fw:Recipe-building-a-catalogue-of-datasets>
   fw:lastUpdate   "2021-06-30" ;
@@ -641,16 +471,6 @@
   fw:name         "Converting from proprietary to open format" ;
   fw:labels       ( "data formatting" "data markup" ) ;
   fw:resourceType "Recipe" .
-
-<fw:Tool-mz-markup-language>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://fairsharing.org/FAIRsharing.26dmba" ;
-  fw:description
-                  "mzML was formed to amalgamate two formats for encoding raw spectrometer data; mzData developed by the PSI, and, mzXML developed at the Seattle Proteome Center at the Institute for Systems Biology. The PSI, with full participation by the ISB, developed the new format by taking the best aspects of each of the precursors to form a single, less confusing, format. " ;
-  fw:name         "Tool mz markup language" ;
-  fw:labels       ( "mass spectrometry" "data markup" "data formatting" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:resourceType "Tool" .
 
 <fw:Recipe-creating-a-metadata-profile>
   fw:lastUpdate   "2021-06-30" ;
@@ -699,14 +519,7 @@
   fw:relatesTo    ( <fw:Tool-bioschema> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-bioschema>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:description
-                  "To improve the Findability on the Web of life sciences resouces such as datasets, software, and training materials. " ;
-  fw:location     "https://bioschemas.org/" ;
-  fw:name         "BioSchema" ;
-  fw:labels       ( "search engine" "data markup" ) ;
-  fw:resourceType "Tool" .
+
 
 <fw:Recipe-dataset-page-markup-with-schema.org>
   fw:lastUpdate   "2021-06-30" ;
@@ -756,14 +569,6 @@
   fw:relatesTo    ( <fw:Tool-zenodo> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-zenodo>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "zenodo.org/" ;
-  fw:description
-                  "A general-purpose open-access repository developed under the European OpenAIRE program and operated by CERN." ;
-  fw:name         "Zenodo" ;
-  fw:labels       ( "data deposition" ) ;
-  fw:resourceType "Tool" .
 
 <fw:Recipe-downloading-data-with-aspera>
   fw:lastUpdate   "2021-06-30" ;
@@ -775,13 +580,7 @@
   fw:relatesTo    ( <fw:Tool-aspera> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-aspera>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.ibm.com/uk-en/products/aspera" ;
-  fw:name         "Aspera" ;
-  fw:labels       ( "data transfer" "data sharing" ) ;
-  fw:description  "A data transport and streaming technology company that provides high speed data transfer services." ;
-  fw:resourceType "Tool" .
+
 
 
 <fw:Recipe-ethical-values-of-fair>
@@ -830,13 +629,7 @@
   fw:relatesTo    ( <fw:Tool-fair-evaluator-tool> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-fair-evaluator-tool>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://fairsharing.github.io/FAIR-Evaluator-FrontEnd/#!/" ;
-  fw:name         "FAIR Evaluator tool" ;
-  fw:description  "Resources and guidelines to assess the FAIRness of digital resources." ;
-  fw:labels       ( "assessment" ) ;
-  fw:resourceType "Tool" .
+
 
 <fw:Recipe-fairshake-tool>
   fw:lastUpdate   "2021-06-30" ;
@@ -848,13 +641,6 @@
   fw:labels       ( "assessment" ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-fairshake>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://fairshake.cloud/" ;
-  fw:name         "FAIRshake" ;
-  fw:description  "A System to Evaluate the FAIRness of Digital Objects." ;
-  fw:labels       ( "assessment" ) ;
-  fw:resourceType "Tool" .
 
 <fw:Recipe-file-format-validation,-fastq-example>
   fw:lastUpdate   "2021-06-30" ;
@@ -866,14 +652,6 @@
   fw:relatesTo    ( <fw:Tool-fastq-utils> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-fastq-utils>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://github.com/nunofonseca/fastq_utils" ;
-  fw:name         "FASTQ-utils" ;
-  fw:description
-                  "Validation and manipulation of FASTQ files, scRNA-seq barcode pre-processing and UMI quantification." ;
-  fw:labels       ( "data formatting" "validation" ) ;
-  fw:resourceType "Tool" .
 
 
 <fw:Recipe-how-to-check-intactness-of-files-by-validating-checksums>
@@ -896,14 +674,7 @@
 
 
 
-<fw:Tool-md5sum>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://en.wikipedia.org/wiki/Md5sum" ;
-  fw:name         "md5sum" ;
-  fw:description  "A computer program that calculates and verifies 128-bit MD5 hashes, as described in RFC 1321. ";
-  fw:relatesTo (<fw:Tool-md5sum>);
-  fw:labels       ( "validation" "data sharing") ;
-  fw:resourceType "Recipe" .
+
 
 <fw:Recipe-identifier-mapping-with-bridgedb>
   fw:lastUpdate   "2021-06-30" ;
@@ -915,14 +686,6 @@
   fw:relatesTo    ( <fw:Tool-bridgedb> ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-bridgedb>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bridgedb.github.io/" ;
-  fw:description
-                  "Standardised access to Gene, Gene-Variant, Protein, Metabolite and Interaction Identifier Mapping Services" ;
-  fw:name         "BridgeDB" ;
-  fw:labels       ( "identifier" "identifier mapping" "protein" "gene" "metabolite" ) ;
-  fw:resourceType "Tool" .
 
 
 <fw:Recipe-inchi-and-smiles-identifiers-for-chemical-structures>
@@ -1035,14 +798,6 @@
   fw:labels       ( "identifier" "uc-chemical-identifier") ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-minid>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://pypi.org/project/minid/2.0.0b4/" ;
-  fw:description
-                  "A minid (Minimal Viable Identifier) is an identifier that is sufficiently simple to make creation and use trivial, while still having enough substance to make data easily findable, accessible, interoperable, and reusable (FAIR)." ;
-  fw:name         "Minid" ;
-  fw:labels       ( "identifier" "uc-chemical-identifier") ;
-  fw:resourceType "Tool" .
 
 <fw:Recipe-ndb---clinical-trial-datasets>
   fw:lastUpdate   "2021-06-30" ;
@@ -1091,14 +846,7 @@
   fw:labels       ( "provenance" ) ;
   fw:resourceType "Recipe" .
 
-<fw:Tool-prov-vocabulary>
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.w3.org/TR/prov-overview/" ;
-  fw:name         "PROV vocabulary" ;
-  fw:description
-                  " The PROV Family of Documents defines a model, corresponding serializations and other supporting definitions to enable the inter-operable interchange of provenance information in heterogeneous environments such as the Web." ;
-  fw:labels       ( "provenance" ) ;
-  fw:resourceType "Tool" .
+
 
 <fw:Recipe-requesting-new-terms>
   fw:lastUpdate   "2021-06-30" ;
@@ -1194,664 +942,871 @@
   fw:labels       ( "identifier" ) ;
   fw:resourceType "Recipe" .
 
-
-<fw:Tool-aberowl>
+<fw:tool-tamr>
+  fw:name         "TAMR" ;
   fw:description
-                  "A framework for ontology-based access to biological data. It consists of a repository of bio-ontologies, a set of webservices which provide access to OWL(-EL) reasoning over the ontologies, and several frontends which utilise the ontology repository and reasoning services." ;
-  fw:labels       ( "ontology management" "infrastructure" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "http://www.aber-owl.net/" ;
-  fw:name         "AberOWL" ;
-  fw:resourceType "Tool" .
+                  "A cloud-native data mastering solution (cloud MDM) accelerate analytics through machine learning (ML), available on Google Cloud, Azure and AWS." ;
+  fw:labels       ( "Data query and retrieval" "information integration" "data unification" ) ;
+  fw:location     "https://www.tamr.com/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-apache-hadoop>
-  fw:description
-                  "A framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines" ;
-  fw:labels       ( "data transformation" "distributed computing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://hadoop.apache.org/" ;
-  fw:name         "Apache Hadoop" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-baget>
-  fw:description
-                  "Web service designed to facilitate extraction of specific gene and protein sequences from completely determined prokaryotic genomes. Query results can be exported as a rich text format file for printing, archival or further analysis." ;
-  fw:labels       ( "data portals" "DNA" "Sequencing" "model organisms" "Sequence analysis" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/baget" ;
-  fw:name         "BAGET" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-bert>
+<fw:tool-bert>
+  fw:name         "Bert" ;
   fw:description
                   "Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google, aiming to extractcontext-sensitive features from an input text." ;
-  fw:labels       ( "search engine" "relationship extraction" "uc-vocabulary-annotation") ;
-  fw:lastUpdate   "2021-06-30" ;
+  fw:labels       ( "Data query and retrieval" "relationship extraction" ) ;
   fw:location     "https://github.com/google-research/bert" ;
-  fw:name         "Bert" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-biobert>
+<fw:tool-termite>
+  fw:name         "Termite" ;
   fw:description
-  "A biomedical language representation model designed for biomedical text mining tasks such as biomedical named entity recognition, relation extraction, question answering.",
-  "A pre-trained weights of BioBERT, a language representation model for biomedical domain, especially designed for biomedical text mining tasks such as biomedical named entity recognition, relation extraction, question answering, etc." ;
-  fw:labels ( "ontology annotation" "text mining" "named-entity recognition"
-              "natural language processing" ),
-( "ontology annotation" "medicine" "ontology and terminology" "natural language processing" "uc-vocabulary-annotation") ;
-  fw:lastUpdate "2021-06-30" ;
-  fw:location "https://bio.tools/BioBERT", "https://github.com/dmis-lab/biobert" ;
-  fw:name "BioBert", "bioBERT" ;
-  fw:resourceType "Tool" .
+                  "TERMite (TERM identification, tagging & extraction) is a fast named entity recognition (NER) and extraction engine for semantic analytics." ;
+  fw:labels       ( "Data query and retrieval" "information extraction" ) ;
+  fw:location     "https://www.scibite.com/platform/termite/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-bioportal>
-  fw:description  "A repository of biomedical ontologies." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology" "uc-vocabulary-annotation") ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bioportal.bioontology.org/" ;
-  fw:name         "BioPortal" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-calchas>
-  fw:description
-                  "A web based framework that takes advantage of domain specific ontologies, and Natural Language Processing, aiming to empower exploration of biomedical resources via semantic-based querying and search. The NLP engine analyzes the input free-text query and translates it into targeted queries with terms from the underlying ontology." ;
-  fw:labels       ( "ontology annotation" "Medical informatics" "ontology and terminology"
-                    "natural language processing" "bioinformatics" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/calchas" ;
-  fw:name         "Calchas" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-centree-ontology-manager>
-  fw:description
-                  "A centralised, enterprise-ready resource for ontology management and transforms the experience of maintaining and releasing ontologies for research-led businesses." ;
-  fw:labels       ( "ontology management" "infrastructure" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.scibite.com/platform/centree/" ;
-  fw:name         "Centree Ontology Manager" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-chemotion>
-  fw:description
-                  "Repository for chemistry research data that provides solutions for current challenges to store research data in a feasible manner, allowing the conservation of domain specific information in a machine readable format." ;
-  fw:labels       ( "data deposition" "data submission" "annotation and curation" "workflow" "chemical data" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/chemotion" ;
-  fw:name         "Chemotion" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-circular-gene-ontology-(cirgo)>
-  fw:description
-                  "Visualises non-redundant two-level hierarchically structured ontology terms from gene expression data in a 2D space." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology"
-                    "data visualisation" "Gene expression" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/cirgo" ;
-  fw:name         "Circular Gene Ontology (CirGO)" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-clobnet>
-  fw:description
-                  "cloud-based machine learning system (CLOBNET) that is an open-source, lean infrastructure for electronic health record (EHR) data integration and is capable of extract, transform, and load (ETL) processing" ;
-  fw:labels       ( "search engine" "machine learning" "medicines research and development" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/CLOBNET" ;
-  fw:name         "CLOBNET" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-collabonet>
-  fw:description  "Collaboration of deep neural networks for biomedical named entity recognition." ;
-  fw:labels       ( "ontology annotation" "ontology and terminology" "natural language processing"
-                    "machine learning" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/collabonet" ;
-  fw:name         "CollaboNet" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-collibra>
-  fw:description
-                  "an enterprise-oriented data governance platform that provides tools for data management and stewardship." ;
-  fw:labels       ( "data transformation" "data catalogue" "data governance" "data linkage" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.collibra.com/" ;
-  fw:name         "Collibra" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-cpad>
-  fw:description
-                  "Curated Protein Aggregation Database (CPAD) is an integrated database which contains information related to amyloidogenic proteins, Aggregation prone regions, aggregation kinetics and structure of proteins relevant to aggregation." ;
-  fw:labels       ( "data portals" "proteomics" "data submission" "annotation and curation" "Proteins"
-                    "Small molecules" "Literature and language" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/cpad" ;
-  fw:name         "CPAD" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-disqover>
-  fw:description
-                  "Data integration platform for public, licensed and internal data. The Data Ingestion Engine enables transforming data into Linked Data which can be searched, navigated and analysed via the user interface and the API." ;
-  fw:labels       ( "data transformation" "biomedical science" "omics" "biology" "chemical data" "medicine" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/discover" ;
-  fw:name         "DISQOVER" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-doc2hpo>
-  fw:description  "Web application for efficient and accurate Human Phenotype Ontology (HPO) concept curation." ;
-  fw:labels       ( "ontology management" "infrastructure" "genotype and phenotype"
-                    "ontology and terminology" "natural language processing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/doc2hpo" ;
-  fw:name         "Doc2Hpo" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-enanomapper-slimmer>
-  fw:description
-                  "A slim tool to slim ontologies as part of ontology integration. It allows users to provide configuration files that specify which parts of an ontology should be kept and/or removed, allowing to just select parts of the ontology you like." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://github.com/enanomapper/slimmer" ;
-  fw:name         "eNanoMapper Slimmer" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-epiviz-file-server>
-  fw:description  "A library to query and transform genomic data from indexed files" ;
-  fw:labels       ( "data portals" "oncology" "workflow" "DNA" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/epivizFileServer" ;
-  fw:name         "Epiviz File Server" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-genomicsdb>
-  fw:description
-                  "Advancing clinical cohort selection with genomics analysis on a distributed platform. Highly performant data storage in C++ for importing, querying and transforming variant data with Java/Spark. Used in gatk4." ;
-  fw:labels       ( "data portals" "exome sequencing" "systems medicine" "p"
-                    "Complementary medicine" "Biobank" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/GenomicsDB" ;
-  fw:name         "GenomicsDB" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-geoboost2>
-  fw:description  "A natural languageprocessing pipeline for GenBank metadata enrichment for virus phylogeography." ;
-  fw:labels       ( "search engine" "biotechnology" "natural language processing" "workflow"
-                    "Public health and epidemiology" "Infectious disease" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/geoboost2" ;
-  fw:name         "GeoBoost2" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-gocats>
-  fw:description  "Advances in gene ontology utilization improve statistical power of annotation enrichment." ;
-  fw:labels       ( "ontology management" "infrastructure" "mapping" "ontology and terminology"
-                    "microarray experiment" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/gocats" ;
-  fw:name         "GOcats" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-hpo2go>
-  fw:description
-                  "Prediction of human phenotype ontology term associations using cross ontology annotation co-occurrences.Mapping between Human Phenotype Ontology (HPO) and Gene Ontology (GO) terms for the prediction of gene/protein - function - phenotype - disease associations." ;
-  fw:labels       ( "ontology annotation" "pathology" "protein interactions"
-                    "genotype and phenotype" "ontology and terminology" "gene expression" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/HPO2GO" ;
-  fw:name         "HPO2GO" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-informatica>
-  fw:description  "Connect & fetch data from different heterogeneous source and processing of data." ;
-  fw:labels       ( "data transformation" "data integration" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.informatica.com/" ;
-  fw:name         "Informatica" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-locdb>
-  fw:description
-                  "Manually curated database with experimental annotations for the subcellular localizations of proteins in Homo sapiens (HS, human) and Arabidopsis thaliana (AT, thale cress)." ;
-  fw:labels       ( "ontology mapping" "ontology and terminology" "data submission"
-                    "annotation and curation" "Proteins" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/locdb" ;
-  fw:name         "locdb" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-martview>
-  fw:description
-                  "Tool for data retrieval and data mining that integrates data from Ensembl. Through the web interface it allows you to apply a series of filters to create custom datasets which can be converted to several useful output formats." ;
-  fw:labels       ( "search engine" "pathology" "data integration and warehousing" "data base management"
-                    "molecular interactions" "pathways and networks" "gene transcripts" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/martview" ;
-  fw:name         "MartView" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-matscholar>
-  fw:description
-                  "A Python library for materials-focused natural language processing (NLP). Named Entity Recognition and Normalization Applied to Large-Scale Information Extraction from the Materials Science Literature." ;
-  fw:labels       ( "ontology annotation" "chemical data" "ontology and terminology"
-                    "natural language processing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/matscholar" ;
-  fw:name         "matscholar" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-meshr>
-  fw:description  "A set of annotation maps describing the entire MeSH assembled using data from MeSH." ;
-  fw:labels       ( "ontology mapping" "medical informatics" "data quality management" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/meshr" ;
-  fw:name         "meshr" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ms-data-core-api>
-  fw:description
-                  "The primary purpose of ms-data-core-api library is to provide commonly used classes and Object Model for proteomicsn Experiments. You may also find it useful for your own computational proteomics projects." ;
-  fw:labels       ( "data transformation" "proteomics" "proteomics experiment" "software engineering" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/ms-data-core-api" ;
-  fw:name         "ms-data-core-api" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ncbi-bioportal-annotator>
-  fw:description  "Get annotations for biomedical text with classes from the ontologies." ;
-  fw:labels       ( "ontology annotation" "ontology and terminology" "systems biology"
-                    "data identity and mapping" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bioportal.bioontology.org/annotatorplus" ;
-  fw:name         "NCBI BioPortal Annotator" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ncbi-resources>
-  fw:description
-                  "Analysis and retrieval resources for the data in GenBank and other biological data made available through the NCBI web site." ;
-  fw:labels       ( "data portals" "data mining" "data integration and warehousing" "data base management"
-                    "molecular interactions" "pathways and networks" "rare diseases" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/ncbi_resources" ;
-  fw:name         "NCBI Resources" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ngly1>
-  fw:description
-                  "A repository for the NGLY1 Deficiency Knowledge Graph, the reasoning context to support hypothesis discovery for NGLY1 Deficiency-CDDG (DOID:0060728) research. The user can navigate the knowledge in the graph in the Neo4j Browser website." ;
-  fw:labels       ( "ontology management" "infrastructure" "molecular interactions" "pathways and networks"
-                    "ontology and terminology" "machine learning" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/ngly1" ;
-  fw:name         "ngly1" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ols>
-  fw:description
-                  "a repository for biomedical ontologies that aims to provide a single point of access to the latest ontology versions." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.ebi.ac.uk/ols/index" ;
-  fw:name         "OLS" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-omop>
-  fw:description  "The OMOP Common Data Model allows for the systematic analysis of disparate observational databases." ;
-  fw:labels       ( "data transformation" "data transformation" "uc-metadata-standards" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.ohdsi.org/data-standardization/the-common-data-model/" ;
-  fw:name         "OMOP" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ontobee>
-  fw:description
-                  "A linked data server designed for ontologies. Ontobee is aimed to facilitate ontology data sharing, visualization, query, integration, and analysis." ;
-  fw:labels       ( "ontology management" "infrastructure" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "http://www.ontobee.org/" ;
-  fw:name         "Ontobee" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ontobrowser>
-  fw:description
-                  "The tool was developed to manage ontologies (and controlled terminologies e.g. CDISC SEND). The primary goal of the tool is to provide an online collaborative solution for expert curators to map code list terms (sourced from multiple systems/databases) to preferred ontology terms." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology" "data identity and mapping" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/ontobrowser" ;
-  fw:name         "OntoBrowser" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ontomaton>
-  fw:description  "A tool facilitating ontology search and tagging functionalities within Google Spreadsheets." ;
-  fw:labels       ( "ontology annotation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://github.com/ISA-tools/OntoMaton" ;
-  fw:name         "OntoMaton" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ontotext>
-  fw:description
-                  "Connect and publish complex enterprise knowledge with standard-compliant semantic graph database; Customize and apply analytics to link documents to graphs, extract new facts, classify and recommend content." ;
-  fw:labels       ( "ontology annotation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.ontotext.com/products/ontotext-platform/" ;
-  fw:name         "OntoText" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-openrefine-metadata-extension>
-  fw:description
-                  "Enables a post-hoc FAIRification workflow: load an existing dataset, perform data wrangling tasks, add FAIR attributes to the data, generate a linked data version of the data and, finally, push the result to an online FAIR data infrastructure to make it accessible and discoverable." ;
-  fw:labels       ( "data transformation" "data submission" "annotation and curation" "data identity and mapping" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://github.com/FAIRDataTeam/OpenRefine-metadata-extension" ;
-  fw:name         "OpenRefine-metadata-extension" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-oracle-clinical>
+<fw:tool-oracle-clinical>
+  fw:name         "Oracle clinical" ;
   fw:description
                   "a single application and infrastructure for electronic data capture and clinical data management, while leveraging the renowned Oracle database. Oracle Clinical enables management of all clinical trial data in a single system, improving accuracy, visibility, and data integrity." ;
-  fw:labels       ( "search engine" "clinical data" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+  fw:labels       ( "Data query and retrieval" "Clinical data" ) ;
   fw:location     "https://www.oracle.com/uk/industries/life-sciences/clinical-research/" ;
-  fw:name         "Oracle clinical" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-owlapi>
-  fw:description  "A Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "http://owlcs.github.io/owlapi/" ;
-  fw:name         "OWLAPI" ;
-  fw:resourceType "Tool" .
+<fw:tool-geoboost2>
+  fw:name         "GeoBoost2" ;
+  fw:description  "A natural languageprocessing pipeline for GenBank metadata enrichment for virus phylogeography." ;
+  fw:labels       ( "Data query and retrieval" "Biotechnology" "Natural language processing" "Workflows"
+                    "Public health and epidemiology" "Infectiousdisease" ) ;
+  fw:location     "https://bio.tools/geoboost2" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-oxo>
+<fw:tool-martview>
+  fw:name         "MartView" ;
   fw:description
-                  "A service for finding mappings (or cross-references) between terms from ontologies, vocabularies and coding standards." ;
-  fw:labels       ( "ontology mapping" "ontology alignment" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.ebi.ac.uk/spot/oxo/index" ;
-  fw:name         "OxO" ;
-  fw:resourceType "Tool" .
+                  "Tool for data retrieval and data mining that integrates data from Ensembl. Through the web interface it allows you to apply a series of filters to create custom datasets which can be converted to several useful output formats." ;
+  fw:labels       ( "Data query and retrieval" "Pathology" "Data integration and warehousing" "Database management"
+                    "Molecular interactions" "pathways and networks" "Gene transcripts" ) ;
+  fw:location     "https://bio.tools/martview" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-pdbusqlextractor>
-  fw:description  "Scalable Extraction of Big Macromolecular Data in Azure Data Lake Environment." ;
-  fw:labels       ( "search engine" "nucleic acid structure analysis" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/PDBUSQLExtractor" ;
+<fw:tool-clobnet>
+  fw:name         "CLOBNET" ;
+  fw:description
+                  "Cloud-based machine learning system (CLOBNET) that is an open-source, lean infrastructure for electronic health record (EHR) data integration and is capable of extract, transform, and load (ETL) processing" ;
+  fw:labels       ( "Data query and retrieval" "Machine learning" "Medicines research and development" ) ;
+  fw:location     "https://bio.tools/CLOBNET" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-pdbusqlextractor>
   fw:name         "PDBUSQLExtractor" ;
-  fw:resourceType "Tool" .
+  fw:description  "Scalable Extraction of Big Macromolecular Data in Azure Data Lake Environment." ;
+  fw:labels       ( "Data query and retrieval" "Nucleic acid structure analysis" ) ;
+  fw:location     "https://bio.tools/PDBUSQLExtractor" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-pga>
-  fw:description
-                  "Construction of customized protein databases based on RNA-Seq data with/without genome guided, database searching, post-processing and report generation." ;
-  fw:labels       ( "data transformation" "proteomics" "proteomics experiment" "data submission"
-                    "annotation and curation" "data integration and warehousing" "data base management"
-                    "data governance" "RNA-seq" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/pga" ;
-  fw:name         "PGA" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-plangexq>
-  fw:description
-                  "A user-friendly interactive tool for the curation and annotation of planarian morphologies and gene expression patterns in a centralized database." ;
-  fw:labels       ( "ontology management" "infrastructure" "mathematics" "genotype and phenotype" "model organisms"
-                    "ontology and terminology" "gene expression" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/PlanGexQ" ;
-  fw:name         "PlanGexQ" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-plantpis>
-  fw:description  "Web querying system for a database collecting plant protease inhibitors data." ;
-  fw:labels       ( "data portals" "data base Portal" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/plantpis" ;
-  fw:name         "PlantPIs" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-poolparty>
-  fw:description
-                  "Knowledge Engineering & Knowledge Graph Management. Taxonomy, ontology and linked dataset management." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.poolparty.biz/" ;
-  fw:name         "PoolParty" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-poolparty-semantic-suite>
-  fw:description
-                  "Automate the handling of heterogeneous metadata systems and the creation of enterprise knowledge graphs.design knowledge graphs at your own pace and with speed. Create your own ontologies and custom schemes by reusing already existing ontologies such as FOAF, FIBO, schema.org and CHEBI, among others. Apply them to your existing taxonomies with ease." ;
-  fw:labels       ( "ontology annotation" "content enrichment" "data integration" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://semantic-web.com/poolparty-semantic-suite/" ;
-  fw:name         "PoolParty Semantic Suite" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-postgresql>
-  fw:description
-                  "A free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance." ;
-  fw:labels       ( "data deposition" "Relational database" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.postgresql.org/" ;
-  fw:name         "Postgresql" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-ppr-ssm>
-  fw:description
-                  "Personalized PageRank and semantic similarity measures for linking entities found in documents to concepts from domain-specific ontologies." ;
-  fw:labels       ( "ontology annotation" "imaging" "natural language processing" "data mining"
-                    "genotype and phenotype" "ontology and terminology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/PPR-SSM" ;
-  fw:name         "PPR-SSM" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-prodigy>
-  fw:description
-                  "A modern annotation tool for creating training and evaluation data for machine learning models. You can also use Prodigy to help you inspect and clean your data, do error analysis and develop rule-based systems to use in combination with your statistical models." ;
-  fw:labels       ( "ontology annotation" "data annotation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://prodi.gy/" ;
-  fw:name         "Prodigy" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-protégé>
-  fw:description  "A free, open source ontology editor and a knowledge management system." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://protege.stanford.edu/" ;
-  fw:name         "Protégé" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-pygmql>
-  fw:description  "Scalable data extraction and analysis for heterogeneous genomic datasets. Based on GMQL." ;
-  fw:labels       ( "search engine" "imaging" "workflow" "data base management" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/PyGMQL" ;
-  fw:name         "PyGMQL" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-qtl-tableminer++(qtm)>
-  fw:description
-                  "It is a command-line tool to retrieve and semantically annotate results obtained from QTL mapping experiments. It takes full-text articles from the Europe PMC repository as input and outputs the extracted QTLs into a relational database (SQLite) and text file (CSV)." ;
-  fw:labels       ( "ontology annotation" "ontology and terminology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/QTM" ;
-  fw:name         "QTL TableMiner++(QTM)" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-query-tabular>
-  fw:description
-                  "Galaxy-based tool which manipulates tabular files. Query Tabular automatically creates a SQLite database directly from a tabular file within a Galaxy workflow. The SQLite database can be saved to the Galaxy history, and further process to generate tabular outputs containing desired information and formatting." ;
-  fw:labels       ( "data transformation" "bioinformatics" "workflow" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/Query_Tabular" ;
-  fw:name         "Query Tabular" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-quickgo>
-  fw:description  "A fast browser for Gene Ontology terms and annotations." ;
-  fw:labels       ( "ontology management" "infrastructure" "ontology and terminology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/quickgo" ;
-  fw:name         "QuickGO" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-rdfscape>
-  fw:description
-                  "This is a project that brings Semantic Web features to the popular Systems Biology software Cytoscape. It allows to query, visualize and reason on ontologies represented in OWL or RDF within Cytoscape." ;
-  fw:labels       ( "ontology management" "infrastructure" "systems biology"
-                    "ontology and terminology" "biology" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/rdfscape" ;
-  fw:name         "RDFScape" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-redcap>
-  fw:description
-                  "REDCap is a secure web application for building and managing online surveys and databases. While REDCap can be used to collect virtually any type of data in any environment" ;
-  fw:labels       ( "data deposition" "cloud migration" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.project-redcap.org/" ;
-  fw:name         "REDCap" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-repo>
+<fw:tool-repo>
+  fw:name         "repo" ;
   fw:description
                   "A data manager meant to avoid manual storage/retrieval of data to/from the file system. It builds one (or more) centralized repository where R objects are stored with rich annotations, including corresponding code chunks, and easily searched and retrieved." ;
-  fw:labels       ( "search engine" "data submission" "annotation and curation" "data management"
-                    "data base management" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+  fw:labels       ( "Data query and retrieval" "Data submission" "annotation and curation" "Data management"
+                    "Database management" ) ;
   fw:location     "https://bio.tools/repo" ;
-  fw:name         "repo" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-robot>
+<fw:tool-snpator>
+  fw:name         "SNPator" ;
   fw:description
-                  "An open source library and command-line tool for automating ontology development tasks. ROBOT provides ontology processing commands for a variety of tasks, including commands for converting formats, running a reasoner, creating import modules, running reports, and various other tasks." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:image        "assets/img/ebi-robot.jpg" ;
-  fw:location     "http://robot.obolibrary.org/" ;
-  fw:name         "ROBOT" ;
-  fw:resourceType "Tool" .
+                  "Originally designed to help CeGen users to handle, retrieve, transform and analyze the genetic data generated by the genotyping facilities of the institution. However, it is also open to external users who may want to upload their own genotyped data in order to take advantage its data processing features. Users will be able to perform a set of operations which may range from very simple format transformations to some complex biostatistical calculations." ;
+  fw:labels       ( "Data query and retrieval" "Bioinformatics" "Data quality management" "Genetic variation"
+                    "GWAS study" ) ;
+  fw:location     "https://bio.tools/snpator" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-sdtm>
+<fw:tool-pygmql>
+  fw:name         "PyGMQL" ;
+  fw:description  "Scalable data extraction and analysis for heterogeneous genomic datasets. Based on GMQL." ;
+  fw:labels       ( "Data query and retrieval" "Imaging" "Workflows" "Database management" ) ;
+  fw:location     "https://bio.tools/PyGMQL" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-plantpis>
+  fw:name         "PlantPIs" ;
+  fw:description  "Web querying system for a database collecting plant protease inhibitors data." ;
+  fw:labels       ( "data portals" "Database Portal" ) ;
+  fw:location     "https://bio.tools/plantpis" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-baget>
+  fw:name         "BAGET" ;
+  fw:description
+                  "Web service designed to facilitate extraction of specific gene and protein sequences from completely determined prokaryotic genomes. Query results can be exported as a rich text format file for printing, archival or further analysis." ;
+  fw:labels       ( "data portals" "DNA" "Sequencing" "Model organisms" "Sequence analysis" ) ;
+  fw:location     "https://bio.tools/baget" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ncbi-resources>
+  fw:name         "NCBI Resources" ;
+  fw:description
+                  "Analysis and retrieval resources for the data in GenBank and other biological data made available through the NCBI web site." ;
+  fw:labels       ( "data portals" "Data mining" "Data integration and warehousing" "Database management"
+                    "Molecular interactions" "pathways and networks" "Rare diseases" ) ;
+  fw:location     "https://bio.tools/ncbi_resources" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-cpad>
+  fw:name         "CPAD" ;
+  fw:description
+                  "Curated Protein Aggregation Database (CPAD) is an integrated database which contains information related to amyloidogenic proteins, Aggregation prone regions, aggregation kinetics and structure of proteins relevant to aggregation." ;
+  fw:labels       ( "data portals" "Proteomics" "Data submission" "annotation and curation" "Proteins"
+                    "Small molecules" "Literature and language" ) ;
+  fw:location     "https://bio.tools/cpad" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-genomicsdb>
+  fw:name         "GenomicsDB" ;
+  fw:description
+                  "Advancing clinical cohort selection with genomics analysis on a distributed platform. Highly performant data storage in C++ for importing, querying and transforming variant data with Java/Spark. Used in gatk4." ;
+  fw:labels       ( "data portals" "Exome sequencing" "Systems medicine" "Personalised medicine"
+                    "Complementary medicine" "Biobank" ) ;
+  fw:location     "https://bio.tools/GenomicsDB" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-epiviz-file-server>
+  fw:name         "Epiviz File Server" ;
+  fw:description  "A library to query and transform genomic data from indexed files" ;
+  fw:labels       ( "data portals" "Oncology" "Workflows" "DNA" ) ;
+  fw:location     "https://bio.tools/epivizFileServer" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-sdtm>
+  fw:name         "SDTM" ;
   fw:description
                   "SDTM provides a standard for organizing and formatting data to streamline processes in collection management analysis and reporting." ;
   fw:labels       ( "data transformation" "data aggregation" "data warehousing"
                     "Standard for Exchange of Non-clinical Data" ) ;
-  fw:lastUpdate   "2021-06-30" ;
   fw:location     "https://www.cdisc.org/standards/foundational/sdtm" ;
-  fw:name         "SDTM" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-snpator>
-  fw:description
-                  "Originally designed to help CeGen users to handle, retrieve, transform and analyze the genetic data generated by the genotyping facilities of the institution. However, it is also open to external users who may want to upload their own genotyped data in order to take advantage its data processing features. Users will be able to perform a set of operations which may range from very simple format transformations to some complex biostatistical calculations." ;
-  fw:labels       ( "search engine" "bioinformatics" "data quality management" "genetic variation"
-                    "GWAS study" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/snpator" ;
-  fw:name         "SNPator" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-stardog>
-  fw:description  "Triple Store Database, Provide an enterprise knowledge graph as FAIR+ data catalogue" ;
-  fw:labels       ( "data deposition" "data integration" "data catalogue" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.stardog.com/" ;
-  fw:name         "Stardog" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-talend>
-  fw:description
-                  "A unified approach that combines rapid data integration, transformation, and mapping with automated quality checks to ensure trustworthy data in every step." ;
-  fw:labels       ( "data transformation" "data integration" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.talend.com/products/integrate-data/" ;
-  fw:name         "Talend" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-tamr>
-  fw:description
-                  "A cloud-native data mastering solution (cloud MDM) accelerate analytics through machine learning (ML), available on Google Cloud, Azure and AWS." ;
-  fw:labels       ( "search engine" "information integration" "data unification" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.tamr.com/" ;
-  fw:name         "TAMR" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-termite>
-  fw:description
-                  "Semantic enrichment to unlock the value of unstructured text and simplify the identification of new potential biomarker leads from scientific text.",
-                  "TERMite (TERM identification, tagging & extraction) is a fast named entity recognition (NER) and extraction engine for semantic analytics." ;
-  fw:labels       ( "ontology annotation" "ontology and terminology"  "uc-vocabulary-annotation" "search engine" "information extraction" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.scibite.com/platform/termite/" ;
-  fw:name         "Termite" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-thbp>
-  fw:description  "Mapping anatomical related entities to human body parts based on wikipedia in discharge summaries." ;
-  fw:labels       ( "ontology annotation" "anatomy" "ontology and terminology"
-                    "natural language processing" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/thbp" ;
-  fw:name         "thbp" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-topbraid-composer>
-  fw:description
-                  "TopBraid Composer Maestro Edition is used to develop ontology models, configure data source integration, and create semantic services and user interfaces." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://www.topquadrant.com/products/topbraid-composer/" ;
-  fw:name         "TopBraid Composer" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-transmart>
-  fw:description
-                  "An open-source data warehouse designed to store large amounts of clinical data from clinical trials, as well as data from basic research" ;
-  fw:labels       ( "data deposition" "data storage" "clinical data" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://github.com/transmart" ;
-  fw:name         "TransMART" ;
-  fw:resourceType "Tool" .
-
-<fw:Tool-trifacta>
+<fw:tool-trifacta>
+  fw:name         "TriFacta" ;
   fw:description
                   "A data preparation tool for data quality improvement, data transformation, and building data pipelines." ;
-  fw:labels       ( "data transformation" ) ;
-  fw:lastUpdate   "2021-06-30" ;
+  fw:labels       ( "data transformation" "" ) ;
   fw:location     "https://www.trifacta.com/" ;
-  fw:name         "TriFacta" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-vapur>
+<fw:tool-omop>
+  fw:name         "OMOP" ;
   fw:description
-                  "A Search Engine to Find Related Protein.Vapur is an online entity-oriented search engine for the COVID-19 anthology. Vapur is empowered with a semantic inverted index that is created through named entity recognition and relation extraction on CORD-19 abstracts." ;
-  fw:labels       ( "ontology annotation" "pathology" "ontology and terminology"
-                    "natural language processing" "Enzymes" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "https://bio.tools/vapur" ;
-  fw:name         "Vapur" ;
-  fw:resourceType "Tool" .
+                  "The OMOP Common Data Model allows for the systematic analysis of disparate observational databases." ;
+  fw:labels       ( "data transformation" "Data transformation" ) ;
+  fw:location     "https://www.ohdsi.org/data-standardization/the-common-data-model/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-vocbench>
+<fw:tool-collibra>
+  fw:name         "Collibra" ;
   fw:description
-                  "a web-based, multilingual, collaborative development platform for managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons and generic RDF datasets." ;
-  fw:labels       ( "ontology engineering" "vocabulary" ) ;
-  fw:lastUpdate   "2021-06-30" ;
-  fw:location     "http://vocbench.uniroma2.it/" ;
-  fw:name         "VocBench" ;
-  fw:resourceType "Tool" .
+                  "an enterprise-oriented data governance platform that provides tools for data management and stewardship." ;
+  fw:labels       ( "data transformation" "Data catalogue" "data governance" "data linkage" ) ;
+  fw:location     "https://www.collibra.com/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
-<fw:Tool-zooma>
+<fw:tool-apache-hadoop>
+  fw:name         "Apache Hadoop" ;
+  fw:description
+                  "A framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines" ;
+  fw:labels       ( "data transformation" "Distributed computing" ) ;
+  fw:location     "https://hadoop.apache.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-talend>
+  fw:name         "Talend" ;
+  fw:description
+                  "A unified approach that combines rapid data integration, transformation, and mapping with automated quality checks to ensure trustworthy data in every step." ;
+  fw:labels       ( "data transformation" "Data integration" ) ;
+  fw:location     "https://www.talend.com/products/integrate-data/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-informatica>
+  fw:name         "Informatica" ;
+  fw:description  "Connect & fetch data from different heterogeneous source and processing of data." ;
+  fw:labels       ( "data transformation" "Data integration" ) ;
+  fw:location     "https://www.informatica.com/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-openrefine-metadata-extension>
+  fw:name         "OpenRefine-metadata-extension" ;
+  fw:description
+                  "Enables a post-hoc FAIRification workflow: load an existing dataset, perform data wrangling tasks, add FAIR attributes to the data, generate a linked data version of the data and, finally, push the result to an online FAIR data infrastructure to make it accessible and discoverable." ;
+  fw:labels       ( "data transformation" "Data submission" "Annotation and curation" "Data identity and mapping" ) ;
+  fw:location     "https://github.com/FAIRDataTeam/OpenRefine-metadata-extension" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-disqover>
+  fw:name         "DISQOVER" ;
+  fw:description
+                  "Data integration platform for public, licensed and internal data. The Data Ingestion Engine enables transforming data into Linked Data which can be searched, navigated and analysed via the user interface and the API." ;
+  fw:labels       ( "data transformation" "Biomedical science" "Omics" "Biology" "Chemistry" "Medicine" ) ;
+  fw:location     "https://bio.tools/discover" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-pga>
+  fw:name         "PGA" ;
+  fw:description
+                  "Construction of customized protein databases based on RNA-Seq data with/without genome guided, database searching, post-processing and report generation." ;
+  fw:labels       ( "data transformation" "Proteomics" "Proteomics experiment" "Data submission"
+                    "annotation and curation" "Data integration and warehousing" "Database management"
+                    "Data governance" "RNA-seq" ) ;
+  fw:location     "https://bio.tools/pga" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-query-tabular>
+  fw:name         "Query Tabular" ;
+  fw:description
+                  "Galaxy-based tool which manipulates tabular files. Query Tabular automatically creates a SQLite database directly from a tabular file within a Galaxy workflow. The SQLite database can be saved to the Galaxy history, and further process to generate tabular outputs containing desired information and formatting." ;
+  fw:labels       ( "data transformation" "Bioinformatics" "Workflows" ) ;
+  fw:location     "https://bio.tools/Query_Tabular" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ms-data-core-api>
+  fw:name         "ms-data-core-api" ;
+  fw:description
+                  "The primary purpose of ms-data-core-api library is to provide commonly used classes and Object Model for Proteomics Experiments. You may also find it useful for your own computational proteomics projects." ;
+  fw:labels       ( "data transformation" "Proteomics" "Proteomics experiment" "Software engineering" ) ;
+  fw:location     "https://bio.tools/ms-data-core-api" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-redcap>
+  fw:name         "REDCap" ;
+  fw:description
+                  "REDCap is a secure web application for building and managing online surveys and databases. While REDCap can be used to collect virtually any type of data in any environment" ;
+  fw:labels       ( "data deposition" "Cloud migration" ) ;
+  fw:location     "https://www.project-redcap.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-transmart>
+  fw:name         "TransMART" ;
+  fw:description
+                  "An open-source data warehouse designed to store large amounts of clinical data from clinical trials, as well as data from basic research" ;
+  fw:labels       ( "data deposition" "Data storage" "clinical data" ) ;
+  fw:location     "https://github.com/transmart" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-stardog>
+  fw:name         "Stardog" ;
+  fw:description  "Triple Store Database, Provide an enterprise knowledge graph as FAIR+ data catalogue" ;
+  fw:labels       ( "data deposition" "Data integration" "data catalog" ) ;
+  fw:location     "https://www.stardog.com/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-postgresql>
+  fw:name         "Postgresql" ;
+  fw:description
+                  "A free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance." ;
+  fw:labels       ( "data deposition" "Relational database" ) ;
+  fw:location     "https://www.postgresql.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-chemotion>
+  fw:name         "Chemotion" ;
+  fw:description
+                  "Repository for chemistry research data that provides solutions for current challenges to store research data in a feasible manner, allowing the conservation of domain specific information in a machine readable format." ;
+  fw:labels       ( "data deposition" "Data submission" "annotation and curation" "Workflows" "Chemistry" ) ;
+  fw:location     "https://bio.tools/chemotion" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-zooma>
+  fw:name         "ZOOMA" ;
   fw:description
                   "A tool for mapping free text annotations to ontology term based on a curated repository of annotation knowledge." ;
-  fw:labels       ( "ontology annotation" "ontology and terminology" "systems biology"
-                    "data identity and mapping" "uc-vocabulary-annotation") ;
-  fw:lastUpdate   "2021-06-30" ;
+  fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" "Systems biology"
+                    "Data identity and mapping" ) ;
   fw:location     "https://www.ebi.ac.uk/spot/zooma/" ;
-  fw:name         "ZOOMA" ;
-  fw:resourceType "Tool" .
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
 
+<fw:tool-ncbi-bioportal-annotator>
+  fw:name         "NCBI BioPortal Annotator" ;
+  fw:description  "Get annotations for biomedical text with classes from the ontologies." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" "Systems biology"
+                    "Data identity and mapping" ) ;
+  fw:location     "https://bioportal.bioontology.org/annotatorplus" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-biobert>
+  fw:name         "BioBert" ;
+  fw:description
+                  "A biomedical language representation model designed for biomedical text mining tasks such as biomedical named entity recognition, relation extraction, question answering." ;
+  fw:labels       ( "ontology annotation" "interoperability" "text mining" "named-entity recognition"
+                    "natural language processing" ) ;
+  fw:location     "https://github.com/dmis-lab/biobert" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-termite>
+  fw:name         "Termite" ;
+  fw:description
+                  "Semantic enrichment to unlock the value of unstructured text and simplify the identification of new potential biomarker leads from scientific text." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" ) ;
+  fw:location     "https://www.scibite.com/platform/termite/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-poolparty-semantic-suite>
+  fw:name         "PoolParty Semantic Suite" ;
+  fw:description
+                  "Automate the handling of heterogeneous metadata systems and the creation of enterprise knowledge graphs.design knowledge graphs at your own pace and with speed. Create your own ontologies and custom schemes by reusing already existing ontologies such as FOAF, FIBO, schema.org and CHEBI, among others. Apply them to your existing taxonomies with ease." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Content enrichment" "Data integration" ) ;
+  fw:location     "https://semantic-web.com/poolparty-semantic-suite/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ontomaton>
+  fw:name         "OntoMaton" ;
+  fw:description  "A tool facilitating ontology search and tagging functionalities within Google Spreadsheets." ;
+  fw:labels       ( "ontology annotation" "interoperability" "" ) ;
+  fw:location     "https://github.com/ISA-tools/OntoMaton" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-prodigy>
+  fw:name         "Prodigy" ;
+  fw:description
+                  "A modern annotation tool for creating training and evaluation data for machine learning models. You can also use Prodigy to help you inspect and clean your data, do error analysis and develop rule-based systems to use in combination with your statistical models." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Data annotation" ) ;
+  fw:location     "https://prodi.gy/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ontotext>
+  fw:name         "OntoText" ;
+  fw:description
+                  "Connect and publish complex enterprise knowledge with standard-compliant semantic graph database; Customize and apply analytics to link documents to graphs, extract new facts, classify and recommend content." ;
+  fw:labels       ( "ontology annotation" "interoperability" "" ) ;
+  fw:location     "https://www.ontotext.com/products/ontotext-platform/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-biobert>
+  fw:name         "bioBERT" ;
+  fw:description
+                  "A pre-trained weights of BioBERT, a language representation model for biomedical domain, especially designed for biomedical text mining tasks such as biomedical named entity recognition, relation extraction, question answering, etc." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Medicine" "Ontology and terminology"
+                    "Natural language processing" ) ;
+  fw:location     "https://bio.tools/BioBERT" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ppr-ssm>
+  fw:name         "PPR-SSM" ;
+  fw:description
+                  "Personalized PageRank and semantic similarity measures for linking entities found in documents to concepts from domain-specific ontologies." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Imaging" "Natural language processing" "Data mining"
+                    "Genotype and phenotype" "Ontology and terminology" ) ;
+  fw:location     "https://bio.tools/PPR-SSM" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-hpo2go>
+  fw:name         "HPO2GO" ;
+  fw:description
+                  "Prediction of human phenotype ontology term associations using cross ontology annotation co-occurrences.Mapping between Human Phenotype Ontology (HPO) and Gene Ontology (GO) terms for the prediction of gene/protein - function - phenotype - disease associations." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Pathology" "Protein interactions"
+                    "Genotype and phenotype" "Ontology and terminology" "Gene expression" ) ;
+  fw:location     "https://bio.tools/HPO2GO" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-vapur>
+  fw:name         "Vapur" ;
+  fw:description
+                  "A Search Engine to Find Related Protein.Vapur is an online entity-oriented search engine for the COVID-19 anthology. Vapur is empowered with a semantic inverted index that is created through named entity recognition and relation extraction on CORD-19 abstracts." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Pathology" "Ontology and terminology"
+                    "Natural language processing" "Enzymes" ) ;
+  fw:location     "https://bio.tools/vapur" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-matscholar>
+  fw:name         "matscholar" ;
+  fw:description
+                  "A Python library for materials-focused natural language processing (NLP). Named Entity Recognition and Normalization Applied to Large-Scale Information Extraction from the Materials Science Literature." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Chemistry" "Ontology and terminology"
+                    "Natural language processing" ) ;
+  fw:location     "https://bio.tools/matscholar" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-collabonet>
+  fw:name         "CollaboNet" ;
+  fw:description  "Collaboration of deep neural networks for biomedical named entity recognition." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" "Natural language processing"
+                    "Machine learning" ) ;
+  fw:location     "https://bio.tools/collabonet" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-calchas>
+  fw:name         "Calchas" ;
+  fw:description
+                  "A web based framework that takes advantage of domain specific ontologies, and Natural Language Processing, aiming to empower exploration of biomedical resources via semantic-based querying and search. The NLP engine analyzes the input free-text query and translates it into targeted queries with terms from the underlying ontology." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Medical informatics" "Ontology and terminology"
+                    "Natural language processing" "Bioinformatics" ) ;
+  fw:location     "https://bio.tools/calchas" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-qtl-tableminerqtm>
+  fw:name         "QTL TableMiner++(QTM)" ;
+  fw:description
+                  "It is a command-line tool to retrieve and semantically annotate results obtained from QTL mapping experiments. It takes full-text articles from the Europe PMC repository as input and outputs the extracted QTLs into a relational database (SQLite) and text file (CSV)." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Ontology and terminology" ) ;
+  fw:location     "https://bio.tools/QTM" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-thbp>
+  fw:name         "thbp" ;
+  fw:description
+                  "Mapping anatomical related entities to human body parts based on wikipedia in discharge summaries." ;
+  fw:labels       ( "ontology annotation" "interoperability" "Anatomy" "Ontology and terminology"
+                    "Natural language processing" ) ;
+  fw:location     "https://bio.tools/thbp" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-oxo>
+  fw:name         "OxO" ;
+  fw:description
+                  "A service for finding mappings (or cross-references) between terms from ontologies, vocabularies and coding standards." ;
+  fw:labels       ( "ontology mapping" "interoperability" "Ontology alignment" ) ;
+  fw:location     "https://www.ebi.ac.uk/spot/oxo/index" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-meshr>
+  fw:name         "meshr" ;
+  fw:description  "A set of annotation maps describing the entire MeSH assembled using data from MeSH." ;
+  fw:labels       ( "ontology mapping" "interoperability" "Medical informatics" "Data quality management" ) ;
+  fw:location     "https://bio.tools/meshr" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-locdb>
+  fw:name         "locdb" ;
+  fw:description
+                  "Manually curated database with experimental annotations for the subcellular localizations of proteins in Homo sapiens (HS, human) and Arabidopsis thaliana (AT, thale cress)." ;
+  fw:labels       ( "ontology mapping" "interoperability" "Ontology and terminology" "Data submission"
+                    "annotation and curation" "Proteins" ) ;
+  fw:location     "https://bio.tools/locdb" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ols>
+  fw:name         "OLS" ;
+  fw:description
+                  "a repository for biomedical ontologies that aims to provide a single point of access to the latest ontology versions." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
+  fw:location     "https://www.ebi.ac.uk/ols/index" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-bioportal>
+  fw:name         "BioPortal" ;
+  fw:description  "A repository of biomedical ontologies." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
+  fw:location     "https://bioportal.bioontology.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-poolparty>
+  fw:name         "PoolParty" ;
+  fw:description
+                  "Knowledge Engineering & Knowledge Graph Management. Taxonomy, ontology and linked dataset management." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
+  fw:location     "https://www.poolparty.biz/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-centree-ontology-manager>
+  fw:name         "Centree Ontology Manager" ;
+  fw:description
+                  "A centralised, enterprise-ready resource for ontology management and transforms the experience of maintaining and releasing ontologies for research-led businesses." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
+  fw:location     "https://www.scibite.com/platform/centree/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ontobee>
+  fw:name         "Ontobee" ;
+  fw:description
+                  "A linked data server designed for ontologies. Ontobee is aimed to facilitate ontology data sharing, visualization, query, integration, and analysis." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
+  fw:location     "http://www.ontobee.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-aberowl>
+  fw:name         "AberOWL" ;
+  fw:description
+                  "A framework for ontology-based access to biological data. It consists of a repository of bio-ontologies, a set of webservices which provide access to OWL(-EL) reasoning over the ontologies, and several frontends which utilise the ontology repository and reasoning services." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "" ) ;
+  fw:location     "http://www.aber-owl.net/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ngly1>
+  fw:name         "ngly1" ;
+  fw:description
+                  "A repository for the NGLY1 Deficiency Knowledge Graph, the reasoning context to support hypothesis discovery for NGLY1 Deficiency-CDDG (DOID:0060728) research. The user can navigate the knowledge in the graph in the Neo4j Browser website." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Molecular interactions"
+                    "pathways and networks" "Ontology and terminology" "Machine learning" ) ;
+  fw:location     "https://bio.tools/ngly1" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-doc2hpo>
+  fw:name         "Doc2Hpo" ;
+  fw:description  "Web application for efficient and accurate Human Phenotype Ontology (HPO) concept curation." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Genotype and phenotype"
+                    "Ontology and terminology" "Natural language processing" ) ;
+  fw:location     "https://bio.tools/doc2hpo" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-plangexq>
+  fw:name         "PlanGexQ" ;
+  fw:description
+                  "A user-friendly interactive tool for the curation and annotation of planarian morphologies and gene expression patterns in a centralized database." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Mathematics" "Genotype and phenotype"
+                    "Model organisms" "Ontology and terminology" "Gene expression" ) ;
+  fw:location     "https://bio.tools/PlanGexQ" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-gocats>
+  fw:name         "GOcats" ;
+  fw:description  "Advances in gene ontology utilization improve statistical power of annotation enrichment." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Mapping" "Ontology and terminology"
+                    "Microarray experiment" ) ;
+  fw:location     "https://bio.tools/gocats" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-rdfscape>
+  fw:name         "RDFScape" ;
+  fw:description
+                  "This is a project that brings Semantic Web features to the popular Systems Biology software Cytoscape. It allows to query, visualize and reason on ontologies represented in OWL or RDF within Cytoscape." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Systems biology"
+                    "Ontology and terminology" "Biology" ) ;
+  fw:location     "https://bio.tools/rdfscape" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-ontobrowser>
+  fw:name         "OntoBrowser" ;
+  fw:description
+                  "The tool was developed to manage ontologies (and controlled terminologies e.g. CDISC SEND). The primary goal of the tool is to provide an online collaborative solution for expert curators to map code list terms (sourced from multiple systems/databases) to preferred ontology terms." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology"
+                    "Data identity and mapping" ) ;
+  fw:location     "https://bio.tools/ontobrowser" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-quickgo>
+  fw:name         "QuickGO" ;
+  fw:description  "A fast browser for Gene Ontology terms and annotations." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology" ) ;
+  fw:location     "https://bio.tools/quickgo" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-circular-gene-ontology-cirgo>
+  fw:name         "Circular Gene Ontology (CirGO)" ;
+  fw:description
+                  "Visualises non-redundant two-level hierarchically structured ontology terms from gene expression data in a 2D space." ;
+  fw:labels       ( "ontology management" "infrastructure" "interoprability" "Ontology and terminology"
+                    "Data visualisation" "Gene expression" ) ;
+  fw:location     "https://bio.tools/cirgo" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-protégé>
+  fw:name         "Protégé" ;
+  fw:description  "A free, open source ontology editor and a knowledge management system." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "https://protege.stanford.edu/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-robot>
+  fw:name         "ROBOT" ;
+  fw:description
+                  "An open source library and command-line tool for automating ontology development tasks. ROBOT provides ontology processing commands for a variety of tasks, including commands for converting formats, running a reasoner, creating import modules, running reports, and various other tasks." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "http://robot.obolibrary.org/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-owlapi>
+  fw:name         "OWLAPI" ;
+  fw:description
+                  "A Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "http://owlcs.github.io/owlapi/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-enanomapper-slimmer>
+  fw:name         "eNanoMapper Slimmer" ;
+  fw:description
+                  "A slim tool to slim ontologies as part of ontology integration. It allows users to provide configuration files that specify which parts of an ontology should be kept and/or removed, allowing to just select parts of the ontology you like." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "https://github.com/enanomapper/slimmer" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-topbraid-composer>
+  fw:name         "TopBraid Composer" ;
+  fw:description
+                  "TopBraid Composer Maestro Edition is used to develop ontology models, configure data source integration, and create semantic services and user interfaces." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "https://www.topquadrant.com/products/topbraid-composer/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:tool-vocbench>
+  fw:name         "VocBench" ;
+  fw:description
+                  "a web-based, multilingual, collaborative development platform for managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons and generic RDF datasets." ;
+  fw:labels       ( "ontology engineering" "vocabulary" "interoperability" "" ) ;
+  fw:location     "http://vocbench.uniroma2.it/" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "tool" .
+
+<fw:process-data-access-and-ethics>
+  fw:name         "data access and ethics" ;
+  fw:description  "Determine data access for FAIRification, including ethics, DTAs, licensing etc" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" .
+
+<fw:process-competency-questions>
+  fw:name         "competency questions" ;
+  fw:description  "Define dataset competency questions and expected/desired outcomes of FAIRification" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-interim-hosting>
+  fw:name         "interim hosting" ;
+  fw:description  "Host data in interim solution and make available for FAIRification processes" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-competency-questions>" ) ;
+  fw:relatesTo    ( "<fw:process-competency-questions>" ) .
+
+<fw:process-examination>
+  fw:name         "examination" ;
+  fw:description  "Dataset owners and FAIR experts examine datasets and reach shared understanding" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-interim-hosting>" ) ;
+  fw:relatesTo    ( "<fw:process-interim-hosting>" ) .
+
+<fw:process-identify-data-types>
+  fw:name         "identify data types" ;
+  fw:description
+                  "Identify Data Types (processes, assays, subjects, samples etc.) Identify primary organising principles e.g. cells, compounds" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-examination>" ) ;
+  fw:relatesTo    ( "<fw:process-examination>" ) .
+
+<fw:process-identifier-strategies>
+  fw:name         "identifier strategies" ;
+  fw:description  "Determine identifier strategy for data types. Assign identifiers in accordance with strategy." ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identify-data-types>" ) ;
+  fw:relatesTo    ( "<fw:process-identify-data-types>" ) .
+
+<fw:process-metadata-strategies>
+  fw:name         "metadata strategies" ;
+  fw:description  "Determine  project metadata strategies using FAIRsharing. Apply metadata strategies to datasets" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+
+<fw:process-evaluate-against-standards>
+  fw:name         "evaluate against standards" ;
+  fw:description
+                  "Compare datasets to community standards. Evaluate datasets using FAIR indicators that are appropriate given competency questions. Share with IMI Catalog for indexing. " ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-metadata-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+
+<fw:process-interoperability-requirements>
+  fw:name         "interoperability requirements" ;
+  fw:description
+                  "Determine interoperability requirement for dataset  (e,g, consumption of data for downstream analysis)" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-evaluate-against-standards>" ) ;
+  fw:relatesTo    ( "<fw:process-evaluate-against-standards>" ) .
+
+<fw:process-hosting-requirements>
+  fw:name         "hosting requirements" ;
+  fw:description
+                  "Examine dataset hosting choices and needs (size, complexity, analytics). Match data types to available hosting solutions eg. public repos, EFPIA cloud" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-data-sharing>
+  fw:name         "data sharing" ;
+  fw:description  "Submit data to chosen hosting solution for public sharing and dissemination" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-hosting-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-hosting-requirements>" ) .
+
+<fw:process-data-access>
+  fw:name         "data access" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-data-ethics>
+  fw:name         "data ethics" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-data-retrieval>
+  fw:name         "data retrieval" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-access-and-ethics>" ) ;
+  fw:relatesTo    ( "<fw:process-data-access-and-ethics>" ) .
+
+<fw:process-identifier-mapping>
+  fw:name         "identifier mapping" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-resolution>" ) ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-resolution>" "<fw:process-identifier-strategies>" ) .
+
+<fw:process-identifier-resolution>
+  fw:name         "identifier resolution" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:isAfter      ( "<fw:process-identifier-minting>" ) ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-minting>" "<fw:process-identifier-strategies>" ) .
+
+<fw:process-identifier-minting>
+  fw:name         "identifier minting" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-identifier-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-identifier-strategies>" ) .
+
+<fw:process-vocabulary-engineering>
+  fw:name         "vocabulary engineering" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-management>
+  fw:name         "vocabulary management" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-annotation>
+  fw:name         "vocabulary annotation" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-vocabulary-alignment>
+  fw:name         "vocabulary alignment" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-interoperability-requirements>" ) ;
+  fw:relatesTo    ( "<fw:process-interoperability-requirements>" ) .
+
+<fw:process-data-annotation>
+  fw:name         "data annotation" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-metadata-strategies>" ) ;
+  fw:relatesTo    ( "<fw:process-metadata-strategies>" ) .
+
+<fw:process-data-deposition>
+  fw:name         "data deposition" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+
+<fw:process-data-transfer>
+  fw:name         "data transfer" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
+
+<fw:process-licensing>
+  fw:name         "licensing" ;
+  fw:lastUpdate   "2021-08-04" ;
+  fw:resourceType "process" ;
+  fw:hasParent    ( "<fw:process-data-sharing>" ) ;
+  fw:relatesTo    ( "<fw:process-data-sharing>" ) .
