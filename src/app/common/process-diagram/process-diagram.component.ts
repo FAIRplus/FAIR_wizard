@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
 
@@ -8,19 +8,87 @@ import {ProcessDialogComponent} from "../process-dialog/process-dialog.component
   styleUrls: ['./process-diagram.component.scss']
 })
 export class ProcessDiagramComponent implements OnInit {
-  title = 'appBootstrap';
+  @Input() processList: object[];
 
-  closeResult: string;
+  data = [
+    {
+      "parent": "Data access and ethics",
+      "name": "Data access",
+      "description": "this is sub-process description: Data access"
+    },
+    {
+      "parent": "Data access and ethics",
+      "name": "Data ethics",
+      "description": "this is sub-process description: Data ethics"
+    },
+    {
+      "parent": "Competency questions",
+      "name": "Data competency",
+      "description": "this is sub-process description: Data competency"
+    }
+  ];
 
-  constructor(private modalService: NgbModal) {
+  processes = [
+    {
+      "name": "Data access and ethics",
+      "description": "this is the process description: Data access and ethics",
+      "subProcess": []
+    },
+    {
+      "name": "Competency questions",
+      "description": "this is the process description: Competency questions",
+      "subProcess": []
+    }
+  ];
+
+  processMap = {};
+
+  title: string;
+  description: string;
+  subProcessList: object[];
+  connectedResources: object[];
+
+  constructor() {
   }
 
   ngOnInit(): void {
+    for (let process of this.processList) {
+      if (process['hasParent'] == null || process['hasParent'].length == 0) {
+        if (process["id"] in this.processMap) {
+          this.processMap[process["id"]]["name"] = process["name"];
+          this.processMap[process["id"]]["description"] = process["description"];
+        } else {
+          this.processMap[process["id"]] = {
+            "name": process["name"],
+            "description": process["description"],
+            "subProcess": []
+          }
+        }
+      } else {
+        let parentId = process['hasParent'][0]["id"];
+        let parentProcess;
+        if (parentId in this.processMap) {
+          parentProcess = this.processMap[parentId];
+        } else {
+          parentProcess = {"subProcess": []}
+          this.processMap[parentId] = parentProcess;
+        }
+
+        if (parentProcess != null) {
+          parentProcess.subProcess.push(process);
+        }
+      }
+    }
+
+    this.onSelectProcess("fw:process-data-access-and-ethics");
   }
 
-  openProcessDialog(content) {
-    const modalRef = this.modalService.open(ProcessDialogComponent, {size: 'xl', centered: true});
-    modalRef.componentInstance.name = content;
+  onSelectProcess(processName) {
+    let parentProcess = this.processMap[processName];
+    this.title = parentProcess.name;
+    this.description = parentProcess.description;
+    this.subProcessList = parentProcess.subProcess;
+    this.connectedResources = [];
   }
 
 }

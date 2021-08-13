@@ -54,12 +54,6 @@ public class DecisionTreeController {
   public List<ProcessNetworkElement> getProcessNetwork(@RequestParam(required = false) List<String> filters,
                                                        @RequestParam(required = false) String process) {
 
-//    if (filters == null || filters.isEmpty()) {
-//      return processNetworkService.getResourceNetwork();
-//    }
-//    return processNetworkService.getResourceNetwork();
-//    return rdfNetworkService.getResourceNetwork();
-
     Set<FairResource> resources = rdfNetworkService.searchResources(filters);
     return rdfNetworkService.populateNetwork(resources);
   }

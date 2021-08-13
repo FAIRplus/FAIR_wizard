@@ -24,6 +24,7 @@ public class FairResource {
   private List<FairResource> requires;
   private List<FairResource> isAfter;
   private List<FairResource> includes;
+  private List<FairResource> hasParent;
 
   public FairResource(String id) {
     this.id = id;

@@ -1,78 +1,70 @@
-<div class="diagram-container">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 150 64" fill="#fff" fill-rule="evenodd" stroke="#000"
-       stroke-linecap="round" stroke-linejoin="round" font-family="Roboto" font-size="14" text-anchor="middle">
-<!--    <path d="M9.5 47.5l-8-15 8-15h44l8 15-8 15z" fill="#fdc" stroke="#838383"/>-->
+<div class="row">
+  <div class="col-lg-2 process-container">
+<! todo how can we maintain the order of processes---->
+<!--    <div *ngFor="let process of processList">-->
+<!--    <div class="process chevron" (click)="onSelectProcess(process.id)">-->
+<!--      <div class="process-text">{{process.name}}</div>-->
+<!--    </div>-->
+<!--    </div>-->
 
-    <g id="firstProcess" class="process-block">
-      <path d="M00 2h25l5 5 -5 5h-25v-10 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Data access and ethics')"/>
-      <text x="15" y="8" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Data access and ethics')">
-        <tspan x="15" dy="-1.5">Data access </tspan>
-        <tspan x="15" dy="3">and ethics</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M30 2h25l5 5 -5 5h-25l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Interim hosting')"/>
-      <text x="45" y="8" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Interim hosting')">Interim hosting</text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M60 2h25l5 5 -5 5h-25l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Examination')"/>
-      <text x="75" y="8" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Examination')">Examination</text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M90 2q50 15, 5 28l-5 -5 5 -5q40 -5, -5 -8l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Identify data types')"/>
-      <text x="105" y="17" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Identify data types')">
-        <tspan x="105" dy="-1.5">Identify data </tspan>
-        <tspan x="105" dy="3">types</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M65 20h25l-5 5 5 5h-25l-5 -5 5 -5 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Determine identifiers')"/>
-      <text x="75" y="26" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Determine identifiers')">
-        <tspan x="75" dy="-1.5">Determine </tspan>
-        <tspan x="75" dy="3">identifiers</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M35 20h25l-5 5 5 5h-25l-5 -5 5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Metadata strategies')"/>
-      <text x="45" y="26" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Metadata strategies')">
-        <tspan x="45" dy="-1.5">Metadata </tspan>
-        <tspan x="45" dy="3">strategies</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M30 20q-50 15, -5 28l5 -5 -5 -5q-40 -5, 5 -8l-5 -5 5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Evaluate against standards')"/>
-      <text x="15" y="35" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Evaluate against standards')">
-        <tspan x="15" dy="-1.5">Evaluate against </tspan>
-        <tspan x="15" dy="3">standards</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M30 38h25l5 5 -5 5h-25l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Interoperability requirements')"/>
-      <text x="45" y="44" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Interoperability requirements')">
-        <tspan x="45" dy="-1.5">Interoperability </tspan>
-        <tspan x="45" dy="3">requirements</tspan>
-      </text>
-    </g>
-    <g id="firstProcess" class="process-block">
-      <path d="M60 38h25l5 5 -5 5h-25l5 -5 -5 -5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Hosting requirements')"/>
-      <text x="75" y="44" font-size="3" fill="black" stroke="black" stroke-width=".06" (click)="openProcessDialog('Hosting requirements')">
-        <tspan x="75" dy="-1.5">Hosting </tspan>
-        <tspan x="75" dy="3">requirements</tspan>
-      </text>
-    </g>
-    <g id="lastProcess" class="process-block">
-      <path d="M90 38h30v10h-30l5 -5 -5 -5 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2" (click)="openProcessDialog('Data sharing')"/>
-      <text x="105" y="44" font-size="3" fill="black" stroke="black" stroke-width=".06"  (click)="openProcessDialog('Data sharing')">Data sharing</text>
-    </g>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-data-access-and-ethics')">
+      <div class="process-text">Data access and ethics</div>
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-competency-questions')">
+      <div class="process-text">Competency questions</div>
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-interim-hosting')">
+      <div class="process-text">Interim hosting</div>
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-examination')">
+      <div class="process-text">Examination</div>
 
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-identify-data-types')">
+      <div class="process-text">Identify data types</div>
 
-<!--    <path d="M2 12h10l5 -5 -5 -5h-10v10 z" fill="#d9d9d9" stroke="#888888" stroke-width="0.2"/>-->
-<!--    <path d="M17 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
-<!--    <path d="M32 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
-<!--    <path d="M47 12h10l5 -5 -5 -5h-10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
-<!--    <path d="M63 12c10 10, 10 10, 0 30l-5 5 5 5c10 10, 10 10, 0 10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
-<!--    <path d="M63 12q30 -15, 0 30l-5 5 5 5q-10 5, 0 10l5 5 -5 5 z" fill="#b4a7d6" stroke="#888888" stroke-width="0.2"/>-->
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-identifier-strategies')">
+      <div class="process-text">Identifier strategies</div>
 
-<!--    <line x1="1" x2="40" y1="1" y2="1" stroke="#888888" stroke-width="0.2"/>-->
-  </svg>
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-metadata-strategies')">
+      <div class="process-text">Metadata strategies</div>
+
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-evaluate-against-standards')">
+      <div class="process-text">Evaluate against standards</div>
+
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-interoperability-requirements')">
+      <div class="process-text">Interoperability requirements</div>
+
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-hosting-requirements')">
+      <div class="process-text">Hosting requirements</div>
+    </div>
+    <div class="process chevron" (click)="onSelectProcess('fw:process-data-sharing')">
+      <div class="process-text">Data sharing</div>
+    </div>
+  </div>
+
+  <div class="col-lg-10 sub-process-container">
+    <div class="row process-description">
+      <div class="process-description-title">{{title}}</div>
+      {{description}}
+    </div>
+    <div class="row sub-process-block" *ngFor="let subProcess of subProcessList">
+      <div class="col-lg-4">
+        <div class="sub-process">
+          {{subProcess.name}}
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="related-resource" *ngFor="let relatedResource of subProcess['relatesTo']">
+          {{relatedResource.id}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

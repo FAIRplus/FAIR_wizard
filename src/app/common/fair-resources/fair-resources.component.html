@@ -3,9 +3,11 @@
 <div class="fair-resources">
 
   <div class="card h-100 w-200 fair-resource">
-    <h5 class="card-header">FAIR Cookbook Recipe Recommendations</h5>
+    <h5 class="card-header">
+      FAIR Cookbook Recipe Recommendations
+      <h6 class="card-title h-100 w-200">Short description of FAIR Cookbook Recipe Recommendations</h6>
+    </h5>
     <div class="card-body">
-      <h6 class="card-title h-100 w-200">Short description of FAIRification Processes</h6>
       <div *ngIf="recipes.length > 0; else blankContent" class="card-text h-100">
         <div class="row">
           <div *ngFor="let recipe of recipes" class="col-lg-4">
@@ -25,9 +27,11 @@
   </div>
 
   <div class="card h-100 fair-resource">
-    <h5 class="card-header">FAIRification Implementation Tools</h5>
+    <h5 class="card-header">
+      FAIRification Implementation Tools
+      <h6 class="card-title h-100 w-200">Short description of FAIR Implementation Tools</h6>
+    </h5>
     <div class="card-body">
-      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
       <div *ngIf="tools.length > 0; else blankContent" class="card-text h-100">
         <table class="table table-hover table-bordered table-dark" aria-describedby="FAIRification implementation tools">
           <thead>
@@ -50,9 +54,11 @@
   </div>
 
   <div class="card h-100 fair-resource">
-    <h5 class="card-header">FAIRification Indicators</h5>
+    <h5 class="card-header">
+      FAIRification Indicators
+      <h6 class="card-title h-100 w-200">Short description of FAIR Indicators</h6>
+    </h5>
     <div class="card-body">
-      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
       <div *ngIf="indicators.length > 0; else blankContent" class="card-text h-100">
         <table class="table table-hover table-bordered">
           <thead>
@@ -73,10 +79,12 @@
   </div>
 
   <div class="card h-100 fair-resource">
-    <h5 class="card-header">FAIRification Processes</h5>
+    <h5 class="card-header">
+      FAIRification Processes
+      <h6 class="card-title h-100 w-200">Short description of FAIR Processes</h6>
+    </h5>
     <div class="card-body">
-      <h6 class="card-title h-100">Short description of FAIRification Processes</h6>
-      <p class="card-text h-100"><app-process-diagram></app-process-diagram></p>
+      <p class="card-text h-100"><app-process-diagram [processList]="processes"></app-process-diagram></p>
     </div>
   </div>
 
@@ -86,8 +94,5 @@
       <app-resource-network [filters]="filters"></app-resource-network>
     </div>
   </div>
-
-
-
 
 </div>

@@ -17,10 +17,13 @@
 }
 
 .card-title {
-  height: 20px;
+  //height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 5px;
+  font-size: 15px;
+  margin-bottom: 1px;
 }
 
 .card-header-recipe {
