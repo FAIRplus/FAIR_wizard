@@ -18,8 +18,7 @@ public class RdfToFairResourceConverter {
   private static final Logger LOG = LoggerFactory.getLogger(RdfToFairResourceConverter.class);
 
   public FairResource convert(Resource resource) {
-    FairResource fairResource = new FairResource();
-    fairResource.setId(resource.getURI());
+    FairResource fairResource = new FairResource(resource.getURI());
 
     StmtIterator stmts = resource.listProperties();
     while (stmts.hasNext()) {
@@ -41,10 +40,8 @@ public class RdfToFairResourceConverter {
             if (node.isLiteral()) {
               itemList.add(node.asLiteral().getString());
             } else {
-              FairResource emptyResource = new FairResource();
-              emptyResource.setId(node.asResource().getURI());
+              FairResource emptyResource = new FairResource(node.asResource().getURI());
               itemList.add(emptyResource);
-//              itemList.add(node.asResource().getURI());
             }
           }
         }

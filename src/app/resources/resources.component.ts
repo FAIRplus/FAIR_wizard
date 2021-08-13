@@ -28,6 +28,7 @@ export class ResourcesComponent implements OnInit {
   }
 
   search(filters: string[]) {
+    //todo handle error response
     this.decisionService.searchResources(filters).subscribe(r => this.fairResources = r);
   }
 

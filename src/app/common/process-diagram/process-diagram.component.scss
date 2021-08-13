@@ -1,23 +1,120 @@
-.diagram-container {
-  height: 300px;
-  width: 900px;
+.process-container {
+  //height: 50px;
+  //background-color: #7C2EDD;
 }
 
-svg path:hover {
-  fill: #310562;
-}
-
-svg text:hover {
-  fill: #ffffff;
-}
-
-.process-block:hover path {
-  fill: #310562;
+.process {
+  margin: 5px 2px;
+  padding: 10px 10px;
+  height: 80px;
+  text-align: center;
   cursor: pointer;
 }
 
-.process-block:hover text {
-  fill: #afafaf;
-  stroke: #7F7F7F;
+.process:hover {
+  //height: 60px;
+}
+
+.process:hover .process-text{
+  //font-weight: bold;
+  color: #ffffff;
+}
+
+.process-text {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+  //margin-top: 2px;
+  font-size: 13px;
+}
+
+.chevron {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 6px;
+  height: 50px;
+  width: 102%;
+  //z-index: -1;
+}
+.chevron:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 51%;
+  background: #c09ce5;
+  transform: skew(0deg, 18deg);
+  //border: 1px solid #a371da;
+}
+.chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: #c09ce5;
+  transform: skew(0deg, -18deg);
+  //border-top: 1px solid black;
+  //border-bottom: 1px solid black;
+  //border-right: 1px solid black;
+}
+
+
+.sub-process-container {
+  //height: 50px;
+  //background-color: #5a5165;
+}
+
+.process-description {
+  //width: 100%;
+  padding: 10px;
+  //margin: 10px 0;
+  height: 80px;
+  background-color: #f8f8f8;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  //border-bottom: 1px solid #bdbdbd;
+}
+
+.process-description-title {
+  width: 100%;
+  font-weight: bold;
+}
+
+.process-description-title:first-letter {
+  text-transform:capitalize;
+}
+
+.sub-process-block {
+  padding: 1px;
+  margin-bottom: 3px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.sub-process {
+  margin: 5px 2px;
+  padding: 5px 5px;
+  border: 1px solid #e8d9ff;
+  border-radius: 5px;
+  text-align: center;
   cursor: pointer;
+  background-color: #f2e8fd;
+}
+
+.related-resource {
+  margin-left: 5px;
+  padding: 1px 3px;
+  border: 1px solid #e8d9ff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #f7f3ff;
 }

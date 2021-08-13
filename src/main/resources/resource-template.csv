@@ -1,0 +1,2 @@
+name,description,labels,lastUpdate,resourceType,location,image,status,source,useCase,temp,relatesTo,hasParent,isAfter
+,,use EDAM vocabularies,Yyyy-mm-dd,"recipe,indicator,tool,process,usecase",URL,remember to upload image,curated/released/unmapped/error,FAIRplus/HCA/EMBL-EBI,,putting all other labels,other resources,,

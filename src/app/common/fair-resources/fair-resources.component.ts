@@ -17,6 +17,7 @@ import {FairResourceComponent} from "../fair-resource/fair-resource.component";
 })
 export class FairResourcesComponent implements OnInit {
   @Input() resources: FairResource[];
+  @Input() filters: string[];
   processes: FairResourceProcess[] = [];
   indicators: FairResourceIndicator[] = [];
   recipes: FairResourceRecipe[] = [];

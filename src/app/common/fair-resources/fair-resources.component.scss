@@ -8,7 +8,6 @@
 
 .resource-sub-title {
   font-size: 30px;
-  //color: #310562;
   color: #5e5e5e;
   font-weight: bold;
   padding: 2px 0;
@@ -18,10 +17,13 @@
 }
 
 .card-title {
-  height: 20px;
+  //height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 5px;
+  font-size: 15px;
+  margin-bottom: 1px;
 }
 
 .card-header-recipe {
@@ -34,12 +36,48 @@
 
 .card-text-recipe {
   font-size: 12px;
-  height: 50px;
+  height: 70px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  //text-overflow: ellipsis;
+  //-webkit-line-clamp: 2;
+  //-webkit-box-orient: vertical;
   display: -webkit-box;
+}
+
+.fair-resource-header {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.fair-resource-controls {
+  margin-top: 10px;
+}
+
+.resource-count {
+  float: left;
+  margin-top: 8px;
+  margin-right: 40px;
+  padding: 3px 5px;
+  background-color: #c2b5e3;
+}
+
+.collapse-btn {
+  float: right;
+  margin-top: 2px;
+}
+
+.card-header .accordion-toggle:after {
+  font-family: 'Glyphicons Halflings', serif;
+  //content: "\f078 >";
+  content: url(/assets/img/collapse_open.png);
+  width: 20px;
+  height: 20px;
+  float: right;
+  color: grey;
+}
+.card-header .accordion-toggle.collapsed:after {
+  content: url(/assets/img/collapse_close.png);
 }
 
 .fair-process-img {
@@ -57,4 +95,16 @@
 
 .fair-resource-table-entry {
   cursor: pointer;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 14px;
 }

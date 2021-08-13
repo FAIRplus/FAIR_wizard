@@ -2,6 +2,6 @@
   <div class="fair-resources">
     <h1 class="page-title">FAIRification Resource library</h1>
     <h4 class="search-results-text" *ngIf="searchFilters.length > 0">Found {{fairResources.length}} resources for the search term: {{searchFilters}}</h4>
-    <app-fair-resources *ngIf="fairResources != undefined && fairResources.length > 0" [resources]="fairResources"></app-fair-resources>
+    <app-fair-resources *ngIf="fairResources != undefined && fairResources.length > 0" [resources]="fairResources" [filters]="searchFilters"></app-fair-resources>
   </div>
 </div>
