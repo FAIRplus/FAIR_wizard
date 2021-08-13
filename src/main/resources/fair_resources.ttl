@@ -556,7 +556,7 @@
   fw:description
                   "A step-by-step guide on how to deploy the EBI Ontology Lookup Service (OLS) on local machines. This demonstrates the workflow for deploying open source ontology service softwares in-house." ;
   fw:labels       ( "data deposition" "data sharing" ) ;
-  fw:relatesTo    ( <fw:Tool-ols> ) ;
+  fw:relatesTo    ( <fw:tool-ols> ) ;
   fw:resourceType "Recipe" .
 
 <fw:Recipe-depositing-in-zenodo-generic-repository>
@@ -566,7 +566,7 @@
   fw:description
                   "To show how to take advantage of CERN Zenodo repository to document the existence of datasets, thus increasing its findability. This is of particular relevant for IMI projects since Zenodo is aimed to support the European Commission (EC) nascent Open Data policy and is commissioned by the EC." ;
   fw:labels       ( "data deposition" "data sharing" ) ;
-  fw:relatesTo    ( <fw:Tool-zenodo> ) ;
+  fw:relatesTo    ( ) ;
   fw:resourceType "Recipe" .
 
 
@@ -831,7 +831,7 @@
   fw:name         "Portals and lookup services" ;
   fw:description
                   "This recipe provides guidance on making a decision about the feasibility of a local deployment of existing open source ontology service software. " ;
-  fw:relatesTo    ( <fw:Tool-ols> ) ;
+  fw:relatesTo    ( <fw:tool-ols> ) ;
   fw:labels       ( "vocabulary" "infrastructure" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
@@ -881,7 +881,7 @@
   fw:name         "Selecting an ontology lookup service" ;
   fw:description
                   "This recipe provides guidance on the selection and exploitation of ontology lookup services. An ‘ontology lookup service’ refers to any type of application, standalone or Web-based, that enables the use of existing ontologies to support knowledge formalization and sharing, by fostering ontology-based descriptions of knowledge." ;
-  fw:relatesTo    ( fw:Tool-ols ) ;
+  fw:relatesTo    ( fw:tool-ols ) ;
   fw:labels       ( "vocabulary" "uc-vocabulary-annotation" ) ;
   fw:resourceType "Recipe" .
 
