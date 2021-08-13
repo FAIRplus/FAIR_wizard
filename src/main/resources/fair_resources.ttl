@@ -682,7 +682,7 @@
                   "Provide practical examples on how to map identifiers for Genes, Proteins, Metabolites and Pathways between resources using a purpose built tool, namely BridgeDb. Hands on guidance is provided for 2 interfaces (R package and a Python Webservices) provided by BridgeDb" ;
   fw:name         "Identifier mapping with BridgeDb" ;
   fw:labels       ( "data annotation" "identifier" "uc-chemical-identifier" ) ;
-  fw:relatesTo    ( <fw:Tool-bridgedb> ) ;
+  fw:relatesTo    ( ) ;
   fw:resourceType "Recipe" .
 
 
@@ -937,7 +937,7 @@
   fw:description
                   "1. Mapping data from a recognized data source by BridgeDb to another recognized data source (see here). For example mapping data identifiers from HGNC to Ensembl. 2. Given a local identifier and a TSV mapping it to one of the BridgeDb data sources, how to map the local identifier to a different data source." ;
   fw:name         "Using BridgeDb web services" ;
-  fw:relatesTo    ( <fw:Tool-bridgedb> ) ;
+  fw:relatesTo    ( ) ;
   fw:labels       ( "identifier" ) ;
   fw:resourceType "Recipe" .
 
