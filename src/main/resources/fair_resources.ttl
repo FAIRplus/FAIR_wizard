@@ -2,6 +2,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
@@ -1812,333 +1813,499 @@
   fw:hasParent    ( "<fw:process-data-sharing>" ) ;
   fw:relatesTo    ( "<fw:process-data-sharing>" ) .
 =======
+=======
+>>>>>>> Stashed changes
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <fw:indicator-data-can-be-accessed-automatically-(i.e.-by-a-computer-program)> fw:description "Rda-a1-05d: the  indicator ref ers to automated interactions between machines to access digital objects.  the way machines interact and grant access to the digital object will be evaluated by the indicator." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data can be accessed automatically (i.e. by a computer program)" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-can-be-accessed-manually-(i.e.-with-human-intervention)> fw:description "Rda-a1-02d: the indicator refers to any human interactions that are needed if the requester wants  to  access  the  digital  object.  the  fair  principle  ref ers  mostly  to automated interactions where a machine is able to access the digital object, but there  may also be  digital objectsthat require  human  interactions, such as clicking on a link on a landing page, sending an e-mail to the data owner, or even calling by telephone" ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data can be accessed manually (i.e. with human intervention)" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-complies-with-a-community-standard> fw:description "Rda-r1.3-01d: this indicator requires that data complies with community standards." ;
     fw:labels ( "reusability" "data model" "standards" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-21" ;
+=======
+    fw:lastUpdate "2021-08-21" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data complies with a community standard" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-identifier-resolves-to-a-digital-object> fw:description "Rda-a1-03d: this indicator is about the resolution of the identifier that identifies the digital object. the identifier assigned to thedata should be associated with a formally def ined retrieval/resolution mechanism that enables access to the digital object orprovides access instructions f or access in the  case of  human-mediated access. the  fair principle and this indicator do not say anything about the mutability or immutability of  the  digital object that is  identif ied by the  data identifier --this is an aspect thatshould be governed by a persistence policy of the data provider." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data identifier resolves to a digital object" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-includes-qualified-references-to-other-data> fw:description "Rda-i3-02d: this indicator is about the way data is connected to other data. the ref erences need  to  be  qualif ied which means  that  the  relationship role of  the  related resource is specified, f or example that a particular link is a specification of a unit  of   measurement,  or  the  identification  of   the  sensor  with  which  the measurement was done" ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data includes qualified references to other data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-includes-references-to-other-data> fw:description "Rda-i3-01d: this indicator is about the way data is connected to other data, f or example linking to previous or related research data that provides additional context to the data." ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data includes references to other data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-accessible-through-a-free-access-protocol> fw:description "Rda-a1.1-01d: the  indicator requires that the  protocol can be  used f ree  of  charge which f acilitates unfettered access." ;
     fw:labels ( "accessibility" "protocols" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is accessible through a free access protocol" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-accessible-through-an-access-protocol-that-supports-authentication-and-authorisation> fw:description "Rda-a1.2-01d: the  indicator requires that if the data or local environment indicates a degree of  additional protection then the access protocol must support authentication and authorisation of people and/or machines?" ;
     fw:labels ( "accessibility" "protocols" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is accessible through an access protocol that supports authentication and authorisation" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-accessible-through-standardised-protocol> fw:description "Rda-a1-04d: the indicator concerns the protocol through which the digital object is accessed and requires the protocol to be defined in a standard" ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is accessible through standardised protocol" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-expressed-in-compliance-with-a-machine-understandable-community-standard> fw:description "Rda-r1.3-02d: this indicator requires that the data f ollowsa community standard that has a machine-understandable expression" ;
     fw:labels ( "reusability" "data model" "standards" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-21" ;
+=======
+    fw:lastUpdate "2021-08-21" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is expressed in compliance with a machine-understandable community standard" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-identified-by-a-globally-unique-identifier> fw:description "Rda-f1-02d: the  indicator serves toevaluate whether the identif ier of  the data is globally unique, i.e. that there are no two people that would use that same identifier for two different digital objects." ;
     fw:labels ( "findability" "identifier" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is identified by a globally unique identifier" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-is-identified-by-a-persistent-identifier> fw:description "Rda-f1-01d: this  indicator evaluates whether or notthe data is identified by a persistent identifier. a persistent identifier ensures that the data will remain findable over time andreduces the risk of broken links." ;
     fw:labels ( "findability" "identifier" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data is identified by a persistent identifier" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-uses-fair-compliant-vocabularies> fw:description "Rda-i2-01d: the indicator requires the controlled vocabulary used for the data to conform to the fair principles,and at least be documented and resolvable using globally unique  and  persistent  identifiers.  the  documentation  needs  to  be  easily f indable and accessible." ;
     fw:labels ( "interoperability" "schema" "data model" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data uses fair-compliant vocabularies" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-uses-knowledge-representation-expressed-in-standardised-format> fw:description "Rda-i1-01d: the  indicator serves to determine that  an  appropriate standard is used to express knowledge, in particular the data model and format." ;
     fw:labels ( "interoperability" "schema" "data model" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data uses knowledge representation expressed in standardised format" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-data-uses-machine-understandable-knowledge-representation> fw:description "Rda-i1-02d: this  indicator f ocuses on the machine-understandability aspect of the data. this means that data should be readable and thus interoperable for machines without any requirements such as specific translators or mappings" ;
     fw:labels ( "interoperability" "schema" "data model" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Data uses machine-understandable knowledge representation" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-can-be-accessed-manually-(i.e.-with-human-intervention)> fw:description "Rda-a1-02m: the indicator refers to any human interactions that are needed if the requester wants  to access metadata. the  fair  principle ref ers mostly to automated interactions where a  machine is able to access the metadata, but there may also be metadata that requirehuman interactions. this may be important in cases  where  the  metadata  itself   contains  sensitive  inf ormation.  human interaction might involve sending an e-mail to the metadata owner, or calling by telephone to receive instructions." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata can be accessed manually (i.e. with human intervention)" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-complies-with-a-community-standard> fw:description "Rda-r1.3-01m: this indicator requires that metadata complies with community standards." ;
     fw:labels ( "reusability" "data model" "standards" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-21" ;
+=======
+    fw:lastUpdate "2021-08-21" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata complies with a community standard" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-contains-information-to-enable-the-user-to-get-access-to-the-data> fw:description "Rda-a1-01m: the indicator ref ers to the information that is necessary to allow the requester to gain access to the digital object. it is about (i) restrictions to access the data (i.e. access to the data may be open, restricted or closed), (ii) the actions to be taken by a person who is interested to access the data, in particular when the data has not been published on the web or (iii) specifications that the resources are  available through specified authentication/authorisationsystem including single sign-on providers such as edugain17or through specialised solutions such as proposed for epos18." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata contains information to enable the user to get access to the data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-identifier-resolves-to-a-metadata-record> fw:description "Rda-a1-03m: this indicator is about the resolutionof the metadata identifier. the identifier assigned tothe metadata should be associated with a resolution service that enables access to the metadata record." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata identifier resolves to a metadata record" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-include-qualified-references-to-other-data> fw:description "Rda-i3-04m: this  indicator is  about the  way  metadata is  connected to other data. the ref erences need to be qualified which means that the relationship role of  the related resource is specified, for example dataset x is derived from dataset y." ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata include qualified references to other data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-information-about-the-licence-under-which-the-data-can-be-reused> fw:description "Rda-r1.1-01m: this indicator is about the information that is provided in the metadata related to the conditions (e.g. obligations, restrictions) under which data can be reused. in the absence of licenceinformation, data cannot be reused." ;
     fw:labels ( "reusability" "licence" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes information about the licence under which the data can be reused" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-provenance-information-according-to-a-cross-community-language> fw:description "Rda-r1.2-02m: this  indicator requires  that  the  metadata provides provenance inf ormation according to a cross-domainlanguage." ;
     fw:labels ( "reusability" "data model" "provenance" "standards" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-21" ;
+=======
+    fw:lastUpdate "2021-08-21" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes provenance information according to a cross-community language" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-provenance-information-according-to-community-specific-standards> fw:description "Rda-r1.2-01m: this  indicator  requires  the  metadata  to  include  inf ormation  about  the provenance of the data, i.e. information about the origin, history or workflow that generated the data, in a way that is compliant with the standards that are used in the community for which the data is curated" ;
     fw:labels ( "reusability" "data model" "provenance" "standards" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes provenance information according to community-specific standards" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-qualified-references-to-other-metadata> fw:description "Rda-i3-03m: this indicator is about the way metadata is connected to other metadata, for example to descriptions of related resources that provide additional context to the data. the references need to be qualified which means that the relationship of  the related resource is specified, f or example person y is  the  author  ofdataset x." ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes qualified references to other metadata" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-references-to-other-data> fw:description "Rda-i3-02m: this indicator is about the way metadata is connected to other data, for example linking to previous or related research data that provides additional context to the data. please note that this is not about the link f rom the metadata to the data it describes; that link is considered in principle f3 and in indicator rda-f3-01m." ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes references to other data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-references-to-other-metadata> fw:description "Rda-i3-01m: the  indicator is about the way that metadata is connected to other metadata, f or example through links to inf ormation about organisations, people, places, projects or time periods that are related to the digital object that the metadata describes." ;
     fw:labels ( "interoperability" "data references" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes references to other metadata" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-includes-the-identifier-for-the-data> fw:description "Rda-f3-01m: the indicator deals with the inclusion of the ref erence(i.e. the identifier) of the digital object in the metadata so that the digital object can be accessed" ;
     fw:labels ( "findability" "identifier" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata includes the identifier for the data" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-accessed-through-standardised-protocol> fw:description "Rda-a1-04m: the  indicator concerns the protocol through which the metadata is accessed and requires the protocol to be defined in a standard." ;
     fw:labels ( "accessibility" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is accessed through standardised protocol" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-accessible-through-a-free-access-protocol> fw:description "Rda-a1.1-01m: the  indicator tests that  theprotocol that  enables the  requester to  access metadata can be f reely used. such f ree use of the protocol enhances data reusability." ;
     fw:labels ( "accessibility" "protocols" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is accessible through a free access protocol" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-expressed-in-compliance-with-a-machine-understandable-community-standard> fw:description "Rda-r1.3-02m: this indicator requires that the metadata follows a community standard that has a machine-understandable expression" ;
     fw:labels ( "reusability" "data model" "standards" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-21" ;
+=======
+    fw:lastUpdate "2021-08-21" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is expressed in compliance with a machine-understandable community standard" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-guaranteed-to-remain-available-after-data-is-no-longer-available> fw:description "Rda-a2-01m: the indicator intends to verify that inf ormation about a digital object is still available  af ter  the  object  has  been  deleted  or  otherwise  has  become unavailable.   if  possible, the  metadata that  remains  available should also indicate why the object is no longeravailable." ;
     fw:labels ( "accessibility" "provenance" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is guaranteed to remain available after data is no longer available" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-identified-by-a-globally-unique-identifier> fw:description "Rda-f1-02m: the  indicator serves to evaluate  whether  the  identifier of  the  metadata is globally unique,  i.e.  that  there  are  no  two  identical identifiers that  identify dif ferent metadata records." ;
     fw:labels ( "findability" "identifier" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is identified by a globally unique identifier" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-identified-by-a-persistent-identifier> fw:description "Rda-f1-01m: this indicator evaluates whether or not the metadata is identified by a persistent identifier. a persistent identifier ensures that the metadata will remain findable over time and reduces the risk of broken links." ;
     fw:labels ( "findability" "identifier" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is identified by a persistent identifier" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-is-offered-in-such-a-way-that-it-can-be-harvested-and-indexed> fw:description "Rda-f4-01m: the indicator tests whether the metadata is offered in such a way that it can be indexed. in some cases, metadata could be provided together with the data to a  local institutional repository or to  a  domain-specific or regional portal, or metadata could be included in a landing page where it can be harvested by a search engine. the indicator remains broad enough on purpose not to limit the way how and by whom the harvesting and indexing of the data might be done." ;
     fw:labels ( "findability" "search enginee" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata is offered in such a way that it can be harvested and indexed" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-refers-to-a-machine-understandable-reuse-licence> fw:description "Rda-r1.1-03m: this indicator is about the way that the reuse licence is expressed. rather than being a human-readable text, the licence should be expressed in such a way that it can be processed by machines, without human intervention, for example in automated searches." ;
     fw:labels ( "reusability" "licence" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata refers to a machine-understandable reuse licence" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-refers-to-a-standard-reuse-licence> fw:description "Rda-r1.1-02m: this indicator requires the reference to the conditions of reuse to be a standard licence, rather than a locally defined licence." ;
     fw:labels ( "reusability" "licence" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata refers to a standard reuse licence" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-uses-fair-compliant-vocabularies> fw:description "Rda-i2-01m: the indicator requires the vocabularyused f or the metadata to conform to the fair  principles, and at least be  documented and resolvable using globally unique  and  persistent  identifiers.  the  documentation  needs  to  be  easily f indable and accessible." ;
     fw:labels ( "interoperability" "schema" "data model" "vocabulary" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata uses fair-compliant vocabularies" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-uses-knowledge-representation-expressed-in-standardised-format> fw:description "Rda-i1-01m: the  indicator serves to determine that  an  appropriate standard is used toexpress  knowledge,  f or   example,  controlled  vocabularies  f or  subject classifications" ;
     fw:labels ( "interoperability" "schema" "data model" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata uses knowledge representation expressed in standardised format" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-metadata-uses-machine-understandable-knowledge-representation> fw:description "Rda-i1-02m: this  indicator  f ocuses  on  the  machine-understandability  aspect  of   the metadata. this means that metadata should be readable and thus interoperable f or  machines  without  any requirements  such  as  specific  translators  or mappings." ;
     fw:labels ( "interoperability" "schema" "data model" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Metadata uses machine-understandable knowledge representation" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-plurality-of-accurate-and-relevant-attributes-are-provided-to-allow-reuse> fw:description "Rda-r1-01m: the indicator concerns the quantity but also the quality of metadata provided in order to enhance data reusability" ;
     fw:labels ( "reusability" "data model" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Plurality of accurate and relevant attributes are provided to allow reuse" ;
     fw:resourceType "indicator" .
 
 <fw:indicator-rich-metadata-is-provided-to-allow-discovery> fw:description "Rda-f2-01m: the  indicator is about the presence of metadata, but also about howmuch metadata is provided and how well the provided metadata supports discovery." ;
     fw:labels ( "findability" ) ;
+<<<<<<< Updated upstream
     fw:lastUpdate "2021-08-04" ;
     fw:lastUpdate.1 "2021-08-20" ;
+=======
+    fw:lastUpdate "2021-08-20" ;
+>>>>>>> Stashed changes
     fw:location "https://www.rd-alliance.org/system/files/FAIR%20Data%20Maturity%20Model_%20specification%20and%20guidelines_v1.00.pdf" ;
     fw:name "Rich metadata is provided to allow discovery" ;
     fw:resourceType "indicator" .
@@ -3251,8 +3418,13 @@
 <fw:tool-collibra> fw:confidence "high" ;
     fw:description "An enterprise-oriented data governance platform that provides tools for data management and stewardship.",
         "Commercial solution for building data catalogs. collibra data catalog empowers business users to quickly discover and understand data that matters so they can generate impactful insights that drive business value. leveraging collibraūs industry-leading governance capabilities, collibra data catalog ensures data citizens always have access to the most trusted data available." ;
+<<<<<<< Updated upstream
     fw:labels ( "data transformation" "Data catalogue" "data governance" "data linkage" ),
         ( "commercial" ) ;
+=======
+    fw:labels ( "commercial" ),
+        ( "data transformation" "Data catalogue" "data governance" "data linkage" ) ;
+>>>>>>> Stashed changes
     fw:lastUpdate "2021-08-04",
         "2021-08-25" ;
     fw:location "https://www.collibra.com/",
@@ -3678,4 +3850,7 @@
     fw:relatesTo ( <fw:process-identifier-strategies> ) ;
     fw:resourceType "process" .
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
