@@ -9,9 +9,9 @@ export interface FairResource {
 }
 
 export enum FairResourceType {
-  Process,
-  Recipe,
-  Indicator,
-  Tool,
-  Requirement
+  process,
+  recipe,
+  indicator,
+  tool,
+  requirement
 }

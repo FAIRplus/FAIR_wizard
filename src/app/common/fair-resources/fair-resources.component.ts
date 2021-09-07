@@ -38,15 +38,15 @@ export class FairResourcesComponent implements OnInit {
 
   populateFairResources(resources: FairResource[]): void {
     for (let resource of resources) {
-      if (resource.resourceType === FairResourceType.Process) {
+      if (resource.resourceType === FairResourceType.process) {
         this.processes.push(resource);
-      } else if (resource.resourceType === FairResourceType.Indicator) {
+      } else if (resource.resourceType === FairResourceType.indicator) {
         this.indicators.push(resource);
-      } else if (resource.resourceType === FairResourceType.Recipe) {
+      } else if (resource.resourceType === FairResourceType.recipe) {
         this.recipes.push(resource);
-      } else if (resource.resourceType === FairResourceType.Requirement) {
+      } else if (resource.resourceType === FairResourceType.requirement) {
         this.requirements.push(resource);
-      } else if (resource.resourceType === FairResourceType.Tool) {
+      } else if (resource.resourceType === FairResourceType.tool) {
         this.tools.push(resource);
       }
     }
