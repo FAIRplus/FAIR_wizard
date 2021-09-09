@@ -128,6 +128,13 @@ public class RdfNetworkService {
           }
         }
       }
+      if (resource.getHasParent() != null && !resource.getHasParent().isEmpty()) {
+        for (FairResource r : resource.getHasParent()) {
+          if (resourceIds.contains(r.getId()) && resourceIds.contains(resource.getId())){
+            network.add(new ProcessNetworkElement(new ProcessEdge(resource.getId() + r.getId(), resource.getId(), r.getId(), "hasParent")));
+          }
+        }
+      }
     }
 
     return network;
@@ -143,19 +150,26 @@ public class RdfNetworkService {
 
     StringBuilder labelBuilder = new StringBuilder();
     for (String label : labels) {
-      labelBuilder.append("\"").append(label).append("\",");
+      labelBuilder.append("\"").append(label.toLowerCase()).append("\",");
     }
     String labelQuery = labelBuilder.toString();
     labelQuery = labelQuery.substring(0, labelQuery.length() - 1);
 
     String query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-      "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label . FILTER (?label in (" + labelQuery + ")) }";
+      "SELECT DISTINCT ?x WHERE { ?x  fw:labels/rdf:rest*/rdf:first ?label . FILTER (lcase(str(?label)) in (" + labelQuery + ")) }";
     queryRdfGraph(query, fairResources);
+
+    // add relateTo resources
+    List<FairResource> relateToList = new ArrayList<>();
+    for (FairResource r : fairResources) {
+      relateToList.addAll(getRelatedResources(r));
+    }
+    fairResources.addAll(relateToList);
 
     query = "prefix fw: <http://fair-wizard/collection/fw/0.1/>\n" +
       "prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-      "SELECT DISTINCT ?x WHERE { ?x  fw:usecase/rdf:rest*/rdf:first ?usecase . FILTER (?usecase in (" + labelQuery + ")) }";
+      "SELECT DISTINCT ?x WHERE { ?x  fw:usecase/rdf:rest*/rdf:first ?usecase . FILTER (lcase(str(?usecase)) in (" + labelQuery + ")) }";
     queryRdfGraph(query, fairResources);
 
     return fairResources;
@@ -184,9 +198,15 @@ public class RdfNetworkService {
     }
   }
 
+  private List<FairResource> getRelatedResources(FairResource resource) {
+    return resource.getRelatesTo().stream()
+                   .map(r -> fairResourceGraph.getResource(r.getId()))
+                   .map(rdfToFairResourceConverter::convert)
+                   .collect(Collectors.toList());
+  }
+
   private Model loadResources() throws ApplicationStatusException {
-    try {
-      InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream();
+    try(InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       Model model = ModelFactory.createDefaultModel();
       model.read(in, null, "TTL");
       return model;

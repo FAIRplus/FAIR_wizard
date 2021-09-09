@@ -19,6 +19,8 @@ import { FairResourcesShowcaseComponent } from './common/fair-resources-showcase
 import { FacetPanelComponent } from './common/facet-panel/facet-panel.component';
 import { FacetGroupComponent } from './common/facet-group/facet-group.component';
 import { FacetComponent } from './common/facet/facet.component';
+import { ResourceNetworkComponent } from './common/resource-network/resource-network.component';
+import { AssessmentComponent } from './assessment/assessment.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FacetComponent } from './common/facet/facet.component';
     FairResourcesShowcaseComponent,
     FacetPanelComponent,
     FacetGroupComponent,
-    FacetComponent
+    FacetComponent,
+    ResourceNetworkComponent,
+    AssessmentComponent
   ],
   imports: [
     BrowserModule,

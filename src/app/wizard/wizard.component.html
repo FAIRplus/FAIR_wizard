@@ -19,7 +19,16 @@
   </div>
 
   <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
-    <app-fair-resources [resources]="fairResources"></app-fair-resources>
+    <h2>Results</h2>
+    <div class="actions-container">
+      <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Generate Report</button>
+      <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Get PermaLink</button>
+      <div class="permalink-link" *ngIf="permaLink != undefined">{{permaLink}}</div>
+    </div>
+
+    <app-fair-resources [resources]="fairResources" [filters]="filters"></app-fair-resources>
   </div>
 
 </div>
+
+

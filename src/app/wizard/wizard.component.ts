@@ -4,6 +4,7 @@ import {DecisionNode, Question} from "../models/DecisionNode";
 import {FairResource} from "../models/FairResource";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-wizard',
@@ -16,6 +17,7 @@ export class WizardComponent implements OnInit {
   currentNode: Question;
   reachedLeaf: boolean;
   fairResources: FairResource[];
+  permaLink: string;
 
   constructor(private decisionService: DecisionService, private route: ActivatedRoute, private router: Router) {
   }
@@ -78,6 +80,16 @@ export class WizardComponent implements OnInit {
     this.generateSearchUrl();
   }
 
+  get filters() : string[] {
+    let filters = [];
+    for (let decision of this.decisions) {
+      for (let answer of decision.answers) {
+        filters.push(answer.labels);
+      }
+    }
+    return filters;
+  }
+
   generateQueryParams() {
     let params = [];
     for (let decision of this.decisions) {
@@ -136,5 +148,12 @@ export class WizardComponent implements OnInit {
     this.decisions = newDecisions;
     this.fairResources = [];
     this.reachedLeaf = false;
+  }
+
+  saveSearch() {
+    this.decisionService.saveSearch(this.router.url).subscribe(p => {
+      this.permaLink = environment.baseUrl + "api/permalink/" + p.toString();
+      console.log(this.permaLink);
+    });
   }
 }

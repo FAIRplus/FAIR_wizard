@@ -1,0 +1,26 @@
+name,description,lastUpdate,location,resourceType,relatesTo,isAfter,hasParent
+data access and ethics,"Determine data access for FAIRification, including ethics, DTAs, licensing etc",2021-08-04,,process,,,
+competency questions,Define dataset competency questions and expected/desired outcomes of FAIRification,2021-08-04,,process,,data access and ethics,
+interim hosting,Host data in interim solution and make available for FAIRification processes,2021-08-04,,process,,competency questions,
+examination,Dataset owners and FAIR experts examine datasets and reach shared understanding,2021-08-04,,process,,interim hosting,
+identify data types,"Identify Data Types (processes, assays, subjects, samples etc.) Identify primary organising principles e.g. cells, compounds",2021-08-04,,process,,examination,
+identifier strategies,Determine identifier strategy for data types. Assign identifiers in accordance with strategy.,2021-08-04,,process,,identify data types,
+metadata strategies,Determine  project metadata strategies using FAIRsharing. Apply metadata strategies to datasets,2021-08-04,,process,,identifier strategies,
+evaluate against standards,Compare datasets to community standards. Evaluate datasets using FAIR indicators that are appropriate given competency questions. Share with IMI Catalog for indexing. ,2021-08-04,,process,,metadata strategies,
+interoperability requirements,"Determine interoperability requirement for dataset  (e,g, consumption of data for downstream analysis)",2021-08-04,,process,,evaluate against standards,
+hosting requirements,"Examine dataset hosting choices and needs (size, complexity, analytics). Match data types to available hosting solutions eg. public repos, EFPIA cloud",2021-08-04,,process,,interoperability requirements,
+data sharing,Submit data to chosen hosting solution for public sharing and dissemination,2021-08-04,,process,,hosting requirements,
+data access,,2021-08-04,,process,,,data access and ethics
+data ethics,,2021-08-04,,process,,,data access and ethics
+data retrieval,,2021-08-04,,process,,,data access and ethics
+identifier mapping,,2021-08-04,,process,,identifier resolution,identifier strategies
+identifier resolution,,2021-08-04,,process,,identifier minting,identifier strategies
+identifier minting,,2021-08-04,,process,,,identifier strategies
+vocabulary engineering,,2021-08-04,,process,,,interoperability requirements
+vocabulary management,,2021-08-04,,process,,,interoperability requirements
+vocabulary annotation,,2021-08-04,,process,,,interoperability requirements
+vocabulary alignment,,2021-08-04,,process,,,interoperability requirements
+data annotation,,2021-08-04,,process,,,metadata strategies
+data deposition,,2021-08-04,,process,,,data sharing
+data transfer,,2021-08-04,,process,,,data sharing
+licensing,,2021-08-04,,process,,,data sharing

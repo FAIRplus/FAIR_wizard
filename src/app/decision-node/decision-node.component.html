@@ -7,7 +7,8 @@
         <div class="card-subtitle">{{question.description}}</div>
         <div *ngFor="let answer of question.answers">
           <div class="badge badge-primary answer" (click)="toggleAnswer(answer)"
-               [ngClass]="answers.includes(answer) ? 'answer-selected' : 'answer'">{{answer.text}}</div>
+               [ngClass]="answers.includes(answer) ? 'answer-selected' : 'answer'"
+               data-toggle="tooltip" data-placement="bottom" title={{answer.description}}>{{answer.text}}</div>
         </div>
       </div>
       <div class="col-lg-2">
@@ -16,5 +17,3 @@
     </div>
   </div>
 </div>
-
-<!--[ngClass]="{'badge-secondary': answers.includes(answer), 'badge-primary':!answers.includes(answer) }"-->
