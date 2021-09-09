@@ -11,6 +11,8 @@ import uk.ac.ebi.fairwizard.model.Assessment;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,16 +28,24 @@ public class AssessmentService {
   }
 
   public List<Assessment> getFairAssesment() throws ApplicationStatusException {
-    String file = getClass().getClassLoader().getResource(applicationConfig.getFairAssessmentFile()).getFile();
     List<Assessment> assessments = new ArrayList<>();
-    try (CSVReader reader = new CSVReader(new FileReader(file))) {
+//    InputStream in = null;
+//    try {
+//      in = resourceLoader.getResource(applicationConfig.getFairAssessmentFile()).getInputStream();
+//    } catch (Exception e) {
+//      throw new ApplicationStatusException("Failed to read fair assessment fiel");
+//    }
+
+    try (InputStream in = resourceLoader.getResource(applicationConfig.getFairAssessmentFile()).getInputStream();
+         CSVReader reader = new CSVReader(new InputStreamReader(in))) {
       String[] f = reader.readNext();
       log.info("Reading header line with " + f.length + " fields");
       while ((f = reader.readNext()) != null) {
         if ("Principle".equalsIgnoreCase(f[0])) {
           continue;
         }
-        assessments.add(new Assessment(f[0], f[1], f[2], f[3], f[4], toBoolean(f[5]), toBoolean(f[6]), toBoolean(f[7]), "", ""));
+        assessments.add(
+          new Assessment(f[0], f[1], f[2], f[3], f[4], toBoolean(f[5]), toBoolean(f[6]), toBoolean(f[7]), "", ""));
       }
     } catch (IOException | CsvValidationException e) {
       throw new ApplicationStatusException("Failed to read FAIR assessment file");

@@ -11,6 +11,6 @@ public class ApplicationConfig {
   private String decisionTreeFile;
   @Value("${fairwizard.resources.fairresources:classpath:fair_resources.ttl}")
   private String fairResourcesFile;
-  @Value("${fairwizard.resources.fairAssessment:assessment.csv}")
+  @Value("${fairwizard.resources.fairAssessment:classpath:assessment.csv}")
   private String fairAssessmentFile;
 }

@@ -206,8 +206,7 @@ public class RdfNetworkService {
   }
 
   private Model loadResources() throws ApplicationStatusException {
-    try {
-      InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream();
+    try(InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       Model model = ModelFactory.createDefaultModel();
       model.read(in, null, "TTL");
       return model;

@@ -24,7 +24,8 @@ public class DecisionTreeService {
   private final ResourceLoader resourceLoader;
   private Map<String, Set<FairResource>> fairResourceIndex;
 
-  public DecisionTreeService(ApplicationConfig applicationConfig, ObjectMapper jsonMapper, ResourceLoader resourceLoader) {
+  public DecisionTreeService(ApplicationConfig applicationConfig, ObjectMapper jsonMapper,
+                             ResourceLoader resourceLoader) {
     this.jsonMapper = jsonMapper;
     this.applicationConfig = applicationConfig;
     this.resourceLoader = resourceLoader;
@@ -37,12 +38,11 @@ public class DecisionTreeService {
 
   public List<DecisionNode> getDecisionTree() throws ApplicationStatusException {
     List<DecisionNode> questions;
-    try {
-      InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream();
+    try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error("Failed to load decision tree {}", e.getMessage());
       throw new ApplicationStatusException("Failed to load decision tree");
     }
 
@@ -72,8 +72,7 @@ public class DecisionTreeService {
   private Map<String, Set<FairResource>> loadResources() throws ApplicationStatusException {
     List<FairResource> fairResourceList;
     Map<String, Set<FairResource>> indexedFairResources = new HashMap<>();
-    try {
-      InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream();
+    try (InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       fairResourceList = jsonMapper.readValue(in, new TypeReference<>() {
       });
 
