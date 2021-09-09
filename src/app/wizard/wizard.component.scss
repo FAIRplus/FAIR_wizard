@@ -28,6 +28,34 @@
   border-color: #310562;
 }
 
+.actions-container {
+  width: 100%;
+  float: left;
+  margin: 20px 0;
+}
+
+.permalink-link {
+  border: 1px solid black;
+  overflow: auto;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #dcdcdc;
+}
+
+.fair-report-button {
+  float: left;
+  margin-right: 15px;
+  color: #ffffff;
+  border-color: #000000;
+  background-color: #310562;
+}
+
+.fair-report-button:hover {
+  color: #ffffff;
+  background-color: #ff4057;
+  border-color: #310562;
+}
+
 .fair-resources {
   clear: both;
   margin-top: 30px;

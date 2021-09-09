@@ -13,6 +13,9 @@ export class DecisionService {
   private searchUrl = environment.baseUrl + 'api/search';
   private wizardUrl = environment.baseUrl + 'api/wizard';
   private processNetworkUrl = environment.baseUrl + 'api/processes';
+  private assessmentUrl = environment.baseUrl + 'api/assessment';
+  private permalinkUrl = environment.baseUrl + 'api/permalink';
+  private reportUrl = environment.baseUrl + 'api/report';
 
   constructor(private http: HttpClient) {
   }
@@ -50,4 +53,22 @@ export class DecisionService {
 
     return this.http.get<Object>(this.processNetworkUrl, {params: params});
   }
+
+  getAssessments(): Observable<any> {
+    return this.http.get<Object>(this.assessmentUrl);
+  }
+
+  submitAssessment(assessment): Observable<any> {
+    return this.http.post<Object>(this.assessmentUrl, {"assessment": assessment});
+  }
+
+  saveSearch(resourceUrl: string): Observable<Object> {
+    return this.http.post<Object>(environment.baseUrl + 'api/permalink', {"resourceLink": resourceUrl});
+  }
+
+  getReport(): Observable<any> {
+    return this.http.get<Object>(this.assessmentUrl);
+  }
+
+
 }

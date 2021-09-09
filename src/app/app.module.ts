@@ -20,6 +20,7 @@ import { FacetPanelComponent } from './common/facet-panel/facet-panel.component'
 import { FacetGroupComponent } from './common/facet-group/facet-group.component';
 import { FacetComponent } from './common/facet/facet.component';
 import { ResourceNetworkComponent } from './common/resource-network/resource-network.component';
+import { AssessmentComponent } from './assessment/assessment.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ResourceNetworkComponent } from './common/resource-network/resource-net
     FacetPanelComponent,
     FacetGroupComponent,
     FacetComponent,
-    ResourceNetworkComponent
+    ResourceNetworkComponent,
+    AssessmentComponent
   ],
   imports: [
     BrowserModule,
