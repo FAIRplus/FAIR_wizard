@@ -2,7 +2,6 @@
   {
     "id": "1",
     "question": "What's your role in data FAIRification",
-    "category": "Step 1: Project examination",
     "description": "Please select one most appropriate answer",
     "multipleChoices": false,
     "answers": [
@@ -35,7 +34,6 @@
   {
     "id": "2",
     "question": "What is the status of the dataset to be FAIRified",
-    "category": "Step 1: Project examination",
     "description": "Please indicate the status of your project or dataset",
     "multipleChoices": false,
     "answers": [
@@ -69,7 +67,6 @@
   {
     "id": "3",
     "question": "Would you like to perform FAIR assessment first?",
-    "category": "Step 2: Assessment",
     "description": "An assessment evaluates the FAIR status of the data.",
     "multipleChoices": false,
     "answers": [
@@ -92,7 +89,6 @@
   {
     "id": "4",
     "question": "Which aspect of FAIR you'd like to improve?",
-    "category": "Step 3: Solution design",
     "description": "",
     "multipleChoices": true,
     "answers": [
@@ -133,7 +129,6 @@
   {
     "id": "5",
     "question": "Which topic would you like to focus on",
-    "category": "Step 3: Solution design",
     "description": "Key areas in improving data findability",
     "multipleChoices": false,
     "answers": [
@@ -229,7 +224,7 @@
       },
       {
         "text": "Data vocabularies",
-        "description": "",
+        "description": "using standard terminology for your data",
         "labels": [
           "annotation with controlled vocabularies", "ontology recommendation", "data standards", "application ontology", "OBO", "ontology", "Ontology alignment", "Ontology and terminology", "ontology editor", "ontology engineering", "ontology management", "ontology management environment", "OWL", "terminology", "vocabulary", "vocabulary lookup service", "vocabulary management", "vocabulary repository", "vocabulary service", "controlled terminology", "ontology annotation", "vocabulary annotation", "ontology mapping"
         ],
