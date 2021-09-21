@@ -40,7 +40,7 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Retrospective data",
+        "text": "I have data ready to be FAIRified",
         "description": "Data that has been generated in the past and needs to be improved",
         "labels": [
           "retrospective"
@@ -48,7 +48,7 @@
         "next": "3"
       },
       {
-        "text": "Prospective data",
+        "text": "I have data to be generated",
         "description": "Data to be generated or at very early stage of data generation",
         "labels": [
           "prospective"
@@ -141,7 +141,7 @@
         "text": "Identifiers",
         "description": "",
         "labels": [
-          "identifier"
+          "identifier", "gene names","global identifier","Data identity and mapping","identifier mapping","identifier minting","local identifier", "SMILE", "InChiKeys"
         ],
         "next": "0"
       },
@@ -149,7 +149,7 @@
         "text": "Search Engine Optimization",
         "description": "",
         "labels": [
-          "search engine","data markup"
+          "search engine","data markup","semantic markup","search engine optimization", "vocabularies\nBioSchema\ndata indexing\ndata markup\nfacet oriented searching\nJSON-LD\nknowledge resource indexing\nschema.org\nsearch engine\nsearch engine optimization\nsemantic markup", "vocabularies", "BioSchema", "data indexing", "data markup", "facet oriented searching", "JSON-LD", "knowledge resource indexing", "schema.org", "search engine", "search engine optimization", "semantic markup"
         ],
         "next": "0"
       },
@@ -157,7 +157,7 @@
         "text": "Data sharing",
         "description": " ",
         "labels": [
-          "Data sharing"
+          "DAC", "data access", "data portals", "data sharing", "policy", "open access", "open data", "open source","Data catalogue", "data deposition", "Data integration and warehousing", "Data storage", "Data submission", "data warehousing", "Database management", "Database Portal", "data hosting", "data governance"
         ],
         "next": "0"
       }
@@ -174,7 +174,7 @@
         "text": "Data transfer",
         "description": "Exchanging large files between systems or organisations",
         "labels": [
-          "data transfer"
+          "data transfer", "Cloud migration"
         ],
         "next": "0"
       },
@@ -199,7 +199,15 @@
         "text": "Metadata profile",
         "description": "",
         "labels": [
-          "metadata profile"
+          "metadata profile", "data standards", "CDISC", "chemical profile", "content mapping", "Covid-19 virus sample metadata reporting profile", "data dictionary", "metadata model selection", "metadata profile", "metadata structure", "MIAME", "semantic model", "data model", "metadata requirement", "metadata standards"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Data linkage",
+        "description": "Connecting entities which are from different sources",
+        "labels": [
+          "data references", "entity mapping", "knowledge graph", "Mapping", "relationship extraction", "ontology mapping"
         ],
         "next": "0"
       },
@@ -207,7 +215,7 @@
         "text": "Data formatting",
         "description": "",
         "labels": [
-          "data formatting"
+          "data formatting", "data transformation", "formatting", "transformation", "Water MS format", "schema", "schema structure"
         ],
         "next": "0"
       },
@@ -215,7 +223,7 @@
         "text": "Data annotation",
         "description": "",
         "labels": [
-          "data annotation"
+          "annotation and curation" , "content enrichment", "text annotation", "annotation with controlled vocabularies", "ontology recommendation", "controlled terminology", "ontology annotation", "vocabulary annotation", "semantic markup"
         ],
         "next": "0"
       },
@@ -223,7 +231,7 @@
         "text": "Data vocabularies",
         "description": "",
         "labels": [
-          "vocabulary"
+          "annotation with controlled vocabularies", "ontology recommendation", "data standards", "application ontology", "OBO", "ontology", "Ontology alignment", "Ontology and terminology", "ontology editor", "ontology engineering", "ontology management", "ontology management environment", "OWL", "terminology", "vocabulary", "vocabulary lookup service", "vocabulary management", "vocabulary repository", "vocabulary service", "controlled terminology", "ontology annotation", "vocabulary annotation", "ontology mapping"
         ],
         "next": "0"
       },
@@ -231,7 +239,7 @@
         "text": "Data validation",
         "description": "",
         "labels": [
-          "validation"
+          "validation","data validation","constraint validation", "schema", "schema structure"
         ],
         "next": "0"
       }
@@ -248,7 +256,7 @@
         "text": "Licensing",
         "description": "",
         "labels": [
-          "licensing"
+          "CC BY", "copyleft", "creative commons", "Derivative Software", "Free Software", "licence", "permissive licenses", "data usage", "data use agreement", "data use ontology", "licensing","CC BY","open data", "policy", "data use agreement","data use ontology","open access"
         ],
         "next": "0"
       },
@@ -256,10 +264,19 @@
         "text": "Minimum information checklists",
         "description": "Minimum information required during data collection",
         "labels": [
-          "checklist"
+          "checklist", "metadata requirement", "metadata standards", "minimum information","minimum set of metadata(MSOM)"
         ],
         "next": "0"
       },
+      {
+        "text": "Data ethics",
+        "description": "Data ethics",
+        "labels": [
+          "data ethics", "data governance"
+        ],
+        "next": "0"
+      },
+
       {
         "text": "Provenance",
         "description": "",
