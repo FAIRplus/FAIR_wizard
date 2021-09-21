@@ -12,12 +12,14 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./wizard.component.scss']
 })
 export class WizardComponent implements OnInit {
+  MAX_DECISION_DEPTH = 5;
   decisionTree: Map<string, Question>;
   decisions: DecisionNode[];
   currentNode: Question;
   reachedLeaf: boolean;
   fairResources: FairResource[];
   permaLink: string;
+  progress: number;
 
   constructor(private decisionService: DecisionService, private route: ActivatedRoute, private router: Router) {
   }
@@ -25,6 +27,7 @@ export class WizardComponent implements OnInit {
   ngOnInit(): void {
     this.decisionService.getDecisionTree().subscribe(questions => {
       this.decisionTree = new Map();
+      this.progress = 0;
       for (let q of questions) {
         this.decisionTree.set(q.id, q);
       }
@@ -78,6 +81,7 @@ export class WizardComponent implements OnInit {
     }
     this.searchByLabels(filters);
     this.generateSearchUrl();
+    this.progress = 100;
   }
 
   get filters() : string[] {
@@ -124,6 +128,7 @@ export class WizardComponent implements OnInit {
 
   addDecision(decision: DecisionNode): void {
     this.processDecision(decision);
+    this.calculateProgress();
   }
 
   processDecision(decision: DecisionNode) {
@@ -155,5 +160,10 @@ export class WizardComponent implements OnInit {
       this.permaLink = environment.baseUrl + "api/permalink/" + p.toString();
       console.log(this.permaLink);
     });
+  }
+
+  calculateProgress() {
+    let currentProgress = this.decisions.length;
+    this.progress = currentProgress * 100 / this.MAX_DECISION_DEPTH;
   }
 }

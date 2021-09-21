@@ -1,16 +1,55 @@
 .assessment-principle-container {
   width: 60%;
   margin: 20px auto 20px;
-
 }
 
 .assessment-principle {
-  border: 1px solid black;
+  background-color: #e3d2f8;
+  border: 1px solid #ffffff;
   cursor: pointer;
   padding: 5px;
   text-align: center;
+  width: 25%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.assessment-principle:hover {
+  color: #ffffff;
+  border: 1px solid black;
+}
+
+.assessment-principle-selected {
+  background-color: #310562;
+  color: #ffffff;
+  border: 1px solid black;
+}
+
+.assessment-table-container {
+  width: 100%;
 }
 
 .assessment-table {
-  margin: 0 auto;
+  margin: 10px auto 10px;
+  width: 60%;
+}
+
+.fair-search-button-container {
+  margin: 10px auto 0;
+  width: 60%;
+  clear: both;
+}
+
+.fair-search-button {
+  float: right;
+  width: 100px;
+  color: #ffffff;
+  border-color: #000000;
+  background-color: #310562;
+}
+
+.fair-search-button:hover {
+  color: #ffffff;
+  background-color: #ff4057;
+  border-color: #310562;
 }

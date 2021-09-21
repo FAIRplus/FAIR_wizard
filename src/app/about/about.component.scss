@@ -6,7 +6,6 @@
   overflow: hidden
 }
 .fair-home {
-  height: 100vh;
   width: 60%;
   margin: 0 auto;
   display: block;
@@ -16,19 +15,12 @@
   font-size: 18px;
 }
 
-.fair-wizard-title {
-  margin: 8vh auto 50px;
-  width: 100%;
-  text-align: center;
-}
-
 .background-white {
   background-color: #ffffff;
 }
 
 .fair-goals {
   width: 100%;
-  display: inline-block;
 }
 
 .fair-goal {
@@ -36,15 +28,15 @@
   width: 25%;
   margin: 10px 4.16%;
   padding: 20px;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 5px;
-  background-color: #7619de;
+  background-color: #310562;
   height: 150px;
 }
 
 .fair-goal:hover {
   cursor: pointer;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   background-color: #ff4057;
 }
 
@@ -74,9 +66,8 @@
   background-color: #ffffff;
 }
 .fair-overview-text {
-  text-align: center;
+  text-align: justify;
   font-size: 18px;
-  margin-top: 50px;
 }
 
 .btn-fair-wizard-wrapper {
@@ -125,20 +116,18 @@
 }
 
 .footer {
-  margin: 0 auto;
-  color: black;
-  width: 60%;
-  padding: 20px 0 5px;
+  float: left;
+  width: 100%;
 }
 
 .footer-logos {
-  width: 500px;
+  width: 350px;
   margin: 0 auto;
   display: block;
 }
 
 .footer-logo {
-  margin: 20px 40px;
+  margin: 10px 20px;
 }
 
 .footer-text {
@@ -148,7 +137,4 @@
   text-align: justify;
 }
 
-.text-highlight {
-  color: #d21c1c;
-}
 

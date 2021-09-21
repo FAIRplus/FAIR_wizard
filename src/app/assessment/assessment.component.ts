@@ -8,6 +8,8 @@ import {DecisionService} from "../decision.service";
 })
 export class AssessmentComponent implements OnInit {
 
+  public selectedPrinciple = "Findable";
+
   assessmentFields = [
     {
       "id": "RDA-F1-01M",
@@ -60,7 +62,13 @@ export class AssessmentComponent implements OnInit {
   }
 
   filterResults(principle) {
+    // let elements = this.elem.nativeElement.querySelectorAll('.classImLookingFor');
+    this.selectedPrinciple = principle;
     this.displayedFields = this.assessmentFields.filter(a => a.principle === principle);
+  }
+
+  submitAssessment() {
+
   }
 
 }

@@ -1,39 +1,39 @@
-<div class="container-fluid">
-  <div class="row assessment-principle-container">
-    <div class="col-lg-3 assessment-principle" (click)="filterResults('Findable')">Findability</div>
-    <div class="col-lg-3 assessment-principle" (click)="filterResults('Accessible')">Accessibility</div>
-    <div class="col-lg-3 assessment-principle" (click)="filterResults('Interoperable')">Interoperability</div>
-    <div class="col-lg-3 assessment-principle" (click)="filterResults('Reusable')">Reusability</div>
+<!--<div class="container-fluid">-->
+  <div class="assessment-principle-container">
+    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Findable' == selectedPrinciple}" (click)="filterResults('Findable')">Findability</div>
+    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Accessible' == selectedPrinciple}" (click)="filterResults('Accessible')">Accessibility</div>
+    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Interoperable' == selectedPrinciple}" (click)="filterResults('Interoperable')">Interoperability</div>
+    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Reusable' == selectedPrinciple}" (click)="filterResults('Reusable')">Reusability</div>
   </div>
-  <div class="row">
+  <div class="assessment-table-container">
     <table class="table-bordered table-striped table-hover table-sm assessment-table">
       <thead>
       <tr class="table-secondary">
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>Principle</th>
-        <th>Sub-Principle</th>
+<!--        <th>Sub-Principle</th>-->
         <th>Name</th>
         <th>Priority</th>
-        <th>Assessment Overall</th>
-        <th>Assessment Essential</th>
-        <th>Assessment Non-Essential</th>
+        <th>Self Assessment</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let indicator of displayedFields">
-        <td>{{ indicator.id }}</td>
+<!--        <td>{{ indicator.id }}</td>-->
         <td>{{ indicator.principle }}</td>
-        <td>{{ indicator.sub_principle }}</td>
+<!--        <td>{{ indicator.sub_principle }}</td>-->
         <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
         <td>{{ indicator.priority }}</td>
-        <td><input class="form-check" type="checkbox" [checked]="indicator.score_overall" (change)="indicator.score_overall = !indicator.score_overall"/></td>
-        <td><input type="checkbox" [checked]="indicator.score_essential" (change)="indicator.score_essential = !indicator.score_essential"/></td>
-        <td><input type="checkbox" [checked]="indicator.score_non_essential" (change)="indicator.score_non_essential = !indicator.score_non_essential"/></td>
+        <td>
+          <input type="checkbox" [checked]="indicator.score_overall" (change)="indicator.score_overall = !indicator.score_overall" id="score_overall"/>
+          <label for="score_overall">&nbsp; yes</label>
+        </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <div>
-    <button class="btn-dark">Submit</button>
+<!--  <div>-->
+    <div class="fair-search-button-container">
+    <button class="btn btn-primary fair-search-button" (click)="submitAssessment()">Submit</button>
   </div>
-</div>
+<!--</div>-->

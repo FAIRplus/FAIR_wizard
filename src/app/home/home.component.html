@@ -3,76 +3,63 @@
 <body>
 <div class="fair-home-wrapper">
   <div class="fair-home">
-    <h2>FAIR and FAIRification</h2>
-    <p class="fair-overview-text">FAIR(Findability, Accessibility, Interoperability, and Reusability) principles serve to guide data producers and data publishers to improve their data management practices and improve the reuse of research data<sup>[1]</sup> FAIRification is the process of improving the FAIR level of datasets, projects or related infrastructure.</p>
-    <p>The FAIR wizard utilizes FAIRification resources developed by the FAIRplus project and other platforms, suggests FAIRification materials based on the FAIRification requirements, and designs FAIRification solutions for data owners, data stewards, and other people involved in FAIRification. </p>
 
-    <h2>How to use FAIR wizard</h2>
-    <div class="fair-home-wrapper background-white">
-      <img class="card-img-top" src="assets/img/wizard_howto.png" alt="wizard howto">
-    </div>
+    <h1 class="fair-wizard-title">FAIR Wizard</h1>
 
-    <h2>FAIRification resources </h2>
-    <ul>
-      <li> <b>Recipes</b>. FAIRification guidelines in the FAIR Cookbook<sup>[2]</sup> developed by the FAIRplus project<sup>[3]</sup></li>
-      <li> <b>FAIRification processes</b> developed by the FAIRplus project.</li>
-      <li> <b>FAIR indicators</b> from the RDA data maturity model<sup>[4]</sup>.</li>
-      <li> <b>Curated tools</b> for FAIRification, sourced from Bio.tools<sup>[5]</sup>.</li>
-    </ul>
-
-
-    <div class="btn-fair-wizard-wrapper">
-      <div routerLink="/wizard" class="btn-outline-danger btn-fair-wizard">Go to Wizard</div>
-    </div>
-
-    <h2>Curated FAIRification goals and Solutions</h2>
-    <p>The wizard also contains manually curated solutions for common FAIRification use cases.</p>
-
-
-    <div class="table">
-      <table>
-        <tr>
-          <th>Summary</th>
-          <th>Description</th>
-          <th>Solutions</th>
-        </tr>
-        <tr>
-          <td>Identifying chemical compounds for data exchange</td>
-          <td>As a data owner, I want to use appropriate identifiers for the assay data of chemical compounds, so that I can connect all data about the same compound and exchange the data with others.</td>
-          <td><a href="/resources?text=uc-chemical-identifier">Link</a></td>
-        </tr>
-        <tr>
-          <td>Applying community metadata standards</td>
-          <td>As a biologist, I want to use community metadata standards for data planning so that I can avoid missing information during data collection and adopt the communication exchange standards before the data is born.</td>
-          <td><a href="/resources?text=uc-metadata-standards">Link</a></td>
-        </tr>
-        <tr>
-          <td>Using vocabularies to annotate data</td>
-          <td>As a curator, I want to annotate the metadata with standard vocabularies, so that the data can be consistent and more interoperable. </td>
-          <td><a href="/resources?text=uc-vocabulary-annotation">Link</a></td>
-        </tr>
-    </table>
-    </div>
-
-    <footer>
-      <div class="btn-homepage-references">
-        <h5>References</h5>
-        <p>[1] Wilkinson, Mark D., et al. "The FAIR Guiding Principles for scientific data management and stewardship." Scientific data 3.1 (2016): 1-9.</p>
-        <p>[2] https://fairplus.github.io/the-fair-cookbook/content/home.html</p>
-        <p>[3] https://fairplus-project.eu/</p>
-        <p>[4] https://www.rd-alliance.org/groups/fair-data-maturity-model-wg</p>
-        <p>[5] https://bio.tools/</p>
+    <div class="fair-goals">
+      <div class="fair-goal" routerLink="/about" >
+        <div class="fair-goal-heading">New to FAIR</div>
+        <div class="fair-goal-content">I don't know anything about FAIR. Show me some examples.</div>
       </div>
-
-      <div class="inner-container">
-        <a href="https://europa.eu/"><img src="assets/img/eu-flag.png" height="50" alt="EU flag" class="float-left bottom-margin" loading="lazy" /></a>
-        <a href="https://www.imi.europa.eu/"><img src="assets/img/imi-flag.jpg" height="50" alt="IMI logo" class="float-left" loading="lazy" /></a>
-        <a href="https://efpia.eu"><img src="assets/img/efpia.jpeg" height="50" alt="EFPIA logo" class="float-left"  loading="lazy" /></a>
-        <p class="low-line-height clear-left"><small>This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a> Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the authors and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of the information contained herein.</small></p>
+      <div class="fair-goal" routerLink="/wizard" >
+        <div class="fair-goal-heading">FAIR Wizard</div>
+        <div class="fair-goal-content">I know a bit about FAIR. Take me to the Wizard.</div>
       </div>
-    </footer>
+      <div class="fair-goal" routerLink="/assessment" >
+        <div class="fair-goal-heading">FAIR Assessment</div>
+        <div class="fair-goal-content">I know a lot about FAIR. I would like to assess my FAIRness level.</div>
+      </div>
+    </div>
+
+    <div class="fair-overview-text">
+      <span class="text-highlight">FAIR principles</span> serve to guide data producers and data publishers to
+      improve their data management practices and improve the reuse of
+      research data<sup><a href="https://pubmed.ncbi.nlm.nih.gov/26978244/">1</a></sup>.
+      <span class="text-highlight">FAIRification</span> is the process of improving the FAIR level of datasets,
+      projects or related infrastructure.
+    </div>
+    <div class="fair-overview-text">
+      The <span class="text-highlight">FAIR wizard</span> utilizes FAIRification resources developed by the FAIRplus project and other platforms,
+      suggests FAIRification materials based on the FAIRification requirements, and designs FAIRification solutions
+      for data owners, data stewards, and other people involved in FAIRification.
+    </div>
+
+    <div class="alert-warning"
+         style="float: left; width: 100%; border: 1px solid gray; border-radius: 5px; margin: 10vh auto 0;padding: 3px">
+      The wizard is in early-stage development. Major updates are expected.
+      Feedback is welcome. To provide feedback on general use cases and FAIRification solutions, please fill out this <a
+      href="https://forms.gle/jvJ2aLfeoSueohLX7">form</a>.
+      Feedback is also welcome through <a href="https://github.com/FAIRplus/FAIR_wizard">Github</a> issues.
+    </div>
+
   </div>
 </div>
+<div class="footer">
+  <div class="footer-text">
+    This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a>
+    Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s
+    Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the authors
+    and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of
+    the information contained herein.
+  </div>
+
+  <div class="footer-logos">
+    <a href="https://europa.eu/"><img src="assets/img/eu-flag.png" height="40" alt="EU flag" class="footer-logo" loading="lazy"/></a>
+    <a href="https://www.imi.europa.eu/"><img src="assets/img/imi-flag.jpg" height="40" alt="IMI logo" class="footer-logo" loading="lazy"/></a>
+    <a href="https://efpia.eu"><img src="assets/img/efpia.jpeg" height="40" alt="EFPIA logo" class="footer-logo"  loading="lazy"/></a>
+  </div>
+</div>
+
 </body>
 </html>
 
