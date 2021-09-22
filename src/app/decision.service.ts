@@ -36,7 +36,11 @@ export class DecisionService {
     return this.http.get<FairResource[]>(this.searchUrl, {params: params})
       .pipe(map(resources => {
         let fairResources: FairResource[] = [];
-        resources.forEach(r => r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]);
+        resources.forEach(r => {
+          if (r.resourceType !== undefined) {
+            r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
+          }
+        });
         return resources;
       }));
     // return of(FAIR_RESOURCES);

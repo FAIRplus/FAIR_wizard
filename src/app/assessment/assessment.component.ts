@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DecisionService} from "../decision.service";
+import {FairResource} from "../models/FairResource";
 
 @Component({
   selector: 'app-assessment',
@@ -9,6 +10,7 @@ import {DecisionService} from "../decision.service";
 export class AssessmentComponent implements OnInit {
 
   public selectedPrinciple = "Findable";
+  fairResources: FairResource[];
 
   assessmentFields = [
     {
@@ -21,32 +23,9 @@ export class AssessmentComponent implements OnInit {
       "score_overall": true,
       "score_essential": false,
       "score_non_essential": true,
-      "assessment_details": ""
-    },
-    {
-      "id": "RDA-A1.1-01D",
-      "principle": "Accessible",
-      "sub_principle": "A1.1",
-      "name": "Data is accessible through a free access protocol",
-      "description": "short decscription",
-      "priority": "Important",
-      "score_overall": false,
-      "score_essential": false,
-      "score_non_essential": true,
-      "assessment_details": ""
-    },
-    {
-      "id": "RDA-R1.1-01M",
-      "principle": "Reusable",
-      "sub_principle": "R1.1",
-      "name": "Metadata includes information about the licence under which the data can be reused",
-      "description": "short decscription",
-      "priority": "Essential",
-      "score_overall": false,
-      "score_essential": true,
-      "score_non_essential": true,
-      "assessment_details": ""
-    },
+      "assessment_details": "",
+      "labels": ["", ""]
+    }
   ];
 
   displayedFields;
@@ -62,13 +41,23 @@ export class AssessmentComponent implements OnInit {
   }
 
   filterResults(principle) {
-    // let elements = this.elem.nativeElement.querySelectorAll('.classImLookingFor');
     this.selectedPrinciple = principle;
     this.displayedFields = this.assessmentFields.filter(a => a.principle === principle);
   }
 
   submitAssessment() {
+    this.decisionService.searchResources(Array.from(this.filters.values())).subscribe(r => this.fairResources = r);
+  }
 
+  get filters() : Set<string> {
+    let filters = new Set<string>();
+    for (let field of this.assessmentFields) {
+      if (!field.score_overall) {
+        for(let l of field.labels)
+        filters.add(l);
+      }
+    }
+    return filters;
   }
 
 }

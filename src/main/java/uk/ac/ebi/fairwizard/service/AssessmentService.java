@@ -14,7 +14,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Log
@@ -44,8 +47,10 @@ public class AssessmentService {
         if ("Principle".equalsIgnoreCase(f[0])) {
           continue;
         }
+        List<String> labels = Arrays.stream(f[8].split(",")).collect(Collectors.toList());
         assessments.add(
-          new Assessment(f[0], f[1], f[2], f[3], f[4], toBoolean(f[5]), toBoolean(f[6]), toBoolean(f[7]), "", ""));
+          new Assessment(f[0], f[1], f[2], f[3], f[4], toBoolean(f[5]), toBoolean(f[6]), toBoolean(f[7]),
+                         "", "", labels));
       }
     } catch (IOException | CsvValidationException e) {
       throw new ApplicationStatusException("Failed to read FAIR assessment file");
