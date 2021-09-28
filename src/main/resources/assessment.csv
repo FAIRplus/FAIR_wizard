@@ -1,42 +1,42 @@
-Principle,Sub-principle,ID,Indicator,Priority,Assessment overall,Assessment Essential,Assessment non-essential
-Findable,F1,RDA-F1-01M,Metadata is identified by a persistent identifier,Essential,1,1,-
-Findable,F1,RDA-F1-01D,Data is identified by a persistent identifier,Essential,,,-
-Findable,F1,RDA-F1-02M,Metadata is identified by a globally unique identifier,Essential,,,-
-Findable,F1,RDA-F1-02D,Data is identified by a globally unique identifier,Essential,,,-
-Findable,F2,RDA-F2-01M,Rich metadata is provided to allow discovery,Essential,,,-
-Findable,F3,RDA-F3-01M,Metadata includes the identifier for the data,Essential,,,-
-Findable,F4,RDA-F4-01M,Metadata is offered in such a way that it can be harvested and indexed,Essential,,,-
-Accessible,A1,RDA-A1-01M,Metadata contains information to enable the user to get access to the data,Important,,-,
-Accessible,A1,RDA-A1-02M,Metadata can be accessed manually (i.e. with human intervention),Essential,,,-
-Accessible,A1,RDA-A1-02D,Data can be accessed manually (i.e. with human intervention),Essential,,,-
-Accessible,A1,RDA-A1-03M,Metadata identifier resolves to a metadata record,Essential,,,-
-Accessible,A1,RDA-A1-03D,Data identifier resolves to a digital object,Essential,,,-
-Accessible,A1,RDA-A1-04M,Metadata is accessed through standardised protocol,Essential,,,-
-Accessible,A1,RDA-A1-04D,Data is accessible through standardised protocol,Essential,,,-
-Accessible,A1,RDA-A1-05D,Data can be accessed automatically (i.e. by a computer program),Important,,-,
-Accessible,A1.1,RDA-A1.1-01M,Metadata is accessible through a free access protocol,Essential,,,-
-Accessible,A1.1,RDA-A1.1-01D,Data is accessible through a free access protocol,Important,,-,
-Accessible,A1.2,RDA-A1.2-01D,Data is accessible through an access protocol that supports authentication and authorisation,Useful,,-,
-Accessible,A2,RDA-A2-01M,Metadata is guaranteed to remain available after data is no longer available,Essential,,,-
-Interoperable,I1,RDA-I1-01M,Metadata uses knowledge representation expressed in standardised format,Important,,-,
-Interoperable,I1,RDA-I1-01D,Data uses knowledge representation expressed in standardised format,Important,,-,
-Interoperable,I1,RDA-I1-02M,Metadata uses machine-understandable knowledge representation,Important,,-,
-Interoperable,I1,RDA-I1-02D,Data uses machine-understandable knowledge representation,Important,,-,
-Interoperable,I2,RDA-I2-01M,Metadata uses FAIR-compliant vocabularies,Important,,-,
-Interoperable,I2,RDA-I2-01D,Data uses FAIR-compliant vocabularies,Useful,,-,
-Interoperable,I3,RDA-I3-01M,Metadata includes references to other metadata,Important,,-,
-Interoperable,I3,RDA-I3-01D,Data includes references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-02M,Metadata includes references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-02D,Data includes qualified references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-03M,Metadata includes qualified references to other metadata,Important,,-,
-Interoperable,I3,RDA-I3-04M,Metadata include qualified references to other data,Useful,,-,
-Reusable,R1,RDA-R1-01M,Plurality of accurate and relevant attributes are provided to allow reuse,Essential,,,-
-Reusable,R1.1,RDA-R1.1-01M,Metadata includes information about the licence under which the data can be reused,Essential,,,-
-Reusable,R1.1,RDA-R1.1-02M,Metadata refers to a standard reuse licence,Important,,-,
-Reusable,R1.1,RDA-R1.1-03M,Metadata refers to a machine-understandable reuse licence,Important,,-,
-Reusable,R1.2,RDA-R1.2-01M,Metadata includes provenance information according to community-specific standards,Important,,-,
-Reusable,R1.2,RDA-R1.2-02M,Metadata includes provenance information according to a cross-community language,Useful,,-,
-Reusable,R1.3,RDA-R1.3-01M,Metadata complies with a community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-01D,Data complies with a community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-02M,Metadata is expressed in compliance with a machine-understandable community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-02D,Data is expressed in compliance with a machine-understandable community standard,Important,,-,
+Principle,Sub-principle,ID,Indicator,Priority,Assessment overall,Assessment Essential,Assessment non-essential,Labels
+Findable,F1,RDA-F1-01M,Metadata is identified by a persistent identifier,Essential,1,1,-,"accessibility,protocols"
+Findable,F1,RDA-F1-01D,Data is identified by a persistent identifier,Essential,,,-,"accessibility,protocols"
+Findable,F1,RDA-F1-02M,Metadata is identified by a globally unique identifier,Essential,,,-,"accessibility,protocols"
+Findable,F1,RDA-F1-02D,Data is identified by a globally unique identifier,Essential,,,-,"accessibility,protocols"
+Findable,F2,RDA-F2-01M,Rich metadata is provided to allow discovery,Essential,,,-,"accessibility,protocols"
+Findable,F3,RDA-F3-01M,Metadata includes the identifier for the data,Essential,,,-,"accessibility,protocols"
+Findable,F4,RDA-F4-01M,Metadata is offered in such a way that it can be harvested and indexed,Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-01M,Metadata contains information to enable the user to get access to the data,Important,,-,,"accessibility,protocols"
+Accessible,A1,RDA-A1-02M,Metadata can be accessed manually (i.e. with human intervention),Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-02D,Data can be accessed manually (i.e. with human intervention),Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-03M,Metadata identifier resolves to a metadata record,Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-03D,Data identifier resolves to a digital object,Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-04M,Metadata is accessed through standardised protocol,Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-04D,Data is accessible through standardised protocol,Essential,,,-,"accessibility,protocols"
+Accessible,A1,RDA-A1-05D,Data can be accessed automatically (i.e. by a computer program),Important,,-,,"accessibility,protocols"
+Accessible,A1.1,RDA-A1.1-01M,Metadata is accessible through a free access protocol,Essential,,,-,"accessibility,protocols"
+Accessible,A1.1,RDA-A1.1-01D,Data is accessible through a free access protocol,Important,,-,,"accessibility,protocols"
+Accessible,A1.2,RDA-A1.2-01D,Data is accessible through an access protocol that supports authentication and authorisation,Useful,,-,,"accessibility,protocols"
+Accessible,A2,RDA-A2-01M,Metadata is guaranteed to remain available after data is no longer available,Essential,,,-,"accessibility,protocols"
+Interoperable,I1,RDA-I1-01M,Metadata uses knowledge representation expressed in standardised format,Important,,-,,"accessibility,protocols"
+Interoperable,I1,RDA-I1-01D,Data uses knowledge representation expressed in standardised format,Important,,-,,"accessibility,protocols"
+Interoperable,I1,RDA-I1-02M,Metadata uses machine-understandable knowledge representation,Important,,-,,"accessibility,protocols"
+Interoperable,I1,RDA-I1-02D,Data uses machine-understandable knowledge representation,Important,,-,,"accessibility,protocols"
+Interoperable,I2,RDA-I2-01M,Metadata uses FAIR-compliant vocabularies,Important,,-,,"accessibility,protocols"
+Interoperable,I2,RDA-I2-01D,Data uses FAIR-compliant vocabularies,Useful,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-01M,Metadata includes references to other metadata,Important,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-01D,Data includes references to other data,Useful,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-02M,Metadata includes references to other data,Useful,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-02D,Data includes qualified references to other data,Useful,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-03M,Metadata includes qualified references to other metadata,Important,,-,,"accessibility,protocols"
+Interoperable,I3,RDA-I3-04M,Metadata include qualified references to other data,Useful,,-,,"accessibility,protocols"
+Reusable,R1,RDA-R1-01M,Plurality of accurate and relevant attributes are provided to allow reuse,Essential,,,-,"accessibility,protocols"
+Reusable,R1.1,RDA-R1.1-01M,Metadata includes information about the licence under which the data can be reused,Essential,,,-,"accessibility,protocols"
+Reusable,R1.1,RDA-R1.1-02M,Metadata refers to a standard reuse licence,Important,,-,,"accessibility,protocols"
+Reusable,R1.1,RDA-R1.1-03M,Metadata refers to a machine-understandable reuse licence,Important,,-,,"accessibility,protocols"
+Reusable,R1.2,RDA-R1.2-01M,Metadata includes provenance information according to community-specific standards,Important,,-,,"accessibility,protocols"
+Reusable,R1.2,RDA-R1.2-02M,Metadata includes provenance information according to a cross-community language,Useful,,-,,"accessibility,protocols"
+Reusable,R1.3,RDA-R1.3-01M,Metadata complies with a community standard,Essential,,,-,"accessibility,protocols"
+Reusable,R1.3,RDA-R1.3-01D,Data complies with a community standard,Essential,,,-,"accessibility,protocols"
+Reusable,R1.3,RDA-R1.3-02M,Metadata is expressed in compliance with a machine-understandable community standard,Essential,,,-,"accessibility,protocols"
+Reusable,R1.3,RDA-R1.3-02D,Data is expressed in compliance with a machine-understandable community standard,Important,,-,,"accessibility,protocols"

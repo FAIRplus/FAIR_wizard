@@ -1,39 +1,52 @@
 <!--<div class="container-fluid">-->
-  <div class="assessment-principle-container">
-    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Findable' == selectedPrinciple}" (click)="filterResults('Findable')">Findability</div>
-    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Accessible' == selectedPrinciple}" (click)="filterResults('Accessible')">Accessibility</div>
-    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Interoperable' == selectedPrinciple}" (click)="filterResults('Interoperable')">Interoperability</div>
-    <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Reusable' == selectedPrinciple}" (click)="filterResults('Reusable')">Reusability</div>
+<div class="assessment-principle-container">
+  <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Findable' == selectedPrinciple}"
+       (click)="filterResults('Findable')">Findability
   </div>
-  <div class="assessment-table-container">
-    <table class="table-bordered table-striped table-hover table-sm assessment-table">
-      <thead>
-      <tr class="table-secondary">
-<!--        <th>ID</th>-->
-        <th>Principle</th>
-<!--        <th>Sub-Principle</th>-->
-        <th>Name</th>
-        <th>Priority</th>
-        <th>Self Assessment</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let indicator of displayedFields">
-<!--        <td>{{ indicator.id }}</td>-->
-        <td>{{ indicator.principle }}</td>
-<!--        <td>{{ indicator.sub_principle }}</td>-->
-        <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
-        <td>{{ indicator.priority }}</td>
-        <td>
-          <input type="checkbox" [checked]="indicator.score_overall" (change)="indicator.score_overall = !indicator.score_overall" id="score_overall"/>
-          <label for="score_overall">&nbsp; yes</label>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Accessible' == selectedPrinciple}"
+       (click)="filterResults('Accessible')">Accessibility
   </div>
-<!--  <div>-->
-    <div class="fair-search-button-container">
-    <button class="btn btn-primary fair-search-button" (click)="submitAssessment()">Submit</button>
+  <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Interoperable' == selectedPrinciple}"
+       (click)="filterResults('Interoperable')">Interoperability
   </div>
-<!--</div>-->
+  <div class="assessment-principle" [ngClass]="{'assessment-principle-selected' : 'Reusable' == selectedPrinciple}"
+       (click)="filterResults('Reusable')">Reusability
+  </div>
+</div>
+<div class="assessment-table-container">
+  <table class="table-bordered table-striped table-hover table-sm assessment-table">
+    <thead>
+    <tr class="table-secondary">
+      <!--        <th>ID</th>-->
+      <th>Principle</th>
+      <!--        <th>Sub-Principle</th>-->
+      <th>Name</th>
+      <th>Priority</th>
+      <th>Self Assessment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let indicator of displayedFields">
+      <!--        <td>{{ indicator.id }}</td>-->
+      <td>{{ indicator.principle }}</td>
+      <!--        <td>{{ indicator.sub_principle }}</td>-->
+      <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
+      <td>{{ indicator.priority }}</td>
+      <td>
+        <input type="checkbox" [checked]="indicator.score_overall"
+               (change)="indicator.score_overall = !indicator.score_overall" id="score_overall"/>
+        <label for="score_overall">&nbsp; yes</label>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="fair-search-button-container">
+  <button class="btn btn-primary fair-search-button" (click)="submitAssessment()">Submit</button>
+</div>
+
+<div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
+  <h2>Results</h2>
+  <app-fair-resources [resources]="fairResources" [filters]="filters"></app-fair-resources>
+</div>

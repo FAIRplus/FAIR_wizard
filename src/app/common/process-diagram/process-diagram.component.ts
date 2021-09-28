@@ -85,9 +85,12 @@ export class ProcessDiagramComponent implements OnInit {
 
   onSelectProcess(processName) {
     let parentProcess = this.processMap[processName];
-    this.title = parentProcess.name;
-    this.description = parentProcess.description;
-    this.subProcessList = parentProcess.subProcess;
+    if (parentProcess !== undefined) {
+      this.title = parentProcess.name;
+      this.description = parentProcess.description;
+      this.subProcessList = parentProcess.subProcess;
+    }
+
     this.connectedResources = [];
   }
 
