@@ -39,6 +39,8 @@ export class DecisionService {
         resources.forEach(r => {
           if (r.resourceType !== undefined) {
             r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
+          } else {
+            console.log("Error in data: resourceType is undefined for " + r);
           }
         });
         return resources;
@@ -71,7 +73,7 @@ export class DecisionService {
   }
 
   getReport(): Observable<any> {
-    return this.http.get<Object>(this.assessmentUrl);
+    return this.http.get<Object>(this.reportUrl);
   }
 
 

@@ -163,6 +163,10 @@ export class WizardComponent implements OnInit {
     });
   }
 
+  downloadReport() {
+    window.open(environment.baseUrl + "/api/report", "_blank");
+  }
+
   calculateProgress() {
     let currentProgress = this.decisions.length;
     this.progress = currentProgress * 100 / this.MAX_DECISION_DEPTH;
