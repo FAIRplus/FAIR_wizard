@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import * as cytoscape from "cytoscape";
+import cola from 'cytoscape-cola';
+import spread from 'cytoscape-spread';
+import d3Force from 'cytoscape-d3-force';
+import klay from 'cytoscape-klay';
 import {DecisionService} from "../../decision.service";
 
 @Component({
@@ -16,6 +20,11 @@ export class ResourceNetworkComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    cytoscape.use( cola );
+    cytoscape.use( spread );
+    cytoscape.use( d3Force );
+    cytoscape.use( klay );
+
     if (this.filters == null) {
       this.filters = [];
     }
@@ -26,6 +35,7 @@ export class ResourceNetworkComponent implements OnInit {
     this.decisionService.getProcessNetwork(this.filters, '')
       .subscribe(p => {
         this.processes = p;
+        console.log(this.processes);
         this.draw();
       });
   }
@@ -54,8 +64,10 @@ export class ResourceNetworkComponent implements OnInit {
             'border-width': 3,
             'border-color': '#929292',
             'label': 'data(label)',
+            'text-valign': 'center',
+            'text-halign': 'center',
             'color': '#4b4b4b',
-            'font-size': 30
+            'font-size': 20
           }
         },
         {
@@ -93,7 +105,8 @@ export class ResourceNetworkComponent implements OnInit {
       ],
 
       layout: {
-        name: 'concentric',
+        name: 'klay',
+        // name: 'concentric',
         // name: 'grid',
         // rows: 10,
         // cols: 20
