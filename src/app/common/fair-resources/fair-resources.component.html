@@ -36,40 +36,25 @@
     </div>
   </div>
 
+
   <div class="card h-100 fair-resource">
     <div class="card-header">
       <div class="col-lg-10 float-left fair-resource-header">
-      FAIRification Implementation Tools
-      <h6 class="card-title h-100 w-200">Short description of FAIR Implementation Tools</h6>
+        FAIRification Processes
+        <h6 class="card-title h-100 w-200">Short description of FAIR Processes</h6>
       </div>
       <div class="col-lg-2 float-left fair-resource-controls">
-        <div class="badge badge-info resource-count">{{tools.length}}</div>
-      <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
-         data-target="#tools-collapse" aria-expanded="true" aria-controls="tools-collapse">
-      </a>
+        <div class="badge badge-info resource-count">{{processes.length}}</div>
+        <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
+           data-target="#process-collapse" aria-expanded="true" aria-controls="process-collapse">
+        </a>
       </div>
     </div>
-    <div class="collapse show" id="tools-collapse">
+    <div class="collapse show" id="process-collapse">
       <div class="card-body">
-        <div *ngIf="tools.length > 0; else blankContent" class="card-text h-100">
-          <table class="table table-hover table-bordered table-dark"
-                 aria-describedby="FAIRification implementation tools">
-            <thead>
-            <tr class="font-16">
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Link</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="fair-resource-table-entry font-14" *ngFor="let tool of tools" (click)="openProcessDialog(tool)">
-              <td>{{tool.name}}</td>
-              <td>{{tool.description}}</td>
-              <td>{{tool.location}}</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="card-text h-100">
+          <app-process-diagram [processList]="processes"></app-process-diagram>
+        </p>
       </div>
     </div>
   </div>
@@ -77,14 +62,36 @@
   <div class="card h-100 fair-resource">
     <div class="card-header">
       <div class="col-lg-10 float-left fair-resource-header">
-      FAIRification Indicators
-      <h6 class="card-title h-100 w-200">Short description of FAIR Indicators</h6>
+        Resource Network
+        <h6 class="card-title h-100 w-200">FAIR resource network diagram shows the connections between each
+          resource.</h6>
+      </div>
+      <div class="col-lg-2 float-left fair-resource-controls">
+        <div class="badge badge-info resource-count">{{resources.length}}</div>
+        <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
+           data-target="#network-collapse" aria-expanded="true" aria-controls="network-collapse">
+        </a>
+      </div>
+    </div>
+    <div class="collapse show" id="network-collapse">
+      <div class="card-body">
+        <app-resource-network [filters]="filters"></app-resource-network>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card h-100 fair-resource">
+    <div class="card-header">
+      <div class="col-lg-10 float-left fair-resource-header">
+        FAIRification Indicators
+        <h6 class="card-title h-100 w-200">Short description of FAIR Indicators</h6>
       </div>
       <div class="col-lg-2 float-left fair-resource-controls">
         <div class="badge badge-info resource-count">{{indicators.length}}</div>
-      <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
-         data-target="#indicators-collapse" aria-expanded="true" aria-controls="indicators-collapse">
-      </a>
+        <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
+           data-target="#indicators-collapse" aria-expanded="true" aria-controls="indicators-collapse">
+        </a>
       </div>
     </div>
     <div class="collapse show" id="indicators-collapse">
@@ -113,41 +120,37 @@
   <div class="card h-100 fair-resource">
     <div class="card-header">
       <div class="col-lg-10 float-left fair-resource-header">
-      FAIRification Processes
-      <h6 class="card-title h-100 w-200">Short description of FAIR Processes</h6>
+        FAIRification Implementation Tools
+        <h6 class="card-title h-100 w-200">Short description of FAIR Implementation Tools</h6>
       </div>
       <div class="col-lg-2 float-left fair-resource-controls">
-        <div class="badge badge-info resource-count">{{processes.length}}</div>
-      <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
-         data-target="#process-collapse" aria-expanded="true" aria-controls="process-collapse">
-      </a>
+        <div class="badge badge-info resource-count">{{tools.length}}</div>
+        <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
+           data-target="#tools-collapse" aria-expanded="true" aria-controls="tools-collapse">
+        </a>
       </div>
     </div>
-    <div class="collapse show" id="process-collapse">
+    <div class="collapse show" id="tools-collapse">
       <div class="card-body">
-        <p class="card-text h-100">
-          <app-process-diagram [processList]="processes"></app-process-diagram>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card h-100 fair-resource">
-    <div class="card-header">
-      <div class="col-lg-10 float-left fair-resource-header">
-      Resource Network
-      <h6 class="card-title h-100 w-200">FAIR resource network diagram shows the connections between each resource.</h6>
-      </div>
-      <div class="col-lg-2 float-left fair-resource-controls">
-        <div class="badge badge-info resource-count">{{resources.length}}</div>
-      <a class="btn collapse-btn accordion-toggle" type="button" data-toggle="collapse"
-         data-target="#network-collapse" aria-expanded="true" aria-controls="network-collapse">
-      </a>
+        <div *ngIf="tools.length > 0; else blankContent" class="card-text h-100">
+          <table class="table table-hover table-bordered table-dark"
+                 aria-describedby="FAIRification implementation tools">
+            <thead>
+            <tr class="font-16">
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="fair-resource-table-entry font-14" *ngFor="let tool of tools" (click)="openProcessDialog(tool)">
+              <td>{{tool.name}}</td>
+              <td>{{tool.description}}</td>
+              <td>{{tool.location}}</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
-    </div>
-    <div class="collapse show" id="network-collapse">
-      <div class="card-body">
-        <app-resource-network [filters]="filters"></app-resource-network>
       </div>
     </div>
   </div>
