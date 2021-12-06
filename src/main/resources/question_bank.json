@@ -15,7 +15,7 @@
         "next": "2"
       },
       {
-        "text": "Data scientist or software engineer",
+        "text": "Data scientist/Developer",
         "description": "Bioinformatician or software enigineer whose work involves computational analysis.",
         "labels": [
           "software engineer","bioinformatician","computational biologist"
@@ -40,7 +40,7 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Retrospective data",
+        "text": "Existing data",
         "description": "Data that has been generated in the past and needs to be improved",
         "labels": [
           "retrospective"
@@ -48,7 +48,7 @@
         "next": "3"
       },
       {
-        "text": "Prospective data",
+        "text": "Upcoming data",
         "description": "Data to be generated or at very early stage of data generation",
         "labels": [
           "prospective"
@@ -56,7 +56,7 @@
         "next": "4"
       },
       {
-        "text": "I have no data available",
+        "text": "No available data",
         "description": "",
         "labels": [
           "retrospective",
