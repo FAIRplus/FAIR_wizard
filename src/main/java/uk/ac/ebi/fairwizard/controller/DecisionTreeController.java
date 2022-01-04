@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
@@ -22,7 +23,10 @@ import uk.ac.ebi.fairwizard.service.AssessmentService;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
 import uk.ac.ebi.fairwizard.service.ProcessNetworkService;
 import uk.ac.ebi.fairwizard.service.RdfNetworkService;
+import uk.ac.ebi.fairwizard.service.ReportingService;
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.util.List;
 import java.util.Set;
@@ -90,9 +94,12 @@ public class DecisionTreeController {
     return "Not implemented";
   }
 
-  @GetMapping("report")
-  public void getFairReport() {
-
+//  @GetMapping("report")
+  @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
+  public byte[] getFairReport() {
+    ReportingService reportingService = new ReportingService();
+    ByteArrayOutputStream out = reportingService.getReportStream();
+    return out.toByteArray();
   }
 
   @GetMapping("permalink/{searchId}")

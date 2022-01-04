@@ -12,19 +12,24 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./wizard.component.scss']
 })
 export class WizardComponent implements OnInit {
+  MAX_DECISION_DEPTH = 5;
   decisionTree: Map<string, Question>;
   decisions: DecisionNode[];
   currentNode: Question;
   reachedLeaf: boolean;
   fairResources: FairResource[];
   permaLink: string;
+  progress: number;
+  progressText: string;
 
   constructor(private decisionService: DecisionService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.progressText = "0%";
     this.decisionService.getDecisionTree().subscribe(questions => {
       this.decisionTree = new Map();
+      this.progress = 0;
       for (let q of questions) {
         this.decisionTree.set(q.id, q);
       }
@@ -78,6 +83,7 @@ export class WizardComponent implements OnInit {
     }
     this.searchByLabels(filters);
     this.generateSearchUrl();
+    this.progress = 100;
   }
 
   get filters() : string[] {
@@ -105,9 +111,7 @@ export class WizardComponent implements OnInit {
 
   generateSearchUrl() {
     const params = this.generateQueryParams();
-    console.log(params);
     const existingParams = this.route.snapshot.queryParamMap.getAll('answers');
-    console.log(existingParams.length);
     if (existingParams.length <= 0) {
       this.router.navigate([], {
         relativeTo: this.route,
@@ -124,6 +128,7 @@ export class WizardComponent implements OnInit {
 
   addDecision(decision: DecisionNode): void {
     this.processDecision(decision);
+    this.calculateProgress();
   }
 
   processDecision(decision: DecisionNode) {
@@ -148,6 +153,7 @@ export class WizardComponent implements OnInit {
     this.decisions = newDecisions;
     this.fairResources = [];
     this.reachedLeaf = false;
+    this.calculateProgress();
   }
 
   saveSearch() {
@@ -155,5 +161,14 @@ export class WizardComponent implements OnInit {
       this.permaLink = environment.baseUrl + "api/permalink/" + p.toString();
       console.log(this.permaLink);
     });
+  }
+
+  downloadReport() {
+    window.open(environment.baseUrl + "/api/report", "_blank");
+  }
+
+  calculateProgress() {
+    let currentProgress = this.decisions.length;
+    this.progress = currentProgress * 100 / this.MAX_DECISION_DEPTH;
   }
 }

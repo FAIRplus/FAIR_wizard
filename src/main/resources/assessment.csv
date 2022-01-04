@@ -1,42 +1,54 @@
-Principle,Sub-principle,ID,Indicator,Priority,Assessment overall,Assessment Essential,Assessment non-essential
-Findable,F1,RDA-F1-01M,Metadata is identified by a persistent identifier,Essential,1,1,-
-Findable,F1,RDA-F1-01D,Data is identified by a persistent identifier,Essential,,,-
-Findable,F1,RDA-F1-02M,Metadata is identified by a globally unique identifier,Essential,,,-
-Findable,F1,RDA-F1-02D,Data is identified by a globally unique identifier,Essential,,,-
-Findable,F2,RDA-F2-01M,Rich metadata is provided to allow discovery,Essential,,,-
-Findable,F3,RDA-F3-01M,Metadata includes the identifier for the data,Essential,,,-
-Findable,F4,RDA-F4-01M,Metadata is offered in such a way that it can be harvested and indexed,Essential,,,-
-Accessible,A1,RDA-A1-01M,Metadata contains information to enable the user to get access to the data,Important,,-,
-Accessible,A1,RDA-A1-02M,Metadata can be accessed manually (i.e. with human intervention),Essential,,,-
-Accessible,A1,RDA-A1-02D,Data can be accessed manually (i.e. with human intervention),Essential,,,-
-Accessible,A1,RDA-A1-03M,Metadata identifier resolves to a metadata record,Essential,,,-
-Accessible,A1,RDA-A1-03D,Data identifier resolves to a digital object,Essential,,,-
-Accessible,A1,RDA-A1-04M,Metadata is accessed through standardised protocol,Essential,,,-
-Accessible,A1,RDA-A1-04D,Data is accessible through standardised protocol,Essential,,,-
-Accessible,A1,RDA-A1-05D,Data can be accessed automatically (i.e. by a computer program),Important,,-,
-Accessible,A1.1,RDA-A1.1-01M,Metadata is accessible through a free access protocol,Essential,,,-
-Accessible,A1.1,RDA-A1.1-01D,Data is accessible through a free access protocol,Important,,-,
-Accessible,A1.2,RDA-A1.2-01D,Data is accessible through an access protocol that supports authentication and authorisation,Useful,,-,
-Accessible,A2,RDA-A2-01M,Metadata is guaranteed to remain available after data is no longer available,Essential,,,-
-Interoperable,I1,RDA-I1-01M,Metadata uses knowledge representation expressed in standardised format,Important,,-,
-Interoperable,I1,RDA-I1-01D,Data uses knowledge representation expressed in standardised format,Important,,-,
-Interoperable,I1,RDA-I1-02M,Metadata uses machine-understandable knowledge representation,Important,,-,
-Interoperable,I1,RDA-I1-02D,Data uses machine-understandable knowledge representation,Important,,-,
-Interoperable,I2,RDA-I2-01M,Metadata uses FAIR-compliant vocabularies,Important,,-,
-Interoperable,I2,RDA-I2-01D,Data uses FAIR-compliant vocabularies,Useful,,-,
-Interoperable,I3,RDA-I3-01M,Metadata includes references to other metadata,Important,,-,
-Interoperable,I3,RDA-I3-01D,Data includes references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-02M,Metadata includes references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-02D,Data includes qualified references to other data,Useful,,-,
-Interoperable,I3,RDA-I3-03M,Metadata includes qualified references to other metadata,Important,,-,
-Interoperable,I3,RDA-I3-04M,Metadata include qualified references to other data,Useful,,-,
-Reusable,R1,RDA-R1-01M,Plurality of accurate and relevant attributes are provided to allow reuse,Essential,,,-
-Reusable,R1.1,RDA-R1.1-01M,Metadata includes information about the licence under which the data can be reused,Essential,,,-
-Reusable,R1.1,RDA-R1.1-02M,Metadata refers to a standard reuse licence,Important,,-,
-Reusable,R1.1,RDA-R1.1-03M,Metadata refers to a machine-understandable reuse licence,Important,,-,
-Reusable,R1.2,RDA-R1.2-01M,Metadata includes provenance information according to community-specific standards,Important,,-,
-Reusable,R1.2,RDA-R1.2-02M,Metadata includes provenance information according to a cross-community language,Useful,,-,
-Reusable,R1.3,RDA-R1.3-01M,Metadata complies with a community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-01D,Data complies with a community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-02M,Metadata is expressed in compliance with a machine-understandable community standard,Essential,,,-
-Reusable,R1.3,RDA-R1.3-02D,Data is expressed in compliance with a machine-understandable community standard,Important,,-,
+Levels,Sub-principle,ID,Indicator,Category,Labels
+Level-0,Level-0: Content,F+MM-0.1C,The Data object or dataset as an entity is undefined or undescribed,Content,
+Level-0,Level-0: Content,F+MM-0.2C,No metadata available,Content,
+Level-0,Level-0: Representation & Format,F+MM-0.1R,No formal definition or representation of metadata,Representation & Format,
+Level-0,Level-0: Representation & Format,F+MM-0.2R,Metadata not available in machine readable format (e.g. no metadata or in pdf),Representation & Format,
+Level-0,Level-0: Hosting Env. Capabilities,F+MM-0.1H,"Data or metadata is hosted in non-accessible storage (e.g., personal desktop, local file system or archive) and only retrievable by a single or limited users",Hosting Env. Capabilities,
+Level-0,Level-0: Hosting Env. Capabilities,F+MM-0.2H,Data or metadata hosted in an accessible resource but with no retrieval capability,Hosting Env. Capabilities,
+Level-1,Level-1: Content,F+MM-1.1C,Data object is defined and it is assigned a globally unique and persistent identifier,Content,select your identifier scheme
+Level-1,Level-1: Content,F+MM-1.2C,"Metadata for the data object includes generic descriptive elements of the data object as a whole (e.g., name, description, keywords)",Content,model your domain
+Level-1,Level-1: Content,F+MM-1.3C,"Metadata includes study/project level summary information (i.e., project-level metadata)",Content,project metadata
+Level-1,Level-1: Representation & Format,F+MM-1.1R,"Representation of metadata conforms to a locally defined model/schema (e.g., dictionary of key/value pairs)",Representation & Format,model your domain
+Level-1,Level-1: Representation & Format,F+MM-1.2R,Data Objects do not conform to a defined or structured representation (data model),Representation & Format,"data model, data representation, model your domain"
+Level-1,Level-1: Representation & Format,F+MM-1.3R,"Metadata available in a machine-readable format (e.g. CSV, JSON, XML, or similar)",Representation & Format,data format
+Level-1,Level-1: Hosting Env. Capabilities,F+MM-1.1H,"Data retrieval capability
+Data object AND its metadata record are indexed and retrievable via its globally unique and persistent identifier by a standardized communication protocol",Hosting Env. Capabilities,"accessibility, protocols"
+Level-1,Level-1: Hosting Env. Capabilities,F+MM-1.2H,"The standardized communication protocol for data / metadata retrieval is open, free and universally implementable such as HTTP, FTP (e.g. simple links for download)",Hosting Env. Capabilities,accessibility
+Level-1,Level-1: Hosting Env. Capabilities,F+MM-1.3H,"If legally required, the hosting environment offers authentication and authorisation capabilities",Hosting Env. Capabilities,"accessibility, hosting strategies, IP checker"
+Level-2,Level-2: Content,F+MM-2.1C,Each study variable is reported in a single dataset field / variable,Content,
+Level-2,Level-2: Content,F+MM-2.2C,"Metadata includes dataset field/variable level metadata (e.g. field name, field description and type) ",Content,
+Level-2,Level-2: Content,F+MM-2.3C,Data values (i.e. field/variable values) are standardized against a locally defined dictionary of terms within and across datasets,Content,"validate against standards,"
+Level-2,Level-2: Content,F+MM-2.4C,Metadata contains access information for the data,Content,"accessibility, "
+Level-2,Level-2: Representation & Format,F+MM-2.1R,"Metadata describing project datasets conforms to a Defined Standard Model (e.g. DCAT, DublinCore, BioSchemas)",Representation & Format,"apply data model on metadata, interoperability"
+Level-2,Level-2: Representation & Format,F+MM-2.2R,Overall project/study data representation uniformly conforms to a locally defined (project-defined) data model or schema providing contextual information about the relationships between data content across datasets,Representation & Format,"interoperability, reusability, findability"
+Level-2,Level-2: Representation & Format,F+MM-2.3R,"Dataset(s) available in machine readable format (e.g. CSV, JSON, XML, or similar) ",Representation & Format,interoperability
+Level-2,Level-2: Hosting Env. Capabilities,F+MM-2.1H,"Retrieval capability
+Data and Metadata exchange format is retrieved using API technologies (REST, RPC, GRAPHQL)",Hosting Env. Capabilities,"accessibility, data retrieval"
+Level-2,Level-2: Hosting Env. Capabilities,F+MM-2.2H,"Search capability
+Metadata is registered or indexed in a searchable resource. Data can be retrieved via its metadata descriptive elements",Hosting Env. Capabilities,findability
+Level-3,Level-3: Content,F+MM-3.1C,Data values (i.e. field/variable values) are standardized against community standard controlled vocabularies and/or ontologies,Content,"validate against standards,"
+Level-3,Level-3: Content,F+MM-3.2C,Metadata includes license information under which data can be reused,Content,data access
+Level-3,Level-3: Representation & Format,F+MM-3.1R,"Overall project/study data representation conforms to a community defined standard domain model (e.g., domain specific repos, OMOP, DATS, ISA)",Representation & Format,"interoperability, reusability, evaluate against standards"
+Level-3,Level-3: Representation & Format,F+MM-3.2R,"Dataset(s) available in a structural representation conforming to a community data exchange standard model (e.g. domain specific repos, SDTM, FHIR, or similar)",Representation & Format,"interoperability, reusability, evaluate against standards"
+Level-3,Level-3: Representation & Format,F+MM-3.3R,Dataset(s) available in machine readable community standard format relevant to the adopted domain and data model,Representation & Format,"interoperability, reusability, evaluate against standards"
+Level-3,Level-3: Hosting Env. Capabilities,F+MM-3.1H,"Search capability
+Data content is searchable. (e.g. data is retrieable via queries for standarised field names, ontology or controlled terms reported in the datasets",Hosting Env. Capabilities,"findability, vocabulary annotation"
+Level-3,Level-3: Hosting Env. Capabilities,F+MM-3.2H,The hosting environment is a public / controlled-access repository,Hosting Env. Capabilities,"hosting strategies, accessibility"
+Level-3,Level-3: Hosting Env. Capabilities,F+MM-3.3H,The hosting environment offers data archiving capability,Hosting Env. Capabilities,
+Level-3,Level-3: Hosting Env. Capabilities,F+MM-3.4H,The hosting environment offers version control capability,Hosting Env. Capabilities,
+Level-4,Level-4: Content,F+MM-4.1C,Dataset(s) are semantically typed,Content,semantics
+Level-4,Level-4: Content,F+MM-4.2C,Dataset(s) fields are semantically typed,Content,semantics
+Level-4,Level-4: Content,F+MM-4.3C,Master Data Entities across all datasets are defined,Content,
+Level-4,Level-4: Content,F+MM-4.5C,Relevant attributes are provided to allow reuse of the data between communities,Content,reusability
+Level-4,Level-4: Representation & Format,F+MM-4.1R,Metadata is represented in a semantic machine interpretable form,Representation & Format,"semantics, interoperability"
+Level-4,Level-4: Representation & Format,F+MM-4.2R,Master entity models are formally represented,Representation & Format,
+Level-4,Level-4: Hosting Env. Capabilities,F+MM-4.1H,"Search capability
+Cross-study data is queryable via harmonized master data entities and their attributes",Hosting Env. Capabilities,findability
+Level-5,Level-5: Content,F+MM-5.1C,"Domain model entities are defined and harmonized against enterprise managed master data entities (e.g. Observation Features Types, Subject Types, Domain Types)",Content,interoperability
+Level-5,Level-5: Content,F+MM-5.2C,Field/Variable Level data is linked and harmonized against enterprise managed Reference Data (e.g. MDR registered Data Elements),Content,interoperability
+Level-5,Level-5: Content,F+MM-4.4C,Metadata includes provenance information according to a cross-community language,Content,reusability
+Level-5,Level-5: Representation & Format,F+MM-5.1R,Data-linked Data Elements are represented and formatted in a community standard model/format (e.g. ISO 11179 MDR standard),Representation & Format,
+Level-5,Level-5: Representation & Format,F+MM-5.2R,Data-linked controlled terminologies and ontologies are formatted and represented by community standards,Representation & Format,"vocabulary management, interoperability"
+Level-5,Level-5: Hosting Env. Capabilities,F+MM-5.1H,Hosting Environment implements Master Data Management Capability,Hosting Env. Capabilities,hosting strategies
+Level-5,Level-5: Hosting Env. Capabilities,F+MM-5.2H,Hosting Environment implements Reference Data Management Capability,Hosting Env. Capabilities,
+Level-5,Level-5: Hosting Env. Capabilities,F+MM-5.3H,Hosting Environment implements Data Governance Capability,Hosting Env. Capabilities,"accessibility, privacy restriction checker"

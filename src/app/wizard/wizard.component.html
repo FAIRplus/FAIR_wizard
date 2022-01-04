@@ -1,6 +1,11 @@
 <div class="fair-wizard">
   <h1 class="page-title">FAIRification Wizard</h1>
 
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'">
+      Wizard Progress: {{progress}}%, {{currentNode.category}}
+    </div>
+  </div>
 
   <div *ngFor="let d of decisions; let i = index">
     <app-decision-path
@@ -21,7 +26,7 @@
   <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
     <h2>Results</h2>
     <div class="actions-container">
-      <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Generate Report</button>
+      <button class="btn btn-primary fair-report-button" (click)="downloadReport()">Generate Report</button>
       <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Get PermaLink</button>
       <div class="permalink-link" *ngIf="permaLink != undefined">{{permaLink}}</div>
     </div>

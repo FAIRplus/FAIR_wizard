@@ -6,6 +6,7 @@ import {ResourcesComponent} from "./resources/resources.component";
 import {FairResourceComponent} from "./common/fair-resource/fair-resource.component";
 import {FairResourcesShowcaseComponent} from "./common/fair-resources-showcase/fair-resources-showcase.component";
 import {AssessmentComponent} from "./assessment/assessment.component";
+import {AboutComponent} from "./about/about.component";
 
 const routes: Routes = [
   {path: 'index', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'resource', component: FairResourceComponent},
   {path: 'showcase', component: FairResourcesShowcaseComponent},
   {path: 'assessment', component: AssessmentComponent},
+  {path: 'about', component: AboutComponent},
 ];
 
 @NgModule({

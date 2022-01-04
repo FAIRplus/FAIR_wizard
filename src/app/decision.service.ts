@@ -36,7 +36,13 @@ export class DecisionService {
     return this.http.get<FairResource[]>(this.searchUrl, {params: params})
       .pipe(map(resources => {
         let fairResources: FairResource[] = [];
-        resources.forEach(r => r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]);
+        resources.forEach(r => {
+          if (r.resourceType !== undefined) {
+            r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
+          } else {
+            console.log("Error in data: resourceType is undefined for " + r);
+          }
+        });
         return resources;
       }));
     // return of(FAIR_RESOURCES);
@@ -67,7 +73,7 @@ export class DecisionService {
   }
 
   getReport(): Observable<any> {
-    return this.http.get<Object>(this.assessmentUrl);
+    return this.http.get<Object>(this.reportUrl);
   }
 
 

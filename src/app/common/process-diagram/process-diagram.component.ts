@@ -37,7 +37,12 @@ export class ProcessDiagramComponent implements OnInit {
     {
       "name": "Competency questions",
       "description": "this is the process description: Competency questions",
-      "subProcess": []
+      "subProcess": [
+        {
+          "name": "sub Data access and ethics",
+          "description": "sub this is the process description: Data access and ethics",
+        }
+      ]
     }
   ];
 
@@ -85,9 +90,12 @@ export class ProcessDiagramComponent implements OnInit {
 
   onSelectProcess(processName) {
     let parentProcess = this.processMap[processName];
-    this.title = parentProcess.name;
-    this.description = parentProcess.description;
-    this.subProcessList = parentProcess.subProcess;
+    if (parentProcess !== undefined) {
+      this.title = parentProcess.name;
+      this.description = parentProcess.description;
+      this.subProcessList = parentProcess.subProcess;
+    }
+
     this.connectedResources = [];
   }
 
