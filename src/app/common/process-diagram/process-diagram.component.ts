@@ -37,7 +37,12 @@ export class ProcessDiagramComponent implements OnInit {
     {
       "name": "Competency questions",
       "description": "this is the process description: Competency questions",
-      "subProcess": []
+      "subProcess": [
+        {
+          "name": "sub Data access and ethics",
+          "description": "sub this is the process description: Data access and ethics",
+        }
+      ]
     }
   ];
 

@@ -1,9 +1,9 @@
-.assessment-principle-container {
+.assessment-levels-container {
   width: 60%;
   margin: 20px auto 20px;
 }
 
-.assessment-principle {
+.assessment-levels {
   background-color: #e3d2f8;
   border: 1px solid #ffffff;
   cursor: pointer;
@@ -14,12 +14,12 @@
   margin-bottom: 10px;
 }
 
-.assessment-principle:hover {
+.assessment-levels:hover {
   color: #ffffff;
   border: 1px solid black;
 }
 
-.assessment-principle-selected {
+.assessment-levels-selected {
   background-color: #310562;
   color: #ffffff;
   border: 1px solid black;
