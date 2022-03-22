@@ -1,5 +1,6 @@
 package uk.ac.ebi.fairwizard.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -9,14 +10,17 @@ import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.FairResource;
+import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.ProcessNode;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -39,6 +43,7 @@ public class RdfNetworkService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     fairResourceGraph = this.loadResources();
+//    rdfToJson();
   }
 
   public Set<FairResource> searchResources(List<String> labels) {
@@ -206,12 +211,48 @@ public class RdfNetworkService {
   }
 
   private Model loadResources() throws ApplicationStatusException {
-    try(InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
+    try(InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFileTtl()).getInputStream()) {
       Model model = ModelFactory.createDefaultModel();
       model.read(in, null, "TTL");
       return model;
     } catch (IOException e) {
-      throw new ApplicationStatusException("Failed to load rdf resource file: " + applicationConfig.getFairResourcesFile());
+      throw new ApplicationStatusException("Failed to load rdf resource file: " + applicationConfig.getFairResourcesFileTtl());
     }
+  }
+
+
+  public void rdfToJson() {
+    Set<FairResource> resourcesRdf = searchResourcesAll();
+    Set<MongoFairResource> resourcesJson = new HashSet<>();
+    resourcesRdf.forEach(r -> {
+      MongoFairResource fr = new MongoFairResource();
+      resourcesJson.add(fr);
+      fr.setId(r.getId());
+      fr.setName(r.getName());
+      fr.setTitle(r.getTitle());
+      fr.setDescription(r.getDescription());
+      fr.setImage(r.getImage());
+      fr.setLocation(r.getLocation());
+      fr.setStatus(r.getStatus());
+      fr.setResourceType(r.getResourceType());
+      fr.setLabels(r.getLabels());
+      fr.setUsecase(r.getUsecase());
+      fr.setTarget(r.getTarget());
+      fr.setLastUpdate(r.getLastUpdate());
+
+      fr.setRelatesTo(r.getRelatesTo() != null ? r.getRelatesTo().stream().map(x -> x.getId()).collect(Collectors.toList()) : Collections.emptyList());
+      fr.setRequires(r.getRequires() != null ? r.getRequires().stream().map(x -> x.getId()).collect(Collectors.toList()) : Collections.emptyList());
+      fr.setIsAfter(r.getIsAfter() != null ? r.getIsAfter().stream().map(x -> x.getId()).collect(Collectors.toList()) : Collections.emptyList());
+      fr.setIncludes(r.getIncludes() != null ? r.getIncludes().stream().map(x -> x.getId()).collect(Collectors.toList()) : Collections.emptyList());
+      fr.setHasParent(r.getHasParent() != null ? r.getHasParent().stream().map(x -> x.getId()).collect(Collectors.toList()) : Collections.emptyList());
+    });
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    try {
+      objectMapper.writeValue(new File("./json.json"), resourcesJson);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
   }
 }

@@ -3,22 +3,17 @@ package uk.ac.ebi.fairwizard.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
-@Entity
-@Table(name = "saved_searches")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Document
 public class SavedSearch {
-
-  @Id
-  @Column(name = "perma_link")
-  private String permaLink;
-  @Column(name = "resource_link")
+  private String id;
   private String resourceLink;
+  private String createDate;
 }

@@ -4,4 +4,16 @@ services:
     build: .
     image: fair-wizard:latest
     ports:
-    - 8080:8080
+    - "8080:8080"
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    environment:
+      - spring.data.mongodb.uri=mongodb://mongodb:27017/fairwizard
+# avoid conflics with EBI network
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

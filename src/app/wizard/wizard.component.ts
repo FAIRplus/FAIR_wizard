@@ -158,8 +158,8 @@ export class WizardComponent implements OnInit {
 
   saveSearch() {
     this.decisionService.saveSearch(this.router.url).subscribe(p => {
-      this.permaLink = environment.baseUrl + "api/permalink/" + p.toString();
-      console.log(this.permaLink);
+      // this.permaLink = environment.baseUrl + "api/permalink/" + p.id;
+      this.permaLink = window.location.origin + "/api/permalink/" + p.id;
     });
   }
 
