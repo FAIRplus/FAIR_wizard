@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ebi.ac.uk/ait/fair-wiard/decision_tree_schema.json",
+  "title": "FAIR Wizard decision tree",
+  "description": "Decision tree containing questions and answers and linking between them",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/question"
+  },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "multipleChoices": {
+          "type": "boolean"
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/answer"
+          }
+        }
+      }
+    },
+    "answer": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "sring"
+          }
+        },
+        "next": {
+          "type": "string",
+          "description": "This value should always refer to an existing question id"
+        }
+      },
+      "required": [
+        "text", "labels", "next"
+      ]
+    }
+  }
+}

@@ -7,6 +7,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
+import uk.ac.ebi.fairwizard.model.DecisionNode;
 import uk.ac.ebi.fairwizard.model.FairResource;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
@@ -132,13 +133,55 @@ public class FairResourceService {
     }
   }
 
-  private void loadResources() {
+  private void loadResources() throws ApplicationStatusException {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       List<MongoFairResource> fairResources = jsonMapper.readValue(in, new TypeReference<>() {
       });
+//      validateResources(fairResources);
       fairResourceRepository.saveAll(fairResources);
     } catch (IOException e) {
       log.error("Failed to load FAIR resources from file {}", e.getMessage(), e);
+    }
+  }
+
+  private void validateResources(List<MongoFairResource> resources) throws ApplicationStatusException {
+    Set<String> ids = resources.stream().map(MongoFairResource::getId).collect(Collectors.toSet());
+    List<String> errors = new ArrayList<>();
+
+    for (MongoFairResource r : resources) {
+      if (r.getId() == null || r.getId().isEmpty()) {
+        errors.add("'id' should be a non empty string in: " + r);
+      }
+      if (r.getName() == null || r.getName().isEmpty()) {
+        errors.add("'name' should be a non empty string in: " + r);
+      }
+      if (r.getResourceType() == null || r.getResourceType().isEmpty()) {
+        errors.add("'resourceType' should be a non empty string in: " + r);
+      }
+      if (r.getLabels() == null || r.getLabels().isEmpty()) {
+        errors.add("'labels' should be a non empty string in: " + r);
+      }
+
+      if (r.getRelatesTo() != null && !ids.containsAll(r.getRelatesTo())/* && r.getRelatesTo().stream().anyMatch(s -> !ids.contains(s))*/) {
+        errors.add("'relatesTo' should refer to an existing resource in: " + r);
+      }
+      if (r.getRequires() != null && !ids.containsAll(r.getRequires())) {
+        errors.add("'requires' should refer to an existing resource in: " + r);
+      }
+      if (r.getIsAfter() != null && !ids.containsAll(r.getIsAfter())) {
+        errors.add("'isAfter' should refer to an existing resource in: " + r);
+      }
+      if (r.getIncludes() != null && !ids.containsAll(r.getIncludes())) {
+        errors.add("'includes' should refer to an existing resource in: " + r);
+      }
+      if (r.getHasParent() != null && !ids.containsAll(r.getHasParent())) {
+        errors.add("'hasParent' should refer to an existing resource in: " + r);
+      }
+    }
+
+    if (!errors.isEmpty()) {
+      errors.forEach(e -> log.error(e));
+      throw new ApplicationStatusException("Invalid data in resources. Please fix them before starting the application");
     }
   }
 }

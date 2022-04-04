@@ -43,7 +43,7 @@ public class RdfNetworkService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     fairResourceGraph = this.loadResources();
-//    rdfToJson();
+    rdfToJson();
   }
 
   public Set<FairResource> searchResources(List<String> labels) {
