@@ -1,7 +1,19 @@
 version: '3'
 services:
-  app:
+  fairwizard:
     build: .
     image: fair-wizard:latest
     ports:
-    - 8080:8080
+      - "8080:8080"
+    links:
+      - mongodb
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+# avoid conflics with EBI network
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

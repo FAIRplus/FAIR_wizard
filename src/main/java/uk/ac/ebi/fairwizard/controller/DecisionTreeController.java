@@ -13,24 +13,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
-import uk.ac.ebi.fairwizard.jpa.SavedSearchRepository;
 import uk.ac.ebi.fairwizard.model.Assessment;
-import uk.ac.ebi.fairwizard.model.FairResource;
-import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.DecisionNode;
+import uk.ac.ebi.fairwizard.model.MongoFairResource;
+import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.SavedSearch;
 import uk.ac.ebi.fairwizard.service.AssessmentService;
 import uk.ac.ebi.fairwizard.service.DecisionTreeService;
-import uk.ac.ebi.fairwizard.service.ProcessNetworkService;
-import uk.ac.ebi.fairwizard.service.RdfNetworkService;
+import uk.ac.ebi.fairwizard.service.FairResourceService;
 import uk.ac.ebi.fairwizard.service.ReportingService;
+import uk.ac.ebi.fairwizard.service.SavedSearchService;
 
 import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
 import java.net.URI;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/api")
@@ -38,21 +35,18 @@ public class DecisionTreeController {
   private static final Logger LOG = LoggerFactory.getLogger(DecisionTreeController.class);
 
   private final DecisionTreeService decisionTreeService;
-  private final ProcessNetworkService processNetworkService;
-  private final RdfNetworkService rdfNetworkService;
-  private final SavedSearchRepository savedSearchRepository;
+  private final FairResourceService fairResourceService;
   private final AssessmentService assessmentService;
+  private final SavedSearchService savedSearchService;
 
   public DecisionTreeController(DecisionTreeService decisionTreeService,
-                                ProcessNetworkService processNetworkService,
-                                RdfNetworkService rdfNetworkService,
+                                FairResourceService fairResourceService,
                                 AssessmentService assessmentService,
-                                SavedSearchRepository savedSearchRepository) {
+                                SavedSearchService savedSearchService) {
     this.decisionTreeService = decisionTreeService;
-    this.processNetworkService = processNetworkService;
-    this.rdfNetworkService = rdfNetworkService;
+    this.fairResourceService = fairResourceService;
     this.assessmentService = assessmentService;
-    this.savedSearchRepository = savedSearchRepository;
+    this.savedSearchService = savedSearchService;
   }
 
   @GetMapping("/version")
@@ -66,22 +60,16 @@ public class DecisionTreeController {
   }
 
   @GetMapping("/search")
-  public Set<FairResource> searchResources(@RequestParam(required = false) List<String> filters) {
+  public Set<MongoFairResource> searchResources(@RequestParam(required = false) List<String> filters) {
     LOG.info("Resource search request, filters: {}", filters);
-    return rdfNetworkService.searchResources(filters);
+    return fairResourceService.searchResources(filters);
   }
 
   @GetMapping("/processes")
   public List<ProcessNetworkElement> getProcessNetwork(@RequestParam(required = false) List<String> filters,
                                                        @RequestParam(required = false) String process) {
-
-    Set<FairResource> resources = rdfNetworkService.searchResources(filters);
-    return rdfNetworkService.populateNetwork(resources);
-  }
-
-  @GetMapping("/network")
-  public List<ProcessNetworkElement> getNetwork(@RequestParam(required = false) String resourceId) {
-    return rdfNetworkService.getResourceNetwork("");
+    Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
+    return fairResourceService.populateNetwork(resources);
   }
 
   @GetMapping("assessment")
@@ -94,7 +82,6 @@ public class DecisionTreeController {
     return "Not implemented";
   }
 
-//  @GetMapping("report")
   @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
   public byte[] getFairReport() {
     ReportingService reportingService = new ReportingService();
@@ -103,19 +90,16 @@ public class DecisionTreeController {
   }
 
   @GetMapping("permalink/{searchId}")
-  public ResponseEntity<Void> getSavedSearches(@PathVariable("searchId") String searchId) {
-    return ResponseEntity.status(HttpStatus.FOUND)
-                         .location(URI.create(savedSearchRepository.findByPermaLink(searchId).getResourceLink()))
-                         .build();
+  public ResponseEntity<Object> getSavedSearches(@PathVariable("searchId") String searchId) {
+    return savedSearchService.getSavedSearches(searchId)
+                             .map(s -> ResponseEntity.status(HttpStatus.FOUND).location(URI.create(s.getResourceLink()))
+                                                     .build())
+                             .orElseGet(() -> ResponseEntity.notFound().build());
   }
 
   @PostMapping("permalink")
-  public ResponseEntity<String> saveSearch(@RequestBody SavedSearch savedSearch) {
-    int randomNum = ThreadLocalRandom.current().nextInt(100000, 999999 +
-                                                                1); //todo use hash instead of random number. Then look for existing hashes.
-    savedSearchRepository.save(new SavedSearch(String.valueOf(randomNum), savedSearch.getResourceLink()));
-
-    return ResponseEntity.ok(String.valueOf(randomNum));
+  public ResponseEntity<SavedSearch> saveSearch(@RequestBody SavedSearch savedSearch) {
+    return ResponseEntity.ok(savedSearchService.saveSearch(savedSearch));
   }
 
 }

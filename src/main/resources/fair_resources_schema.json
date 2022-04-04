@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ebi.ac.uk/ait/fair-wiard/decision_tree_schema.json",
+  "title": "FAIR Wizard decision tree",
+  "description": "Decision tree containing questions and answers and linking between them",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/resource"
+  },
+  "$defs": {
+    "resource": {
+      "type": "object",
+      "required": ["id", "name", "description", "resourceType", "labels", "lastUpdate"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "resourceType": {
+          "enum": ["Process"]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "usecases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target": {
+          "type": "string"
+        },
+        "lastUpdate": {
+          "type": "string"
+        },
+        "relatesTo": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Should refer to existing resource by ID"
+          }
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Should refer to existing resource by ID"
+          }
+        },
+        "isAfter": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Should refer to existing resource by ID"
+          }
+        },
+        "includes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Should refer to existing resource by ID"
+          }
+        },
+        "hasParent": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Should refer to existing resource by ID"
+          }
+        }
+      }
+    }
+  }
+}

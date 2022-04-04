@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 public class ApplicationConfig {
   @Value("${fairwizard.resources.decisiontree:classpath:question_bank.json}")
   private String decisionTreeFile;
-  @Value("${fairwizard.resources.fairresources:classpath:fair_resources.ttl}")
+  @Value("${fairwizard.resources.fairresourcesTtl:classpath:fair_resources.ttl}")
+  private String fairResourcesFileTtl;
+  @Value("${fairwizard.resources.fairresources:classpath:fair_resources.json}")
   private String fairResourcesFile;
   @Value("${fairwizard.resources.fairAssessment:classpath:assessment.csv}")
   private String fairAssessmentFile;
+  @Value("${fairwizard.resources.load-on-start:true}")
+  private boolean loadResourcesOnStart;
 }
