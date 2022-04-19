@@ -1,3 +1,8 @@
+.main-container {
+  max-width: 80em;
+  margin: 0 auto;
+}
+
 .main-menu-container {
   width: 100%;
   background-color: #310562;
@@ -32,4 +37,19 @@
   color: #ffffff;
   background-color: #ff4057;
   border-color: #310562;
+}
+
+.footer-logos {
+  float: right;
+  width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.footer-logo {
+  margin: 5px 20px;
+}
+
+.footer-text {
+  float: left;
 }

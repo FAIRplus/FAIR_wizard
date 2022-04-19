@@ -1,7 +1,7 @@
 .fair-wizard {
   width: 60%;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto 100px;
 }
 
 .page-title {
@@ -17,15 +17,8 @@
 .fair-search-button {
   float: right;
   width: 100px;
-  color: #ffffff;
-  border-color: #000000;
-  background-color: #310562;
-}
-
-.fair-search-button:hover {
-  color: #ffffff;
-  background-color: #ff4057;
-  border-color: #310562;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .actions-container {

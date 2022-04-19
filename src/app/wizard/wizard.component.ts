@@ -164,7 +164,8 @@ export class WizardComponent implements OnInit {
   }
 
   downloadReport() {
-    window.open(environment.baseUrl + "/api/report", "_blank");
+    let reportLink = environment.baseUrl + "api/report?" + this.router.url.split("?")[1]
+    window.open(reportLink, "_blank");
   }
 
   calculateProgress() {
