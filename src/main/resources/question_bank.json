@@ -1,66 +1,54 @@
 [
   {
     "id": "1",
-    "question": "What's your role in data FAIRification",
+    "question": "What's the status of your project",
     "category": "Step 1: Project examination",
     "description": "Please select one most appropriate answer",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Project manager",
-        "description": "Project manager or project owner who plays the lead role in planning, executing, monitoring, controlling, etc. ",
-        "labels": [
-          "project manager"
-        ],
+        "text": "Datasets available",
+        "description": "The data generation process of the project is finished.",
+        "labels": [],
         "next": "2"
       },
       {
-        "text": "Data scientist/Developer",
-        "description": "Bioinformatician or software enigineer whose work involves computational analysis.",
-        "labels": [
-          "software engineer","bioinformatician","computational biologist"
-        ],
+        "text": "Data generation in progress",
+        "description": "Some data has been generated. More data upcoming",
+        "labels": [],
         "next": "2"
       },
       {
-        "text": "Biologist",
-        "description": "People who mainly works with biological matter, chemicals and perform experiments. ",
-        "labels": [
-          "biologist"
-        ],
-        "next": "2"
+        "text": "No datasets available",
+        "description": "At the very beginning stage of data generation",
+        "labels": [],
+        "next": "4"
       }
     ]
   },
   {
     "id": "2",
-    "question": "What is the status of the dataset to be FAIRified",
+    "question": "What is your role in the project",
     "category": "Step 1: Project examination",
-    "description": "Please indicate the status of your project or dataset",
+    "description": "Please select the most appropriate answer",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Existing data",
-        "description": "Data that has been generated in the past and needs to be improved",
-        "labels": [
-          "retrospective"
-        ],
+        "text": "Project manager",
+        "description": "",
+        "labels": [],
+        "next": "99"
+      },
+      {
+        "text": "Data scientist",
+        "description": "",
+        "labels": [],
         "next": "3"
       },
       {
-        "text": "Upcoming data",
-        "description": "Data to be generated or at very early stage of data generation",
-        "labels": [
-          "prospective"
-        ],
-        "next": "4"
-      },
-      {
-        "text": "No available data",
+        "text": "Lab scientist",
         "description": "",
         "labels": [
-          "retrospective",
-          "prospective"
         ],
         "next": "4"
       }
@@ -68,21 +56,27 @@
   },
   {
     "id": "3",
-    "question": "Would you like to perform FAIR assessment first?",
-    "category": "Step 2: Assessment",
-    "description": "An assessment evaluates the FAIR status of the data.",
-    "multipleChoices": false,
+    "question": "What data format(s) is included in your project",
+    "Description": "Please select one or more data formats that are included in your project",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": true,
     "answers": [
       {
-        "text": "Yes",
-        "description": "",
-        "labels": [ "assessment"
-        ],
-        "next": "0"
+        "text": "Formats for processing by machines",
+        "description": "Machine-actionable formats such as CSV, RDF, XML, JSON",
+        "labels": [],
+        "next": "5"
       },
       {
-        "text": "No",
-        "description": "",
+        "text": "Formats for manual processing",
+        "description": "Formats with basic structures for human processing, such as Excel, PDF, Docx",
+        "labels": [],
+        "next": "5"
+      },
+      {
+        "text": "Domain-specific formats",
+        "description": "Domain-specific formats such as FASTQ, BAM, mzML",
         "labels": [
         ],
         "next": "4"
@@ -91,181 +85,458 @@
   },
   {
     "id": "4",
-    "question": "Which aspect of FAIR you'd like to improve?",
-    "category": "Step 3: Solution design",
-    "description": "",
+    "question": "Which domain do you work with",
+    "category": "Step 2: Use case identification",
+    "description": "Please select one or more appropriate domains",
     "multipleChoices": true,
     "answers": [
       {
-        "text": "Findability",
-        "description": "To make data and metadata easier to find for both computers and humans",
+        "text": "DNA/RDA sequence",
+        "description": "",
         "labels": [
-          "findability"
+          "genetics",
+          "transcriptomics"
         ],
-        "next": "5"
+        "next": "98"
       },
       {
-        "text": "Accessibility",
-        "description": "To make data accessible to both humans and machines.",
+        "text": "COVID-19 releted data",
+        "description": "",
         "labels": [
-          "accessibility"
+          "COVID19"
         ],
+        "next": "98"
+      },
+      {
+        "text": "Cell lines",
+        "description": "",
+        "labels": [
+          "cell lines"
+        ],
+        "next": "98"
+      },
+      {
+        "text": "Chemical compounds or bioactivities",
+        "description": "",
+        "labels": [
+          "Chemical compounds",
+          "bioactivities"
+        ],
+        "next": "98"
+      },
+      {
+        "text": "Others",
+        "description": "",
+        "labels": [
+        ],
+        "next": "5"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "question": "Is the data described with metadata",
+    "category": "Step 2: Use case identification",
+    "description": "Examples of metadata, e.g. project details, sample details, experimental details",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, no metadata is collected",
+        "description": "",
+        "labels": [],
         "next": "6"
       },
       {
-        "text": "Interoperability",
-        "description": "To ensure the data can be integrated with other data, and supporting different applications or workflows to analysis, store and process the data.",
+        "text": "Yes, metadata is available but not structured",
+        "description": "",
         "labels": [
-          "interoperability"
         ],
+        "next": "5.1"
+      },
+      {
+        "text": "Yes, structured metadata is available",
+        "description": " ",
+        "labels": [
+        ],
+        "next": "5.1"
+      }
+    ]
+  },
+  {
+    "id": "5.1",
+    "question": "Would you like to improve on this aspect",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "6"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "metadata standards"
+        ],
+        "next": "6"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "question": "Does your data have identifiers",
+    "category": "Step 2: Use case identification",
+    "description": "Identifiers for projects, data, metadata",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No",
+        "description": "",
+        "labels": [
+        ],
+        "next": "6.1"
+      },
+      {
+        "text": "Yes, internal identifiers available",
+        "description": "Identifiers that are designed for internal usage, no specific requirements on the persistence, uniqueness of the identifiers",
+        "labels": [
+        ],
+        "next": "6.1"
+      },
+      {
+        "text": "Yes, standard global unique and persistent identifiers following community requirements",
+        "description": "Identifiers that are globally unique and persistent. For domains with clear identifier policies, the community requirements are met",
+        "labels": [
+        ],
+        "next": "7"
+      }
+    ]
+  },
+  {
+    "id": "6.1",
+    "question": "Would you like to improve on this aspect",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
         "next": "7"
       },
       {
-        "text": "Reusability",
-        "description": "To make the data reusable by providing well-described data and metadata.",
+        "text": "Yes",
+        "description": "",
         "labels": [
-          "reusability"
+          "identifiers"
+        ],
+        "next": "7"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "question": "Are standard data models used",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "yes, next aspect please",
+        "description": "",
+        "labels": [
+        ],
+        "next": "8"
+      },
+      {
+        "text": "no",
+        "description": "",
+        "labels": [
+        ],
+        "next": "7.1"
+      }
+    ]
+  },
+  {
+    "id": "7.1",
+    "question": "Would you like to improve on this aspect",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "8"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "data models"
         ],
         "next": "8"
       }
     ]
   },
   {
-    "id": "5",
-    "question": "Which topic would you like to focus on",
-    "category": "Step 3: Solution design",
-    "description": "Key areas in improving data findability",
+    "id": "8",
+    "question": "Are standard vocabularies used",
+    "category": "Step 2: Use case identification",
+    "description": "todo",
     "multipleChoices": false,
     "answers": [
       {
-        "text": "Identifiers",
+        "text": "Yes, dataset has been well-annotated with desired vocabulary",
         "description": "",
         "labels": [
-          "identifier"
         ],
-        "next": "0"
+        "next": "9"
       },
       {
-        "text": "Search Engine Optimization",
+        "text": "Yes, dataset partially annotated with informal/temporary vocabularies",
         "description": "",
         "labels": [
-          "search engine","data markup"
         ],
-        "next": "0"
+        "next": "8.1"
       },
       {
-        "text": "Data sharing",
-        "description": " ",
+        "text": "No",
+        "description": "",
         "labels": [
-          "Data sharing"
         ],
-        "next": "0"
+        "next": "8.1"
       }
     ]
   },
   {
-    "id": "6",
-    "question": "Which topic would you like to focus on",
-    "category": "Step 3: Solution design",
-    "description": "Key areas in improving data accessibility",
-    "multipleChoices": true,
+    "id": "8.1",
+    "question": "Would you like to improve on this aspect",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
     "answers": [
       {
-        "text": "Data transfer",
-        "description": "Exchanging large files between systems or organisations",
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "9"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "vocabularies"
+        ],
+        "next": "9"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "question": "Do you need to share the data with others",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Yes, the dataset will be made public eventually",
+        "description": "",
+        "labels": [
+        ],
+        "next": "9.1"
+      },
+      {
+        "text": "Yes, the dataset will be shared with internal collaborators",
+        "description": "",
+        "labels": [
+        ],
+        "next": "9.2"
+      },
+      {
+        "text": "No",
+        "description": "",
+        "labels": [
+        ],
+        "next": "10"
+      }
+    ]
+  },
+  {
+    "id": "9.1",
+    "question": "Would you like more information on making data public",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "11"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "data sharing"
+        ],
+        "next": "10"
+      }
+    ]
+  },
+  {
+    "id": "9.2",
+    "question": "Would you like more information on sharing data internally",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "11"
+      },
+      {
+        "text": "Yes",
+        "description": "",
         "labels": [
           "data transfer"
         ],
+        "next": "10"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "question": "Does the data contain sensitive information, such as patient details, proprietary information",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+        ],
+        "next": "10.1"
+      },
+      {
+        "text": "No",
+        "description": "",
+        "labels": [
+        ],
+        "next": "11"
+      }
+    ]
+  },
+  {
+    "id": "10.1",
+    "question": "Would you like more information on how to deal with sensitive data",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "11"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "GDPR"
+        ],
+        "next": "11"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "question": "Is there a license available for the dataset",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "Yes, the dataset has appropriate license",
+        "description": "",
+        "labels": [
+        ],
         "next": "0"
       },
       {
-        "text": "Data deposition",
+        "text": "Yes, the dataset has a license which can be improved",
         "description": "",
         "labels": [
-          "data deposition"
+        ],
+        "next": "11.1"
+      },
+      {
+        "text": "No",
+        "description": "",
+        "labels": [
+        ],
+        "next": "11.1"
+      }
+    ]
+  },
+  {
+    "id": "11.1",
+    "question": "Would you like to improve on this aspect",
+    "category": "Step 2: Use case identification",
+    "description": "",
+    "multipleChoices": false,
+    "answers": [
+      {
+        "text": "No, skip for now",
+        "description": "",
+        "labels": [],
+        "next": "0"
+      },
+      {
+        "text": "Yes",
+        "description": "",
+        "labels": [
+          "license"
         ],
         "next": "0"
       }
     ]
   },
   {
-    "id": "7",
-    "question": "Which topic would you like to focus on",
-    "category": "Step 3: Solution design",
-    "description": "Key areas in improving data interoperability",
-    "multipleChoices": true,
+    "id": "98",
+    "question": "are you interested in learning the domain standards first",
+    "description": "things like available vocabulaires, formats, repositories,format standards, etc.",
+    "multipleChoices": false,
     "answers": [
       {
-        "text": "Metadata profile",
-        "description": "",
-        "labels": [
-          "metadata profile"
-        ],
+        "text": "yes, take me to external sites (e.g. FAIRsharing)",
         "next": "0"
       },
       {
-        "text": "Data formatting",
-        "description": "",
-        "labels": [
-          "data formatting"
-        ],
-        "next": "0"
-      },
-      {
-        "text": "Data annotation",
-        "description": "",
-        "labels": [
-          "data annotation"
-        ],
-        "next": "0"
-      },
-      {
-        "text": "Data vocabularies",
-        "description": "",
-        "labels": [
-          "vocabulary"
-        ],
-        "next": "0"
-      },
-      {
-        "text": "Data validation",
-        "description": "",
-        "labels": [
-          "validation"
-        ],
-        "next": "0"
+        "text": "no, connue with other questions",
+        "next": "5"
       }
     ]
   },
   {
-    "id": "8",
-    "question": "Which topic would you like to focus on",
-    "category": "Step 3: Solution design",
-    "description": "Key areas in improving data reusability",
+    "id": "99",
+    "question": "This branch is still in development",
+    "category": "Step 0: Dev",
+    "description": "",
     "multipleChoices": true,
     "answers": [
       {
-        "text": "Licensing",
-        "description": "",
-        "labels": [
-          "licensing"
-        ],
-        "next": "0"
-      },
-      {
-        "text": "Minimum information checklists",
-        "description": "Minimum information required during data collection",
-        "labels": [
-          "checklist"
-        ],
-        "next": "0"
-      },
-      {
-        "text": "Provenance",
-        "description": "",
-        "labels": [
-          "provenance"
-        ],
+        "text": "Please go back to previous question and start again",
         "next": "0"
       }
     ]

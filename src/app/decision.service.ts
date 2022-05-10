@@ -5,6 +5,7 @@ import {FairResource, FairResourceType} from "./models/FairResource";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {environment} from "../environments/environment";
+import {SavedSearch} from "./models/SavedSearch";
 
 @Injectable({
   providedIn: 'root'
@@ -68,8 +69,8 @@ export class DecisionService {
     return this.http.post<Object>(this.assessmentUrl, {"assessment": assessment});
   }
 
-  saveSearch(resourceUrl: string): Observable<Object> {
-    return this.http.post<Object>(environment.baseUrl + 'api/permalink', {"resourceLink": resourceUrl});
+  saveSearch(resourceUrl: string): Observable<SavedSearch> {
+    return this.http.post<SavedSearch>(this.permalinkUrl, {"resourceLink": resourceUrl});
   }
 
   getReport(): Observable<any> {
