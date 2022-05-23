@@ -14,5 +14,9 @@ go to `http://localhost:8080/home`
 ## Development
 - `ng build --watch` (CORS config to allow localhost:4200)
 
-## Contact
+## Production build
+- `mvn clean install -e -DskipTests -P prod`
+- Located at [https://wwwdev.ebi.ac.uk/ait/fair-wizard/](https://wwwdev.ebi.ac.uk/ait/fair-wizard/)
 
+## Contact
+biosamples@ebi.ac.uk
