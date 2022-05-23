@@ -38,15 +38,18 @@ public class DecisionTreeController {
   private final FairResourceService fairResourceService;
   private final AssessmentService assessmentService;
   private final SavedSearchService savedSearchService;
+  private final ReportingService reportingService;
 
   public DecisionTreeController(DecisionTreeService decisionTreeService,
                                 FairResourceService fairResourceService,
                                 AssessmentService assessmentService,
-                                SavedSearchService savedSearchService) {
+                                SavedSearchService savedSearchService,
+                                ReportingService reportingService) {
     this.decisionTreeService = decisionTreeService;
     this.fairResourceService = fairResourceService;
     this.assessmentService = assessmentService;
     this.savedSearchService = savedSearchService;
+    this.reportingService = reportingService;
   }
 
   @GetMapping("/version")
@@ -83,9 +86,8 @@ public class DecisionTreeController {
   }
 
   @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
-  public byte[] getFairReport() {
-    ReportingService reportingService = new ReportingService();
-    ByteArrayOutputStream out = reportingService.getReportStream();
+  public byte[] getFairReport(@RequestParam List<String> answers) throws ApplicationStatusException {
+    ByteArrayOutputStream out = reportingService.getReportStream(answers);
     return out.toByteArray();
   }
 

@@ -10,6 +10,7 @@ import {AboutComponent} from "./about/about.component";
 
 const routes: Routes = [
   {path: 'index', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'wizard', component: WizardComponent},
   {path: 'resources', component: ResourcesComponent},

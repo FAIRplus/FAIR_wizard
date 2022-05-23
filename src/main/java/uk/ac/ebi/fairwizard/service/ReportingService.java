@@ -1,240 +1,59 @@
 package uk.ac.ebi.fairwizard.service;
 
-import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chunk;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
-import com.itextpdf.text.Image;
-import com.itextpdf.text.List;
-import com.itextpdf.text.ListItem;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.Rectangle;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+import org.springframework.stereotype.Service;
+import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
+import uk.ac.ebi.fairwizard.model.Answer;
+import uk.ac.ebi.fairwizard.model.DecisionNode;
+import uk.ac.ebi.fairwizard.model.MongoFairResource;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URISyntaxException;
-import java.util.Date;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
+@Service
 public class ReportingService {
-  private static final Font TITLE_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
-  private static final Font SUB_TITLE_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
-  private static final Font PARAGRAPH_BOLD_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-  private static final Font PARAGRAPH_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
+  private final DecisionTreeService decisionTreeService;
+  private final FairResourceService fairResourceService;
 
-  private static final Font redFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.RED);
-  private static final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-
-
-  public static void main(String[] args) throws Exception {
-    ReportingService reportingService = new ReportingService();
-    reportingService.getPdfIt();
+  public ReportingService(DecisionTreeService decisionTreeService, FairResourceService fairResourceService) {
+    this.decisionTreeService = decisionTreeService;
+    this.fairResourceService = fairResourceService;
   }
 
-  public ByteArrayOutputStream getReportStream() {
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
+  public ByteArrayOutputStream getReportStream(List<String> answers)
+    throws ApplicationStatusException {
+    List<DecisionNode> decisionTree = decisionTreeService.getDecisionTree();
+    List<String> questions = new ArrayList<>();
+
+    List<String> filters = new ArrayList<>();
+
+    DecisionNode node = decisionTree.get(0);
+    for (String answer : answers) {
+      String firstAnswer = answer.split(":")[0];
+      questions.add(node.getQuestion() + "? " + answer.replace(":", ", "));
+      Answer nodeAnswer = node.getAnswers().stream()
+                              .filter(a -> a.getText().equalsIgnoreCase(firstAnswer))
+                              .findFirst()
+                              .orElseThrow(() -> new ApplicationStatusException("Could not traverse decision tree"));
+
+      filters.addAll(nodeAnswer.getLabels()); // todo add labels from all answers
+
+      if (!"0".equals(nodeAnswer.getNext())) {
+        node = decisionTree.stream()
+                           .filter(d -> d.getId().equals(nodeAnswer.getNext()))
+                           .findFirst()
+                           .orElseThrow(() -> new ApplicationStatusException("Could not find decision tree node"));
+      }
+    }
+
+    Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
+
+
     try {
-      writePdf(out);
+      return ReportBuilder.getBuilder().withData().withQuestions(questions).withResources(resources).withFooter(answers).build();
     } catch (Exception e) {
-      e.printStackTrace();
+      throw new ApplicationStatusException("Failed to generate PDF report. Please contact support. " + e.getMessage());
     }
-    return out;
-  }
-
-  public void getPdfIt() throws Exception {
-    String  outputPdfPath = "/home/isuru/temp/test.pdf";
-    writePdf(new FileOutputStream(outputPdfPath));
-  }
-
-  public void writePdf(OutputStream outputStream) throws Exception {
-    Document document = new Document();
-    PdfWriter.getInstance(document, outputStream);
-    document.open();
-
-    addMetaData(document);
-    addReportHeader(document);
-    addFairGoals(document);
-    addProjectExamination(document);
-    addFairProcess(document);
-    addReportFooter(document);
-
-    addTitlePage(document);
-
-    document.close();
-  }
-
-  private void addReportHeader(Document document) throws DocumentException {
-    Paragraph reportHeader = new Paragraph();
-    reportHeader.add(new Paragraph("Personalized FAIRification process report", TITLE_FONT));
-    reportHeader.add(new Paragraph("Generated by: FAIR Wizard on " + new Date(), PARAGRAPH_FONT));
-    addEmptyLine(reportHeader, 1);
-    reportHeader.add(new Paragraph("This report follows the FAIRplus 4-step FAIRification process, and recommends " +
-                              "FAIRification resources based on the project examination performed through the FAIR " +
-                              "Wizard (link).  For an interactive report, please visit link.", PARAGRAPH_FONT));
-
-    addEmptyLine(reportHeader, 1);
-    reportHeader.add(new Paragraph("Content", PARAGRAPH_BOLD_FONT));
-    List list = new List(false, false, 20);
-    list.add(new ListItem("Stage 1: Define FAIRification Goal", PARAGRAPH_FONT));
-    list.add(new ListItem("Stage 2: Project Examination", PARAGRAPH_FONT));
-    list.add(new ListItem("Stage 3: Designed FAIRification process", PARAGRAPH_FONT));
-    reportHeader.add(list);
-
-    addEmptyLine(reportHeader, 1);
-    reportHeader.add(new Paragraph("A FAIRification goal defines the aim of FAIRification, communicates clear " +
-                              "scientific value, defines a specific scope and ensures the FAIRification plan is " +
-                              "actionable. Please think about your FAIRification goal and focus on the scientific " +
-                              "value of the FAIRification.", PARAGRAPH_FONT));
-
-    document.add(reportHeader);
-  }
-
-  private void addFairGoals(Document document) throws DocumentException {
-    Paragraph fairGoals = new Paragraph();
-    fairGoals.add(new Paragraph("Stage 1: Define FAIRification Goal", SUB_TITLE_FONT));
-    fairGoals.add(new Paragraph("Determine goals for FAIRfiication in terms of desired usability of data that is not current possible", PARAGRAPH_FONT));
-    fairGoals.add(new Paragraph("Here are FAIRification goals that we think are similar to your needs：\n" +
-                                "☑ <Example FAIRification goal A>\n" +
-                                "☑ <Example FAIRification goal B>\n" +
-                                "☑\n" +
-                                "OR write down your own FAIRification goal here.\n", PARAGRAPH_FONT));
-    document.add(fairGoals);
-  }
-
-  private void addProjectExamination(Document document) throws DocumentException {
-    Paragraph projectExam = new Paragraph();
-    projectExam.add(new Paragraph("Stage 2: Project Examination", SUB_TITLE_FONT));
-    projectExam.add(new Paragraph("Examine the current state of the project with respect to FAIRification goal", PARAGRAPH_FONT));
-
-    List list = new List(true, false, 20);
-    list.add(new ListItem("Identify Data Requirements\n" +
-                          "Here are the indicators that specify how the data needs to be presented to fulfil the expected " +
-                          "FAIR usage. For more information about the indicators, please check link\n", PARAGRAPH_FONT));
-    list.add(new ListItem("Identify FAIRification Capabilities & Resources\n" +
-                          "Based on your FAIRification goal, we recommend you focus on the FAIR capabilities listed below.\n", PARAGRAPH_FONT));
-    list.add(new ListItem("Produce the FAIRification Backlog\n" +
-                          "You can also further decide which capabilities you’d like to focus.\n", PARAGRAPH_FONT));
-    projectExam.add(list);
-
-    document.add(projectExam);
-  }
-
-  private void addFairProcess(Document document) throws DocumentException, IOException {
-    Paragraph fairProcess = new Paragraph();
-    fairProcess.add(new Paragraph("Stage 3: Designed FAIRification process", SUB_TITLE_FONT));
-    fairProcess.add(new Paragraph("Based on the FAIRification goal and project status, below is the " +
-                                  "FAIRification implementation cycle we recommend. The cycle starts from " +
-                                  "pre-FAIRification assessment, and is guided by a designed FAIRification work plan. " +
-                                  "One the work plan is implemented, users can re-perform FAIR assessment to measure " +
-                                  "the outcome of the FAIRification", PARAGRAPH_FONT));
-
-    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.jpg");
-    processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
-    processDiagram.setAlignment(Element.ALIGN_CENTER);
-    document.add(processDiagram);
-
-    fairProcess.add(new Paragraph("The FAIRifictaion work plan we built for your project is listed below, the " +
-                                  "left panel steps in the FAIRification implementation template. Steps that are " +
-                                  "highly related to your project are in purple. The table on the right side provides " +
-                                  "details about what needs to be done in each step. ", PARAGRAPH_FONT));
-
-    Image workflowDiagram = Image.getInstance("./src/main/resources/fair_process_workflow.jpg");
-    workflowDiagram.scalePercent(50);
-    document.add(workflowDiagram);
-
-    document.add(fairProcess);
-  }
-
-  private void addReportFooter(Document document) throws DocumentException {
-    Paragraph reportFooter = new Paragraph();
-    addEmptyLine(reportFooter, 1);
-    reportFooter.add(new Paragraph("For more information about each resource, please check at the FAIR wizard " +
-                                   "site. To view the interactive web version of this report, please visit XXX", PARAGRAPH_FONT));
-    reportFooter.add(new Paragraph("If you’d like to revise your answers, please re-enter your answers in the FAIR wizard (link).", PARAGRAPH_FONT));
-
-    Paragraph footerQuestion = new Paragraph();
-    footerQuestion.add(new Chunk("If you have any questions, please provide feedback ", PARAGRAPH_FONT));
-    footerQuestion.add(new Chunk("here.", PARAGRAPH_FONT).setAnchor("https://github.com/FAIRplus/FAIR_wizard/issues/new"));
-    reportFooter.add(footerQuestion);
-
-    document.add(reportFooter);
-  }
-
-  private void addTitlePage(Document document) throws Exception {
-    Paragraph preface = new Paragraph();
-    addEmptyLine(preface, 8);
-    preface.add(new Paragraph("This document is a preliminary version and not subject to any license " +
-                              "agreement or any other agreement ;-).", redFont));
-
-    document.add(preface);
-
-    // Start a new page
-    document.newPage();
-
-    PdfPTable table = new PdfPTable(3);
-    addTableHeader(table);
-    addRows(table);
-    addCustomRows(table);
-    document.add(table);
-  }
-
-  private void addTableHeader(PdfPTable table) {
-    Stream.of("column header 1", "column header 2", "column header 3")
-          .forEach(columnTitle -> {
-            PdfPCell header = new PdfPCell();
-            header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            header.setBorderWidth(2);
-            header.setPhrase(new Phrase(columnTitle));
-            table.addCell(header);
-          });
-  }
-
-  private void addRows(PdfPTable table) {
-    table.addCell("row 1, col 1");
-    table.addCell("row 1, col 2");
-    table.addCell("row 1, col 3");
-  }
-
-  private void addCustomRows(PdfPTable table) throws URISyntaxException, BadElementException, IOException {
-//    Path path = Paths.get(ClassLoader.getSystemResource("Java_logo.png").toURI());
-//    Image img = Image.getInstance(path.toAbsolutePath().toString());
-    Image img = Image.getInstance("./src/main/resources/fair_process.jpg");
-    img.scalePercent(10);
-
-    PdfPCell imageCell = new PdfPCell(img);
-    table.addCell(imageCell);
-
-    PdfPCell horizontalAlignCell = new PdfPCell(new Phrase("row 2, col 2"));
-    horizontalAlignCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-    table.addCell(horizontalAlignCell);
-
-    PdfPCell verticalAlignCell = new PdfPCell(new Phrase("row 2, col 3"));
-    verticalAlignCell.setVerticalAlignment(Element.ALIGN_BOTTOM);
-    table.addCell(verticalAlignCell);
-  }
-
-  private void addEmptyLine(Paragraph paragraph, int number) {
-    for (int i = 0; i < number; i++) {
-      paragraph.add(new Paragraph(" "));
-    }
-  }
-
-  private void addMetaData(Document document) {
-    document.addTitle("FAIR Wizard personlized report");
-    document.addSubject("Generated by FAIR Wizard");
-    document.addKeywords("FAIR");
-    document.addAuthor("EBI BioSamples");
-    document.addCreator("EBI BioSamples");
   }
 }
