@@ -42,15 +42,17 @@ public class AssessmentService {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getFairAssessmentFile()).getInputStream();
          CSVReader reader = new CSVReader(new InputStreamReader(in))) {
       String[] f = reader.readNext();
-      log.info("Reading header line with " + f.length + " fields");
+      log.info("Reading assessment header with " + f.length + " fields");
+      boolean headerSkipped = false;
       while ((f = reader.readNext()) != null) {
-        if ("Principle".equalsIgnoreCase(f[0])) {
+        if (!headerSkipped) {
+          headerSkipped = true;
           continue;
         }
-        List<String> labels = Arrays.stream(f[8].split(",")).collect(Collectors.toList());
+        // Expecting csv file Leveles, Sub-principle, ID, Indicator, Category, Lables
+        List<String> labels = Arrays.stream(f[5].split(",")).collect(Collectors.toList());
         assessments.add(
-          new Assessment(f[0], f[1], f[2], f[3], f[4], toBoolean(f[5]), toBoolean(f[6]), toBoolean(f[7]),
-                         "", "", labels));
+          new Assessment(f[0], f[1], f[2], f[3], f[4], true, "", "", labels));
       }
     } catch (IOException | CsvValidationException e) {
       throw new ApplicationStatusException("Failed to read FAIR assessment file");

@@ -23,10 +23,10 @@
   <table class="table-bordered table-striped table-hover table-sm assessment-table">
     <thead>
     <tr class="table-secondary">
-      <!--        <th>ID</th>-->
+      <!--      <th>ID</th>-->
       <th>ID</th>
-      <!--        <th>Sub-levels</th>-->
-      <th>Name</th>
+      <!--      <th>Sub-levels</th>-->
+      <th>Indicator</th>
       <th>Category</th>
       <th>Assessment</th>
     </tr>
@@ -34,8 +34,8 @@
     <tbody>
     <tr *ngFor="let indicator of displayedFields">
       <td>{{ indicator.id }}</td>
-      <td>{{ indicator.levels }}</td>
-      <!--        <td>{{ indicator.sub_principle }}</td>-->
+      <!--      <td>{{ indicator.levels }}</td>-->
+      <!--      <td>{{ indicator.sub_principle }}</td>-->
       <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
       <td>{{ indicator.category}}</td>
       <td>

@@ -32,7 +32,10 @@
             "$ref": "#/$defs/answer"
           }
         }
-      }
+      },
+      "required": [
+        "id", "question", "answers"
+      ]
     },
     "answer": {
       "type": "object",

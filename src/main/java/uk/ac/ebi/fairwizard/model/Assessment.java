@@ -14,8 +14,6 @@ public class Assessment {
   public String name;
   public String category;
   public boolean scoreOverall;
-  public boolean scoreEssential;
-  public boolean scoreNonEssential;
   public String description;
   public String assessmentDetails;
   public List<String> labels;

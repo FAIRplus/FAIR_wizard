@@ -52,7 +52,7 @@ public class DecisionTreeService {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
-      validateDecisionTree(questions);
+//      validateDecisionTree(questions);
       decisionNodeRepository.saveAll(questions);
     } catch (IOException e) {
       log.error("Failed to load decision tree from file {}", e.getMessage(), e);
@@ -82,10 +82,10 @@ public class DecisionTreeService {
         if (!ids.contains(a.getNext())) {
           errors.add("'next' pointing to a non existing node in question: " + q);
         }
-        if(a.getText() == null && a.getText().isEmpty()) {
+        if(a.getText() == null || a.getText().isEmpty()) {
           errors.add("Answer 'text' should not be empty in question: " + q);
         }
-        if(a.getLabels() == null && a.getLabels().isEmpty()) {
+        if(a.getLabels() == null || a.getLabels().isEmpty()) {
           errors.add("Answer 'labels' should not be empty in question: " + q);
         }
       }
