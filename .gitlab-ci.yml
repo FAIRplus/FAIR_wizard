@@ -10,7 +10,7 @@ cache:
 
 stages:
   - build
-  - copy-config
+  - config
   - deploy
 
 build:
