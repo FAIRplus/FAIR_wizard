@@ -10,33 +10,38 @@ cache:
 
 stages:
   - build
-#  - test
+  - copy-config
   - deploy
 
 build:
   stage: build
   script:
     - mvn $MAVEN_CLI_OPTS package
+    - mkdir -p deployment/ait/sw/fair-wizard
+    - cp target/fair-wizard-*.jar deployment/ait/sw/fair-wizard/fair-wizard.jar
   artifacts:
     paths:
-      - target/fair-wizard-0.0.1-SNAPSHOT.jar
+      - deployment/fair-wizard/fair-wizard.jar
 
-#test:
-#  stage: test
-#  script:
-#    - mvn $MAVEN_CLI_OPTS test
-#
+copy-config:
+  image: ubuntu
+  stage: config
+  script:
+    - git clone https://$BSD_INTERNAL_USER:$BSD_INTERNAL_PASS@gitlab.ebi.ac.uk:biosamples/fair-wizard-internal.git
+    - cp -r fair-wizard-internal/www/* deployment/
+
 deploy:
   image: ubuntu
   stage: deploy
   script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
     - eval $(ssh-agent -s)
-    - echo "$EMBASSY_VM_SSH_KEY" | tr -d '\r' | ssh-add -
+    - echo "$BSD_PROD_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - ssh-keyscan 45.88.80.100 >> ~/.ssh/known_hosts
+    - ssh-keyscan wp-p2m-27.ebi.ac.uk >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - ssh -v -o StrictHostKeyChecking=no ubuntu@45.88.80.100 "cd FAIR_wizard ; git checkout master && git pull origin && ./mvnw clean install -e && docker-compose up -d --build"
+    - scp -r -v -o StrictHostKeyChecking=no deployment/* bsd_prod@wp-p2m-27.ebi.ac.uk:~/
+    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p2m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin restart fair-wizard"
   only:
     - master
