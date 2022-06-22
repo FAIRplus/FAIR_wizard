@@ -9,19 +9,19 @@
       {
         "text": "Datasets available",
         "description": "The data generation process of the project is finished.",
-        "labels": [],
+        "labels": ["retrospective"],
         "next": "2"
       },
       {
         "text": "Data generation in progress",
         "description": "Some data has been generated. More data upcoming",
-        "labels": [],
+        "labels": ["ongoining"],
         "next": "2"
       },
       {
         "text": "No datasets available",
         "description": "At the very beginning stage of data generation",
-        "labels": [],
+        "labels": ["prospective"],
         "next": "4"
       }
     ]
@@ -36,19 +36,19 @@
       {
         "text": "Project manager",
         "description": "",
-        "labels": [],
-        "next": "99"
+        "labels": ["project manager"],
+        "next": "3"
       },
       {
         "text": "Data scientist",
         "description": "",
-        "labels": [],
+        "labels": ["data scientist"],
         "next": "3"
       },
       {
         "text": "Lab scientist",
         "description": "",
-        "labels": [
+        "labels": ["biologist"
         ],
         "next": "4"
       }
@@ -65,20 +65,19 @@
       {
         "text": "Formats for processing by machines",
         "description": "Machine-actionable formats such as CSV, RDF, XML, JSON",
-        "labels": [],
+        "labels": ["CSV","RDF","XML","JSON"],
         "next": "5"
       },
       {
         "text": "Formats for manual processing",
         "description": "Formats with basic structures for human processing, such as Excel, PDF, Docx",
-        "labels": [],
+        "labels": ["Excel"],
         "next": "5"
       },
       {
         "text": "Domain-specific formats",
         "description": "Domain-specific formats such as FASTQ, BAM, mzML",
-        "labels": [
-        ],
+        "labels": ["FASTQ","BAM","mzML"],
         "next": "4"
       }
     ]
@@ -97,7 +96,7 @@
           "genetics",
           "transcriptomics"
         ],
-        "next": "98"
+        "next": "5"
       },
       {
         "text": "COVID-19 releted data",
@@ -105,7 +104,7 @@
         "labels": [
           "COVID19"
         ],
-        "next": "98"
+        "next": "5"
       },
       {
         "text": "Cell lines",
@@ -113,7 +112,7 @@
         "labels": [
           "cell lines"
         ],
-        "next": "98"
+        "next": "5"
       },
       {
         "text": "Chemical compounds or bioactivities",
@@ -122,12 +121,12 @@
           "Chemical compounds",
           "bioactivities"
         ],
-        "next": "98"
+        "next": "5"
       },
       {
         "text": "Others",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "5"
       }
@@ -143,20 +142,20 @@
       {
         "text": "No, no metadata is collected",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "6"
       },
       {
         "text": "Yes, metadata is available but not structured",
         "description": "",
-        "labels": [
+        "labels": ["metadata standards"
         ],
         "next": "5.1"
       },
       {
         "text": "Yes, structured metadata is available",
         "description": " ",
-        "labels": [
+        "labels": [""
         ],
         "next": "5.1"
       }
@@ -172,7 +171,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "6"
       },
       {
@@ -195,21 +194,21 @@
       {
         "text": "No",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "6.1"
       },
       {
         "text": "Yes, internal identifiers available",
         "description": "Identifiers that are designed for internal usage, no specific requirements on the persistence, uniqueness of the identifiers",
-        "labels": [
+        "labels": [""
         ],
         "next": "6.1"
       },
       {
         "text": "Yes, standard global unique and persistent identifiers following community requirements",
         "description": "Identifiers that are globally unique and persistent. For domains with clear identifier policies, the community requirements are met",
-        "labels": [
+        "labels": [""
         ],
         "next": "7"
       }
@@ -225,7 +224,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "7"
       },
       {
@@ -246,16 +245,16 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "yes, next aspect please",
-        "description": "",
-        "labels": [
+        "text": "yes",
+        "description": "Data uses internal, community standards",
+        "labels": [""
         ],
         "next": "8"
       },
       {
         "text": "no",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "7.1"
       }
@@ -271,7 +270,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "8"
       },
       {
@@ -294,21 +293,21 @@
       {
         "text": "Yes, dataset has been well-annotated with desired vocabulary",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "9"
       },
       {
         "text": "Yes, dataset partially annotated with informal/temporary vocabularies",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "8.1"
       },
       {
         "text": "No",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "8.1"
       }
@@ -331,7 +330,7 @@
         "text": "Yes",
         "description": "",
         "labels": [
-          "vocabularies"
+          "vocabularies","ontologies"
         ],
         "next": "9"
       }
@@ -347,21 +346,21 @@
       {
         "text": "Yes, the dataset will be made public eventually",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "9.1"
       },
       {
         "text": "Yes, the dataset will be shared with internal collaborators",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "9.2"
       },
       {
         "text": "No",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "10"
       }
@@ -377,7 +376,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "11"
       },
       {
@@ -400,7 +399,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "11"
       },
       {
@@ -423,14 +422,14 @@
       {
         "text": "Yes",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "10.1"
       },
       {
         "text": "No",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "11"
       }
@@ -446,7 +445,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "11"
       },
       {
@@ -469,21 +468,21 @@
       {
         "text": "Yes, the dataset has appropriate license",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "0"
       },
       {
         "text": "Yes, the dataset has a license which can be improved",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "11.1"
       },
       {
         "text": "No",
         "description": "",
-        "labels": [
+        "labels": [""
         ],
         "next": "11.1"
       }
@@ -499,7 +498,7 @@
       {
         "text": "No, skip for now",
         "description": "",
-        "labels": [],
+        "labels": [""],
         "next": "0"
       },
       {
@@ -520,11 +519,13 @@
     "answers": [
       {
         "text": "yes, take me to external sites (e.g. FAIRsharing)",
-        "next": "0"
+        "next": "0",
+        "labels":[""]
       },
       {
         "text": "no, connue with other questions",
-        "next": "5"
+        "next": "5",
+        "labels":[""]
       }
     ]
   },
@@ -537,7 +538,8 @@
     "answers": [
       {
         "text": "Please go back to previous question and start again",
-        "next": "0"
+        "next": "0",
+        "labels":[""]
       }
     ]
   }
