@@ -29,6 +29,9 @@ copy-config:
   script:
     - git clone https://$FW_INTERNAL_USER:$FW_INTERNAL_PASS@gitlab.ebi.ac.uk/biosamples/fair-wizard-internal.git
     - cp -r fair-wizard-internal/www/* deployment/
+  only:
+    - master
+    - dev
 
 deploy:
   image: ubuntu
@@ -40,8 +43,13 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan wp-p2m-27.ebi.ac.uk >> ~/.ssh/known_hosts
+    - ssh-keyscan wp-p1m-27.ebi.ac.uk >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - scp -r -v -o StrictHostKeyChecking=no deployment/* bsd_prod@wp-p2m-27.ebi.ac.uk:~/
     - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p2m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin restart fair-wizard"
+    - scp -r -v -o StrictHostKeyChecking=no deployment/* bsd_prod@wp-p1m-27.ebi.ac.uk:~/
+    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p1m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin restart fair-wizard"
+  when: manual
   only:
     - master
+    - dev
