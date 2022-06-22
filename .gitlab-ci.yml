@@ -24,7 +24,7 @@ build:
       - deployment/ait/sw/fair-wizard/fair-wizard.jar
 
 copy-config:
-  image: ubuntu
+  image: maven:3.6-jdk-11
   stage: config
   script:
     - git clone https://$BSD_INTERNAL_USER:$BSD_INTERNAL_PASS@gitlab.ebi.ac.uk:biosamples/fair-wizard-internal.git
