@@ -21,7 +21,7 @@ build:
     - cp target/fair-wizard-*.jar deployment/ait/sw/fair-wizard/fair-wizard.jar
   artifacts:
     paths:
-      - deployment/fair-wizard/fair-wizard.jar
+      - deployment/ait/sw/fair-wizard/fair-wizard.jar
 
 copy-config:
   image: ubuntu
