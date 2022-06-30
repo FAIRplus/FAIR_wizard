@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-lg-2 process-container">
+<!--  <div class="col-lg-2 process-container">-->
+  <div class="process-container">
     <! todo how can we maintain the order of processes---->
     <!--    <div *ngFor="let process of processList">-->
     <!--    <div class="process chevron" (click)="onSelectProcess(process.id)">-->
@@ -7,7 +8,9 @@
     <!--    </div>-->
     <!--    </div>-->
 
-    <div class="process chevron" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">
+<!--    <div class="process" [ngClass]="this.processMap['fw:process-data-access-and-retrieval']  ? 'chevron' : 'chevron-disabled'" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">-->
+    <div class="process" [class.chevron]="this.processMap['fw:process-data-access-and-retrieval']" [class.chevron-disabled]="!this.processMap['fw:process-data-access-and-retrieval']" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">
+<!--    <div class="process" [ngClass]="{'chevron': this.processMap.has('fw:process-data-access-and-retrieval') , 'chevron-disabled' : !this.processMap.has('fw:process-data-access-and-retrieval') }" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">-->
       <div class="process-text">Data access and retrieval</div>
     </div>
     <div class="process chevron" (click)="onSelectProcess('fw:process-model-your-domain')">
@@ -18,7 +21,6 @@
     </div>
     <div class="process chevron" (click)="onSelectProcess('fw:process-choose-a-data-standard')">
       <div class="process-text">Choose a data standard</div>
-
     </div>
     <div class="process chevron" (click)="onSelectProcess('fw:process-validate-against-standards')">
       <div class="process-text">Validate against standards</div>
@@ -31,7 +33,8 @@
     </div>
   </div>
 
-  <div class="col-lg-10 sub-process-container">
+<!--  <div class="col-lg-10 sub-process-container">-->
+  <div class="sub-process-container">
     <div class="row process-description">
       <div class="process-description-title">{{title}}</div>
       {{description}}
@@ -44,7 +47,7 @@
       </div>
       <div class="col-lg-8">
         <div class="related-resource" *ngFor="let relatedResource of subProcess['relatesTo']">
-          {{relatedResource.id}}
+          {{relatedResource}}
         </div>
       </div>
     </div>

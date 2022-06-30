@@ -57,6 +57,7 @@ export class ProcessDiagramComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("Loading proess diagram. Number of processes: " + this.processList.length);
     for (let process of this.processList) {
       if (process['hasParent'] == null || process['hasParent'].length == 0) {
         if (process["id"] in this.processMap) {
@@ -70,7 +71,7 @@ export class ProcessDiagramComponent implements OnInit {
           }
         }
       } else {
-        let parentId = process['hasParent'][0]["id"];
+        let parentId = process['hasParent'][0];
         let parentProcess;
         if (parentId in this.processMap) {
           parentProcess = this.processMap[parentId];
@@ -84,8 +85,8 @@ export class ProcessDiagramComponent implements OnInit {
         }
       }
     }
-
-    this.onSelectProcess("fw:process-data-access-and-ethics");
+    console.log(this.processMap);
+    this.onSelectProcess("fw:process-data-access-and-retrieval");
   }
 
   onSelectProcess(processName) {
@@ -94,6 +95,8 @@ export class ProcessDiagramComponent implements OnInit {
       this.title = parentProcess.name;
       this.description = parentProcess.description;
       this.subProcessList = parentProcess.subProcess;
+    } else {
+      console.log("Process not defined: " + processName);
     }
 
     this.connectedResources = [];
