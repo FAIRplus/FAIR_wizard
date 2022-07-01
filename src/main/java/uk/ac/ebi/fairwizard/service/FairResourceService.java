@@ -7,8 +7,6 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
-import uk.ac.ebi.fairwizard.model.DecisionNode;
-import uk.ac.ebi.fairwizard.model.FairResource;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
@@ -42,7 +40,8 @@ public class FairResourceService {
 
   @PostConstruct
   public void init() throws ApplicationStatusException {
-    if(applicationConfig.isLoadResourcesOnStart()) {
+    if (applicationConfig.isLoadResourcesOnStart()) {
+      log.info("Loading FAIR resources from file to the database");
       loadResources();
     }
   }
@@ -128,12 +127,13 @@ public class FairResourceService {
   }
 
   private void addToNetwork(String id1, String id2, String rel, Set<String> ids, List<ProcessNetworkElement> network) {
-    if (ids.contains(id1) && ids.contains(id2)){
+    if (ids.contains(id1) && ids.contains(id2)) {
       network.add(new ProcessNetworkElement(new ProcessEdge(id1 + id2, id1, id2, rel)));
     }
   }
 
   private void loadResources() throws ApplicationStatusException {
+    fairResourceRepository.deleteAll();
     try (InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       List<MongoFairResource> fairResources = jsonMapper.readValue(in, new TypeReference<>() {
       });
@@ -162,7 +162,8 @@ public class FairResourceService {
         errors.add("'labels' should be a non empty string in: " + r);
       }
 
-      if (r.getRelatesTo() != null && !ids.containsAll(r.getRelatesTo())/* && r.getRelatesTo().stream().anyMatch(s -> !ids.contains(s))*/) {
+      if (r.getRelatesTo() != null &&
+          !ids.containsAll(r.getRelatesTo())/* && r.getRelatesTo().stream().anyMatch(s -> !ids.contains(s))*/) {
         errors.add("'relatesTo' should refer to an existing resource in: " + r);
       }
       if (r.getRequires() != null && !ids.containsAll(r.getRequires())) {
@@ -181,7 +182,8 @@ public class FairResourceService {
 
     if (!errors.isEmpty()) {
       errors.forEach(e -> log.error(e));
-      throw new ApplicationStatusException("Invalid data in resources. Please fix them before starting the application");
+      throw new ApplicationStatusException(
+        "Invalid data in resources. Please fix them before starting the application");
     }
   }
 }
