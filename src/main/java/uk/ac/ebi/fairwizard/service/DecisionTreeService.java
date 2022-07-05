@@ -39,6 +39,7 @@ public class DecisionTreeService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     if (applicationConfig.isLoadResourcesOnStart()) {
+      log.info("Loading decision tree from file to the database");
       loadDecisionTree();
     }
   }
@@ -49,10 +50,11 @@ public class DecisionTreeService {
 
   public void loadDecisionTree() throws ApplicationStatusException {
     List<DecisionNode> questions;
+    decisionNodeRepository.deleteAll();
     try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
-      validateDecisionTree(questions);
+//      validateDecisionTree(questions);  // todo fix me
       decisionNodeRepository.saveAll(questions);
     } catch (IOException e) {
       log.error("Failed to load decision tree from file {}", e.getMessage(), e);

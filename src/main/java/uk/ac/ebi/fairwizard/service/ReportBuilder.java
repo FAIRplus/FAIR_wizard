@@ -19,6 +19,7 @@ import uk.ac.ebi.fairwizard.model.MongoFairResource;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.List;
@@ -247,10 +248,18 @@ public class ReportBuilder {
                                   "One the work plan is implemented, users can re-perform FAIR assessment to measure " +
                                   "the outcome of the FAIRification", PARAGRAPH_FONT));
 
-    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.jpg");
-    processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
-    processDiagram.setAlignment(Element.ALIGN_CENTER);
-    document.add(processDiagram);
+//    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.jpg");
+//    processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
+//    processDiagram.setAlignment(Element.ALIGN_CENTER);
+//    document.add(processDiagram);
+
+    try (InputStream in = getClass().getResourceAsStream("/fair_process.jpg"))  {
+      Image processDiagram = Image.getInstance(in.readAllBytes());
+      processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
+      processDiagram.setAlignment(Element.ALIGN_CENTER);
+      document.add(processDiagram);
+    }
+
 
     fairProcess.add(new Paragraph("The FAIRifictaion work plan we built for your project is listed below, the " +
                                   "left panel steps in the FAIRification implementation template. Steps that are " +

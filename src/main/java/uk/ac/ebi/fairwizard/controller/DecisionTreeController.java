@@ -24,6 +24,7 @@ import uk.ac.ebi.fairwizard.service.FairResourceService;
 import uk.ac.ebi.fairwizard.service.ReportingService;
 import uk.ac.ebi.fairwizard.service.SavedSearchService;
 
+import javax.servlet.ServletContext;
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.util.List;
@@ -39,17 +40,20 @@ public class DecisionTreeController {
   private final AssessmentService assessmentService;
   private final SavedSearchService savedSearchService;
   private final ReportingService reportingService;
+  private ServletContext servletContext;
 
   public DecisionTreeController(DecisionTreeService decisionTreeService,
                                 FairResourceService fairResourceService,
                                 AssessmentService assessmentService,
                                 SavedSearchService savedSearchService,
-                                ReportingService reportingService) {
+                                ReportingService reportingService,
+                                ServletContext servletContext) {
     this.decisionTreeService = decisionTreeService;
     this.fairResourceService = fairResourceService;
     this.assessmentService = assessmentService;
     this.savedSearchService = savedSearchService;
     this.reportingService = reportingService;
+    this.servletContext = servletContext;
   }
 
   @GetMapping("/version")
@@ -93,8 +97,9 @@ public class DecisionTreeController {
 
   @GetMapping("permalink/{searchId}")
   public ResponseEntity<Object> getSavedSearches(@PathVariable("searchId") String searchId) {
+    System.out.println(servletContext.getContextPath());
     return savedSearchService.getSavedSearches(searchId)
-                             .map(s -> ResponseEntity.status(HttpStatus.FOUND).location(URI.create(s.getResourceLink()))
+                             .map(s -> ResponseEntity.status(HttpStatus.FOUND).location(URI.create(servletContext.getContextPath() + s.getResourceLink()))
                                                      .build())
                              .orElseGet(() -> ResponseEntity.notFound().build());
   }
