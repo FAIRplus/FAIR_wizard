@@ -6,6 +6,7 @@ FAIRification Wizard is developed as a part of FAIR Plus project.
 
 ## Build and run locally
 ```shell
+docker-compose down
 ./mvnw clean install -e
 docker-compose up -d --build
 ```

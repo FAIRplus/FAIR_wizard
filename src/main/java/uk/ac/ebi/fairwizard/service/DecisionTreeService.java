@@ -39,7 +39,7 @@ public class DecisionTreeService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     if (applicationConfig.isLoadResourcesOnStart()) {
-      log.info("Loading decision tree from file to the database");
+      log.warn("Loading decision tree from file to the database");
       loadDecisionTree();
     }
   }
@@ -54,7 +54,7 @@ public class DecisionTreeService {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
-//      validateDecisionTree(questions);  // todo fix me
+      validateDecisionTree(questions);  // todo fix me
       decisionNodeRepository.saveAll(questions);
     } catch (IOException e) {
       log.error("Failed to load decision tree from file {}", e.getMessage(), e);
@@ -73,8 +73,8 @@ public class DecisionTreeService {
       if (q.getQuestion() == null || q.getQuestion().isEmpty()) {
         errors.add("'question' should be a non empty string in question: " + q);
       }
-      if (q.getId() == null || q.getId().isEmpty()) {
-        errors.add("'id' should be a non empty string in question: " + q);
+      if (q.getCategory() == null || q.getCategory().isEmpty()) {
+        errors.add("'category' should be a non empty string in question: " + q);
       }
 
       if (q.getAnswers() == null || q.getAnswers().isEmpty()) {

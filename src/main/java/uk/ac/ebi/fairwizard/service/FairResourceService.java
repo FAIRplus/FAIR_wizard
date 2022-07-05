@@ -41,7 +41,7 @@ public class FairResourceService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     if (applicationConfig.isLoadResourcesOnStart()) {
-      log.info("Loading FAIR resources from file to the database");
+      log.warn("Loading FAIR resources from file to the database");
       loadResources();
     }
   }
