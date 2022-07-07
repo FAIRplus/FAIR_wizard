@@ -1,5 +1,17 @@
 <!--<div class="container-fluid">-->
 <div class="assessment-levels-container">
+
+  <section class="vf-card-container | vf-u-background-color-ui--white about-section-wrapper" style="--vf-card__image--aspect-ratio: 16 / 9;">
+    <div class="vf-news-container__content about-section">
+      <h2>Project assessment</h2>
+      <p>A project assessment lows advanced users to perform a comprehensive FAIR analysis on their project, and
+      determine their FAIRification goals accordingly.</p>
+      <p>The FAIR wizard uses the FAIRplus DataSet Maturity model(DSM) for the assessment.
+        Detailed information on what each level is, and how to interpret each indicator can be found at
+        <a href="https://www.fairplus.github.io/data-maturity/">the DSM website.</a></p>
+    </div>
+  </section>
+
   <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-0' == selectedLevels}"
        (click)="filterResults('Level-0')">Level-0
   </div>

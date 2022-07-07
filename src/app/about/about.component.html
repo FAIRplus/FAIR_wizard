@@ -2,6 +2,7 @@
 <html>
 <body>
 <!--<div class="fair-home-wrapper">-->
+
   <section
     class="vf-card-container vf-card-container__col-4 | vf-u-background-color--grey--lightest vf-u-fullbleed home-fair-levels about-section-wrapper"
     style="--vf-card__image--aspect-ratio: 16 / 9;">
@@ -11,15 +12,32 @@
         to guide data producers and data publishers to improve their data management practices and improve the reuse of
         research data<sup>[1]</sup> FAIRification is the process of improving the FAIR level of datasets, projects or
         related infrastructure.</p>
-      <p>The FAIR wizard utilizes FAIRification resources developed by the FAIRplus project and other platforms,
-        suggests FAIRification materials based on the FAIRification requirements, and designs FAIRification solutions
-        for data owners, data stewards, and other people involved in FAIRification. </p>
+      <h3>Challenges in FAIRification</h3>
+      <p>1. While many people are aware of FAIR, it is hard to find the ideal state and FAIRification goals for their projects.
+        <br>2. Implementing FAIR requires a broad spectrum of knowledge and skills.</p>
+          There is no single platform providing structured guidance and systematic training in one place.
     </div>
   </section>
 
   <section class="vf-card-container | vf-u-background-color-ui--white about-section-wrapper" style="--vf-card__image--aspect-ratio: 16 / 9;">
     <div class="vf-news-container__content about-section">
-      <h2>How to use FAIR wizard</h2>
+      <h2>FAIR Wizard</h2>
+      <p>The FAIR Wizard allows people without specific prior knowledge to explore solutions to help
+        them adopt the  FAIR principles, as well as practical steps they can take to do so,
+        supported by contextually-relevant documentation and tools.
+        It also connects different FAIR communities and serves as a unified entrance for
+        finding resources related to FAIR.</p>
+
+      <h3>Aims</h3>
+      <p>1. To identify FAIRification goals through a list of questions or FAIR assessment.<br>
+        2. To recommend solutions for implementing FAIR based on user requirements</p>
+
+      <h3>How the wizard works</h3>
+      <div class="fair-home-wrapper background-white">
+        <img class="card-img-top about-fair-img" src="assets/img/wizard_design.png" alt="wizard design">
+      </div>
+
+      <h3>How to use FAIR wizard</h3>
       <div class="fair-home-wrapper background-white">
         <img class="card-img-top about-fair-img" src="assets/img/wizard_howto.png" alt="wizard howto">
       </div>
@@ -28,7 +46,8 @@
 
   <section class="vf-card-container | vf-u-background-color--grey--lightest about-section-wrapper" style="--vf-card__image--aspect-ratio: 16 / 9;">
     <div class="vf-news-container__content about-section">
-      <h2>FAIRification resources </h2>
+      <h2>Types of FAIRification solutions</h2>
+      <!--TODO update -->
       <ul>
         <li><b>Recipes</b>. FAIRification guidelines in the FAIR Cookbook<sup>[2]</sup> developed by the FAIRplus
           project<sup>[3]</sup></li>
@@ -49,8 +68,9 @@
 
   <section class="vf-card-container | vf-u-background-color--grey--lightest about-section-wrapper" style="--vf-card__image--aspect-ratio: 16 / 9;">
     <div class="vf-news-container__content about-section">
-      <h2>Curated FAIRification goals and Solutions</h2>
-      <p>The wizard also contains manually curated solutions for common FAIRification use cases.</p>
+      <h2>Example FAIRification goals</h2>
+      <!--TODO revive once the usecase tag is reused.
+      <p>The wizard also contains manually curated solutions for common FAIRification use cases.</p> -->
 
       <div class="vf-content" #fairExamples id="fairExamples">
 <!--        <table class="vf-table">-->
@@ -59,7 +79,7 @@
           <tr class="vf-table__row">
             <th class="vf-table__heading" scope="col">Summary</th>
             <th class="vf-table__heading" scope="col">Description</th>
-            <th class="vf-table__heading" scope="col">Solutions</th>
+            <!--<th class="vf-table__heading" scope="col">Solutions</th>-->
           </tr>
           </thead>
           <tbody class="vf-table__body">
@@ -69,21 +89,21 @@
               I
               can connect all data about the same compound and exchange the data with others.
             </td>
-            <td class="vf-table__cell"><a href="/resources?text=uc-chemical-identifier">Link</a></td>
+            <!-- <td class="vf-table__cell"><a href="/resources?text=uc-chemical-identifier">Link</a></td> -->
           </tr>
           <tr class="vf-table__row">
             <td class="vf-table__cell">Applying community metadata standards</td>
             <td class="vf-table__cell">As a biologist, I want to use community metadata standards for data planning so that I can avoid missing
               information during data collection and adopt the communication exchange standards before the data is born.
             </td>
-            <td class="vf-table__cell"><a href="/resources?text=uc-metadata-standards">Link</a></td>
+            <!-- <td class="vf-table__cell"><a href="/resources?text=uc-metadata-standards">Link</a></td> -->
           </tr>
           <tr class="vf-table__row">
             <td class="vf-table__cell">Using vocabularies to annotate data</td>
             <td class="vf-table__cell">As a curator, I want to annotate the metadata with standard vocabularies, so that the data can be
               consistent and more interoperable.
             </td>
-            <td class="vf-table__cell"><a href="/resources?text=uc-vocabulary-annotation">Link</a></td>
+            <!-- <td class="vf-table__cell"><a href="/resources?text=uc-vocabulary-annotation">Link</a></td> -->
           </tr>
           </tbody>
         </table>
