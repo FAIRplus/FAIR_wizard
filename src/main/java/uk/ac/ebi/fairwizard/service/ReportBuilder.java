@@ -247,7 +247,7 @@ public class ReportBuilder {
                                   "One the work plan is implemented, users can re-perform FAIR assessment to measure " +
                                   "the outcome of the FAIRification", PARAGRAPH_FONT));
 
-    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.jpg");
+    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.png");
     processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
     processDiagram.setAlignment(Element.ALIGN_CENTER);
     document.add(processDiagram);
