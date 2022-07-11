@@ -1,6 +1,11 @@
 <div class="fair-wizard">
   <h1 class="page-title">FAIRification Wizard</h1>
 
+  <div>
+    <p>The wizard service uses a list of questions to identify the FAIRification needs of the users.
+    A FAIR analysis report and suggested FAIR solutions are provided at the end of the question list.</p>
+  </div>
+
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'">
       Wizard Progress: {{progress}}%, {{currentNode.category}}
@@ -17,6 +22,7 @@
                      [question]="currentNode"
                      (selectAnswerEvent)="addDecision($event)">
   </app-decision-node>
+
   <div *ngIf="reachedLeaf">
     <div class="fair-search-button-container">
       <button class="vf-button vf-button--primary vf-button--sm fair-search-button" (click)="searchResources()">Search</button>
@@ -24,9 +30,13 @@
   </div>
 
   <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
-    <h2>Results</h2>
+    <h2>FAIR Analysis Results</h2>
     <div class="actions-container">
+      <!-- Adding a quick description about what the buttons are -->
+      <!-- TODO highlight the report since it is the most human readable outcome -->
+      <div><p>An FAIRification analysis report has been generated based on your answers. </p></div>
       <button class="btn btn-primary fair-report-button" (click)="downloadReport()">Generate Report</button>
+      <div><p>A permanent link for revisiting and sharing this FAIRification analysis. </p></div>
       <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Get PermaLink</button>
       <div class="permalink-link" *ngIf="permaLink != undefined">{{permaLink}}</div>
     </div>
