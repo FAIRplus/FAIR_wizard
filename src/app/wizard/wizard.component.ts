@@ -78,7 +78,7 @@ export class WizardComponent implements OnInit {
     let filters = [];
     for (let decision of this.decisions) {
       for (let answer of decision.answers) {
-        filters.push(answer.labels);
+        filters.push(...answer.labels);
       }
     }
     this.searchByLabels(filters);
@@ -90,7 +90,7 @@ export class WizardComponent implements OnInit {
     let filters = [];
     for (let decision of this.decisions) {
       for (let answer of decision.answers) {
-        filters.push(answer.labels);
+        filters.push(...answer.labels);
       }
     }
     return filters;
