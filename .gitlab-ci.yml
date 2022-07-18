@@ -46,9 +46,9 @@ deploy:
     - ssh-keyscan wp-p1m-27.ebi.ac.uk >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - scp -r -v -o StrictHostKeyChecking=no deployment/* bsd_prod@wp-p2m-27.ebi.ac.uk:~/
-    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p2m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin restart fair-wizard"
+    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p2m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin/monit restart fair-wizard"
     - scp -r -v -o StrictHostKeyChecking=no deployment/* bsd_prod@wp-p1m-27.ebi.ac.uk:~/
-    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p1m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin restart fair-wizard"
+    - ssh -v -o StrictHostKeyChecking=no bsd_prod@wp-p1m-27.ebi.ac.uk "~/ait/tools/monit-5.32.0/bin/monit restart fair-wizard"
   when: manual
   only:
     - master
