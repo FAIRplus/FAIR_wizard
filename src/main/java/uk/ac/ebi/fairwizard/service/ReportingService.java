@@ -5,6 +5,7 @@ import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.Answer;
 import uk.ac.ebi.fairwizard.model.DecisionNode;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
+import uk.ac.ebi.fairwizard.model.SavedSearch;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -15,17 +16,19 @@ import java.util.Set;
 public class ReportingService {
   private final DecisionTreeService decisionTreeService;
   private final FairResourceService fairResourceService;
+  private final SavedSearchService savedSearchService;
 
-  public ReportingService(DecisionTreeService decisionTreeService, FairResourceService fairResourceService) {
+  public ReportingService(DecisionTreeService decisionTreeService, FairResourceService fairResourceService,
+                          SavedSearchService savedSearchService) {
     this.decisionTreeService = decisionTreeService;
     this.fairResourceService = fairResourceService;
+    this.savedSearchService = savedSearchService;
   }
 
   public ByteArrayOutputStream getReportStream(List<String> answers)
     throws ApplicationStatusException {
     List<DecisionNode> decisionTree = decisionTreeService.getDecisionTree();
     List<String> questions = new ArrayList<>();
-
     List<String> filters = new ArrayList<>();
 
     DecisionNode node = decisionTree.get(0);
@@ -48,12 +51,23 @@ public class ReportingService {
     }
 
     Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
-
-
+    String permaLink = getSavedSearchForReport(answers);
     try {
-      return ReportBuilder.getBuilder().withData().withQuestions(questions).withResources(resources).withFooter(answers).build();
+      return ReportBuilder.getBuilder()
+                          .withData()
+                          .withQuestions(questions)
+                          .withResources(resources)
+                          .withFooter(answers, permaLink)
+                          .build();
     } catch (Exception e) {
       throw new ApplicationStatusException("Failed to generate PDF report. Please contact support. " + e.getMessage());
     }
+  }
+
+  private String getSavedSearchForReport(List<String> answers) {
+    StringBuilder urlBuilder = new StringBuilder("www.ebi.ac.uk/ait/fair-wizard/wizard?");
+    answers.forEach(a -> urlBuilder.append("answers=" + a + '&'));
+    SavedSearch savedSearch = savedSearchService.saveSearch(new SavedSearch(null, urlBuilder.toString(), null));
+    return "www.ebi.ac.uk/ait/fair-wizard/api/permalink/" + savedSearch.getId();
   }
 }

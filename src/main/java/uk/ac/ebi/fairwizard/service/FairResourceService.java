@@ -46,6 +46,11 @@ public class FairResourceService {
     }
   }
 
+  public MongoFairResource getResource(String resourceId) throws ApplicationStatusException {
+    return fairResourceRepository.findById(resourceId)
+                                 .orElseThrow(() -> new ApplicationStatusException("Resource does not exist with ID: " + resourceId));
+  }
+
   public Set<MongoFairResource> searchResources(List<String> labels) {
     if (labels != null && !labels.isEmpty()) {
       return searchResourcesWithFilters(labels);

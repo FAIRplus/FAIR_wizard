@@ -102,7 +102,7 @@ public class ReportBuilder {
     return this;
   }
 
-  public ReportBuilder withFooter(List<String> answers) throws DocumentException {
+  public ReportBuilder withFooter(List<String> answers, String permaLink) throws DocumentException {
     StringBuilder urlBuilder = new StringBuilder("www.ebi.ac.uk/ait/fair-wizard/wizard?");
     answers.forEach(a -> urlBuilder.append("answers=" + a + '&'));
 
@@ -117,7 +117,9 @@ public class ReportBuilder {
     reportFooter.add(
       new Chunk(" If you have any questions or have any comments, please provide feedback ", PARAGRAPH_FONT));
     reportFooter.add(
-      new Chunk("here.", PARAGRAPH_FONT_BLUE).setAnchor("https://github.com/FAIRplus/FAIR_wizard/issues/new"));
+      new Chunk("here.", PARAGRAPH_FONT_BLUE).setAnchor("https://github.com/FAIRplus/FAIR_wizard/issues/new?title=Re: "
+                                                        + permaLink + "&body=Please include report link with your issue. <br/> "
+                                                        + permaLink + " <br/> "));
     document.add(reportFooter);
 
     Paragraph license = new Paragraph();
@@ -142,24 +144,7 @@ public class ReportBuilder {
             header.setPhrase(new Phrase(columnTitle));
             table.addCell(header);
           });
-
-
-//    PdfPCell header = new PdfPCell();
-//    header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-//    header.setBorderWidth(1);
-//    header.setPhrase(new Phrase("Resource Name"));
-//    table.addCell(header);
-//
-//    header = new PdfPCell();
-//    header.setW
-//    header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-//    header.setBorderWidth(1);
-//    header.setPhrase(new Phrase("Resource Description"));
-//    table.addCell(header);
-
-
     addResourcesToTable(table, resources);
-
     document.add(table);
     return table;
   }
@@ -167,9 +152,6 @@ public class ReportBuilder {
   private void addResourcesToTable(PdfPTable table, List<MongoFairResource> resources) {
     Font f = new Font(FontFamily.HELVETICA, 10, Font.NORMAL);
     resources.forEach(r -> {
-//      Chunk chunk = new Chunk("European Business Award!", f);
-//      chunk.setAnchor("http://itextpdf.com/blog/european-business-award-kick-ceremony");
-//      Phrase phrase = new Phrase(chunk);
       table.addCell(new PdfPCell(new Phrase(r.getName(), f)));
       table.addCell(new PdfPCell(new Phrase(r.getDescription(), f)));
     });
@@ -247,11 +229,6 @@ public class ReportBuilder {
                                   "pre-FAIRification assessment, and is guided by a designed FAIRification work plan. " +
                                   "One the work plan is implemented, users can re-perform FAIR assessment to measure " +
                                   "the outcome of the FAIRification", PARAGRAPH_FONT));
-
-//    Image processDiagram = Image.getInstance("./src/main/resources/fair_process.jpg");
-//    processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
-//    processDiagram.setAlignment(Element.ALIGN_CENTER);
-//    document.add(processDiagram);
 
     try (InputStream in = getClass().getResourceAsStream("/fair_process.jpg"))  {
       Image processDiagram = Image.getInstance(in.readAllBytes());
