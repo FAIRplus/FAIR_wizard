@@ -37,7 +37,6 @@ export class ResourceNetworkComponent implements OnInit {
     this.decisionService.getProcessNetwork(this.filters, '')
       .subscribe(p => {
         this.processes = p;
-        console.log(this.processes);
         this.draw();
       });
   }

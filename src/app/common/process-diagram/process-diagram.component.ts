@@ -85,7 +85,6 @@ export class ProcessDiagramComponent implements OnInit {
         }
       }
     }
-    console.log(this.processMap);
     this.onSelectProcess("fw:process-data-access-and-retrieval");
   }
 
