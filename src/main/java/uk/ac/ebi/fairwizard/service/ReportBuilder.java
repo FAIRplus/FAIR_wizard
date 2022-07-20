@@ -165,7 +165,7 @@ public class ReportBuilder {
     addEmptyLine(reportHeader, 1);
     reportHeader.add(new Paragraph("This report follows the FAIRplus 4-step FAIRification process, and recommends " +
                                    "FAIRification resources based on the project examination performed through the FAIR " +
-                                   "Wizard (link).  For an interactive report, please visit link.", PARAGRAPH_FONT));
+                                   "Wizard wwwdev.ebi.ac.uk/ait/fair_wizard", PARAGRAPH_FONT));
 
     reportHeader.add(new Paragraph("Content", PARAGRAPH_BOLD_FONT));
     com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 20);
@@ -191,8 +191,8 @@ public class ReportBuilder {
       "Determine goals for FAIRfiication in terms of desired usability of data that is not current possible",
       PARAGRAPH_FONT));
     fairGoals.add(new Paragraph("Here are FAIRification goals that we think are similar to your needs：\n" +
-                                "☑ <Example FAIRification goal A>\n" +
-                                "☑ <Example FAIRification goal B>\n" +
+                                "Map the metadata parameters (data dictionary) to appropriate domain-relevant ontologies and standards to enable applying to data catalogues and repositories to make the data more findable.\n" +
+                                "Provide advice and information to the consortium members so they can decide on the type of licensing for publicly sharing the data and clarifying the possible reuse of the data.\n" +
                                 "☑\n" +
                                 "OR write down your own FAIRification goal here.\n", PARAGRAPH_FONT));
     document.add(fairGoals);
