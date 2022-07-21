@@ -90,6 +90,12 @@ export class ResourceNetworkComponent implements OnInit {
           }
         },
         {
+          selector: 'node[type="Recipe"]',
+          style: {
+            'background-color': '#d0d0ce'
+          }
+        },
+        {
           selector: 'edge',
           style: {
             'width': 3,
