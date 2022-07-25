@@ -165,7 +165,7 @@ public class ReportBuilder {
     addEmptyLine(reportHeader, 1);
     reportHeader.add(new Paragraph("This report follows the FAIRplus 4-step FAIRification process, and recommends " +
                                    "FAIRification resources based on the project examination performed through the FAIR " +
-                                   "Wizard wwwdev.ebi.ac.uk/ait/fair_wizard", PARAGRAPH_FONT));
+                                   "Wizard www.ebi.ac.uk/ait/fair_wizard", PARAGRAPH_FONT));
 
     reportHeader.add(new Paragraph("Content", PARAGRAPH_BOLD_FONT));
     com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 20);
