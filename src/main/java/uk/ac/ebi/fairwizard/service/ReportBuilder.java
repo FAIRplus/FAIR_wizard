@@ -165,7 +165,7 @@ public class ReportBuilder {
     addEmptyLine(reportHeader, 1);
     reportHeader.add(new Paragraph("This report follows the FAIRplus 4-step FAIRification process, and recommends " +
                                    "FAIRification resources based on the project examination performed through the FAIR " +
-                                   "Wizard wwwdev.ebi.ac.uk/ait/fair_wizard", PARAGRAPH_FONT));
+                                   "Wizard www.ebi.ac.uk/ait/fair_wizard", PARAGRAPH_FONT));
 
     reportHeader.add(new Paragraph("Content", PARAGRAPH_BOLD_FONT));
     com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 20);
@@ -230,7 +230,7 @@ public class ReportBuilder {
                                   "One the work plan is implemented, users can re-perform FAIR assessment to measure " +
                                   "the outcome of the FAIRification", PARAGRAPH_FONT));
 
-    try (InputStream in = getClass().getResourceAsStream("/fair_process.jpg"))  {
+    try (InputStream in = getClass().getResourceAsStream("/fair_process.png"))  {
       Image processDiagram = Image.getInstance(in.readAllBytes());
       processDiagram.scaleToFit(PageSize.A4.getWidth() * 0.75f, PageSize.A4.getHeight() * 0.75f);
       processDiagram.setAlignment(Element.ALIGN_CENTER);

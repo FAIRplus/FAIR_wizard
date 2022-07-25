@@ -50,7 +50,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "type": "sring",
+            "type": "string",
             "minItems": 1
           }
         },

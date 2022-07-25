@@ -17,7 +17,7 @@ go to `http://localhost:8080/home`
 
 ## Production build
 - `mvn clean install -e -DskipTests -P prod`
-- Located at [https://wwwdev.ebi.ac.uk/ait/fair-wizard/](https://wwwdev.ebi.ac.uk/ait/fair-wizard/)
+- Located at [https://www.ebi.ac.uk/ait/fair-wizard/](https://www.ebi.ac.uk/ait/fair-wizard/)
 
 ## Contact
 biosamples@ebi.ac.uk

@@ -59,7 +59,7 @@
       },
       {
         "text": "Biomedical infrastructures",
-        "description": "Such as data vocabularies, analytical tools and other softwares",
+        "description": "Such as data vocabularies, analytical tools and other software",
         "labels": [
           "infrastructure"
         ],
@@ -298,7 +298,7 @@
       },
       {
         "text": "All types of guidance",
-        "description": "Guidances such as background introduction, implementation guide, and others.",
+        "description": "Guidance such as background introduction, implementation guide, and others.",
         "labels": [
           "technical guidance",
           "Hands-on",
@@ -310,7 +310,7 @@
   },
   {
     "id": "data_format",
-    "question": "What are the expections for the data formats in this project?",
+    "question": "What are the exceptions for the data formats in this project?",
     "Description": "Data formats such as CSV, JSON, PDF, and FASTA. Different formats affects the usage of the project. If this aspect is not the project FAIR focus, please select SKIP",
     "category": "Stage 3: FAIRification solution design",
     "multipleChoices": true,
@@ -349,14 +349,6 @@
           "data model"
         ],
         "next": "metadata_exist"
-      },
-      {
-        "text": "Skip this aspect",
-        "description": "Please select this if data formats is not the primary focus, ",
-        "labels": [
-          ""
-        ],
-        "next": "metadata_exist"
       }
     ]
   },
@@ -368,16 +360,10 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "No, no metadata is collected",
-        "description": "",
+        "text": "Yes, structured metadata is available",
+        "description": "Descriptions of the study object are provided in a structured format",
         "labels": [
-          "metadata collection",
-          "metadata requirement",
-          "metadata profile",
-          "metadata standards",
-          "metadata structure",
-          "minimum information",
-          "project metadata"
+          ""
         ],
         "next": "data_models"
       },
@@ -394,10 +380,16 @@
         "next": "data_models"
       },
       {
-        "text": "Yes, structured metadata is available",
-        "description": "Descriptions of the study object are provided in a structured format",
+        "text": "No, no metadata is collected",
+        "description": "",
         "labels": [
-          ""
+          "metadata collection",
+          "metadata requirement",
+          "metadata profile",
+          "metadata standards",
+          "metadata structure",
+          "minimum information",
+          "project metadata"
         ],
         "next": "data_models"
       }
@@ -411,7 +403,7 @@
     "multipleChoices": false,
     "answers": [
       {
-        "text": "yes, appropriated data models have been selected.",
+        "text": "Yes, appropriated data models have been selected.",
         "description": "Data models that meet the project's needs are used",
         "labels": [
           ""
@@ -419,8 +411,8 @@
         "next": "identifier"
       },
       {
-        "text": "no",
-        "description": "no, no data model available, or the data model needs to be improved",
+        "text": "No",
+        "description": "No, no data model available, or the data model needs to be improved",
         "labels": [
           "data model",
           "data standards"
@@ -431,11 +423,19 @@
   },
   {
     "id": "identifier",
-    "question": "Can the data components be identified unambiguiously",
+    "question": "Can the data components be identified unambiguously",
     "category": "Stage 3: FAIRification solution design",
     "description": "Data, data files and metadata should contain unique identifiers. ",
     "multipleChoices": false,
     "answers": [
+      {
+        "text": "Yes, appropriated identifiers have been used.",
+        "description": "Identifiers that meet the project needs are used.",
+        "labels": [
+          ""
+        ],
+        "next": "vocab"
+      },
       {
         "text": "No",
         "description": "No data identifiers are provided",
@@ -445,14 +445,6 @@
           "identifier generation",
           "identifier",
           "global identifier"
-        ],
-        "next": "vocab"
-      },
-      {
-        "text": "Yes, appropriated identifiers have been used.",
-        "description": "Identifiers that meet the project needs are used.",
-        "labels": [
-          ""
         ],
         "next": "vocab"
       }
