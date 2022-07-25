@@ -1,6 +1,15 @@
 .main-container {
-  max-width: 80em;
-  margin: 0 auto;
+  //max-width: 80em;
+  //margin: 0 auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  margin-bottom: 50px;
+  background: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  border-bottom: 1px solid black;
 }
 
 .main-menu-container {

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DecisionService} from "../decision.service";
-import {DecisionNode, Question} from "../models/DecisionNode";
+import {Answer, DecisionNode, Question} from "../models/DecisionNode";
 import {FairResource} from "../models/FairResource";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -12,7 +12,7 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./wizard.component.scss']
 })
 export class WizardComponent implements OnInit {
-  MAX_DECISION_DEPTH = 5;
+  MAX_DECISION_DEPTH = 15;
   decisionTree: Map<string, Question>;
   decisions: DecisionNode[];
   currentNode: Question;
@@ -21,8 +21,17 @@ export class WizardComponent implements OnInit {
   permaLink: string;
   progress: number;
   progressText: string;
+  fairStep: string;
 
   constructor(private decisionService: DecisionService, private route: ActivatedRoute, private router: Router) {
+    this.currentNode =  { // empty assignment to fix browser error
+      id: '0',
+      category: 'Undefined',
+      question: 'string',
+      answers: [],
+      multipleChoices: false,
+      description: 'string',
+    }
   }
 
   ngOnInit(): void {
@@ -35,6 +44,7 @@ export class WizardComponent implements OnInit {
       }
 
       this.currentNode = this.decisionTree.get("1");
+      this.fairStep = "step-" + this.currentNode.category.match(/\d+/)[0];
       this.processQueryParams();
     });
     this.decisions = [];
@@ -78,7 +88,7 @@ export class WizardComponent implements OnInit {
     let filters = [];
     for (let decision of this.decisions) {
       for (let answer of decision.answers) {
-        filters.push(answer.labels);
+        filters.push(...answer.labels);
       }
     }
     this.searchByLabels(filters);
@@ -90,7 +100,7 @@ export class WizardComponent implements OnInit {
     let filters = [];
     for (let decision of this.decisions) {
       for (let answer of decision.answers) {
-        filters.push(answer.labels);
+        filters.push(...answer.labels);
       }
     }
     return filters;
@@ -138,6 +148,7 @@ export class WizardComponent implements OnInit {
     } else {
       this.currentNode = this.decisionTree.get(decision.answers[0].next)//todo
     }
+    this.fairStep = "step-" + this.currentNode.category.match(/\d+/)[0];
   }
 
   resetDecision(question: Question): void {

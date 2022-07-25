@@ -26,7 +26,10 @@ import uk.ac.ebi.fairwizard.service.SavedSearchService;
 
 import javax.servlet.ServletContext;
 import java.io.ByteArrayOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
 
@@ -59,6 +62,12 @@ public class DecisionTreeController {
   @GetMapping("/version")
   public String getApi() {
     return "{'api': 'v0.0.1'}";
+  }
+
+  @GetMapping("/resource")
+  public MongoFairResource getResource(@RequestParam String resourceId) throws ApplicationStatusException {
+    resourceId = URLDecoder.decode(resourceId, StandardCharsets.UTF_8); // there are strange characters in resouce IDs
+    return fairResourceService.getResource(resourceId);
   }
 
   @GetMapping("/wizard")

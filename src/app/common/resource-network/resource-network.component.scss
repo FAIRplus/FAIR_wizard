@@ -1,11 +1,19 @@
+.modal-body {
+  padding: 0;
+}
+
 #cy {
-  width: 85%;
+  width: calc(100% - 130px);
   height: 500px;
   float: left;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 #legend {
-  width: 15%;
+  width: 120px;
   height: 500px;
   float: left;
 }
@@ -24,7 +32,7 @@
 }
 
 #recipe-icon {
-  background: #d0d0ce;
+  background: #ededed;
 }
 
 .legend-icon-container {
@@ -39,9 +47,11 @@
   -moz-border-radius: 25px;
   border-radius: 25px;
   float: left;
+  border: 1px solid #929292;
 }
 
 .legend-text {
-  float: right;
-  width: 80%;
+  float: left;
+  margin-top: 4px;
+  margin-left: 5px;
 }

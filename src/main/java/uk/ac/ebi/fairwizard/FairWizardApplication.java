@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "uk.ac.ebi.fairwizard.jpa")
+//@EnableJpaRepositories(basePackages = "uk.ac.ebi.fairwizard.jpa")
 @EnableMongoRepositories(basePackages = "uk.ac.ebi.fairwizard.mongo")
 public class FairWizardApplication {
 
@@ -17,14 +17,14 @@ public class FairWizardApplication {
     SpringApplication.run(FairWizardApplication.class, args);
   }
 
-  @Bean
-  public WebMvcConfigurer corsConfigurer() {
-    return new WebMvcConfigurer() {
-      @Override
-      public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("http://localhost:4200");
-      }
-    };
-  }
+//  @Bean
+//  public WebMvcConfigurer corsConfigurer() {
+//    return new WebMvcConfigurer() {
+//      @Override
+//      public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**").allowedOrigins("http://localhost:4200");
+//      }
+//    };
+//  }
 
 }

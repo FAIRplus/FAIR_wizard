@@ -54,7 +54,7 @@ public class DecisionTreeService {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
-      validateDecisionTree(questions);  // todo fix me
+//      validateDecisionTree(questions);  // todo fix me
       decisionNodeRepository.saveAll(questions);
     } catch (IOException e) {
       log.error("Failed to load decision tree from file {}", e.getMessage(), e);

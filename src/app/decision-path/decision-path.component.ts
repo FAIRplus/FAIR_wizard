@@ -9,10 +9,12 @@ import {DecisionNode, Question} from "../models/DecisionNode";
 export class DecisionPathComponent implements OnInit {
   @Input() decision: DecisionNode;
   @Output() resetNodeEvent = new EventEmitter<Question>();
+  fairStep: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.fairStep = "step-" + this.decision.question.category.match(/\d+/)[0];
   }
 
   callParent(question: Question): void {
