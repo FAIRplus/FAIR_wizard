@@ -20,7 +20,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -52,7 +51,8 @@ public class FairResourceService {
 
   public MongoFairResource getResource(String resourceId) throws ApplicationStatusException {
     return fairResourceRepository.findById(resourceId)
-                                 .orElseThrow(() -> new ApplicationStatusException("Resource does not exist with ID: " + resourceId));
+                                 .orElseThrow(() -> new ApplicationStatusException(
+                                   "Resource does not exist with ID: " + resourceId));
   }
 
   public Set<MongoFairResource> searchResources(List<String> labels) {
@@ -95,33 +95,40 @@ public class FairResourceService {
 //    }
 //  }
 
-  public FairProcess getProcesses(Set<MongoFairResource> resources) {
+  public List<FairProcess> getProcesses(Set<MongoFairResource> resources) {
     Map<String, FairProcess> resourceMap = new HashMap<>();
     Map<String, MongoFairResource> isAfterMap = new HashMap<>();
-    List<MongoFairResource> parentProcesses = new ArrayList<>();
+    List<FairProcess> parentProcesses = new ArrayList<>();
     FairProcess processesHierarchy = null;
     List<MongoFairResource> processes = fairResourceRepository.findByResourceType("Process");
     for (MongoFairResource process : processes) {
-      resourceMap.put(process.getId(), new FairProcess(process));
+      FairProcess fairProcess = new FairProcess(process);
+      resourceMap.put(process.getId(), fairProcess);
 
       // arrange parent processes
       if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
         if (process.getIsAfter() == null || process.getIsAfter().isEmpty()) {
-          parentProcesses.add(process);
+          parentProcesses.add(fairProcess);
         } else {
           isAfterMap.put(process.getIsAfter().get(0), process);
         }
       }
     }
 
+    while (parentProcesses.size() <= isAfterMap.size()) {
+      String current = parentProcesses.get(parentProcesses.size() - 1).getId();
+      MongoFairResource next = isAfterMap.get(current);
+      parentProcesses.add(resourceMap.get(next.getId()));
+    }
+
     for (MongoFairResource process : processes) {
       FairProcess fairProcess = resourceMap.get(process.getId());
       if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
-        if (process.getIsAfter() != null && !process.getIsAfter().isEmpty()) {
-          resourceMap.get(process.getIsAfter().get(0)).setNext(fairProcess);
-        } else {
-          processesHierarchy = fairProcess;
-        }
+//        if (process.getIsAfter() != null && !process.getIsAfter().isEmpty()) {
+//          resourceMap.get(process.getIsAfter().get(0)).setNext(fairProcess);
+//        } else {
+//          processesHierarchy = fairProcess;
+//        }
       } else {
         if (resourceMap.containsKey(process.getHasParent().get(0))) {
           resourceMap.get(process.getHasParent().get(0)).getChildren().add(fairProcess);
@@ -141,7 +148,7 @@ public class FairResourceService {
       }
     }
 
-    return processesHierarchy;
+    return parentProcesses;
   }
 
   public List<ProcessNetworkElement> populateNetwork(Set<MongoFairResource> resources) {
@@ -227,10 +234,27 @@ public class FairResourceService {
     try (InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       List<MongoFairResource> fairResources = jsonMapper.readValue(in, new TypeReference<>() {
       });
+      populateReverseLinks(fairResources);
 //      validateResources(fairResources);
       fairResourceRepository.saveAll(fairResources);
     } catch (IOException e) {
       log.error("Failed to load FAIR resources from file {}", e.getMessage(), e);
+    }
+  }
+
+  private static void populateReverseLinks(List<MongoFairResource> resources) {
+    Map<String, MongoFairResource> resourceMap = resources.stream().collect(Collectors.toMap(r -> r.getId(), r -> r));
+    for (MongoFairResource r : resources) {
+      r.getForwardLinks().forEach(rel -> {
+        if (resourceMap.containsKey(rel)) {
+          Set<String> reverseLinks = resourceMap.get(rel).getReverseLinks();
+          if (reverseLinks == null) {
+            reverseLinks = new HashSet<>();
+            resourceMap.get(rel).setReverseLinks(reverseLinks);
+          }
+          reverseLinks.add(r.getId());
+        }
+      });
     }
   }
 

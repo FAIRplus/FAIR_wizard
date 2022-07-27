@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
 import {DecisionService} from "../../decision.service";
+import {FairResourceComponent} from "../fair-resource/fair-resource.component";
+import {FairResourceType} from "../../models/FairResource";
 
 @Component({
   selector: 'app-process-diagram',
@@ -10,52 +12,14 @@ import {DecisionService} from "../../decision.service";
 })
 export class ProcessDiagramComponent implements OnInit {
   @Input() processList: object[];
-
-  data = [
-    {
-      "parent": "Data access and ethics",
-      "name": "Data access",
-      "description": "this is sub-process description: Data access"
-    },
-    {
-      "parent": "Data access and ethics",
-      "name": "Data ethics",
-      "description": "this is sub-process description: Data ethics"
-    },
-    {
-      "parent": "Competency questions",
-      "name": "Data competency",
-      "description": "this is sub-process description: Data competency"
-    }
-  ];
-
-  processes = [
-    {
-      "name": "Data access and ethics",
-      "description": "this is the process description: Data access and ethics",
-      "subProcess": []
-    },
-    {
-      "name": "Competency questions",
-      "description": "this is the process description: Competency questions",
-      "subProcess": [
-        {
-          "name": "sub Data access and ethics",
-          "description": "sub this is the process description: Data access and ethics",
-        }
-      ]
-    }
-  ];
-
   processMap = {};
   parentProcesses = [];
 
   title: string;
   description: string;
   subProcessList: object[];
-  connectedResources: object[];
 
-  constructor(public decisionService: DecisionService) {
+  constructor(public decisionService: DecisionService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -63,6 +27,7 @@ export class ProcessDiagramComponent implements OnInit {
     this.decisionService.getParentProcesses()
       .subscribe(p => {
         this.parentProcesses = p;
+        this.onSelectProcess(this.parentProcesses[0]);
       });
 
     for (let process of this.processList) {
@@ -92,20 +57,18 @@ export class ProcessDiagramComponent implements OnInit {
         }
       }
     }
-    this.onSelectProcess("fw:process-data-access-and-retrieval");
   }
 
-  onSelectProcess(processName) {
-    let parentProcess = this.processMap[processName];
-    if (parentProcess !== undefined) {
-      this.title = parentProcess.name;
-      this.description = parentProcess.description;
-      this.subProcessList = parentProcess.subProcess;
-    } else {
-      console.log("Process not defined: " + processName);
-    }
+  onSelectProcess(process) {
+    this.title = process.name;
+    this.description = process.description;
+    this.subProcessList = process.children;
+  }
 
-    this.connectedResources = [];
+  openProcessDialog(resource) {
+    resource.resourceType = FairResourceType[resource.resourceType.toString() as keyof typeof FairResourceType];
+    const modalRef = this.modalService.open(FairResourceComponent, {size: 'lg', centered: true});
+    modalRef.componentInstance.resource = resource;
   }
 
 }

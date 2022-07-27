@@ -131,7 +131,6 @@ export class ResourceNetworkComponent implements OnInit {
     });
   }
 
-
   openProcessDialog(resource) {
     const modalRef = this.modalService.open(FairResourceComponent, {size: 'lg', centered: true});
     modalRef.componentInstance.resource = resource;

@@ -2,7 +2,7 @@
   <div class="process-container">
     <div *ngFor="let process of parentProcesses">
       <div class="process" [ngClass]="this.processMap[process.id]? 'chevron' : 'chevron-disabled'"
-           (click)="onSelectProcess(process.id)">
+           (click)="onSelectProcess(process)">
         <div class="process-text">{{process.name}}</div>
       </div>
     </div>
@@ -13,15 +13,16 @@
       <div class="process-description-title">{{title}}</div>
       {{description}}
     </div>
-    <div class="row sub-process-block" *ngFor="let subProcess of subProcessList">
+    <div class="row sub-process-block" *ngFor="let subProcess of subProcessList" >
       <div class="col-lg-4">
-        <div class="sub-process">
+        <div class="sub-process" (click)="openProcessDialog(subProcess)">
           {{subProcess.name}}
         </div>
       </div>
       <div class="col-lg-8">
-        <div class="related-resource" *ngFor="let relatedResource of subProcess['relatesTo']">
-          {{relatedResource}}
+        <div class="related-resource" *ngFor="let relatedResource of subProcess['children']"
+             (click)="openProcessDialog(relatedResource)">
+          {{relatedResource.name}}
         </div>
       </div>
     </div>

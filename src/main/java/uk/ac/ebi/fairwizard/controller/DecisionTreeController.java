@@ -89,13 +89,13 @@ public class DecisionTreeController {
     return fairResourceService.populateNetwork(resources);
   }
 
-  @GetMapping("/processDiagram")
-  public List<MongoFairResource> getProcessDiagram(@RequestParam(required = false) List<String> filters) {
+  @GetMapping("/processDiagram1")
+  public List<MongoFairResource> getProcessDiagram1(@RequestParam(required = false) List<String> filters) {
     return fairResourceService.getParentProcesses();
   }
 
-  @GetMapping("/processDiagram1")
-  public FairProcess getProcessDiagram1(@RequestParam(required = false) List<String> filters) {
+  @GetMapping("/processDiagram")
+  public List<FairProcess> getProcessDiagram(@RequestParam(required = false) List<String> filters) {
     Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
     return fairResourceService.getProcesses(resources);
   }
