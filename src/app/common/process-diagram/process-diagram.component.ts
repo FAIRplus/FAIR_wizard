@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
+import {DecisionService} from "../../decision.service";
 
 @Component({
   selector: 'app-process-diagram',
@@ -47,17 +48,23 @@ export class ProcessDiagramComponent implements OnInit {
   ];
 
   processMap = {};
+  parentProcesses = [];
 
   title: string;
   description: string;
   subProcessList: object[];
   connectedResources: object[];
 
-  constructor() {
+  constructor(public decisionService: DecisionService) {
   }
 
   ngOnInit(): void {
-    console.log("Loading proess diagram. Number of processes: " + this.processList.length);
+    console.log("Loading process diagram. Number of processes: " + this.processList.length);
+    this.decisionService.getParentProcesses()
+      .subscribe(p => {
+        this.parentProcesses = p;
+      });
+
     for (let process of this.processList) {
       if (process['hasParent'] == null || process['hasParent'].length == 0) {
         if (process["id"] in this.processMap) {

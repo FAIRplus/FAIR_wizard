@@ -18,6 +18,7 @@ export class DecisionService {
   private permalinkUrl = environment.baseUrl + 'api/permalink';
   private reportUrl = environment.baseUrl + 'api/report';
   private resourceUrl = environment.baseUrl + 'api/resource';
+  private processDiagramUrl = environment.baseUrl + 'api/processDiagram';
 
   constructor(private http: HttpClient) {
   }
@@ -75,6 +76,10 @@ export class DecisionService {
     params = params.append("process", process);
 
     return this.http.get<Object>(this.processNetworkUrl, {params: params});
+  }
+
+  getParentProcesses() {
+    return this.http.get<[]>(this.processDiagramUrl);
   }
 
   getAssessments(): Observable<any> {

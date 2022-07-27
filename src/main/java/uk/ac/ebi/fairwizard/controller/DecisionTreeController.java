@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.Assessment;
 import uk.ac.ebi.fairwizard.model.DecisionNode;
+import uk.ac.ebi.fairwizard.model.FairProcess;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.SavedSearch;
@@ -86,6 +87,17 @@ public class DecisionTreeController {
                                                        @RequestParam(required = false) String process) {
     Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
     return fairResourceService.populateNetwork(resources);
+  }
+
+  @GetMapping("/processDiagram")
+  public List<MongoFairResource> getProcessDiagram(@RequestParam(required = false) List<String> filters) {
+    return fairResourceService.getParentProcesses();
+  }
+
+  @GetMapping("/processDiagram1")
+  public FairProcess getProcessDiagram1(@RequestParam(required = false) List<String> filters) {
+    Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
+    return fairResourceService.getProcesses(resources);
   }
 
   @GetMapping("assessment")

@@ -7,6 +7,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
+import uk.ac.ebi.fairwizard.model.FairProcess;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
@@ -17,8 +18,11 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -57,6 +61,87 @@ public class FairResourceService {
     } else {
       return searchResourcesAll();
     }
+  }
+
+  public List<MongoFairResource> getParentProcesses() {
+    Map<String, MongoFairResource> isAfterMap = new HashMap<>();
+    List<MongoFairResource> parentProcesses = new ArrayList<>();
+    List<MongoFairResource> processes = fairResourceRepository.findByResourceType("Process");
+    for (MongoFairResource process : processes) {
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+        if (process.getIsAfter() == null || process.getIsAfter().isEmpty()) {
+          parentProcesses.add(process);
+        } else {
+          isAfterMap.put(process.getIsAfter().get(0), process);
+        }
+      }
+    }
+
+    while (parentProcesses.size() <= isAfterMap.size()) {
+      String next = parentProcesses.get(parentProcesses.size() - 1).getId();
+      parentProcesses.add(isAfterMap.get(next));
+    }
+
+    return parentProcesses;
+  }
+
+//  public FairProcess getProcessDiagram(List<String> labels) {
+//    Set<MongoFairResource> resouces = searchResources(labels);
+//    List<MongoFairResource> parentProcess = getParentProcesses();
+//
+//    Map<String, MongoFairResource> resouceMap = new HashMap<>();
+//    for (MongoFairResource r : resouces) {
+//      if
+//    }
+//  }
+
+  public FairProcess getProcesses(Set<MongoFairResource> resources) {
+    Map<String, FairProcess> resourceMap = new HashMap<>();
+    Map<String, MongoFairResource> isAfterMap = new HashMap<>();
+    List<MongoFairResource> parentProcesses = new ArrayList<>();
+    FairProcess processesHierarchy = null;
+    List<MongoFairResource> processes = fairResourceRepository.findByResourceType("Process");
+    for (MongoFairResource process : processes) {
+      resourceMap.put(process.getId(), new FairProcess(process));
+
+      // arrange parent processes
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+        if (process.getIsAfter() == null || process.getIsAfter().isEmpty()) {
+          parentProcesses.add(process);
+        } else {
+          isAfterMap.put(process.getIsAfter().get(0), process);
+        }
+      }
+    }
+
+    for (MongoFairResource process : processes) {
+      FairProcess fairProcess = resourceMap.get(process.getId());
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+        if (process.getIsAfter() != null && !process.getIsAfter().isEmpty()) {
+          resourceMap.get(process.getIsAfter().get(0)).setNext(fairProcess);
+        } else {
+          processesHierarchy = fairProcess;
+        }
+      } else {
+        if (resourceMap.containsKey(process.getHasParent().get(0))) {
+          resourceMap.get(process.getHasParent().get(0)).getChildren().add(fairProcess);
+        } else {
+          log.warn("ID does not exist for linked process: " + process.getHasParent().get(0));
+        }
+      }
+    }
+
+    for (MongoFairResource resource : resources) {
+      if (resource.getRelatesTo() != null || !resource.getRelatesTo().isEmpty()) {
+        for (String related : resource.getRelatesTo()) {
+          if (resourceMap.containsKey(related)) {
+            resourceMap.get(related).getChildren().add(new FairProcess(resource));
+          }
+        }
+      }
+    }
+
+    return processesHierarchy;
   }
 
   public List<ProcessNetworkElement> populateNetwork(Set<MongoFairResource> resources) {

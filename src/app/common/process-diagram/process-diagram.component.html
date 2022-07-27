@@ -1,46 +1,13 @@
 <div class="row">
-<!--  <div class="col-lg-2 process-container">-->
   <div class="process-container">
-    <! todo how can we maintain the order of processes---->
-    <!--    <div *ngFor="let process of processList">-->
-    <!--    <div class="process chevron" (click)="onSelectProcess(process.id)">-->
-    <!--      <div class="process-text">{{process.name}}</div>-->
-    <!--    </div>-->
-    <!--    </div>-->
-
-<!--    <div class="process" [ngClass]="this.processMap['fw:process-data-access-and-retrieval']  ? 'chevron' : 'chevron-disabled'" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">-->
-<!--    <div class="process" [class.chevron]="this.processMap['fw:process-data-access-and-retrieval']" [class.chevron-disabled]="!this.processMap['fw:process-data-access-and-retrieval']" (click)="onSelectProcess('fw:process-data-access-and-retrieval')">-->
-    <div class="process" [ngClass]="this.processMap['fw:process-data-access-and-retrieval']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-data-access-and-retrieval')">
-      <div class="process-text">Data access and retrieval</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-model-your-domain']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-model-your-domain')">
-      <div class="process-text">Model your domain</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-select-your-identifier-scheme']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-select-your-identifier-scheme')">
-      <div class="process-text">Select your identifier scheme</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-choose-a-data-standard']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-choose-a-data-standard')">
-      <div class="process-text">Choose a data standard</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-validate-against-standards']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-validate-against-standards')">
-      <div class="process-text">Validate against standards</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-semantics']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-semantics')">
-      <div class="process-text">Semantics</div>
-    </div>
-    <div class="process" [ngClass]="this.processMap['fw:process-hosting-strategies']? 'chevron' : 'chevron-disabled'"
-         (click)="onSelectProcess('fw:process-hosting-strategies')">
-      <div class="process-text">Hosting strategies</div>
+    <div *ngFor="let process of parentProcesses">
+      <div class="process" [ngClass]="this.processMap[process.id]? 'chevron' : 'chevron-disabled'"
+           (click)="onSelectProcess(process.id)">
+        <div class="process-text">{{process.name}}</div>
+      </div>
     </div>
   </div>
 
-<!--  <div class="col-lg-10 sub-process-container">-->
   <div class="sub-process-container">
     <div class="row process-description">
       <div class="process-description-title">{{title}}</div>

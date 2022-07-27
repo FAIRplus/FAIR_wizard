@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-//@EnableJpaRepositories(basePackages = "uk.ac.ebi.fairwizard.jpa")
 @EnableMongoRepositories(basePackages = "uk.ac.ebi.fairwizard.mongo")
 public class FairWizardApplication {
 
