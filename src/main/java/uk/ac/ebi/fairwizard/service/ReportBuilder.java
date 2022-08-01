@@ -29,17 +29,17 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ReportBuilder {
-  private static final Font TITLE_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
-  private static final Font SUB_TITLE_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
-  private static final Font HEADING_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.BOLD);
-  private static final Font SUB_HEADING_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 13, Font.BOLD);
-  private static final Font PARAGRAPH_BOLD_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-  private static final Font PARAGRAPH_FONT = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
-  private static final Font PARAGRAPH_FONT_GRAY = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.DARK_GRAY);
-  private static final Font PARAGRAPH_FONT_BLUE = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.BLUE);
+  private static final Font TITLE_FONT = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
+  private static final Font SUB_TITLE_FONT = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
+  private static final Font HEADING_FONT = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+  private static final Font SUB_HEADING_FONT = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+  private static final Font PARAGRAPH_BOLD_FONT = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
+  private static final Font PARAGRAPH_FONT = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+  private static final Font PARAGRAPH_FONT_GRAY = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.DARK_GRAY);
+  private static final Font PARAGRAPH_FONT_BLUE = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.BLUE);
 
-  private static final Font redFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.RED);
-  private static final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+  private static final Font redFont = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.RED);
+  private static final Font smallBold = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
 
   private final Document document;
   private final ByteArrayOutputStream outputStream;
