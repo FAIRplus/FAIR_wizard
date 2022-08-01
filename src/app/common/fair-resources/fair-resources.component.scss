@@ -55,29 +55,39 @@
 }
 
 .resource-count {
-  float: left;
+  float: right;
   margin-top: 8px;
-  margin-right: 40px;
+  //margin-right: 40px;
   padding: 3px 5px;
-  background-color: #c2b5e3;
+  color: #ffffff;
+  background-color: #a3a3a3;
+  border-radius: 20px;
 }
 
 .collapse-btn {
   float: right;
-  margin-top: 2px;
+  margin-top: -1px;
+  padding-left: 5px;
+  padding-right: 0;
 }
 
 .card-header .accordion-toggle:after {
   font-family: 'Glyphicons Halflings', serif;
   //content: "\f078 >";
-  content: url(/assets/img/collapse_open.png);
+  //content: url(/assets/img/collapse_open.png);
+  content: '▲';
+  font-size: 25px;
+  margin-top: -9px;
   width: 20px;
   height: 20px;
   float: right;
   color: grey;
 }
 .card-header .accordion-toggle.collapsed:after {
-  content: url(/assets/img/collapse_close.png);
+  //content: url(/assets/img/collapse_close.png);
+  content: '▼';
+  font-size: 25px;
+  margin-top: -9px;
 }
 
 .fair-process-img {

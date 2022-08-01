@@ -1,4 +1,57 @@
+.modal-body {
+  padding: 0;
+}
+
 #cy {
-  width: 100%;
+  width: calc(100% - 130px);
   height: 500px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#legend {
+  width: 120px;
+  height: 500px;
+  float: left;
+}
+
+#process-icon {
+  background: #cde1f0;
+  border-radius: 0;
+}
+
+#tool-icon {
+  background: #b1f0cb;
+}
+
+#indicator-icon {
+  background: #f0efcb;
+}
+
+#recipe-icon {
+  background: #ededed;
+}
+
+.legend-icon-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.legend-icon {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  float: left;
+  border: 1px solid #929292;
+}
+
+.legend-text {
+  float: left;
+  margin-top: 4px;
+  margin-left: 5px;
 }

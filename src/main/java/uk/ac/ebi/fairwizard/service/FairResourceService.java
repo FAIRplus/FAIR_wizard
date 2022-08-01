@@ -7,8 +7,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
-import uk.ac.ebi.fairwizard.model.DecisionNode;
-import uk.ac.ebi.fairwizard.model.FairResource;
+import uk.ac.ebi.fairwizard.model.FairProcess;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
@@ -19,8 +18,10 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -42,9 +43,16 @@ public class FairResourceService {
 
   @PostConstruct
   public void init() throws ApplicationStatusException {
-    if(applicationConfig.isLoadResourcesOnStart()) {
+    if (applicationConfig.isLoadResourcesOnStart()) {
+      log.warn("Loading FAIR resources from file to the database");
       loadResources();
     }
+  }
+
+  public MongoFairResource getResource(String resourceId) throws ApplicationStatusException {
+    return fairResourceRepository.findById(resourceId)
+                                 .orElseThrow(() -> new ApplicationStatusException(
+                                   "Resource does not exist with ID: " + resourceId));
   }
 
   public Set<MongoFairResource> searchResources(List<String> labels) {
@@ -53,6 +61,94 @@ public class FairResourceService {
     } else {
       return searchResourcesAll();
     }
+  }
+
+  public List<MongoFairResource> getParentProcesses() {
+    Map<String, MongoFairResource> isAfterMap = new HashMap<>();
+    List<MongoFairResource> parentProcesses = new ArrayList<>();
+    List<MongoFairResource> processes = fairResourceRepository.findByResourceType("Process");
+    for (MongoFairResource process : processes) {
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+        if (process.getIsAfter() == null || process.getIsAfter().isEmpty()) {
+          parentProcesses.add(process);
+        } else {
+          isAfterMap.put(process.getIsAfter().get(0), process);
+        }
+      }
+    }
+
+    while (parentProcesses.size() <= isAfterMap.size()) {
+      String next = parentProcesses.get(parentProcesses.size() - 1).getId();
+      parentProcesses.add(isAfterMap.get(next));
+    }
+
+    return parentProcesses;
+  }
+
+//  public FairProcess getProcessDiagram(List<String> labels) {
+//    Set<MongoFairResource> resouces = searchResources(labels);
+//    List<MongoFairResource> parentProcess = getParentProcesses();
+//
+//    Map<String, MongoFairResource> resouceMap = new HashMap<>();
+//    for (MongoFairResource r : resouces) {
+//      if
+//    }
+//  }
+
+  public List<FairProcess> getProcesses(Set<MongoFairResource> resources) {
+    Map<String, FairProcess> resourceMap = new HashMap<>();
+    Map<String, MongoFairResource> isAfterMap = new HashMap<>();
+    List<FairProcess> parentProcesses = new ArrayList<>();
+    FairProcess processesHierarchy = null;
+    List<MongoFairResource> processes = fairResourceRepository.findByResourceType("Process");
+    for (MongoFairResource process : processes) {
+      FairProcess fairProcess = new FairProcess(process);
+      resourceMap.put(process.getId(), fairProcess);
+
+      // arrange parent processes
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+        if (process.getIsAfter() == null || process.getIsAfter().isEmpty()) {
+          parentProcesses.add(fairProcess);
+        } else {
+          isAfterMap.put(process.getIsAfter().get(0), process);
+        }
+      }
+    }
+
+    while (parentProcesses.size() <= isAfterMap.size()) {
+      String current = parentProcesses.get(parentProcesses.size() - 1).getId();
+      MongoFairResource next = isAfterMap.get(current);
+      parentProcesses.add(resourceMap.get(next.getId()));
+    }
+
+    for (MongoFairResource process : processes) {
+      FairProcess fairProcess = resourceMap.get(process.getId());
+      if (process.getHasParent() == null || process.getHasParent().isEmpty()) {
+//        if (process.getIsAfter() != null && !process.getIsAfter().isEmpty()) {
+//          resourceMap.get(process.getIsAfter().get(0)).setNext(fairProcess);
+//        } else {
+//          processesHierarchy = fairProcess;
+//        }
+      } else {
+        if (resourceMap.containsKey(process.getHasParent().get(0))) {
+          resourceMap.get(process.getHasParent().get(0)).getChildren().add(fairProcess);
+        } else {
+          log.warn("ID does not exist for linked process: " + process.getHasParent().get(0));
+        }
+      }
+    }
+
+    for (MongoFairResource resource : resources) {
+      if (resource.getRelatesTo() != null || !resource.getRelatesTo().isEmpty()) {
+        for (String related : resource.getRelatesTo()) {
+          if (resourceMap.containsKey(related)) {
+            resourceMap.get(related).getChildren().add(new FairProcess(resource));
+          }
+        }
+      }
+    }
+
+    return parentProcesses;
   }
 
   public List<ProcessNetworkElement> populateNetwork(Set<MongoFairResource> resources) {
@@ -128,19 +224,37 @@ public class FairResourceService {
   }
 
   private void addToNetwork(String id1, String id2, String rel, Set<String> ids, List<ProcessNetworkElement> network) {
-    if (ids.contains(id1) && ids.contains(id2)){
+    if (ids.contains(id1) && ids.contains(id2)) {
       network.add(new ProcessNetworkElement(new ProcessEdge(id1 + id2, id1, id2, rel)));
     }
   }
 
   private void loadResources() throws ApplicationStatusException {
+    fairResourceRepository.deleteAll();
     try (InputStream in = resourceLoader.getResource(applicationConfig.getFairResourcesFile()).getInputStream()) {
       List<MongoFairResource> fairResources = jsonMapper.readValue(in, new TypeReference<>() {
       });
+      populateReverseLinks(fairResources);
 //      validateResources(fairResources);
       fairResourceRepository.saveAll(fairResources);
     } catch (IOException e) {
       log.error("Failed to load FAIR resources from file {}", e.getMessage(), e);
+    }
+  }
+
+  private static void populateReverseLinks(List<MongoFairResource> resources) {
+    Map<String, MongoFairResource> resourceMap = resources.stream().collect(Collectors.toMap(r -> r.getId(), r -> r));
+    for (MongoFairResource r : resources) {
+      r.getForwardLinks().forEach(rel -> {
+        if (resourceMap.containsKey(rel)) {
+          Set<String> reverseLinks = resourceMap.get(rel).getReverseLinks();
+          if (reverseLinks == null) {
+            reverseLinks = new HashSet<>();
+            resourceMap.get(rel).setReverseLinks(reverseLinks);
+          }
+          reverseLinks.add(r.getId());
+        }
+      });
     }
   }
 
@@ -162,7 +276,8 @@ public class FairResourceService {
         errors.add("'labels' should be a non empty string in: " + r);
       }
 
-      if (r.getRelatesTo() != null && !ids.containsAll(r.getRelatesTo())/* && r.getRelatesTo().stream().anyMatch(s -> !ids.contains(s))*/) {
+      if (r.getRelatesTo() != null &&
+          !ids.containsAll(r.getRelatesTo())/* && r.getRelatesTo().stream().anyMatch(s -> !ids.contains(s))*/) {
         errors.add("'relatesTo' should refer to an existing resource in: " + r);
       }
       if (r.getRequires() != null && !ids.containsAll(r.getRequires())) {
@@ -181,7 +296,8 @@ public class FairResourceService {
 
     if (!errors.isEmpty()) {
       errors.forEach(e -> log.error(e));
-      throw new ApplicationStatusException("Invalid data in resources. Please fix them before starting the application");
+      throw new ApplicationStatusException(
+        "Invalid data in resources. Please fix them before starting the application");
     }
   }
 }

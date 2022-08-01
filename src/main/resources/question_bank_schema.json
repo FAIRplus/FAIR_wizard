@@ -29,10 +29,14 @@
         "answers": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/answer"
+            "$ref": "#/$defs/answer",
+            "minItems": 1
           }
         }
-      }
+      },
+      "required": [
+        "id", "question", "answers"
+      ]
     },
     "answer": {
       "type": "object",
@@ -46,7 +50,8 @@
         "labels": {
           "type": "array",
           "items": {
-            "type": "sring"
+            "type": "string",
+            "minItems": 1
           }
         },
         "next": {

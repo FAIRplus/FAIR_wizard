@@ -5,6 +5,8 @@ import spread from 'cytoscape-spread';
 import d3Force from 'cytoscape-d3-force';
 import klay from 'cytoscape-klay';
 import {DecisionService} from "../../decision.service";
+import {FairResourceComponent} from "../fair-resource/fair-resource.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-resource-network',
@@ -15,7 +17,7 @@ export class ResourceNetworkComponent implements OnInit {
   @Input() filters: string[];
   processes: Object;
 
-  constructor(public decisionService: DecisionService) {
+  constructor(public decisionService: DecisionService, private modalService: NgbModal) {
 
   }
 
@@ -35,7 +37,6 @@ export class ResourceNetworkComponent implements OnInit {
     this.decisionService.getProcessNetwork(this.filters, '')
       .subscribe(p => {
         this.processes = p;
-        console.log(this.processes);
         this.draw();
       });
   }
@@ -50,8 +51,9 @@ export class ResourceNetworkComponent implements OnInit {
 
   draw(): void {
     let cytoscapeElements = JSON.parse(JSON.stringify(this.processes));
+    let self = this;
 
-    var cy = cytoscape({
+    let cy = cytoscape({
       container: document.getElementById('cy'), // container to render in
       elements: cytoscapeElements,
       style: [ // the stylesheet for the graph
@@ -90,6 +92,12 @@ export class ResourceNetworkComponent implements OnInit {
           }
         },
         {
+          selector: 'node[type="Recipe"]',
+          style: {
+            'background-color': '#d0d0ce'
+          }
+        },
+        {
           selector: 'edge',
           style: {
             'width': 3,
@@ -113,6 +121,19 @@ export class ResourceNetworkComponent implements OnInit {
       }
 
     });
+
+    cy.on('click', 'node', function (evt) {
+      console.log('clicked ' + this.id());
+      self.decisionService.getResource(this.id()).subscribe(r => {
+        console.log(r);
+        self.openProcessDialog(r);
+      });
+    });
+  }
+
+  openProcessDialog(resource) {
+    const modalRef = this.modalService.open(FairResourceComponent, {size: 'lg', centered: true});
+    modalRef.componentInstance.resource = resource;
   }
 
 }

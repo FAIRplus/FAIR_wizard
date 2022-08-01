@@ -1,72 +1,114 @@
-<!DOCTYPE html>
-<html>
-<body>
-<div class="fair-home-wrapper">
-  <div class="fair-home">
+<div class="content-wrapper">
+  <section class="vf-hero vf-hero--800 | vf-u-fullbleed home-background">
+    <div class="vf-hero__content | vf-box | vf-stack vf-stack--400 home-summary">
+      <h2 class="vf-hero__heading pl-0">FAIR Wizard</h2>
+      <p class="vf-hero__subheading">The FAIR Wizard allows people without specific prior knowledge to explore solutions
+        to help them adopt the FAIR principles, as well as practical steps they can take to do so, supported by
+        contextually-relevant documentation and tools. It also connects different FAIR communities and serves as a
+        unified entrance for finding resources related to FAIR.</p>
 
-    <h1 class="fair-wizard-title">FAIR Wizard</h1>
+<!--      <a class="vf-hero__link" href="/components">Learn more-->
+<!--        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5-->
+<!--            4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25-->
+<!--            0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>-->
+<!--        </svg>-->
+<!--      </a>-->
+    </div>
+  </section>
 
-    <div class="fair-goals">
-      <div class="fair-goal" routerLink="/about">
-        <div class="fair-goal-heading">New to FAIR</div>
-        <div class="fair-goal-content">I don't know anything about FAIR. Show me some examples.</div>
+  <section
+    class="vf-card-container vf-card-container__col-4 | vf-u-background-color--grey--lightest vf-u-fullbleed home-fair-levels"
+    style="--vf-card__image--aspect-ratio: 16 / 9;">
+    <div class="vf-card-container__inner">
+      <!--    <div class="vf-section-header">-->
+      <!--      <h2 class="vf-section-header__heading">Select FAIR maturity level</h2>-->
+      <!--    </div>-->
+
+      <article class="vf-card vf-card--brand vf-card--bordered">
+        <div class="vf-card__content | vf-stack vf-stack--400">
+          <h3 class="vf-card__heading">
+            <a class="vf-card__link" routerLink="/about">New to FAIR
+              <svg aria-hidden="true" class="vf-card__heading__icon | vf-icon vf-icon-arrow--inline-end" width="1em"
+                   height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5
+                4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0
+                010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z"
+                  fill="currentColor" fill-rule="nonzero"></path>
+              </svg>
+            </a></h3>
+          <p class="vf-card__text"> For users with no prior knowledge about FAIR data.<br>
+            A brief introduction of what FAIR data is and how the FAIR wizard works.</p>
+        </div>
+      </article>
+
+      <article class="vf-card vf-card--brand vf-card--bordered">
+        <div class="vf-card__content | vf-stack vf-stack--400">
+          <h3 class="vf-card__heading">
+            <a class="vf-card__link" routerLink="/wizard">FAIR Wizard
+              <svg aria-hidden="true" class="vf-card__heading__icon | vf-icon vf-icon-arrow--inline-end" width="1em"
+                   height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5
+                4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0
+                010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z"
+                  fill="currentColor" fill-rule="nonzero"></path>
+              </svg>
+            </a></h3>
+          <p class="vf-card__text"> For users with basic knowledge about FAIR data.<br>
+            An interactive FAIR decision and solution recommendation service. </p>
+        </div>
+      </article>
+
+      <article class="vf-card vf-card--brand vf-card--bordered">
+        <div class="vf-card__content | vf-stack vf-stack--400">
+          <h3 class="vf-card__heading"><a class="vf-card__link" routerLink="/assessment">FAIR Assessment
+            <svg aria-hidden="true" class="vf-card__heading__icon | vf-icon vf-icon-arrow--inline-end" width="1em"
+                 height="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z"
+                fill="currentColor" fill-rule="nonzero"></path>
+            </svg>
+          </a></h3>
+          <p class="vf-card__text">For advanced users.<br> A FAIR assessment portal. </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="vf-news-container vf-news-container--featured | vf-stack ">
+    <div class="vf-news-container__content home-details">
+
+      <div class="fair-overview-text">
+        <span class="text-highlight">FAIR principles</span> serve to guide data producers and data publishers to
+        improve their data management practices and improve the reuse of
+        research data<sup><a href="https://pubmed.ncbi.nlm.nih.gov/26978244/">1</a></sup>.
+        <br>
+        <span class="text-highlight">FAIRification</span> is the process of improving the FAIR level of datasets,
+        projects or related infrastructure.
+        <br>
+        The <span class="text-highlight">FAIR wizard</span> utilizes FAIRification resources developed by the FAIRplus
+        project and other platforms,
+        suggests FAIRification materials based on the FAIRification requirements, and designs FAIRification solutions
+        for data owners, data stewards, and other people involved in FAIRification.
       </div>
-      <div class="fair-goal" routerLink="/wizard">
-        <div class="fair-goal-heading">FAIR Wizard</div>
-        <div class="fair-goal-content">I know a bit about FAIR. Take me to the Wizard.</div>
-      </div>
-      <div class="fair-goal" routerLink="/assessment">
-        <div class="fair-goal-heading">FAIR Assessment</div>
-        <div class="fair-goal-content">I know a lot about FAIR. I would like to assess my FAIRness level.</div>
-      </div>
-    </div>
 
-    <div class="fair-overview-text">
-      <span class="text-highlight">FAIR principles</span> serve to guide data producers and data publishers to
-      improve their data management practices and improve the reuse of
-      research data<sup><a href="https://pubmed.ncbi.nlm.nih.gov/26978244/">1</a></sup>.
-      <span class="text-highlight">FAIRification</span> is the process of improving the FAIR level of datasets,
-      projects or related infrastructure.
+      <div class="fair-overview-text"><a routerLink="/about">Learn more about FAIR Wizard</a></div>
     </div>
-    <div class="fair-overview-text">
-      The <span class="text-highlight">FAIR wizard</span> utilizes FAIRification resources developed by the FAIRplus
-      project and other platforms,
-      suggests FAIRification materials based on the FAIRification requirements, and designs FAIRification solutions
-      for data owners, data stewards, and other people involved in FAIRification.
+  </section>
+
+
+  <div class="vf-banner vf-banner--alert vf-banner--info">
+    <div class="vf-banner__content">
+      <p class="vf-banner__text home-details">The wizard is in early-stage development. Major updates are expected.
+        Feedback is welcome. To provide feedback on general use cases and FAIRification solutions, please fill out this
+        <a
+          href="https://forms.gle/jvJ2aLfeoSueohLX7">form</a>.
+        Feedback is also welcome through <a style="color: steelblue" href="https://github.com/FAIRplus/FAIR_wizard">Github</a>
+        issues.</p>
     </div>
-
-    <div class="fair-overview-text"><a routerLink="/about">Learn more about FAIR Wizard</a></div>
-
-    <div class="alert-warning"
-         style="float: left; width: 100%; border: 1px solid gray; border-radius: 5px; margin: 10vh auto 0;padding: 3px">
-      The wizard is in early-stage development. Major updates are expected.
-      Feedback is welcome. To provide feedback on general use cases and FAIRification solutions, please fill out this <a
-      href="https://forms.gle/jvJ2aLfeoSueohLX7">form</a>.
-      Feedback is also welcome through <a href="https://github.com/FAIRplus/FAIR_wizard">Github</a> issues.
-    </div>
-
   </div>
 </div>
-<div class="footer">
-  <div class="footer-text">
-    This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a>
-    Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s
-    Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the
-    authors
-    and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of
-    the information contained herein.
-  </div>
-
-  <div class="footer-logos">
-    <a href="https://europa.eu/"><img src="assets/img/eu-flag.png" height="40" alt="EU flag" class="footer-logo"
-                                      loading="lazy"/></a>
-    <a href="https://www.imi.europa.eu/"><img src="assets/img/imi-flag.jpg" height="40" alt="IMI logo"
-                                              class="footer-logo" loading="lazy"/></a>
-    <a href="https://efpia.eu"><img src="assets/img/efpia.jpeg" height="40" alt="EFPIA logo" class="footer-logo"
-                                    loading="lazy"/></a>
-  </div>
-</div>
-
-</body>
-</html>
-

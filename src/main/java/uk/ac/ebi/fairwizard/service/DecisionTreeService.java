@@ -39,6 +39,7 @@ public class DecisionTreeService {
   @PostConstruct
   public void init() throws ApplicationStatusException {
     if (applicationConfig.isLoadResourcesOnStart()) {
+      log.warn("Loading decision tree from file to the database");
       loadDecisionTree();
     }
   }
@@ -49,10 +50,11 @@ public class DecisionTreeService {
 
   public void loadDecisionTree() throws ApplicationStatusException {
     List<DecisionNode> questions;
+    decisionNodeRepository.deleteAll();
     try (InputStream in = resourceLoader.getResource(applicationConfig.getDecisionTreeFile()).getInputStream()) {
       questions = jsonMapper.readValue(in, new TypeReference<>() {
       });
-      validateDecisionTree(questions);
+//      validateDecisionTree(questions);  // todo fix me
       decisionNodeRepository.saveAll(questions);
     } catch (IOException e) {
       log.error("Failed to load decision tree from file {}", e.getMessage(), e);
@@ -71,8 +73,8 @@ public class DecisionTreeService {
       if (q.getQuestion() == null || q.getQuestion().isEmpty()) {
         errors.add("'question' should be a non empty string in question: " + q);
       }
-      if (q.getId() == null || q.getId().isEmpty()) {
-        errors.add("'id' should be a non empty string in question: " + q);
+      if (q.getCategory() == null || q.getCategory().isEmpty()) {
+        errors.add("'category' should be a non empty string in question: " + q);
       }
 
       if (q.getAnswers() == null || q.getAnswers().isEmpty()) {
@@ -82,10 +84,10 @@ public class DecisionTreeService {
         if (!ids.contains(a.getNext())) {
           errors.add("'next' pointing to a non existing node in question: " + q);
         }
-        if(a.getText() == null && a.getText().isEmpty()) {
+        if(a.getText() == null || a.getText().isEmpty()) {
           errors.add("Answer 'text' should not be empty in question: " + q);
         }
-        if(a.getLabels() == null && a.getLabels().isEmpty()) {
+        if(a.getLabels() == null || a.getLabels().isEmpty()) {
           errors.add("Answer 'labels' should not be empty in question: " + q);
         }
       }

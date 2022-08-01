@@ -1,3 +1,7 @@
+.content-wrapper {
+  margin-top: 60px;
+}
+
 .fair-home-wrapper {
   width: 100%;
   background-color: #310562;
@@ -124,31 +128,34 @@
   font-size: 10px;
 }
 
-.footer {
-  margin: 0 auto;
-  color: black;
-  width: 60%;
-  padding: 20px 0 5px;
-}
-
-.footer-logos {
-  width: 500px;
-  margin: 0 auto;
-  display: block;
-}
-
-.footer-logo {
-  margin: 20px 40px;
-}
-
-.footer-text {
-  float: left;
-  width: 100%;
-  font-size: 13px;
-  text-align: justify;
-}
-
 .text-highlight {
   color: #d21c1c;
 }
+
+.home-background {
+  //background-image: url("https://acxngcvroo.cloudimg.io/v7/https://www.embl.org/files/wp-content/uploads/vf-hero-intense.png");
+  //background-image: url("../../assets/img/home-back-2.jpg");
+  background-image: url("../../assets/img/home-back.webp");
+  background-size: cover;
+  margin-bottom: 0;
+}
+
+.home-summary {
+  background: white;
+  width: 600px;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.home-fair-levels {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.home-details {
+  width: 1250px;
+  margin: 0 auto 20px;
+  text-align: justify;
+}
+
 

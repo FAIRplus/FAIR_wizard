@@ -1,3 +1,7 @@
+.content-wrapper {
+  margin-top: 60px;
+}
+
 .fair-home-wrapper {
   width: 100%;
   background-color: #310562;
@@ -13,6 +17,22 @@
   background-color: #310562;
   //font-family: 'Roboto', serif;
   font-size: 18px;
+}
+
+.about-section-wrapper {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.about-section {
+  width: 1250px;
+  margin: 0 auto 20px;
+  text-align: justify;
+}
+
+.about-fair-img {
+  width: 700px;
 }
 
 .background-white {

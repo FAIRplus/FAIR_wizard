@@ -8,6 +8,7 @@ import {Answer, DecisionNode, Question} from "../models/DecisionNode";
 })
 export class DecisionNodeComponent implements OnInit {
   @Input() question: Question;
+  @Input() fairStep: string;
   @Output() selectAnswerEvent = new EventEmitter<DecisionNode>();
   answers: Answer[];
 
@@ -37,5 +38,12 @@ export class DecisionNodeComponent implements OnInit {
     };
     this.selectAnswerEvent.next(decision);
     this.answers = [];
+
+    window.scroll({
+      top: document.body.scrollHeight - 800,
+      left: 0,
+      behavior: 'smooth'
+    });
+
   }
 }

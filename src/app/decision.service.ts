@@ -17,6 +17,8 @@ export class DecisionService {
   private assessmentUrl = environment.baseUrl + 'api/assessment';
   private permalinkUrl = environment.baseUrl + 'api/permalink';
   private reportUrl = environment.baseUrl + 'api/report';
+  private resourceUrl = environment.baseUrl + 'api/resource';
+  private processDiagramUrl = environment.baseUrl + 'api/processDiagram';
 
   constructor(private http: HttpClient) {
   }
@@ -24,6 +26,21 @@ export class DecisionService {
   getDecisionTree(): Observable<Question[]> {
     return this.http.get<Question[]>(this.wizardUrl);
     // return of(DECISION_TREE);
+  }
+
+  getResource(resourceId: string): Observable<FairResource> {
+    // let params = encodeURIComponent("?resourceId=" + resourceId);
+    let params = new HttpParams();
+    params = params.append("resourceId", encodeURIComponent(resourceId));
+    return this.http.get<FairResource>(this.resourceUrl, {params: params})
+      .pipe(map(r => {
+        if (r.resourceType !== undefined) {
+          r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
+        } else {
+          console.log("Error in data: resourceType is undefined for " + r);
+        }
+        return r;
+      }));
   }
 
   searchResources(filters: string[]): Observable<FairResource[]> {
@@ -59,6 +76,10 @@ export class DecisionService {
     params = params.append("process", process);
 
     return this.http.get<Object>(this.processNetworkUrl, {params: params});
+  }
+
+  getParentProcesses() {
+    return this.http.get<[]>(this.processDiagramUrl);
   }
 
   getAssessments(): Observable<any> {

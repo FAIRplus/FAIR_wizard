@@ -16,4 +16,9 @@ public interface FairResourceRepository extends MongoRepository<MongoFairResourc
 
   @Query("{ 'useCases' : {$in : ?0 }}")
   List<MongoFairResource> findLabledResourcesForUseCases(List<String> useCases);
+
+  @Query("{ 'relatesTo' : {$in : ?0 }}")
+  List<MongoFairResource> findRelatesToResources(List<String> useCases);
+
+  List<MongoFairResource> findByResourceType(String resourceType);
 }

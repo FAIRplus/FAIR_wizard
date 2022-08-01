@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.Assessment;
 import uk.ac.ebi.fairwizard.model.DecisionNode;
+import uk.ac.ebi.fairwizard.model.FairProcess;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.SavedSearch;
@@ -24,8 +25,12 @@ import uk.ac.ebi.fairwizard.service.FairResourceService;
 import uk.ac.ebi.fairwizard.service.ReportingService;
 import uk.ac.ebi.fairwizard.service.SavedSearchService;
 
+import javax.servlet.ServletContext;
 import java.io.ByteArrayOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
 
@@ -38,20 +43,32 @@ public class DecisionTreeController {
   private final FairResourceService fairResourceService;
   private final AssessmentService assessmentService;
   private final SavedSearchService savedSearchService;
+  private final ReportingService reportingService;
+  private ServletContext servletContext;
 
   public DecisionTreeController(DecisionTreeService decisionTreeService,
                                 FairResourceService fairResourceService,
                                 AssessmentService assessmentService,
-                                SavedSearchService savedSearchService) {
+                                SavedSearchService savedSearchService,
+                                ReportingService reportingService,
+                                ServletContext servletContext) {
     this.decisionTreeService = decisionTreeService;
     this.fairResourceService = fairResourceService;
     this.assessmentService = assessmentService;
     this.savedSearchService = savedSearchService;
+    this.reportingService = reportingService;
+    this.servletContext = servletContext;
   }
 
   @GetMapping("/version")
   public String getApi() {
     return "{'api': 'v0.0.1'}";
+  }
+
+  @GetMapping("/resource")
+  public MongoFairResource getResource(@RequestParam String resourceId) throws ApplicationStatusException {
+    resourceId = URLDecoder.decode(resourceId, StandardCharsets.UTF_8); // there are strange characters in resouce IDs
+    return fairResourceService.getResource(resourceId);
   }
 
   @GetMapping("/wizard")
@@ -72,6 +89,17 @@ public class DecisionTreeController {
     return fairResourceService.populateNetwork(resources);
   }
 
+  @GetMapping("/processDiagram1")
+  public List<MongoFairResource> getProcessDiagram1(@RequestParam(required = false) List<String> filters) {
+    return fairResourceService.getParentProcesses();
+  }
+
+  @GetMapping("/processDiagram")
+  public List<FairProcess> getProcessDiagram(@RequestParam(required = false) List<String> filters) {
+    Set<MongoFairResource> resources = fairResourceService.searchResources(filters);
+    return fairResourceService.getProcesses(resources);
+  }
+
   @GetMapping("assessment")
   public List<Assessment> getAssessment() throws ApplicationStatusException {
     return assessmentService.getFairAssesment();
@@ -83,16 +111,16 @@ public class DecisionTreeController {
   }
 
   @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
-  public byte[] getFairReport() {
-    ReportingService reportingService = new ReportingService();
-    ByteArrayOutputStream out = reportingService.getReportStream();
+  public byte[] getFairReport(@RequestParam List<String> answers) throws ApplicationStatusException {
+    ByteArrayOutputStream out = reportingService.getReportStream(answers);
     return out.toByteArray();
   }
 
   @GetMapping("permalink/{searchId}")
   public ResponseEntity<Object> getSavedSearches(@PathVariable("searchId") String searchId) {
+    System.out.println(servletContext.getContextPath());
     return savedSearchService.getSavedSearches(searchId)
-                             .map(s -> ResponseEntity.status(HttpStatus.FOUND).location(URI.create(s.getResourceLink()))
+                             .map(s -> ResponseEntity.status(HttpStatus.FOUND).location(URI.create(servletContext.getContextPath() + s.getResourceLink()))
                                                      .build())
                              .orElseGet(() -> ResponseEntity.notFound().build());
   }

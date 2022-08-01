@@ -1,52 +1,54 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2">
-      <app-facet-panel [facetGroups]="facets"></app-facet-panel>
-    </div>
-    <div class="col-lg-8">
-      <h2>FAIRification Resources</h2>
-      <div class="resource-container" #tools>
-        <div class="resource-container-head">Implementation Tools</div>
-        <div class="resource-card">EBiSC FAIRification Tools</div>
-        <div class="resource-card">CARE FAIRification Tools </div>
-        <div class="resource-card">ReSOLUTE FAIRification Tools </div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2">
+        <app-facet-panel [facetGroups]="facets"></app-facet-panel>
       </div>
-      <div class="resource-container" #processes>
-        <div class="resource-container-head">Processes</div>
-        <div class="resource-card">EBiSC FAIRification Processes</div>
-        <div class="resource-card">CARE FAIRification Processes</div>
-        <div class="resource-card">ReSOLUTE FAIRification Processes </div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
+      <div class="col-lg-8">
+        <h2>FAIRification Resources</h2>
+        <div class="resource-container" #tools>
+          <div class="resource-container-head">Implementation Tools</div>
+          <div class="resource-card">EBiSC FAIRification Tools</div>
+          <div class="resource-card">CARE FAIRification Tools</div>
+          <div class="resource-card">ReSOLUTE FAIRification Tools</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+        </div>
+        <div class="resource-container" #processes>
+          <div class="resource-container-head">Processes</div>
+          <div class="resource-card">EBiSC FAIRification Processes</div>
+          <div class="resource-card">CARE FAIRification Processes</div>
+          <div class="resource-card">ReSOLUTE FAIRification Processes</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+        </div>
+        <div class="resource-container" #goals>
+          <div class="resource-container-head">Competency questions</div>
+          <div class="resource-card">EBiSC FAIRification Goals</div>
+          <div class="resource-card">CARE FAIRification Goals</div>
+          <div class="resource-card">ReSOLUTE FAIRification Goals</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+          <div class="resource-card">hello</div>
+        </div>
       </div>
-      <div class="resource-container" #goals>
-        <div class="resource-container-head">Competency questions</div>
-        <div class="resource-card">EBiSC FAIRification Goals</div>
-        <div class="resource-card">CARE FAIRification Goals </div>
-        <div class="resource-card">ReSOLUTE FAIRification Goals </div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-        <div class="resource-card">hello</div>
-      </div>
-    </div>
-    <div class="col-lg-2 showcase-navigator">
-      <h3>Content</h3>
-      <div class="showcase-navigator-fragment" (click)="scroll(tools)">Implementation Tools</div>
-      <div class="showcase-navigator-fragment" (click)="scroll(processes)">Processes</div>
-      <div class="showcase-navigator-fragment" (click)="scroll(goals)">Goals</div>
+      <div class="col-lg-2 showcase-navigator">
+        <h3>Content</h3>
+        <div class="showcase-navigator-fragment" (click)="scroll(tools)">Implementation Tools</div>
+        <div class="showcase-navigator-fragment" (click)="scroll(processes)">Processes</div>
+        <div class="showcase-navigator-fragment" (click)="scroll(goals)">Goals</div>
 
-      <button class="btn-outline-dark showcase-navigator-btn">Generate Report</button>
-      <button class="btn-outline-dark showcase-navigator-btn">Filter Selected</button>
-      <button class="btn-outline-dark showcase-navigator-btn">Get Sharable Link</button>
+        <button class="btn-outline-dark showcase-navigator-btn">Generate Report</button>
+        <button class="btn-outline-dark showcase-navigator-btn">Filter Selected</button>
+        <button class="btn-outline-dark showcase-navigator-btn">Get Sharable Link</button>
+      </div>
     </div>
   </div>
 </div>

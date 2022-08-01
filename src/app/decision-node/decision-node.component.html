@@ -1,10 +1,11 @@
-<div class="card decision-node">
-  <div class="card-header">{{question.category}}</div>
+<div class="card decision-node {{fairStep}}">
+<!--  <div class="card-header">{{question.category}}</div>-->
+  <div class="card-header question">{{question.question}}</div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-10">
-        <div class="card-title question">{{question.question}}</div>
-        <div class="card-subtitle">{{question.description}}</div>
+<!--        <div class="card-title question">{{question.question}}</div>-->
+        <div class="card-subtitle mt-1">{{question.description}}</div>
         <div *ngFor="let answer of question.answers">
           <div class="badge badge-primary answer" (click)="toggleAnswer(answer)"
                [ngClass]="answers.includes(answer) ? 'answer-selected' : 'answer'"

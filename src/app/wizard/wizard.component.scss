@@ -1,12 +1,32 @@
 .fair-wizard {
   width: 60%;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto 100px;
+}
+
+.wizard-fixed-head {
+  position: fixed;
+  background: #ffffff;
+  top: 0;
+  margin-top: 60px;
+  padding-bottom: 10px;
+  width: 60%;
+  z-index: 10;
+  border-bottom: 1px solid #b0b0b0;
+  box-shadow: 0 12px 12px -12px #dad9d9;
+}
+
+.wizard-scroll-content {
+  margin-top: 195px;
 }
 
 .page-title {
-  padding: 0.9rem 0;
+  padding: 10px 0 0 0;
   color: #310562;
+}
+.wizard-stage {
+  font-size: 18px;
+  color: #646464;
 }
 
 .fair-search-button-container {
@@ -17,15 +37,8 @@
 .fair-search-button {
   float: right;
   width: 100px;
-  color: #ffffff;
-  border-color: #000000;
-  background-color: #310562;
-}
-
-.fair-search-button:hover {
-  color: #ffffff;
-  background-color: #ff4057;
-  border-color: #310562;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .actions-container {
@@ -86,6 +99,11 @@
 
 }
 
+.progress {
+  height: 22px;
+}
+
 .progress-bar {
-  background-color: #ff4057;
+  background-color: #407bff;
+  padding-left: 10px;
 }

@@ -1,13 +1,15 @@
 .decision-node {
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .question {
   font-size: 18px;
   font-weight: bold;
   color: #4d4d4d;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .answer {
@@ -36,7 +38,7 @@
 .btn-answer {
   color: #310562;
   border-color: #310562;
-  margin: 30px 10px 0 0;
+  margin: 5px 10px 0 0;
   width: 90px;
 }
 
@@ -50,4 +52,16 @@
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.37);
   border-radius: 2px;
+}
+
+.step-1 {
+  border-left: 5px solid blue;
+}
+
+.step-2 {
+  border-left: 5px solid red;
+}
+
+.step-3 {
+  border-left: 5px solid purple;
 }

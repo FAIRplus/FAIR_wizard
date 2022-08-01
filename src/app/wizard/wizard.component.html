@@ -1,25 +1,33 @@
 <div class="fair-wizard">
-  <h1 class="page-title">FAIRification Wizard</h1>
+  <div class="wizard-fixed-head">
+    <h1 class="page-title">FAIRification Wizard</h1>
 
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'">
-      Wizard Progress: {{progress}}%, {{currentNode.category}}
+    <div class="wizard-stage">{{currentNode.category}}</div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+           [style.width]="progress + '%'"> {{progress | number : '1.0-0'}}%
+      </div>
     </div>
   </div>
 
-  <div *ngFor="let d of decisions; let i = index">
-    <app-decision-path
-      [decision]="d"
-      (resetNodeEvent)="resetDecision($event)">
-    </app-decision-path>
-  </div>
-  <app-decision-node *ngIf="!reachedLeaf && currentNode != undefined"
-                     [question]="currentNode"
-                     (selectAnswerEvent)="addDecision($event)">
-  </app-decision-node>
-  <div *ngIf="reachedLeaf">
-    <div class="fair-search-button-container">
-      <button class="btn btn-primary fair-search-button" (click)="searchResources()">Search</button>
+  <div class="wizard-scroll-content">
+    <div *ngFor="let d of decisions; let i = index">
+      <app-decision-path
+        [decision]="d"
+        (resetNodeEvent)="resetDecision($event)">
+      </app-decision-path>
+    </div>
+    <app-decision-node *ngIf="!reachedLeaf && currentNode != undefined"
+                       [question]="currentNode"
+                       [fairStep]="fairStep"
+                       (selectAnswerEvent)="addDecision($event)">
+    </app-decision-node>
+    <div *ngIf="reachedLeaf">
+      <div class="fair-search-button-container">
+        <button class="vf-button vf-button--primary vf-button--sm fair-search-button" (click)="searchResources()">
+          Search
+        </button>
+      </div>
     </div>
   </div>
 
