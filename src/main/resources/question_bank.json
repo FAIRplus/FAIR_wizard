@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "question": "What type(s) data do you have",
+    "question": "What type(s) data do you have?",
     "category": "Stage 1: Project examination",
     "description": "Domains that are included in the project/dataset",
     "multipleChoices": true,
@@ -77,7 +77,7 @@
   },
   {
     "id": "project_status",
-    "question": "What is the status of your project",
+    "question": "What is the status of your project?",
     "category": "Stage 1: Project examination",
     "description": "Stages of the research dataset/study/project. Pse select answers that are most close to your project",
     "multipleChoices": true,
@@ -134,7 +134,7 @@
   },
   {
     "id": "project_aim",
-    "question": "What are the primary uses of the project outcomes",
+    "question": "What are the primary uses of the project outcomes?",
     "category": "Stage 2: FAIRification goal identification",
     "description": "How will the data/software/tools generated during this project be used?",
     "multipleChoices": true,
@@ -177,7 +177,7 @@
   },
   {
     "id": "project_beneficiary",
-    "question": "What are the primary users of the project outcomes",
+    "question": "Who are the primary users of the project outcomes?",
     "category": "Stage 2: FAIRification goal identification",
     "description": "Candidate users that would interact with the project or reuse the project outcomes",
     "multipleChoices": true,
@@ -221,7 +221,7 @@
   },
   {
     "id": "fair_aim",
-    "question": "By making the project data FAIR, which is the most important added value",
+    "question": "By making the project data FAIR, which would be the most important added value?",
     "category": "Stage 2: FAIRification goal identification",
     "description": "Values of having FAIR data, and the prioritization of such values",
     "multipleChoices": true,
@@ -268,7 +268,7 @@
   },
   {
     "id": "guide_type",
-    "question": "What kind of FAIRification support are you looking for",
+    "question": "What kind of FAIRification support are you looking for?",
     "category": "Stage 2: FAIRification goal identification",
     "description": "Users with different types of background and roles have different needs for FAIR data",
     "multipleChoices": false,
@@ -310,7 +310,7 @@
   },
   {
     "id": "data_format",
-    "question": "What are the exceptions for the data formats in this project?",
+    "question": "What are the requirements for file formats?",
     "Description": "Data formats such as CSV, JSON, PDF, and FASTA. Different formats affects the usage of the project. If this aspect is not the project FAIR focus, please select SKIP",
     "category": "Stage 3: FAIRification solution design",
     "multipleChoices": true,
@@ -354,7 +354,7 @@
   },
   {
     "id": "metadata_exist",
-    "question": "Is the data described with metadata",
+    "question": "Is the data described with metadata?",
     "category": "Stage 3: FAIRification solution design",
     "description": "Examples of metadata: project details, sample details, experimental details",
     "multipleChoices": false,
@@ -423,7 +423,7 @@
   },
   {
     "id": "identifier",
-    "question": "Can the data components be identified unambiguously",
+    "question": "Can the data components be identified unambiguously?",
     "category": "Stage 3: FAIRification solution design",
     "description": "Data, data files and metadata should contain unique identifiers. ",
     "multipleChoices": false,
@@ -496,7 +496,7 @@
   },
   {
     "id": "data_exchange",
-    "question": "Are data exchange across expected?",
+    "question": "Are internal and external data exchange expected?",
     "category": "Stage 3: FAIRification solution design",
     "description": "Data exchange and sharing between two projects, databases, companies, and etc.",
     "multipleChoices": false,
@@ -562,7 +562,7 @@
   },
   {
     "id": "license",
-    "question": "Does the project have appropriate license",
+    "question": "Does the project have appropriate license?",
     "category": "Stage 3: FAIRification solution design",
     "description": "A license specifies data ownership and usage information",
     "multipleChoices": false,
