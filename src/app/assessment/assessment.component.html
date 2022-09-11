@@ -1,61 +1,82 @@
 <div class="content-wrapper">
-  <!--<div class="container-fluid">-->
-  <div class="assessment-levels-container">
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-0' == selectedLevels}"
-         (click)="filterResults('Level-0')">Level-0
+  <div class="assessment-fixed-head">
+    <h1 class="page-title">FAIR Assessment</h1>
+
+    <div *ngIf="currentIndicatorGroup" class="assessment-stage">Category: {{currentIndicatorGroup.category}}</div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+           [style.width]="progress + '%'"> {{progress | number : '1.0-0'}}%
+      </div>
     </div>
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-1' == selectedLevels}"
-         (click)="filterResults('Level-1')">Level-1
-    </div>
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-2' == selectedLevels}"
-         (click)="filterResults('Level-2')">Level-2
-    </div>
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-3' == selectedLevels}"
-         (click)="filterResults('Level-3')">Level-3
-    </div>
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-4' == selectedLevels}"
-         (click)="filterResults('Level-4')">Level-4
-    </div>
-    <div class="assessment-levels" [ngClass]="{'assessment-levels-selected' : 'Level-5' == selectedLevels}"
-         (click)="filterResults('Level-5')">Level-5
-    </div>
-  </div>
-  <div class="assessment-table-container">
-    <table class="table-bordered table-striped table-hover table-sm assessment-table">
-      <thead>
-      <tr class="table-secondary">
-        <!--      <th>ID</th>-->
-        <th>ID</th>
-        <!--      <th>Sub-levels</th>-->
-        <th>Indicator</th>
-        <th>Category</th>
-        <th>Assessment</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let indicator of displayedFields">
-        <td>{{ indicator.id }}</td>
-        <!--      <td>{{ indicator.levels }}</td>-->
-        <!--      <td>{{ indicator.sub_principle }}</td>-->
-        <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
-        <td>{{ indicator.category}}</td>
-        <td>
-          <input type="checkbox" [checked]="indicator.score_overall"
-                 (change)="indicator.score_overall = !indicator.score_overall" id="score_overall"/>
-          <label for="score_overall">&nbsp; yes</label>
-        </td>
-      </tr>
-      </tbody>
-    </table>
   </div>
 
-  <div class="fair-search-button-container">
-    <button class="vf-button vf-button--primary vf-button--sm fair-search-button" (click)="submitAssessment()">Submit
-    </button>
-  </div>
+  <div *ngIf="currentIndicatorGroup" class="assessment-scroll-content">
 
-  <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
-    <h2>Results</h2>
-    <app-fair-resources [resources]="fairResources" [filters]="filters"></app-fair-resources>
+    <div *ngIf="currentIndicatorGroup" class="assessment-table-container">
+      <table class="table-bordered table-striped table-hover table-sm assessment-table">
+        <thead>
+        <tr class="table-secondary">
+          <th>ID</th>
+          <th>Indicator</th>
+          <th>Assessment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let indicator of currentIndicatorGroup.indicators">
+          <td>{{ indicator.id }}</td>
+          <td data-toggle="tooltip" data-placement="right" title="{{indicator.description}}">{{ indicator.name }}</td>
+          <td>
+            <input type="checkbox" [checked]="indicator.evaluation"
+                   (change)="indicator.evaluation = !indicator.evaluation" id="score_overall"/>
+            <label for="score_overall">&nbsp; yes</label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fair-search-button-container">
+      <button class="vf-button vf-button--primary vf-button--sm assessment-next-button"
+              (click)="previousIndicatorGroup()">
+        Back
+      </button>
+      <button class="vf-button vf-button--primary vf-button--sm assessment-next-button" (click)="nextIndicatorGroup()">
+        Next
+      </button>
+      <button *ngIf="currentIndicatorIndex + 1 == indicators.length"
+              class="vf-button vf-button--secondary vf-button--sm assessment-search-button"
+              (click)="submitAssessment()">
+        Submit
+      </button>
+    </div>
+
+    <div class="assessment-result container-fluid">
+      <h2 *ngIf="assessmentResult != undefined">Assessment Results</h2>
+
+      <div>
+        <h2 *ngIf="assessmentResult != undefined">Spider Chart</h2>
+        <figure id="spider"></figure>
+
+        <h2 *ngIf="assessmentResult != undefined">Bar Chart</h2>
+        <figure id="bar"></figure>
+      </div>
+
+      <div *ngIf="assessmentResult != undefined">
+
+      </div>
+
+    </div>
+
+
   </div>
+</div>
+
+<div>
+
+
+  <!--  <h2>Bar Chart</h2>-->
+  <!--  <figure id="bar"></figure>-->
+
+  <!--  <h2>Spider Chart</h2>-->
+  <!--  <figure id="spider"></figure>-->
 </div>

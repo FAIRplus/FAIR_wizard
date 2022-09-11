@@ -1,0 +1,77 @@
+[
+  {
+    "category": "Content",
+    "description": "Content descripton",
+    "order": 1,
+    "indicators": [
+      {
+        "id": "c1",
+        "name": "content indicator 1",
+        "description": "content indicator 1 description",
+        "order": 1,
+        "level": 1,
+        "evaluation": false,
+        "links": []
+      },
+      {
+        "id": "c2",
+        "name": "content indicator 2",
+        "description": "content indicator 2 description",
+        "order": 2,
+        "level": 2,
+        "evaluation": false,
+        "links": []
+      }
+    ]
+  },
+  {
+    "category": "Format",
+    "description": "Format description",
+    "order": 2,
+    "indicators": [
+      {
+        "id": "f1",
+        "name": "format indicator 1",
+        "description": "format indicator 1 description",
+        "order": 1,
+        "level": 1,
+        "evaluation": false,
+        "links": []
+      },
+      {
+        "id": "f2",
+        "name": "format indicator 2",
+        "description": "format indicator 2 description",
+        "order": 2,
+        "level": 3,
+        "evaluation": false,
+        "links": []
+      },
+      {
+        "id": "f3",
+        "name": "format indicator 3",
+        "description": "format indicator 3 description",
+        "order": 3,
+        "level": 5,
+        "evaluation": false,
+        "links": ["f1"]
+      }
+    ]
+  },
+  {
+    "category": "Hosting Capabilities",
+    "description": "Hosting capabilities description",
+    "order": 3,
+    "indicators": [
+      {
+        "id": "h1",
+        "name": "Hosting indicator 1",
+        "description": "Hosting indicator 1 description",
+        "order": 1,
+        "level": 1,
+        "evaluation": false,
+        "links": []
+      }
+    ]
+  }
+]

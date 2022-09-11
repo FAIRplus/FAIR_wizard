@@ -1,15 +1,23 @@
 package uk.ac.ebi.fairwizard.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.Assessment;
+import uk.ac.ebi.fairwizard.model.FairAssessment;
+import uk.ac.ebi.fairwizard.model.FairAssessmentLevel;
+import uk.ac.ebi.fairwizard.model.Indicator;
+import uk.ac.ebi.fairwizard.model.IndicatorGroup;
+import uk.ac.ebi.fairwizard.mongo.AssessmentRepository;
 
-import java.io.FileReader;
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,17 +25,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-@Log
+@Slf4j
 public class AssessmentService {
   private final ResourceLoader resourceLoader;
   private final ApplicationConfig applicationConfig;
+  private final ObjectMapper jsonMapper;
+  private final AssessmentRepository assessmentRepository;
 
-  public AssessmentService(ResourceLoader resourceLoader, ApplicationConfig applicationConfig) {
+  public AssessmentService(ResourceLoader resourceLoader, ApplicationConfig applicationConfig,
+                           ObjectMapper jsonMapper, AssessmentRepository assessmentRepository) {
     this.resourceLoader = resourceLoader;
     this.applicationConfig = applicationConfig;
+    this.jsonMapper = jsonMapper;
+    this.assessmentRepository = assessmentRepository;
+  }
+
+
+  @PostConstruct
+  public void init() throws ApplicationStatusException {
+    if (applicationConfig.isLoadResourcesOnStart()) {
+      log.warn("Loading FAIR assessment from file to the database");
+      loadAssessmentFromFile();
+    }
   }
 
   public List<Assessment> getFairAssesment() throws ApplicationStatusException {
@@ -39,7 +62,8 @@ public class AssessmentService {
 //      throw new ApplicationStatusException("Failed to read fair assessment fiel");
 //    }
 
-    try (InputStream in = resourceLoader.getResource(applicationConfig.getFairAssessmentFile()).getInputStream();
+    String assessmentFile = "classpath:assessment.csv"; //applicationConfig.getFairAssessmentFile()
+    try (InputStream in = resourceLoader.getResource(assessmentFile).getInputStream();
          CSVReader reader = new CSVReader(new InputStreamReader(in))) {
       String[] f = reader.readNext();
       log.info("Reading assessment header with " + f.length + " fields");
@@ -61,7 +85,43 @@ public class AssessmentService {
     return assessments;
   }
 
-  private boolean toBoolean(String s) {
-    return "1".equals(s);
+  public List<IndicatorGroup> getIndicatorsForAssessment() {
+    return assessmentRepository.findAll();
   }
+
+  public FairAssessment getFairAssessment(List<IndicatorGroup> indicatos) {
+    int fairLevel = 1;
+    float fairPercentage = 90;
+    Map<String, Float> fairCategories = Map.of("cat 1", 85f, "cat 3", 80f, "cat 4", 91f, "cat 5", 95f, "cat 2", 90f);
+    List<Indicator> indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
+    FairAssessmentLevel fairAssessmentLevel = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
+    fairLevel = 2;
+    fairPercentage = 80;
+    fairCategories = Map.of("cat 1", 70f, "cat 3", 80f, "cat 4", 75f, "cat 5", 95f, "cat 2", 80f);
+    indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
+    FairAssessmentLevel fairAssessmentLevel2 = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
+
+    List<FairAssessmentLevel> fairLevels = List.of(fairAssessmentLevel, fairAssessmentLevel2);
+    int overallFairLevel = 4;
+    float overallFairPercentage = 85.0f;
+    Map<String, Integer> categoriesMap = Map.of("cat 1", 4, "cat 3", 3, "cat 4", 1, "cat 5", 5, "cat 2", 2);
+    FairAssessment fairAssessment = new FairAssessment(overallFairLevel, overallFairPercentage, categoriesMap, fairLevels);
+
+    return fairAssessment;
+  }
+
+  private void loadAssessmentFromFile() throws ApplicationStatusException {
+    assessmentRepository.deleteAll();
+
+    try (InputStream in = resourceLoader.getResource(applicationConfig.getFairAssessmentFile()).getInputStream()) {
+      List<IndicatorGroup> indicators = jsonMapper.readValue(in, new TypeReference<>() {
+      });
+//      populateReverseLinks(fairResources);
+//      validateResources(fairResources);
+      assessmentRepository.saveAll(indicators);
+    } catch (IOException e) {
+      log.error("Failed to load FAIR resources from file {}", e.getMessage(), e);
+    }
+  }
+
 }

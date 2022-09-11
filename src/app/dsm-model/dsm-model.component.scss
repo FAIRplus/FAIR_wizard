@@ -1,46 +1,16 @@
 .content-wrapper {
-  //margin-top: 54px;
-  width: 60%;
-  display: block;
-  margin: 0 auto 100px;
-}
-
-.assessment-fixed-head {
-  position: fixed;
-  background: #ffffff;
-  top: 0;
-  margin-top: 51px;
-  padding-bottom: 10px;
-  width: 60%;
-  z-index: 10;
-  border-bottom: 1px solid #b0b0b0;
-  box-shadow: 0 12px 12px -12px #dad9d9;
+  margin-top: 54px;
 }
 
 .page-title {
+  margin: 20px auto 20px;
+  width: 60%;
   padding: 10px 0 0 0;
   color: #310562;
 }
 
-.assessment-stage {
-  font-size: 18px;
-  color: #646464;
-}
-
-.progress {
-  height: 22px;
-}
-
-.progress-bar {
-  background-color: #407bff;
-  padding-left: 10px;
-}
-
-.assessment-scroll-content {
-  margin-top: 195px;
-}
-
 .assessment-levels-container {
+  width: 60%;
   margin: 20px auto 20px;
 }
 
@@ -72,33 +42,27 @@
 
 .assessment-table {
   margin: 10px auto 10px;
-  width: 100%;
+  width: 60%;
 }
 
 .fair-search-button-container {
+  width: 60%;
   clear: both;
   margin: 10px auto 100px;
 }
 
-.assessment-search-button {
+.fair-search-button {
   float: right;
   width: 100px;
   font-size: 18px;
   padding: 5px;
-  margin-right: 10px;
 }
 
-.assessment-next-button {
-  float: left;
-  width: 100px;
-  font-size: 18px;
-  padding: 5px;
-}
-
-.assessment-result {
+.fair-resources {
   clear: both;
   margin-top: 30px;
   padding-top: 30px;
   padding-left: 0;
   padding-right: 0;
+  width: 60%;
 }

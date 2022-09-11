@@ -22,6 +22,7 @@ import { FacetComponent } from './common/facet/facet.component';
 import { ResourceNetworkComponent } from './common/resource-network/resource-network.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { AboutComponent } from './about/about.component';
+import { DsmModelComponent } from './dsm-model/dsm-model.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AboutComponent } from './about/about.component';
     FacetComponent,
     ResourceNetworkComponent,
     AssessmentComponent,
-    AboutComponent
+    AboutComponent,
+    DsmModelComponent
   ],
   imports: [
     BrowserModule,

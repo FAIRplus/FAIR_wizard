@@ -11,7 +11,8 @@ public class ApplicationConfig {
   private String decisionTreeFile;
   @Value("${fairwizard.resources.fairresources:classpath:fair_resources.json}")
   private String fairResourcesFile;
-  @Value("${fairwizard.resources.fairAssessment:classpath:assessment.csv}")
+//  @Value("${fairwizard.resources.fairAssessment:classpath:assessment.csv}")
+  @Value("${fairwizard.resources.fairAssessment:classpath:fair_assessment.json}")
   private String fairAssessmentFile;
   @Value("${fairwizard.resources.load-on-start:true}")
   private boolean loadResourcesOnStart;
