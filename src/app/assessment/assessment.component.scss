@@ -98,7 +98,50 @@
 .assessment-result {
   clear: both;
   margin-top: 30px;
-  padding-top: 30px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.assessment-result-header {
+  margin-bottom: 15px;
+  color: #310562;
+  font-size: 34px;
+}
+
+.assessment-result-subheader {
+  margin-bottom: 10px;
+  color: #7e7e7e;
+  font-size: 28px;
+}
+
+.assessment-figures {
+  overflow: auto;
+}
+
+.assessment-overall-score {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  background-color: #310562;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.assessment-overall-description {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.assessment-figure-breakdown {
+  float: left;
+  width: calc(100% - 650px);
+  margin-right: 50px;
+}
+
+.assessment-figure-spider {
+  float: left;
+  width: 500px;
 }

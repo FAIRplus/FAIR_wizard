@@ -43,26 +43,85 @@
       <button class="vf-button vf-button--primary vf-button--sm assessment-next-button" (click)="nextIndicatorGroup()">
         Next
       </button>
-      <button *ngIf="currentIndicatorIndex + 1 == indicators.length"
-              class="vf-button vf-button--secondary vf-button--sm assessment-search-button"
-              (click)="submitAssessment()">
+      <!--      <button *ngIf="currentIndicatorIndex + 1 == indicators.length"-->
+      <button
+        class="vf-button vf-button--secondary vf-button--sm assessment-search-button"
+        (click)="submitAssessment()">
         Submit
       </button>
     </div>
 
     <div class="assessment-result container-fluid">
-      <h2 *ngIf="assessmentResult != undefined">Assessment Results</h2>
+      <div class="assessment-result-header" *ngIf="assessmentResult != undefined">Assessment Results</div>
 
-      <div>
-        <h2 *ngIf="assessmentResult != undefined">Spider Chart</h2>
-        <figure id="spider"></figure>
+      <div class="assessment-figures">
+        <div class="assessment-figure-breakdown">
+          <div class="assessment-overall-score" *ngIf="assessmentResult != undefined">Overall assessment level: {{assessmentResult.fairLevel}}</div>
 
-        <h2 *ngIf="assessmentResult != undefined">Bar Chart</h2>
-        <figure id="bar"></figure>
+          <div class="assessment-overall-description" *ngIf="assessmentResult != undefined">
+            The figures show a break down of assessment results based on FAIR level and categories. Add more details
+            about the assessment here.
+          </div>
+
+          <div class="assessment-result-subheader" *ngIf="assessmentResult != undefined">FAIRness Percentage by Maturity Level and Dimension</div>
+          <table class="table-bordered table-striped table-hover table-sm assessment-table" *ngIf="assessmentResult != undefined">
+            <thead>
+            <tr class="table-secondary">
+              <th>Level</th>
+              <th>Content related</th>
+              <th>Representation and format</th>
+              <th>Hosting environment</th>
+              <th>Overall</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let assessmentLevel of assessmentResult.levels">
+              <td>Level {{ assessmentLevel.level }}</td>
+              <td>{{ assessmentLevel.categoryPercentage['cat 1'] }}</td>
+              <td>{{ assessmentLevel.categoryPercentage['cat 2'] }}</td>
+              <td>{{ assessmentLevel.categoryPercentage['cat 3'] }}</td>
+              <td>{{ assessmentLevel.percentage }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!--    spider chart    -->
+        <div class="assessment-figure-spider">
+          <div class="assessment-result-subheader" *ngIf="assessmentResult != undefined">Maturity Level for Dimensions</div>
+          <figure id="spider"></figure>
+        </div>
+
       </div>
 
       <div *ngIf="assessmentResult != undefined">
+        <div *ngFor="let assessmentLevel of assessmentResult.levels">
+          <h3>FAIR-DSM Level {{assessmentLevel.level}} assessment results</h3>
+          <div>The list below shows the indicators required to achive FAIR-DSM Level {{assessmentLevel.level}}.
+            Based on these assessment {{assessmentLevel.indicators.length}} indicator(s) still needs to be satisfied for
+            your dataset to reach maturity level {{assessmentLevel.level}}
+          </div>
 
+          <table class="table-bordered table-striped table-hover table-sm assessment-table">
+            <thead>
+            <tr class="table-secondary">
+              <th>Id</th>
+              <th>Assessment</th>
+              <th>Indicator</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let indicator of assessmentLevel.indicators">
+              <td>{{ indicator.id }}</td>
+              <td>
+                <input type="checkbox" [checked]="indicator.evaluation"
+                       (change)="indicator.evaluation = !indicator.evaluation" disabled/>
+              </td>
+              <td>{{ indicator.name }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>

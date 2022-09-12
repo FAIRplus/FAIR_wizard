@@ -89,7 +89,19 @@ public class AssessmentService {
     return assessmentRepository.findAll();
   }
 
-  public FairAssessment getFairAssessment(List<IndicatorGroup> indicatos) {
+  public FairAssessment getFairAssessment(List<IndicatorGroup> indicatorGroups) {
+    for (IndicatorGroup group : indicatorGroups) {
+      for (Indicator indicator : group.getIndicators()) {
+
+      }
+    }
+
+
+
+
+
+
+
     int fairLevel = 1;
     float fairPercentage = 90;
     Map<String, Float> fairCategories = Map.of("cat 1", 85f, "cat 3", 80f, "cat 4", 91f, "cat 5", 95f, "cat 2", 90f);
@@ -100,8 +112,23 @@ public class AssessmentService {
     fairCategories = Map.of("cat 1", 70f, "cat 3", 80f, "cat 4", 75f, "cat 5", 95f, "cat 2", 80f);
     indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
     FairAssessmentLevel fairAssessmentLevel2 = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
+    fairLevel = 3;
+    fairPercentage = 80;
+    fairCategories = Map.of("cat 1", 70f, "cat 3", 80f, "cat 4", 75f, "cat 5", 95f, "cat 2", 80f);
+    indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
+    FairAssessmentLevel fairAssessmentLevel3 = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
+    fairLevel = 4;
+    fairPercentage = 80;
+    fairCategories = Map.of("cat 1", 70f, "cat 3", 80f, "cat 4", 75f, "cat 5", 95f, "cat 2", 80f);
+    indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
+    FairAssessmentLevel fairAssessmentLevel4 = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
+    fairLevel = 5;
+    fairPercentage = 80;
+    fairCategories = Map.of("cat 1", 70f, "cat 3", 80f, "cat 4", 75f, "cat 5", 95f, "cat 2", 80f);
+    indicators = List.of(new Indicator("id", "name", "description", 1, 1, true, Collections.emptyList()));
+    FairAssessmentLevel fairAssessmentLevel5 = new FairAssessmentLevel(fairLevel, fairPercentage, fairCategories, indicators);
 
-    List<FairAssessmentLevel> fairLevels = List.of(fairAssessmentLevel, fairAssessmentLevel2);
+    List<FairAssessmentLevel> fairLevels = List.of(fairAssessmentLevel, fairAssessmentLevel2, fairAssessmentLevel3, fairAssessmentLevel4, fairAssessmentLevel5);
     int overallFairLevel = 4;
     float overallFairPercentage = 85.0f;
     Map<String, Integer> categoriesMap = Map.of("cat 1", 4, "cat 3", 3, "cat 4", 1, "cat 5", 5, "cat 2", 2);
