@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Question} from "./models/DecisionNode";
+import {DecisionNode, Question} from "./models/DecisionNode";
 import {Observable} from 'rxjs';
 import {FairResource, FairResourceType} from "./models/FairResource";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {environment} from "../environments/environment";
 import {SavedSearch} from "./models/SavedSearch";
+import {FairSolution} from "./models/FairSolution";
 
 @Injectable({
   providedIn: 'root'
@@ -64,6 +65,24 @@ export class DecisionService {
         return resources;
       }));
     // return of(FAIR_RESOURCES);
+  }
+
+  initFairSolutionFromDecisionTree(decisonTree: DecisionNode[]): Observable<FairSolution> {
+    let questions = [];
+    for (let decision of decisonTree) {
+      let q = decision.question;
+      let questionClone : Question = {
+        id: q.id,
+        question: q.question,
+        answers: decision.answers,
+        multipleChoices: q.multipleChoices,
+        category: q.category,
+        description: q.description
+      };
+      questions.push(questionClone);
+    }
+    console.log(questions);
+    return this.http.post<FairSolution>(this.searchUrl, questions);
   }
 
   getProcessNetwork(filters: string[], process: string): Observable<Object> {

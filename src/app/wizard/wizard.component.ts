@@ -9,6 +9,7 @@ import {FairResourceComponent} from "../common/fair-resource/fair-resource.compo
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {SaveDialogComponent} from "../common/save-dialog/save-dialog.component";
 import {wizardMetadata} from "../models/SavedSearch";
+import {FairSolution} from "../models/FairSolution";
 
 @Component({
   selector: 'app-wizard',
@@ -26,6 +27,8 @@ export class WizardComponent implements OnInit {
   progress: number;
   progressText: string;
   fairStep: string;
+
+  fairSolution: FairSolution;
 
   constructor(private decisionService: DecisionService, private route: ActivatedRoute, private router: Router, private modalService: NgbModal) {
     this.currentNode = { // empty assignment to fix browser error
@@ -97,6 +100,18 @@ export class WizardComponent implements OnInit {
     }
     this.searchByLabels(filters);
     this.generateSearchUrl();
+    this.progress = 100;
+  }
+
+  getFairSolution(): void {
+    this.decisionService.initFairSolutionFromDecisionTree(this.decisions).
+    subscribe(s => {
+      this.fairSolution = s
+      this.fairResources = this.fairSolution.fairResources;
+      console.log(this.fairSolution);
+    });
+
+    // this.generateSearchUrl();
     this.progress = 100;
   }
 
