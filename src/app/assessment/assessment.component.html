@@ -65,22 +65,22 @@
 
           <div class="assessment-result-subheader" *ngIf="assessmentResult != undefined">FAIRness Percentage by Maturity Level and Dimension</div>
           <table class="table-bordered table-striped table-hover table-sm assessment-table" *ngIf="assessmentResult != undefined">
-            <thead>
-            <tr class="table-secondary">
-              <th>Level</th>
-              <th>Content related</th>
-              <th>Representation and format</th>
-              <th>Hosting environment</th>
-              <th>Overall</th>
+            <thead class="vf-table__header">
+            <tr class="vf-table__row">
+              <th class="vf-table__heading" scope="col">Level</th>
+              <th class="vf-table__heading" scope="col">Content related</th>
+              <th class="vf-table__heading" scope="col">Representation and format</th>
+              <th class="vf-table__heading" scope="col">Hosting environment</th>
+              <th class="vf-table__heading" scope="col">Overall</th>
             </tr>
             </thead>
-            <tbody>
-            <tr *ngFor="let assessmentLevel of assessmentResult.levels">
-              <td>Level {{ assessmentLevel.level }}</td>
-              <td>{{ assessmentLevel.categoryPercentage['cat 1'] }}</td>
-              <td>{{ assessmentLevel.categoryPercentage['cat 2'] }}</td>
-              <td>{{ assessmentLevel.categoryPercentage['cat 3'] }}</td>
-              <td>{{ assessmentLevel.percentage }}</td>
+            <tbody class="vf-table__body">
+            <tr class="vf-table__row" *ngFor="let assessmentLevel of assessmentResult.levels">
+              <td class="vf-table__cell">Level {{ assessmentLevel.level }}</td>
+              <td class="vf-table__cell">{{ assessmentLevel.categoryPercentage['Content related'] }}</td>
+              <td class="vf-table__cell">{{ assessmentLevel.categoryPercentage['Representation and format'] }}</td>
+              <td class="vf-table__cell">{{ assessmentLevel.categoryPercentage['Hosting environment'] }}</td>
+              <td class="vf-table__cell">{{ assessmentLevel.percentage }}</td>
             </tr>
             </tbody>
           </table>
@@ -98,8 +98,8 @@
         <div *ngFor="let assessmentLevel of assessmentResult.levels">
           <h3>FAIR-DSM Level {{assessmentLevel.level}} assessment results</h3>
           <div>The list below shows the indicators required to achive FAIR-DSM Level {{assessmentLevel.level}}.
-            Based on these assessment {{assessmentLevel.indicators.length}} indicator(s) still needs to be satisfied for
-            your dataset to reach maturity level {{assessmentLevel.level}}
+            Based on these assessment, {{assessmentLevel.indicators.length}} indicator(s) still needs to be satisfied for
+            your dataset to reach maturity level {{assessmentLevel.level}}.
           </div>
 
           <table class="table-bordered table-striped table-hover table-sm assessment-table">
@@ -125,17 +125,6 @@
       </div>
 
     </div>
-
-
   </div>
 </div>
 
-<div>
-
-
-  <!--  <h2>Bar Chart</h2>-->
-  <!--  <figure id="bar"></figure>-->
-
-  <!--  <h2>Spider Chart</h2>-->
-  <!--  <figure id="spider"></figure>-->
-</div>

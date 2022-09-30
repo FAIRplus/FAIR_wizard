@@ -16,6 +16,7 @@ import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
 import uk.ac.ebi.fairwizard.model.Assessment;
 import uk.ac.ebi.fairwizard.model.DecisionNode;
 import uk.ac.ebi.fairwizard.model.FairProcess;
+import uk.ac.ebi.fairwizard.model.FairSolution;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
 import uk.ac.ebi.fairwizard.model.SavedSearch;
@@ -80,6 +81,11 @@ public class DecisionTreeController {
   public Set<MongoFairResource> searchResources(@RequestParam(required = false) List<String> filters) {
     LOG.info("Resource search request, filters: {}", filters);
     return fairResourceService.searchResources(filters);
+  }
+
+  @PostMapping("/search")
+  public FairSolution identifyGoalsFromDecisionTree(@RequestBody List<DecisionNode> decisionTree) {
+    return fairResourceService.generateSolutionFromDecisionTree(decisionTree);
   }
 
   @GetMapping("/processes")

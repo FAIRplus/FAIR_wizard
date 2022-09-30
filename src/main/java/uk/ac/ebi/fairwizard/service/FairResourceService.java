@@ -7,7 +7,10 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.fairwizard.config.ApplicationConfig;
 import uk.ac.ebi.fairwizard.exceptions.ApplicationStatusException;
+import uk.ac.ebi.fairwizard.model.Answer;
+import uk.ac.ebi.fairwizard.model.DecisionNode;
 import uk.ac.ebi.fairwizard.model.FairProcess;
+import uk.ac.ebi.fairwizard.model.FairSolution;
 import uk.ac.ebi.fairwizard.model.MongoFairResource;
 import uk.ac.ebi.fairwizard.model.ProcessEdge;
 import uk.ac.ebi.fairwizard.model.ProcessNetworkElement;
@@ -23,6 +26,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -53,6 +57,25 @@ public class FairResourceService {
     return fairResourceRepository.findById(resourceId)
                                  .orElseThrow(() -> new ApplicationStatusException(
                                    "Resource does not exist with ID: " + resourceId));
+  }
+
+  public FairSolution generateSolutionFromDecisionTree(List<DecisionNode> decisionTree) {
+    Set<String> labels = getLabelsFromDecisionTree(decisionTree);
+
+    FairSolution fairSolution = new FairSolution(UUID.randomUUID().toString());
+    fairSolution.setDecisionTree(decisionTree);
+    fairSolution.setLabels(labels);
+    fairSolution.setFairResources(searchResources(new ArrayList<>(labels)));
+
+    // persist temperory
+    return fairSolution;
+  }
+
+  public Set<String> getLabelsFromDecisionTree(List<DecisionNode> decisionTree) {
+    return decisionTree.stream()
+                       .flatMap(n -> n.getAnswers().stream())
+                       .flatMap(a -> a.getLabels().stream())
+                       .collect(Collectors.toSet());
   }
 
   public Set<MongoFairResource> searchResources(List<String> labels) {

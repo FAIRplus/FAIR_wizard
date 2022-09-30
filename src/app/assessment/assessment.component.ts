@@ -15,9 +15,10 @@ export class AssessmentComponent implements OnInit {
 
 
   private features = ["Content related","Representation and format","Hosting environment"];
-  private data1 = [{"Content related": 3, "Representation and format": 4, "Hosting environment": 5},
-    {"Content related": 5, "Representation and format": 4, "Hosting environment": 1},
-    {"Content related": 2, "Representation and format": 1, "Hosting environment": 3}];
+  // private data1 = [{"Content related": 3, "Representation and format": 4, "Hosting environment": 5},
+  //   {"Content related": 5, "Representation and format": 4, "Hosting environment": 1},
+  //   {"Content related": 2, "Representation and format": 1, "Hosting environment": 3}];
+  private  data1;
 
 
   private svg;
@@ -43,14 +44,16 @@ export class AssessmentComponent implements OnInit {
         this.indicators = p;
         this.initAssessment();
       });
-
-    this.drawAssessmentFigures(); // todo temp
   }
 
   initAssessment() {
     this.currentIndicatorIndex = 0;
     this.progress = 0;
     this.currentIndicatorGroup = this.indicators[this.currentIndicatorIndex];
+  }
+
+  generateDataForGraph() {
+    this.data1 = [this.assessmentResult.categoryLevel];
   }
 
   nextIndicatorGroup() {
@@ -74,6 +77,8 @@ export class AssessmentComponent implements OnInit {
       .subscribe(r => {
         this.progress = 100;
         this.assessmentResult = r
+
+        this.generateDataForGraph();
         this.drawAssessmentFigures();
       });
   }
@@ -84,6 +89,7 @@ export class AssessmentComponent implements OnInit {
   }
 
   private createSvgForSpider(): void {
+    d3.select("svg").remove();
     this.svg = d3.select("figure#spider")
       .append("svg")
       .attr("width", this.width + (this.margin))
@@ -138,7 +144,7 @@ export class AssessmentComponent implements OnInit {
     let line = d3.line()
       .x((d: any) => d.x)
       .y((d: any) => d.y);
-    let colors = ["darkorange", "gray", "navy"];
+    let colors = ["navy", "darkorange", "gray"];
 
     for (let i = 0; i < data.length; i ++){
       let d = data[i];
@@ -168,7 +174,7 @@ export class AssessmentComponent implements OnInit {
     for (let i = 0; i < this.features.length; i++){
       let ft_name = this.features[i];
       let angle = (Math.PI / 2) + (2 * Math.PI * i / this.features.length);
-      coordinates.push(this.angleToCoordinate(angle, data_point[ft_name]));
+      coordinates.push(this.angleToCoordinate(angle, data_point[ft_name] * this.zoomFactor));
     }
     return coordinates;
   }

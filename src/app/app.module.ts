@@ -23,6 +23,7 @@ import { ResourceNetworkComponent } from './common/resource-network/resource-net
 import { AssessmentComponent } from './assessment/assessment.component';
 import { AboutComponent } from './about/about.component';
 import { DsmModelComponent } from './dsm-model/dsm-model.component';
+import { SaveDialogComponent } from './common/save-dialog/save-dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DsmModelComponent } from './dsm-model/dsm-model.component';
     ResourceNetworkComponent,
     AssessmentComponent,
     AboutComponent,
-    DsmModelComponent
+    DsmModelComponent,
+    SaveDialogComponent
   ],
   imports: [
     BrowserModule,
