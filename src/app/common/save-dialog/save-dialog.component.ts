@@ -52,7 +52,7 @@ export class SaveDialogComponent implements OnInit {
 
   generateLocationUrl() {
     if (environment.baseUrl === "/" || environment.baseUrl === "/ait/fair-wizard/") {
-      return window.location.origin + "/";
+      return window.location.origin + environment.baseUrl;
     } else {
       return environment.baseUrl;
     }
