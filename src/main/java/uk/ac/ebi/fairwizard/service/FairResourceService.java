@@ -21,6 +21,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -62,7 +63,10 @@ public class FairResourceService {
   public FairSolution generateSolutionFromDecisionTree(List<DecisionNode> decisionTree) {
     Set<String> labels = getLabelsFromDecisionTree(decisionTree);
 
-    FairSolution fairSolution = new FairSolution(UUID.randomUUID().toString());
+    String id = UUID.randomUUID().toString();
+    FairSolution fairSolution = new FairSolution(id);
+    fairSolution.setLink("api/solution/" + id);
+    fairSolution.setCreateDate(new Date().toString());
     fairSolution.setDecisionTree(decisionTree);
     fairSolution.setLabels(labels);
     fairSolution.setFairResources(searchResources(new ArrayList<>(labels)));

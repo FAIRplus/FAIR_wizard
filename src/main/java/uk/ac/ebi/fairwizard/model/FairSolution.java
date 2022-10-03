@@ -2,20 +2,20 @@ package uk.ac.ebi.fairwizard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class FairSolution {
   public String id;
   public String link;
   public String createDate;
   public String title;
   public String project;
-  public String name;
-  public String email;
   public String description;
   public String comments;
 

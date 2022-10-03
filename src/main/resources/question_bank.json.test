@@ -1,0 +1,78 @@
+[
+  {
+    "id": "1",
+    "question": "What type(s) data do you have",
+    "category": "Stage 1: Project examination",
+    "description": "Domains that are included in the project/dataset",
+    "multipleChoices": true,
+    "answers": [
+      {
+        "text": "DNA/RNA sequence",
+        "description": "Fields such as genomics, transcriptomics, gene expression, and epi-genomics",
+        "labels": [
+          "transcriptomics",
+          "genomics"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Protein data",
+        "description": "Studies on proteins, such as protein structure, proteomics, and others.",
+        "labels": [
+          "protein",
+          "proteomics"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Chemical and bioassays",
+        "description": "Studies on bioactivity data, chemical substance, toxicity and others",
+        "labels": [
+          "bioassays",
+          "chemical compounds",
+          "chemical biology"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Multi-omics studies",
+        "description": "Studies on omics datasets",
+        "labels": [
+          "Omics",
+          "multi-omics",
+          "metabolomics"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Clinical data and human studies",
+        "description": "Studies such as clinical trials, patient studies and other studies that involves human study",
+        "labels": [
+          "clinical studies",
+          "clinical data",
+          "clinical trail data",
+          "Clinical data",
+          "human data",
+          "sensitive data"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Biomedical infrastructures",
+        "description": "Such as data vocabularies, analytical tools and other software",
+        "labels": [
+          "infrastructure"
+        ],
+        "next": "0"
+      },
+      {
+        "text": "Others",
+        "description": "Any other types of studies",
+        "labels": [
+          ""
+        ],
+        "next": "0"
+      }
+    ]
+  }
+]

@@ -24,11 +24,11 @@
     </app-decision-node>
     <div *ngIf="reachedLeaf">
       <div class="fair-search-button-container">
-        <button class="vf-button vf-button--primary vf-button--sm fair-search-button" (click)="searchResources()">
-          Search
-        </button>
+<!--        <button class="vf-button vf-button&#45;&#45;primary vf-button&#45;&#45;sm fair-search-button" (click)="searchResources()">-->
+<!--          Search depricated-->
+<!--        </button>-->
         <button class="vf-button vf-button--primary vf-button--sm fair-search-button" (click)="getFairSolution()">
-          Search post
+          Search
         </button>
       </div>
     </div>
@@ -37,10 +37,12 @@
   <div class="fair-resources container-fluid" *ngIf="fairResources != undefined && fairResources.length > 0">
     <h2>Results</h2>
     <div class="actions-container">
-      <button class="btn btn-primary fair-report-button" (click)="openSaveDialog()">Save</button>
-      <button class="btn btn-primary fair-report-button" (click)="downloadReport()">Generate Report</button>
-      <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Get PermaLink</button>
-      <div class="permalink-link" *ngIf="permaLink != undefined">{{permaLink}}</div>
+      <button class="btn btn-primary fair-report-button" (click)="openSaveDialog()">Save/Download Report</button>
+      <button class="btn btn-primary fair-report-button" *ngIf="fairSolution.title" (click)="gotoAssessment()">Continue to Assessment</button>
+<!--      <button class="btn btn-primary fair-report-button" (click)="downloadReport()">Generate Report</button>-->
+<!--      <button class="btn btn-primary fair-report-button" (click)="saveSearch()">Get PermaLink</button>-->
+<!--      <div class="permalink-link" *ngIf="permaLink != undefined">{{permaLink}}</div>-->
+      <div class="permalink-link" *ngIf="fairSolution.title != undefined">{{fairSolution.link}}</div>
     </div>
 
     <app-fair-resources [resources]="fairResources" [filters]="filters"></app-fair-resources>

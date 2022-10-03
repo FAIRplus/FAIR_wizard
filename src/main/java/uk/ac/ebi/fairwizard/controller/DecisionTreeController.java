@@ -116,12 +116,6 @@ public class DecisionTreeController {
     return "Not implemented";
   }
 
-  @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
-  public byte[] getFairReport(@RequestParam List<String> answers) throws ApplicationStatusException {
-    ByteArrayOutputStream out = reportingService.getReportStream(answers);
-    return out.toByteArray();
-  }
-
   @GetMapping("permalink/{searchId}")
   public ResponseEntity<Object> getSavedSearches(@PathVariable("searchId") String searchId) {
     System.out.println(servletContext.getContextPath());
@@ -134,6 +128,32 @@ public class DecisionTreeController {
   @PostMapping("permalink")
   public ResponseEntity<SavedSearch> saveSearch(@RequestBody SavedSearch savedSearch) {
     return ResponseEntity.ok(savedSearchService.saveSearch(savedSearch));
+  }
+
+  @PostMapping("solution")
+  public ResponseEntity<FairSolution> saveSolution(@RequestBody FairSolution fairSolution) {
+    FairSolution fairSolutionResponse = savedSearchService.saveSolution(fairSolution);
+    return ResponseEntity.ok(fairSolutionResponse);
+  }
+
+  @GetMapping("solution/{searchId}")
+  public ResponseEntity<FairSolution> getSavedSolution(@PathVariable("searchId") String searchId) {
+    System.out.println(servletContext.getContextPath());
+    return savedSearchService.getSavedSolution(searchId)
+                             .map(s -> ResponseEntity.ok(s))
+                             .orElseGet(() -> ResponseEntity.notFound().build());
+  }
+
+  @RequestMapping(method = RequestMethod.GET, value = "report", produces = "application/pdf")
+  public byte[] getFairReport(@RequestParam List<String> answers) throws ApplicationStatusException {
+    ByteArrayOutputStream out = reportingService.getReportStream(answers);
+    return out.toByteArray();
+  }
+
+  @RequestMapping(method = RequestMethod.GET, value = "report/{searchId}", produces = "application/pdf")
+  public byte[] downloadSolutionReport(@PathVariable("searchId") String searchId) throws ApplicationStatusException {
+    ByteArrayOutputStream out = reportingService.getReportStream(searchId);
+    return out.toByteArray();
   }
 
 }

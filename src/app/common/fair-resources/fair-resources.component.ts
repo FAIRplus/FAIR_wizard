@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FairResource, FairResourceType} from "../../models/FairResource";
+import {FairResource} from "../../models/FairResource";
 import {FairResourceProcess} from "../../models/FairResourceProcess";
 import {FairResourceIndicator} from "../../models/FairResourceIndicator";
 import {FairResourceRecipe} from "../../models/FairResourceRecipe";
@@ -38,15 +38,15 @@ export class FairResourcesComponent implements OnInit {
 
   populateFairResources(resources: FairResource[]): void {
     for (let resource of resources) {
-      if (resource.resourceType === FairResourceType.Process) {
+      if (resource.resourceType.toLowerCase() === "process") {
         this.processes.push(resource);
-      } else if (resource.resourceType === FairResourceType.Indicator) {
+      } else if (resource.resourceType.toLowerCase() === "indicator") {
         this.indicators.push(resource);
-      } else if (resource.resourceType === FairResourceType.Recipe) {
+      } else if (resource.resourceType.toLowerCase() === "recipe") {
         this.recipes.push(resource);
-      } else if (resource.resourceType === FairResourceType.Requirement) {
+      } else if (resource.resourceType.toLowerCase() === "requirement") {
         this.requirements.push(resource);
-      } else if (resource.resourceType === FairResourceType.Tool) {
+      } else if (resource.resourceType.toLowerCase() === "tool") {
         this.tools.push(resource);
       }
     }

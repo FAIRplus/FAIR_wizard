@@ -3,7 +3,6 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProcessDialogComponent} from "../process-dialog/process-dialog.component";
 import {DecisionService} from "../../decision.service";
 import {FairResourceComponent} from "../fair-resource/fair-resource.component";
-import {FairResourceType} from "../../models/FairResource";
 
 @Component({
   selector: 'app-process-diagram',
@@ -66,7 +65,6 @@ export class ProcessDiagramComponent implements OnInit {
   }
 
   openProcessDialog(resource) {
-    resource.resourceType = FairResourceType[resource.resourceType.toString() as keyof typeof FairResourceType];
     const modalRef = this.modalService.open(FairResourceComponent, {size: 'lg', centered: true});
     modalRef.componentInstance.resource = resource;
   }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FairResource, FairResourceType} from "../../models/FairResource";
+import {FairResource} from "../../models/FairResource";
 
 @Component({
   selector: 'app-fair-resource',
@@ -15,7 +15,7 @@ export class FairResourceComponent implements OnInit {
   }
 
   getResourceType(resourceType) {
-    return FairResourceType[resourceType];
+    return resourceType;
   }
 
 }

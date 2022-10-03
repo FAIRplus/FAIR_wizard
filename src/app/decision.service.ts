@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {DecisionNode, Question} from "./models/DecisionNode";
 import {Observable} from 'rxjs';
-import {FairResource, FairResourceType} from "./models/FairResource";
+import {FairResource} from "./models/FairResource";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {environment} from "../environments/environment";
@@ -21,6 +21,8 @@ export class DecisionService {
   private resourceUrl = environment.baseUrl + 'api/resource';
   private processDiagramUrl = environment.baseUrl + 'api/processDiagram';
 
+  private saveSolutionUrl = environment.baseUrl + 'api/solution';
+
   constructor(private http: HttpClient) {
   }
 
@@ -33,15 +35,7 @@ export class DecisionService {
     // let params = encodeURIComponent("?resourceId=" + resourceId);
     let params = new HttpParams();
     params = params.append("resourceId", encodeURIComponent(resourceId));
-    return this.http.get<FairResource>(this.resourceUrl, {params: params})
-      .pipe(map(r => {
-        if (r.resourceType !== undefined) {
-          r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
-        } else {
-          console.log("Error in data: resourceType is undefined for " + r);
-        }
-        return r;
-      }));
+    return this.http.get<FairResource>(this.resourceUrl, {params: params});
   }
 
   searchResources(filters: string[]): Observable<FairResource[]> {
@@ -52,19 +46,19 @@ export class DecisionService {
       }
     }
 
-    return this.http.get<FairResource[]>(this.searchUrl, {params: params})
-      .pipe(map(resources => {
-        let fairResources: FairResource[] = [];
-        resources.forEach(r => {
-          if (r.resourceType !== undefined) {
-            r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
-          } else {
-            console.log("Error in data: resourceType is undefined for " + r);
-          }
-        });
-        return resources;
-      }));
-    // return of(FAIR_RESOURCES);
+    return this.http.get<FairResource[]>(this.searchUrl, {params: params});
+
+    // return this.http.get<FairResource[]>(this.searchUrl, {params: params})
+    //   .pipe(map(resources => {
+    //     resources.forEach(r => {
+    //       if (r.resourceType !== undefined) {
+    //         r.resourceType = FairResourceType[r.resourceType.toString() as keyof typeof FairResourceType]
+    //       } else {
+    //         console.log("Error in data: resourceType is undefined for " + r);
+    //       }
+    //     });
+    //     return resources;
+    //   }));
   }
 
   initFairSolutionFromDecisionTree(decisonTree: DecisionNode[]): Observable<FairSolution> {
@@ -111,6 +105,14 @@ export class DecisionService {
 
   saveSearch(resourceUrl: string): Observable<SavedSearch> {
     return this.http.post<SavedSearch>(this.permalinkUrl, {"resourceLink": resourceUrl});
+  }
+
+  saveFairSolution(fairSolution: FairSolution): Observable<FairSolution> {
+    return this.http.post<FairSolution>(this.saveSolutionUrl, fairSolution);
+  }
+
+  getSavedSolution(solutionId: string): Observable<FairSolution> {
+    return this.http.get<FairSolution>(this.saveSolutionUrl + "/" + solutionId);
   }
 
   getReport(): Observable<any> {
